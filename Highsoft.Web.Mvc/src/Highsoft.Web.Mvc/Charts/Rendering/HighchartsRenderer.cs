@@ -23,8 +23,6 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
     public string RenderHtml()
     {
-      if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30.0))
-        return "This is a trial version of Highcharts for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
       return this.GetStartupJavascript();
     }
 
