@@ -3,7 +3,7 @@
   <metadata>
     <id>Highsoft.Web.Mvc</id>
     <title>Highsoft.Web.Mvc</title>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <authors>Highsoft</authors>
     <owners>Highsoft</owners>
     <licenseUrl>https://github.com/pmrozek/highcharts/blob/master/LICENSE</licenseUrl>
@@ -17,7 +17,7 @@
 
     <dependencies>
       <dependency id="Newtonsoft.Json" version="9.0.1" />
-      <dependency id="Microsoft.AspNetCore.Mvc" version="1.0.1" />
+      <dependency id="Microsoft.AspNetCore.Mvc" version="1.1.0" />
     </dependencies>
   </metadata>
 </package>
