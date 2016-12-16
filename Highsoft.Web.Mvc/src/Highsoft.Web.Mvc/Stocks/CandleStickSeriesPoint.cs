@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.CandleStickSeriesPoint
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.CandleStickSeriesPoint
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public class CandleStickSeriesPoint : BaseObject
-  {
-    public CandleStickSeriesPointEvents Events { get; set; }
-
-    private CandleStickSeriesPointEvents Events_DefaultValue { get; set; }
-
-    public CandleStickSeriesPoint()
+    public class CandleStickSeriesPoint : BaseObject
     {
-      this.Events = this.Events_DefaultValue = new CandleStickSeriesPointEvents();
-    }
+        public CandleStickSeriesPointEvents Events { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Events.IsDirty())
-        hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-      return hashtable;
-    }
+        private CandleStickSeriesPointEvents Events_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public CandleStickSeriesPoint()
+        {
+            this.Events = this.Events_DefaultValue = new CandleStickSeriesPointEvents();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Events.IsDirty())
+                hashtable.Add((object) "events", (object) this.Events.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

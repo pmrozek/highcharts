@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsBubbleCursor
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsBubbleCursor
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsBubbleCursor
-  {
-    Null,
-    Default,
-    None,
-    Help,
-    Pointer,
-    Crosshair,
-  }
+    public enum PlotOptionsBubbleCursor
+    {
+        Null,
+        Default,
+        None,
+        Help,
+        Pointer,
+        Crosshair,
+    }
 }

@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.ColumnSeriesDataLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.ColumnSeriesDataLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum ColumnSeriesDataLabelsAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum ColumnSeriesDataLabelsAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

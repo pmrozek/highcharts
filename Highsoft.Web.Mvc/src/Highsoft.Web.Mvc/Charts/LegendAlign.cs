@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.LegendAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.LegendAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum LegendAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum LegendAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

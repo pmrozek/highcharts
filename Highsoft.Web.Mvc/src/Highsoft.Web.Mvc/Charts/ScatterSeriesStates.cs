@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.ScatterSeriesStates
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.ScatterSeriesStates
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public class ScatterSeriesStates : BaseObject
-  {
-    public ScatterSeriesStatesHover Hover { get; set; }
-
-    private ScatterSeriesStatesHover Hover_DefaultValue { get; set; }
-
-    public ScatterSeriesStates()
+    public class ScatterSeriesStates : BaseObject
     {
-      this.Hover = this.Hover_DefaultValue = new ScatterSeriesStatesHover();
-    }
+        public ScatterSeriesStatesHover Hover { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Hover.IsDirty())
-        hashtable.Add((object) "hover", (object) this.Hover.ToHashtable());
-      return hashtable;
-    }
+        private ScatterSeriesStatesHover Hover_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public ScatterSeriesStates()
+        {
+            this.Hover = this.Hover_DefaultValue = new ScatterSeriesStatesHover();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Hover.IsDirty())
+                hashtable.Add((object) "hover", (object) this.Hover.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.SolidgaugeSeriesDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.SolidgaugeSeriesDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum SolidgaugeSeriesDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum SolidgaugeSeriesDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

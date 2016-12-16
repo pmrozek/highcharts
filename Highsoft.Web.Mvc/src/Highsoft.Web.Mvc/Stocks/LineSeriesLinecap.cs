@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.LineSeriesLinecap
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.LineSeriesLinecap
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum LineSeriesLinecap
-  {
-    Round,
-    Butt,
-    Square,
-  }
+    public enum LineSeriesLinecap
+    {
+        Round,
+        Butt,
+        Square,
+    }
 }

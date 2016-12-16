@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsCandlestickPoint
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsCandlestickPoint
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public class PlotOptionsCandlestickPoint : BaseObject
-  {
-    public PlotOptionsCandlestickPointEvents Events { get; set; }
-
-    private PlotOptionsCandlestickPointEvents Events_DefaultValue { get; set; }
-
-    public PlotOptionsCandlestickPoint()
+    public class PlotOptionsCandlestickPoint : BaseObject
     {
-      this.Events = this.Events_DefaultValue = new PlotOptionsCandlestickPointEvents();
-    }
+        public PlotOptionsCandlestickPointEvents Events { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Events.IsDirty())
-        hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-      return hashtable;
-    }
+        private PlotOptionsCandlestickPointEvents Events_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public PlotOptionsCandlestickPoint()
+        {
+            this.Events = this.Events_DefaultValue = new PlotOptionsCandlestickPointEvents();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Events.IsDirty())
+                hashtable.Add((object) "events", (object) this.Events.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

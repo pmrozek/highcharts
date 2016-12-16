@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsBubbleSizeBy
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsBubbleSizeBy
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsBubbleSizeBy
-  {
-    Area,
-    Width,
-  }
+    public enum PlotOptionsBubbleSizeBy
+    {
+        Area,
+        Width,
+    }
 }

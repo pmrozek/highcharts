@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.ScatterSeriesDataLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.ScatterSeriesDataLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum ScatterSeriesDataLabelsAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum ScatterSeriesDataLabelsAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

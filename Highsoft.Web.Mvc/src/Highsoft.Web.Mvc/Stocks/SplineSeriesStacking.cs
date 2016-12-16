@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.SplineSeriesStacking
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.SplineSeriesStacking
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum SplineSeriesStacking
-  {
-    Null,
-    Normal,
-    Percent,
-  }
+    public enum SplineSeriesStacking
+    {
+        Null,
+        Normal,
+        Percent,
+    }
 }

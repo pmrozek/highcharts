@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsOhlcStates
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsOhlcStates
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public class PlotOptionsOhlcStates : BaseObject
-  {
-    public PlotOptionsOhlcStatesHover Hover { get; set; }
-
-    private PlotOptionsOhlcStatesHover Hover_DefaultValue { get; set; }
-
-    public PlotOptionsOhlcStates()
+    public class PlotOptionsOhlcStates : BaseObject
     {
-      this.Hover = this.Hover_DefaultValue = new PlotOptionsOhlcStatesHover();
-    }
+        public PlotOptionsOhlcStatesHover Hover { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Hover.IsDirty())
-        hashtable.Add((object) "hover", (object) this.Hover.ToHashtable());
-      return hashtable;
-    }
+        private PlotOptionsOhlcStatesHover Hover_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public PlotOptionsOhlcStates()
+        {
+            this.Hover = this.Hover_DefaultValue = new PlotOptionsOhlcStatesHover();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Hover.IsDirty())
+                hashtable.Add((object) "hover", (object) this.Hover.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

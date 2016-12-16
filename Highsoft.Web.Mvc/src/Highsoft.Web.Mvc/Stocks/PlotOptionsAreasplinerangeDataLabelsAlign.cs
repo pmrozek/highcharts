@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsAreasplinerangeDataLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsAreasplinerangeDataLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsAreasplinerangeDataLabelsAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum PlotOptionsAreasplinerangeDataLabelsAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

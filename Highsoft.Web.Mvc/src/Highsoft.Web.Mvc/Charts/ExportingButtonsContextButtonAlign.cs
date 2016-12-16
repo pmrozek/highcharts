@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.ExportingButtonsContextButtonAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.ExportingButtonsContextButtonAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum ExportingButtonsContextButtonAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum ExportingButtonsContextButtonAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

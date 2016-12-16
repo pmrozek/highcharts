@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.ScatterSeriesCursor
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.ScatterSeriesCursor
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum ScatterSeriesCursor
-  {
-    Null,
-    Default,
-    None,
-    Help,
-    Pointer,
-    Crosshair,
-  }
+    public enum ScatterSeriesCursor
+    {
+        Null,
+        Default,
+        None,
+        Help,
+        Pointer,
+        Crosshair,
+    }
 }

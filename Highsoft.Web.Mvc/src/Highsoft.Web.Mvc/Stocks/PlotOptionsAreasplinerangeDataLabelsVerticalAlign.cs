@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsAreasplinerangeDataLabelsVerticalAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsAreasplinerangeDataLabelsVerticalAlign
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsAreasplinerangeDataLabelsVerticalAlign
-  {
-    Null,
-    Top,
-    Middle,
-    Bottom,
-  }
+    public enum PlotOptionsAreasplinerangeDataLabelsVerticalAlign
+    {
+        Null,
+        Top,
+        Middle,
+        Bottom,
+    }
 }

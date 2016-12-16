@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.OhlcSeriesPointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.OhlcSeriesPointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum OhlcSeriesPointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum OhlcSeriesPointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.AreasplineSeriesDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.AreasplineSeriesDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum AreasplineSeriesDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum AreasplineSeriesDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

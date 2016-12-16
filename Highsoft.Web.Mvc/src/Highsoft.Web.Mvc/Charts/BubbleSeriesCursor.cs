@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.BubbleSeriesCursor
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.BubbleSeriesCursor
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum BubbleSeriesCursor
-  {
-    Null,
-    Default,
-    None,
-    Help,
-    Pointer,
-    Crosshair,
-  }
+    public enum BubbleSeriesCursor
+    {
+        Null,
+        Default,
+        None,
+        Help,
+        Pointer,
+        Crosshair,
+    }
 }

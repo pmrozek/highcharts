@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsTreemapLevelIsConstant
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsTreemapLevelIsConstant
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsTreemapLevelIsConstant
-  {
-    True,
-    False,
-  }
+    public enum PlotOptionsTreemapLevelIsConstant
+    {
+        True,
+        False,
+    }
 }

@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!--Project was exported from assembly: C:\Users\piotrm\Documents\Visual Studio 2015\Projects\ILSpy_Master_2.4.0.1963_Binaries\Highstock.Web.Mvc.dll-->
+  <!--Project was exported from assembly: C:\Users\piotrm\Documents\Visual Studio 2015\Projects\!Test\Highstock.Web.Mvc.dll-->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{859C0FB6-49EB-4BBA-9EF1-A65D050DD578}</ProjectGuid>
+    <ProjectGuid>{759C27E2-C2BA-4D20-AE8D-FB3F3864EC4F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Highstock.Web.Mvc</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ApplicationVersion>1.0.6164.2596</ApplicationVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>5.0.2.15794</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Highsoft.Web.Mvc.Stocks</RootNamespace>
   </PropertyGroup>
@@ -32,9 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Core" />
     <Reference Include="System.Web.Mvc" />
     <Reference Include="System" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
@@ -48,6 +51,8 @@
     <Compile Include="Stop.cs" />
     <Compile Include="SymbolEnum.cs" />
     <Compile Include="Symbol.cs" />
+    <Compile Include="Accessibility.cs" />
+    <Compile Include="AccessibilityKeyboardNavigation.cs" />
     <Compile Include="ArearangeSeries.cs" />
     <Compile Include="ArearangeSeriesData.cs" />
     <Compile Include="ArearangeSeriesDataEvents.cs" />
@@ -60,7 +65,6 @@
     <Compile Include="ArearangeSeriesStates.cs" />
     <Compile Include="ArearangeSeriesStatesHover.cs" />
     <Compile Include="ArearangeSeriesStatesHoverHalo.cs" />
-    <Compile Include="ArearangeSeriesStatesHoverMarker.cs" />
     <Compile Include="ArearangeSeriesTooltip.cs" />
     <Compile Include="ArearangeSeriesZones.cs" />
     <Compile Include="AreaSeries.cs" />
@@ -83,7 +87,6 @@
     <Compile Include="AreaSeriesStates.cs" />
     <Compile Include="AreaSeriesStatesHover.cs" />
     <Compile Include="AreaSeriesStatesHoverHalo.cs" />
-    <Compile Include="AreaSeriesStatesHoverMarker.cs" />
     <Compile Include="AreaSeriesTooltip.cs" />
     <Compile Include="AreaSeriesZones.cs" />
     <Compile Include="AreasplinerangeSeries.cs" />
@@ -98,7 +101,6 @@
     <Compile Include="AreasplinerangeSeriesStates.cs" />
     <Compile Include="AreasplinerangeSeriesStatesHover.cs" />
     <Compile Include="AreasplinerangeSeriesStatesHoverHalo.cs" />
-    <Compile Include="AreasplinerangeSeriesStatesHoverMarker.cs" />
     <Compile Include="AreasplinerangeSeriesTooltip.cs" />
     <Compile Include="AreasplinerangeSeriesZones.cs" />
     <Compile Include="AreasplineSeries.cs" />
@@ -121,7 +123,6 @@
     <Compile Include="AreasplineSeriesStates.cs" />
     <Compile Include="AreasplineSeriesStatesHover.cs" />
     <Compile Include="AreasplineSeriesStatesHoverHalo.cs" />
-    <Compile Include="AreasplineSeriesStatesHoverMarker.cs" />
     <Compile Include="AreasplineSeriesTooltip.cs" />
     <Compile Include="AreasplineSeriesZones.cs" />
     <Compile Include="CandleStickSeries.cs" />
@@ -130,21 +131,18 @@
     <Compile Include="CandleStickSeriesDataGrouping.cs" />
     <Compile Include="CandleStickSeriesDataLabels.cs" />
     <Compile Include="CandleStickSeriesEvents.cs" />
-    <Compile Include="CandleStickSeriesMarker.cs" />
-    <Compile Include="CandleStickSeriesMarkerStates.cs" />
-    <Compile Include="CandleStickSeriesMarkerStatesHover.cs" />
-    <Compile Include="CandleStickSeriesMarkerStatesSelect.cs" />
     <Compile Include="CandleStickSeriesPoint.cs" />
     <Compile Include="CandleStickSeriesPointEvents.cs" />
     <Compile Include="CandleStickSeriesPointPlacement.cs" />
     <Compile Include="CandleStickSeriesStates.cs" />
     <Compile Include="CandleStickSeriesStatesHover.cs" />
     <Compile Include="CandleStickSeriesStatesHoverHalo.cs" />
-    <Compile Include="CandleStickSeriesStatesHoverMarker.cs" />
     <Compile Include="CandleStickSeriesTooltip.cs" />
     <Compile Include="CandleStickSeriesZones.cs" />
     <Compile Include="Chart.cs" />
     <Compile Include="ChartEvents.cs" />
+    <Compile Include="ChartResetZoomButton.cs" />
+    <Compile Include="ChartResetZoomButtonPosition.cs" />
     <Compile Include="ColorAxis.cs" />
     <Compile Include="ColumnrangeSeries.cs" />
     <Compile Include="ColumnrangeSeriesData.cs" />
@@ -152,17 +150,12 @@
     <Compile Include="ColumnrangeSeriesDataGrouping.cs" />
     <Compile Include="ColumnrangeSeriesDataLabels.cs" />
     <Compile Include="ColumnrangeSeriesEvents.cs" />
-    <Compile Include="ColumnrangeSeriesMarker.cs" />
-    <Compile Include="ColumnrangeSeriesMarkerStates.cs" />
-    <Compile Include="ColumnrangeSeriesMarkerStatesHover.cs" />
-    <Compile Include="ColumnrangeSeriesMarkerStatesSelect.cs" />
     <Compile Include="ColumnrangeSeriesPoint.cs" />
     <Compile Include="ColumnrangeSeriesPointEvents.cs" />
     <Compile Include="ColumnrangeSeriesPointPlacement.cs" />
     <Compile Include="ColumnrangeSeriesStates.cs" />
     <Compile Include="ColumnrangeSeriesStatesHover.cs" />
     <Compile Include="ColumnrangeSeriesStatesHoverHalo.cs" />
-    <Compile Include="ColumnrangeSeriesStatesHoverMarker.cs" />
     <Compile Include="ColumnrangeSeriesTooltip.cs" />
     <Compile Include="ColumnrangeSeriesZones.cs" />
     <Compile Include="ColumnSeries.cs" />
@@ -171,41 +164,42 @@
     <Compile Include="ColumnSeriesDataGrouping.cs" />
     <Compile Include="ColumnSeriesDataLabels.cs" />
     <Compile Include="ColumnSeriesEvents.cs" />
-    <Compile Include="ColumnSeriesMarker.cs" />
-    <Compile Include="ColumnSeriesMarkerStates.cs" />
-    <Compile Include="ColumnSeriesMarkerStatesHover.cs" />
-    <Compile Include="ColumnSeriesMarkerStatesSelect.cs" />
     <Compile Include="ColumnSeriesPoint.cs" />
     <Compile Include="ColumnSeriesPointEvents.cs" />
     <Compile Include="ColumnSeriesPointPlacement.cs" />
     <Compile Include="ColumnSeriesStates.cs" />
     <Compile Include="ColumnSeriesStatesHover.cs" />
     <Compile Include="ColumnSeriesStatesHoverHalo.cs" />
-    <Compile Include="ColumnSeriesStatesHoverMarker.cs" />
     <Compile Include="ColumnSeriesTooltip.cs" />
     <Compile Include="ColumnSeriesZones.cs" />
     <Compile Include="Credits.cs" />
+    <Compile Include="CreditsPosition.cs" />
     <Compile Include="ArearangeSeriesCursor.cs" />
     <Compile Include="ArearangeSeriesDashStyle.cs" />
     <Compile Include="ArearangeSeriesDataLabelsAlign.cs" />
     <Compile Include="ArearangeSeriesDataLabelsOverflow.cs" />
     <Compile Include="ArearangeSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="ArearangeSeriesLinecap.cs" />
     <Compile Include="ArearangeSeriesPointIntervalUnit.cs" />
     <Compile Include="ArearangeSeriesStacking.cs" />
+    <Compile Include="ArearangeSeriesStep.cs" />
     <Compile Include="ArearangeSeriesType.cs" />
     <Compile Include="AreaSeriesCursor.cs" />
     <Compile Include="AreaSeriesDashStyle.cs" />
     <Compile Include="AreaSeriesDataLabelsAlign.cs" />
     <Compile Include="AreaSeriesDataLabelsOverflow.cs" />
     <Compile Include="AreaSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="AreaSeriesLinecap.cs" />
     <Compile Include="AreaSeriesPointIntervalUnit.cs" />
     <Compile Include="AreaSeriesStacking.cs" />
+    <Compile Include="AreaSeriesStep.cs" />
     <Compile Include="AreaSeriesType.cs" />
     <Compile Include="AreasplinerangeSeriesCursor.cs" />
     <Compile Include="AreasplinerangeSeriesDashStyle.cs" />
     <Compile Include="AreasplinerangeSeriesDataLabelsAlign.cs" />
     <Compile Include="AreasplinerangeSeriesDataLabelsOverflow.cs" />
     <Compile Include="AreasplinerangeSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="AreasplinerangeSeriesLinecap.cs" />
     <Compile Include="AreasplinerangeSeriesPointIntervalUnit.cs" />
     <Compile Include="AreasplinerangeSeriesStacking.cs" />
     <Compile Include="AreasplinerangeSeriesType.cs" />
@@ -214,6 +208,7 @@
     <Compile Include="AreasplineSeriesDataLabelsAlign.cs" />
     <Compile Include="AreasplineSeriesDataLabelsOverflow.cs" />
     <Compile Include="AreasplineSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="AreasplineSeriesLinecap.cs" />
     <Compile Include="AreasplineSeriesPointIntervalUnit.cs" />
     <Compile Include="AreasplineSeriesStacking.cs" />
     <Compile Include="AreasplineSeriesType.cs" />
@@ -224,6 +219,9 @@
     <Compile Include="CandleStickSeriesPointIntervalUnit.cs" />
     <Compile Include="CandleStickSeriesType.cs" />
     <Compile Include="ChartPinchType.cs" />
+    <Compile Include="ChartResetZoomButtonPositionAlign.cs" />
+    <Compile Include="ChartResetZoomButtonPositionVerticalAlign.cs" />
+    <Compile Include="ChartResetZoomButtonRelativeTo.cs" />
     <Compile Include="ChartType.cs" />
     <Compile Include="ChartZoomType.cs" />
     <Compile Include="ColumnrangeSeriesCursor.cs" />
@@ -231,7 +229,6 @@
     <Compile Include="ColumnrangeSeriesDataLabelsOverflow.cs" />
     <Compile Include="ColumnrangeSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="ColumnrangeSeriesPointIntervalUnit.cs" />
-    <Compile Include="ColumnrangeSeriesStacking.cs" />
     <Compile Include="ColumnrangeSeriesType.cs" />
     <Compile Include="ColumnSeriesCursor.cs" />
     <Compile Include="ColumnSeriesDataLabelsAlign.cs" />
@@ -240,6 +237,8 @@
     <Compile Include="ColumnSeriesPointIntervalUnit.cs" />
     <Compile Include="ColumnSeriesStacking.cs" />
     <Compile Include="ColumnSeriesType.cs" />
+    <Compile Include="CreditsPositionAlign.cs" />
+    <Compile Include="CreditsPositionVerticalAlign.cs" />
     <Compile Include="ExportingButtonsContextButtonAlign.cs" />
     <Compile Include="ExportingButtonsContextButtonVerticalAlign.cs" />
     <Compile Include="ExportingType.cs" />
@@ -247,8 +246,10 @@
     <Compile Include="FlagsSeriesDataLabelsAlign.cs" />
     <Compile Include="FlagsSeriesDataLabelsOverflow.cs" />
     <Compile Include="FlagsSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="FlagsSeriesOnKey.cs" />
     <Compile Include="FlagsSeriesPointIntervalUnit.cs" />
     <Compile Include="FlagsSeriesShape.cs" />
+    <Compile Include="FlagsSeriesTextAlign.cs" />
     <Compile Include="FlagsSeriesType.cs" />
     <Compile Include="LegendAlign.cs" />
     <Compile Include="LegendLayout.cs" />
@@ -265,6 +266,8 @@
     <Compile Include="LineSeriesType.cs" />
     <Compile Include="NavigationButtonOptionsAlign.cs" />
     <Compile Include="NavigationButtonOptionsVerticalAlign.cs" />
+    <Compile Include="NoDataPositionAlign.cs" />
+    <Compile Include="NoDataPositionVerticalAlign.cs" />
     <Compile Include="OhlcSeriesCursor.cs" />
     <Compile Include="OhlcSeriesDataLabelsAlign.cs" />
     <Compile Include="OhlcSeriesDataLabelsOverflow.cs" />
@@ -276,29 +279,35 @@
     <Compile Include="PlotOptionsAreaDataLabelsAlign.cs" />
     <Compile Include="PlotOptionsAreaDataLabelsOverflow.cs" />
     <Compile Include="PlotOptionsAreaDataLabelsVerticalAlign.cs" />
+    <Compile Include="PlotOptionsAreaLinecap.cs" />
     <Compile Include="PlotOptionsAreaPointIntervalUnit.cs" />
     <Compile Include="PlotOptionsArearangeCursor.cs" />
     <Compile Include="PlotOptionsArearangeDashStyle.cs" />
     <Compile Include="PlotOptionsArearangeDataLabelsAlign.cs" />
     <Compile Include="PlotOptionsArearangeDataLabelsOverflow.cs" />
     <Compile Include="PlotOptionsArearangeDataLabelsVerticalAlign.cs" />
+    <Compile Include="PlotOptionsArearangeLinecap.cs" />
     <Compile Include="PlotOptionsArearangePointIntervalUnit.cs" />
     <Compile Include="PlotOptionsArearangeStacking.cs" />
+    <Compile Include="PlotOptionsArearangeStep.cs" />
     <Compile Include="PlotOptionsAreasplineCursor.cs" />
     <Compile Include="PlotOptionsAreasplineDashStyle.cs" />
     <Compile Include="PlotOptionsAreasplineDataLabelsAlign.cs" />
     <Compile Include="PlotOptionsAreasplineDataLabelsOverflow.cs" />
     <Compile Include="PlotOptionsAreasplineDataLabelsVerticalAlign.cs" />
+    <Compile Include="PlotOptionsAreasplineLinecap.cs" />
     <Compile Include="PlotOptionsAreasplinePointIntervalUnit.cs" />
     <Compile Include="PlotOptionsAreasplinerangeCursor.cs" />
     <Compile Include="PlotOptionsAreasplinerangeDashStyle.cs" />
     <Compile Include="PlotOptionsAreasplinerangeDataLabelsAlign.cs" />
     <Compile Include="PlotOptionsAreasplinerangeDataLabelsOverflow.cs" />
     <Compile Include="PlotOptionsAreasplinerangeDataLabelsVerticalAlign.cs" />
+    <Compile Include="PlotOptionsAreasplinerangeLinecap.cs" />
     <Compile Include="PlotOptionsAreasplinerangePointIntervalUnit.cs" />
     <Compile Include="PlotOptionsAreasplinerangeStacking.cs" />
     <Compile Include="PlotOptionsAreasplineStacking.cs" />
     <Compile Include="PlotOptionsAreaStacking.cs" />
+    <Compile Include="PlotOptionsAreaStep.cs" />
     <Compile Include="PlotOptionsCandlestickCursor.cs" />
     <Compile Include="PlotOptionsCandlestickDataLabelsAlign.cs" />
     <Compile Include="PlotOptionsCandlestickDataLabelsOverflow.cs" />
@@ -314,14 +323,15 @@
     <Compile Include="PlotOptionsColumnrangeDataLabelsOverflow.cs" />
     <Compile Include="PlotOptionsColumnrangeDataLabelsVerticalAlign.cs" />
     <Compile Include="PlotOptionsColumnrangePointIntervalUnit.cs" />
-    <Compile Include="PlotOptionsColumnrangeStacking.cs" />
     <Compile Include="PlotOptionsColumnStacking.cs" />
     <Compile Include="PlotOptionsFlagsCursor.cs" />
     <Compile Include="PlotOptionsFlagsDataLabelsAlign.cs" />
     <Compile Include="PlotOptionsFlagsDataLabelsOverflow.cs" />
     <Compile Include="PlotOptionsFlagsDataLabelsVerticalAlign.cs" />
+    <Compile Include="PlotOptionsFlagsOnKey.cs" />
     <Compile Include="PlotOptionsFlagsPointIntervalUnit.cs" />
     <Compile Include="PlotOptionsFlagsShape.cs" />
+    <Compile Include="PlotOptionsFlagsTextAlign.cs" />
     <Compile Include="PlotOptionsLineCursor.cs" />
     <Compile Include="PlotOptionsLineDashStyle.cs" />
     <Compile Include="PlotOptionsLineDataLabelsAlign.cs" />
@@ -355,13 +365,16 @@
     <Compile Include="PlotOptionsSeriesDataLabelsAlign.cs" />
     <Compile Include="PlotOptionsSeriesDataLabelsOverflow.cs" />
     <Compile Include="PlotOptionsSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="PlotOptionsSeriesLinecap.cs" />
     <Compile Include="PlotOptionsSeriesPointIntervalUnit.cs" />
     <Compile Include="PlotOptionsSeriesStacking.cs" />
+    <Compile Include="PlotOptionsSeriesStep.cs" />
     <Compile Include="PlotOptionsSplineCursor.cs" />
     <Compile Include="PlotOptionsSplineDashStyle.cs" />
     <Compile Include="PlotOptionsSplineDataLabelsAlign.cs" />
     <Compile Include="PlotOptionsSplineDataLabelsOverflow.cs" />
     <Compile Include="PlotOptionsSplineDataLabelsVerticalAlign.cs" />
+    <Compile Include="PlotOptionsSplineLinecap.cs" />
     <Compile Include="PlotOptionsSplinePointIntervalUnit.cs" />
     <Compile Include="PlotOptionsSplineStacking.cs" />
     <Compile Include="PolygonSeriesCursor.cs" />
@@ -372,6 +385,7 @@
     <Compile Include="PolygonSeriesPointIntervalUnit.cs" />
     <Compile Include="PolygonSeriesStacking.cs" />
     <Compile Include="PolygonSeriesType.cs" />
+    <Compile Include="RangeSelectorButtonsType.cs" />
     <Compile Include="ScatterSeriesCursor.cs" />
     <Compile Include="ScatterSeriesDashStyle.cs" />
     <Compile Include="ScatterSeriesDataLabelsAlign.cs" />
@@ -386,6 +400,7 @@
     <Compile Include="SplineSeriesDataLabelsAlign.cs" />
     <Compile Include="SplineSeriesDataLabelsOverflow.cs" />
     <Compile Include="SplineSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="SplineSeriesLinecap.cs" />
     <Compile Include="SplineSeriesPointIntervalUnit.cs" />
     <Compile Include="SplineSeriesStacking.cs" />
     <Compile Include="SplineSeriesType.cs" />
@@ -393,6 +408,7 @@
     <Compile Include="SubtitleVerticalAlign.cs" />
     <Compile Include="TitleAlign.cs" />
     <Compile Include="TitleVerticalAlign.cs" />
+    <Compile Include="XAxisCrosshairDashStyle.cs" />
     <Compile Include="XAxisGridLineDashStyle.cs" />
     <Compile Include="XAxisLabelsAlign.cs" />
     <Compile Include="XAxisMinorGridLineDashStyle.cs" />
@@ -401,7 +417,9 @@
     <Compile Include="XAxisPlotLinesLabelVerticalAlign.cs" />
     <Compile Include="XAxisTickPosition.cs" />
     <Compile Include="XAxisTitleAlign.cs" />
+    <Compile Include="YAxisCrosshairDashStyle.cs" />
     <Compile Include="YAxisGridLineDashStyle.cs" />
+    <Compile Include="YAxisLabelsAlign.cs" />
     <Compile Include="YAxisMinorGridLineDashStyle.cs" />
     <Compile Include="YAxisMinorTickPosition.cs" />
     <Compile Include="YAxisPlotLinesDashStyle.cs" />
@@ -421,7 +439,6 @@
     <Compile Include="FlagsSeriesStates.cs" />
     <Compile Include="FlagsSeriesStatesHover.cs" />
     <Compile Include="FlagsSeriesStatesHoverHalo.cs" />
-    <Compile Include="FlagsSeriesStatesHoverMarker.cs" />
     <Compile Include="FlagsSeriesTooltip.cs" />
     <Compile Include="FlagsSeriesZones.cs" />
     <Compile Include="Global.cs" />
@@ -452,30 +469,27 @@
     <Compile Include="LineSeriesStates.cs" />
     <Compile Include="LineSeriesStatesHover.cs" />
     <Compile Include="LineSeriesStatesHoverHalo.cs" />
-    <Compile Include="LineSeriesStatesHoverMarker.cs" />
     <Compile Include="LineSeriesTooltip.cs" />
     <Compile Include="LineSeriesZones.cs" />
     <Compile Include="Loading.cs" />
     <Compile Include="Navigation.cs" />
     <Compile Include="NavigationButtonOptions.cs" />
     <Compile Include="Navigator.cs" />
+    <Compile Include="NavigatorHandles.cs" />
+    <Compile Include="NoData.cs" />
+    <Compile Include="NoDataPosition.cs" />
     <Compile Include="OhlcSeries.cs" />
     <Compile Include="OhlcSeriesData.cs" />
     <Compile Include="OhlcSeriesDataEvents.cs" />
     <Compile Include="OhlcSeriesDataGrouping.cs" />
     <Compile Include="OhlcSeriesDataLabels.cs" />
     <Compile Include="OhlcSeriesEvents.cs" />
-    <Compile Include="OhlcSeriesMarker.cs" />
-    <Compile Include="OhlcSeriesMarkerStates.cs" />
-    <Compile Include="OhlcSeriesMarkerStatesHover.cs" />
-    <Compile Include="OhlcSeriesMarkerStatesSelect.cs" />
     <Compile Include="OhlcSeriesPoint.cs" />
     <Compile Include="OhlcSeriesPointEvents.cs" />
     <Compile Include="OhlcSeriesPointPlacement.cs" />
     <Compile Include="OhlcSeriesStates.cs" />
     <Compile Include="OhlcSeriesStatesHover.cs" />
     <Compile Include="OhlcSeriesStatesHoverHalo.cs" />
-    <Compile Include="OhlcSeriesStatesHoverMarker.cs" />
     <Compile Include="OhlcSeriesTooltip.cs" />
     <Compile Include="OhlcSeriesZones.cs" />
     <Compile Include="PlotOptions.cs" />
@@ -500,7 +514,6 @@
     <Compile Include="PlotOptionsArearangeStates.cs" />
     <Compile Include="PlotOptionsArearangeStatesHover.cs" />
     <Compile Include="PlotOptionsArearangeStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsArearangeStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsArearangeTooltip.cs" />
     <Compile Include="PlotOptionsArearangeZones.cs" />
     <Compile Include="PlotOptionsAreaspline.cs" />
@@ -524,46 +537,34 @@
     <Compile Include="PlotOptionsAreasplinerangeStates.cs" />
     <Compile Include="PlotOptionsAreasplinerangeStatesHover.cs" />
     <Compile Include="PlotOptionsAreasplinerangeStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsAreasplinerangeStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsAreasplinerangeTooltip.cs" />
     <Compile Include="PlotOptionsAreasplinerangeZones.cs" />
     <Compile Include="PlotOptionsAreasplineStates.cs" />
     <Compile Include="PlotOptionsAreasplineStatesHover.cs" />
     <Compile Include="PlotOptionsAreasplineStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsAreasplineStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsAreasplineTooltip.cs" />
     <Compile Include="PlotOptionsAreasplineZones.cs" />
     <Compile Include="PlotOptionsAreaStates.cs" />
     <Compile Include="PlotOptionsAreaStatesHover.cs" />
     <Compile Include="PlotOptionsAreaStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsAreaStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsAreaTooltip.cs" />
     <Compile Include="PlotOptionsAreaZones.cs" />
     <Compile Include="PlotOptionsCandlestick.cs" />
     <Compile Include="PlotOptionsCandlestickDataGrouping.cs" />
     <Compile Include="PlotOptionsCandlestickDataLabels.cs" />
     <Compile Include="PlotOptionsCandlestickEvents.cs" />
-    <Compile Include="PlotOptionsCandlestickMarker.cs" />
-    <Compile Include="PlotOptionsCandlestickMarkerStates.cs" />
-    <Compile Include="PlotOptionsCandlestickMarkerStatesHover.cs" />
-    <Compile Include="PlotOptionsCandlestickMarkerStatesSelect.cs" />
     <Compile Include="PlotOptionsCandlestickPoint.cs" />
     <Compile Include="PlotOptionsCandlestickPointEvents.cs" />
     <Compile Include="PlotOptionsCandlestickPointPlacement.cs" />
     <Compile Include="PlotOptionsCandlestickStates.cs" />
     <Compile Include="PlotOptionsCandlestickStatesHover.cs" />
     <Compile Include="PlotOptionsCandlestickStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsCandlestickStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsCandlestickTooltip.cs" />
     <Compile Include="PlotOptionsCandlestickZones.cs" />
     <Compile Include="PlotOptionsColumn.cs" />
     <Compile Include="PlotOptionsColumnDataGrouping.cs" />
     <Compile Include="PlotOptionsColumnDataLabels.cs" />
     <Compile Include="PlotOptionsColumnEvents.cs" />
-    <Compile Include="PlotOptionsColumnMarker.cs" />
-    <Compile Include="PlotOptionsColumnMarkerStates.cs" />
-    <Compile Include="PlotOptionsColumnMarkerStatesHover.cs" />
-    <Compile Include="PlotOptionsColumnMarkerStatesSelect.cs" />
     <Compile Include="PlotOptionsColumnPoint.cs" />
     <Compile Include="PlotOptionsColumnPointEvents.cs" />
     <Compile Include="PlotOptionsColumnPointPlacement.cs" />
@@ -571,23 +572,17 @@
     <Compile Include="PlotOptionsColumnrangeDataGrouping.cs" />
     <Compile Include="PlotOptionsColumnrangeDataLabels.cs" />
     <Compile Include="PlotOptionsColumnrangeEvents.cs" />
-    <Compile Include="PlotOptionsColumnrangeMarker.cs" />
-    <Compile Include="PlotOptionsColumnrangeMarkerStates.cs" />
-    <Compile Include="PlotOptionsColumnrangeMarkerStatesHover.cs" />
-    <Compile Include="PlotOptionsColumnrangeMarkerStatesSelect.cs" />
     <Compile Include="PlotOptionsColumnrangePoint.cs" />
     <Compile Include="PlotOptionsColumnrangePointEvents.cs" />
     <Compile Include="PlotOptionsColumnrangePointPlacement.cs" />
     <Compile Include="PlotOptionsColumnrangeStates.cs" />
     <Compile Include="PlotOptionsColumnrangeStatesHover.cs" />
     <Compile Include="PlotOptionsColumnrangeStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsColumnrangeStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsColumnrangeTooltip.cs" />
     <Compile Include="PlotOptionsColumnrangeZones.cs" />
     <Compile Include="PlotOptionsColumnStates.cs" />
     <Compile Include="PlotOptionsColumnStatesHover.cs" />
     <Compile Include="PlotOptionsColumnStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsColumnStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsColumnTooltip.cs" />
     <Compile Include="PlotOptionsColumnZones.cs" />
     <Compile Include="PlotOptionsFlags.cs" />
@@ -598,7 +593,6 @@
     <Compile Include="PlotOptionsFlagsStates.cs" />
     <Compile Include="PlotOptionsFlagsStatesHover.cs" />
     <Compile Include="PlotOptionsFlagsStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsFlagsStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsFlagsTooltip.cs" />
     <Compile Include="PlotOptionsFlagsZones.cs" />
     <Compile Include="PlotOptionsLine.cs" />
@@ -615,24 +609,18 @@
     <Compile Include="PlotOptionsLineStates.cs" />
     <Compile Include="PlotOptionsLineStatesHover.cs" />
     <Compile Include="PlotOptionsLineStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsLineStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsLineTooltip.cs" />
     <Compile Include="PlotOptionsLineZones.cs" />
     <Compile Include="PlotOptionsOhlc.cs" />
     <Compile Include="PlotOptionsOhlcDataGrouping.cs" />
     <Compile Include="PlotOptionsOhlcDataLabels.cs" />
     <Compile Include="PlotOptionsOhlcEvents.cs" />
-    <Compile Include="PlotOptionsOhlcMarker.cs" />
-    <Compile Include="PlotOptionsOhlcMarkerStates.cs" />
-    <Compile Include="PlotOptionsOhlcMarkerStatesHover.cs" />
-    <Compile Include="PlotOptionsOhlcMarkerStatesSelect.cs" />
     <Compile Include="PlotOptionsOhlcPoint.cs" />
     <Compile Include="PlotOptionsOhlcPointEvents.cs" />
     <Compile Include="PlotOptionsOhlcPointPlacement.cs" />
     <Compile Include="PlotOptionsOhlcStates.cs" />
     <Compile Include="PlotOptionsOhlcStatesHover.cs" />
     <Compile Include="PlotOptionsOhlcStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsOhlcStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsOhlcTooltip.cs" />
     <Compile Include="PlotOptionsOhlcZones.cs" />
     <Compile Include="PlotOptionsPolygon.cs" />
@@ -649,7 +637,6 @@
     <Compile Include="PlotOptionsPolygonStates.cs" />
     <Compile Include="PlotOptionsPolygonStatesHover.cs" />
     <Compile Include="PlotOptionsPolygonStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsPolygonStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsPolygonZones.cs" />
     <Compile Include="PlotOptionsScatter.cs" />
     <Compile Include="PlotOptionsScatterDataGrouping.cs" />
@@ -665,7 +652,6 @@
     <Compile Include="PlotOptionsScatterStates.cs" />
     <Compile Include="PlotOptionsScatterStatesHover.cs" />
     <Compile Include="PlotOptionsScatterStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsScatterStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsScatterZones.cs" />
     <Compile Include="PlotOptionsSeries.cs" />
     <Compile Include="PlotOptionsSeriesDataGrouping.cs" />
@@ -681,7 +667,6 @@
     <Compile Include="PlotOptionsSeriesStates.cs" />
     <Compile Include="PlotOptionsSeriesStatesHover.cs" />
     <Compile Include="PlotOptionsSeriesStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsSeriesStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsSeriesTooltip.cs" />
     <Compile Include="PlotOptionsSeriesZones.cs" />
     <Compile Include="PlotOptionsSpline.cs" />
@@ -698,7 +683,6 @@
     <Compile Include="PlotOptionsSplineStates.cs" />
     <Compile Include="PlotOptionsSplineStatesHover.cs" />
     <Compile Include="PlotOptionsSplineStatesHoverHalo.cs" />
-    <Compile Include="PlotOptionsSplineStatesHoverMarker.cs" />
     <Compile Include="PlotOptionsSplineTooltip.cs" />
     <Compile Include="PlotOptionsSplineZones.cs" />
     <Compile Include="PolygonSeries.cs" />
@@ -721,9 +705,12 @@
     <Compile Include="PolygonSeriesStates.cs" />
     <Compile Include="PolygonSeriesStatesHover.cs" />
     <Compile Include="PolygonSeriesStatesHoverHalo.cs" />
-    <Compile Include="PolygonSeriesStatesHoverMarker.cs" />
     <Compile Include="PolygonSeriesZones.cs" />
     <Compile Include="RangeSelector.cs" />
+    <Compile Include="RangeSelectorButton.cs" />
+    <Compile Include="Responsive.cs" />
+    <Compile Include="ResponsiveRules.cs" />
+    <Compile Include="ResponsiveRulesCondition.cs" />
     <Compile Include="ScatterSeries.cs" />
     <Compile Include="ScatterSeriesData.cs" />
     <Compile Include="ScatterSeriesDataEvents.cs" />
@@ -744,7 +731,6 @@
     <Compile Include="ScatterSeriesStates.cs" />
     <Compile Include="ScatterSeriesStatesHover.cs" />
     <Compile Include="ScatterSeriesStatesHoverHalo.cs" />
-    <Compile Include="ScatterSeriesStatesHoverMarker.cs" />
     <Compile Include="ScatterSeriesZones.cs" />
     <Compile Include="Scrollbar.cs" />
     <Compile Include="Series.cs" />
@@ -769,7 +755,6 @@
     <Compile Include="SplineSeriesStates.cs" />
     <Compile Include="SplineSeriesStatesHover.cs" />
     <Compile Include="SplineSeriesStatesHoverHalo.cs" />
-    <Compile Include="SplineSeriesStatesHoverMarker.cs" />
     <Compile Include="SplineSeriesTooltip.cs" />
     <Compile Include="SplineSeriesZones.cs" />
     <Compile Include="Subtitle.cs" />
@@ -777,6 +762,8 @@
     <Compile Include="Tooltip.cs" />
     <Compile Include="XAxis.cs" />
     <Compile Include="XAxisBreaks.cs" />
+    <Compile Include="XAxisCrosshair.cs" />
+    <Compile Include="XAxisCrosshairLabel.cs" />
     <Compile Include="XAxisEvents.cs" />
     <Compile Include="XAxisLabels.cs" />
     <Compile Include="XAxisPlotBands.cs" />
@@ -786,16 +773,20 @@
     <Compile Include="XAxisTitle.cs" />
     <Compile Include="YAxis.cs" />
     <Compile Include="YAxisBreaks.cs" />
+    <Compile Include="YAxisCrosshair.cs" />
+    <Compile Include="YAxisCrosshairLabel.cs" />
     <Compile Include="YAxisEvents.cs" />
     <Compile Include="YAxisLabels.cs" />
     <Compile Include="YAxisPlotBands.cs" />
     <Compile Include="YAxisPlotBandsLabel.cs" />
     <Compile Include="YAxisPlotLines.cs" />
     <Compile Include="YAxisPlotLinesLabel.cs" />
+    <Compile Include="YAxisScrollbar.cs" />
     <Compile Include="YAxisTitle.cs" />
     <Compile Include="CompiledOn.cs" />
     <Compile Include="HtmlHelperExtensions.cs" />
     <Compile Include="HighsoftNamespace.cs" />
+    <Compile Include="LicenseVerifier.cs" />
     <Compile Include="Rendering\HighstockRenderer.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>

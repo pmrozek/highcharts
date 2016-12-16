@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.AreasplineSeriesPointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.AreasplineSeriesPointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum AreasplineSeriesPointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum AreasplineSeriesPointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

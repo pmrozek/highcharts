@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsSeriesDataLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsSeriesDataLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsSeriesDataLabelsAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum PlotOptionsSeriesDataLabelsAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

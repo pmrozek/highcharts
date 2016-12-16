@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.ScatterSeriesDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.ScatterSeriesDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum ScatterSeriesDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum ScatterSeriesDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

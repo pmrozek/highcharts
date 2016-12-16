@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.YAxisStackLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.YAxisStackLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum YAxisStackLabelsAlign
-  {
-    Null,
-    Left,
-    Center,
-    Right,
-  }
+    public enum YAxisStackLabelsAlign
+    {
+        Null,
+        Left,
+        Center,
+        Right,
+    }
 }

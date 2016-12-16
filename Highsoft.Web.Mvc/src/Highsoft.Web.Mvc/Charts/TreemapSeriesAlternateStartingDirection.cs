@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.TreemapSeriesAlternateStartingDirection
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.TreemapSeriesAlternateStartingDirection
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum TreemapSeriesAlternateStartingDirection
-  {
-    False,
-    True,
-  }
+    public enum TreemapSeriesAlternateStartingDirection
+    {
+        False,
+        True,
+    }
 }

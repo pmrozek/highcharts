@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.LineSeriesDataLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.LineSeriesDataLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum LineSeriesDataLabelsAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum LineSeriesDataLabelsAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

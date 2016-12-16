@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.ErrorbarSeriesPoint
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.ErrorbarSeriesPoint
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public class ErrorbarSeriesPoint : BaseObject
-  {
-    public ErrorbarSeriesPointEvents Events { get; set; }
-
-    private ErrorbarSeriesPointEvents Events_DefaultValue { get; set; }
-
-    public ErrorbarSeriesPoint()
+    public class ErrorbarSeriesPoint : BaseObject
     {
-      this.Events = this.Events_DefaultValue = new ErrorbarSeriesPointEvents();
-    }
+        public ErrorbarSeriesPointEvents Events { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Events.IsDirty())
-        hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-      return hashtable;
-    }
+        private ErrorbarSeriesPointEvents Events_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public ErrorbarSeriesPoint()
+        {
+            this.Events = this.Events_DefaultValue = new ErrorbarSeriesPointEvents();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Events.IsDirty())
+                hashtable.Add((object) "events", (object) this.Events.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

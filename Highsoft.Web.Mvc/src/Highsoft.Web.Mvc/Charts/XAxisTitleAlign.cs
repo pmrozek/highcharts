@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.XAxisTitleAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.XAxisTitleAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum XAxisTitleAlign
-  {
-    Low,
-    Middle,
-    High,
-  }
+    public enum XAxisTitleAlign
+    {
+        Low,
+        Middle,
+        High,
+    }
 }

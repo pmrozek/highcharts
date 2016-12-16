@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsOhlcPointPlacement
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsOhlcPointPlacement
 
 
 using System.Collections;
@@ -9,23 +6,23 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public class PlotOptionsOhlcPointPlacement : BaseObject
-  {
-    internal override Hashtable ToHashtable()
+    public class PlotOptionsOhlcPointPlacement : BaseObject
     {
-      return new Hashtable();
-    }
+        internal override Hashtable ToHashtable()
+        {
+            return new Hashtable();
+        }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.YAxisTickmarkPlacement
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.YAxisTickmarkPlacement
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum YAxisTickmarkPlacement
-  {
-    Null,
-    On,
-    Between,
-  }
+    public enum YAxisTickmarkPlacement
+    {
+        Null,
+        On,
+        Between,
+    }
 }

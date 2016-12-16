@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.TitleVerticalAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.TitleVerticalAlign
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum TitleVerticalAlign
-  {
-    Top,
-    Middle,
-    Bottom,
-  }
+    public enum TitleVerticalAlign
+    {
+        Null,
+        Top,
+        Middle,
+        Bottom,
+    }
 }

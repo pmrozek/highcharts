@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsTreemapDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsTreemapDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsTreemapDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum PlotOptionsTreemapDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

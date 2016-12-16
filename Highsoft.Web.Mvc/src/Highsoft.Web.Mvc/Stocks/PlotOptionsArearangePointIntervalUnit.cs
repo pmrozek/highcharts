@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsArearangePointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsArearangePointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsArearangePointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum PlotOptionsArearangePointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

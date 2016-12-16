@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsAreasplinerangeStacking
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsAreasplinerangeStacking
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsAreasplinerangeStacking
-  {
-    Null,
-    Normal,
-    Percent,
-  }
+    public enum PlotOptionsAreasplinerangeStacking
+    {
+        Null,
+        Normal,
+        Percent,
+    }
 }

@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsFlagsDataLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsFlagsDataLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsFlagsDataLabelsAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum PlotOptionsFlagsDataLabelsAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

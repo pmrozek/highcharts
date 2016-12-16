@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PolygonSeriesDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PolygonSeriesDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PolygonSeriesDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum PolygonSeriesDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

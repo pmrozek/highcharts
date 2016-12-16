@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsLinePointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsLinePointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsLinePointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum PlotOptionsLinePointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

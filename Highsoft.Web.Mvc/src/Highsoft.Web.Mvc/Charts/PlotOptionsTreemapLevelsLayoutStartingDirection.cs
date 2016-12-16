@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsTreemapLevelsLayoutStartingDirection
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsTreemapLevelsLayoutStartingDirection
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsTreemapLevelsLayoutStartingDirection
-  {
-    Null,
-    Vertical,
-    Horizontal,
-  }
+    public enum PlotOptionsTreemapLevelsLayoutStartingDirection
+    {
+        Null,
+        Vertical,
+        Horizontal,
+    }
 }

@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.HeatmapSeriesDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.HeatmapSeriesDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum HeatmapSeriesDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum HeatmapSeriesDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

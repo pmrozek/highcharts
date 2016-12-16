@@ -1,23 +1,20 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.AreasplineSeriesDashStyle
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.AreasplineSeriesDashStyle
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum AreasplineSeriesDashStyle
-  {
-    Solid,
-    ShortDash,
-    ShortDot,
-    ShortDashDot,
-    ShortDashDotDot,
-    Dot,
-    Dash,
-    LongDash,
-    DashDot,
-    LongDashDot,
-    LongDashDotDot,
-  }
+    public enum AreasplineSeriesDashStyle
+    {
+        Solid,
+        ShortDash,
+        ShortDot,
+        ShortDashDot,
+        ShortDashDotDot,
+        Dot,
+        Dash,
+        LongDash,
+        DashDot,
+        LongDashDot,
+        LongDashDotDot,
+    }
 }

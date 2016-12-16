@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.ScatterSeriesDataLabelsVerticalAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.ScatterSeriesDataLabelsVerticalAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum ScatterSeriesDataLabelsVerticalAlign
-  {
-    Null,
-    Top,
-    Middle,
-    Bottom,
-  }
+    public enum ScatterSeriesDataLabelsVerticalAlign
+    {
+        Null,
+        Top,
+        Middle,
+        Bottom,
+    }
 }

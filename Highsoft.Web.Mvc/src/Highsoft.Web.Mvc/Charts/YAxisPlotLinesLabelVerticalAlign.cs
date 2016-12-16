@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.YAxisPlotLinesLabelVerticalAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.YAxisPlotLinesLabelVerticalAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum YAxisPlotLinesLabelVerticalAlign
-  {
-    Top,
-    Middle,
-    Bottom,
-  }
+    public enum YAxisPlotLinesLabelVerticalAlign
+    {
+        Top,
+        Middle,
+        Bottom,
+    }
 }

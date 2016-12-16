@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.AreasplineSeriesPoint
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.AreasplineSeriesPoint
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public class AreasplineSeriesPoint : BaseObject
-  {
-    public AreasplineSeriesPointEvents Events { get; set; }
-
-    private AreasplineSeriesPointEvents Events_DefaultValue { get; set; }
-
-    public AreasplineSeriesPoint()
+    public class AreasplineSeriesPoint : BaseObject
     {
-      this.Events = this.Events_DefaultValue = new AreasplineSeriesPointEvents();
-    }
+        public AreasplineSeriesPointEvents Events { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Events.IsDirty())
-        hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-      return hashtable;
-    }
+        private AreasplineSeriesPointEvents Events_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public AreasplineSeriesPoint()
+        {
+            this.Events = this.Events_DefaultValue = new AreasplineSeriesPointEvents();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Events.IsDirty())
+                hashtable.Add((object) "events", (object) this.Events.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

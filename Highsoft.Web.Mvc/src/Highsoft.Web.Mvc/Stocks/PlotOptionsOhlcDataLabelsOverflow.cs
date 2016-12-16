@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsOhlcDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsOhlcDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsOhlcDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum PlotOptionsOhlcDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

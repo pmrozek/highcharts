@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.BarSeriesStacking
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.BarSeriesStacking
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum BarSeriesStacking
-  {
-    Null,
-    Normal,
-    Percent,
-  }
+    public enum BarSeriesStacking
+    {
+        Null,
+        Normal,
+        Percent,
+    }
 }

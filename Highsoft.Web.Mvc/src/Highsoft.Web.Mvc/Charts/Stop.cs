@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.Stop
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.Stop
 
 
 using System.Collections;
@@ -9,36 +6,36 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public class Stop : BaseObject
-  {
-    public double Position { get; set; }
-
-    public string Color { get; set; }
-
-    public Stop()
+    public class Stop : BaseObject
     {
-      this.Position = 0.0;
-      this.Color = "";
-    }
+        public double Position { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (!string.IsNullOrEmpty(this.Color))
-        hashtable.Add((object) "color", (object) this.Color);
-      if (this.Position != 0.0)
-        hashtable.Add((object) "position", (object) this.Position);
-      return hashtable;
-    }
+        public string Color { get; set; }
 
-    internal override string ToJSON()
-    {
-      return JsonConvert.SerializeObject((object) this.ToHashtable());
-    }
+        public Stop()
+        {
+            this.Position = 0.0;
+            this.Color = "";
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (!string.IsNullOrEmpty(this.Color))
+                hashtable.Add((object) "color", (object) this.Color);
+            if (this.Position != 0.0)
+                hashtable.Add((object) "position", (object) this.Position);
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            return JsonConvert.SerializeObject((object) this.ToHashtable());
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

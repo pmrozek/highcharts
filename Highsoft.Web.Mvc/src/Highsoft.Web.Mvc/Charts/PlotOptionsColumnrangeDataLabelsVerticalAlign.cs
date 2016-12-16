@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeDataLabelsVerticalAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeDataLabelsVerticalAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsColumnrangeDataLabelsVerticalAlign
-  {
-    Null,
-    Top,
-    Middle,
-    Bottom,
-  }
+    public enum PlotOptionsColumnrangeDataLabelsVerticalAlign
+    {
+        Null,
+        Top,
+        Middle,
+        Bottom,
+    }
 }

@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsLineDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsLineDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsLineDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum PlotOptionsLineDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

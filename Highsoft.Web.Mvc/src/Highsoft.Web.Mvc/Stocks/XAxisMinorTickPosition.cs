@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.XAxisMinorTickPosition
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.XAxisMinorTickPosition
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum XAxisMinorTickPosition
-  {
-    Inside,
-    Outside,
-  }
+    public enum XAxisMinorTickPosition
+    {
+        Inside,
+        Outside,
+    }
 }

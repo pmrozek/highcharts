@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesPointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesPointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum AreasplinerangeSeriesPointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum AreasplinerangeSeriesPointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

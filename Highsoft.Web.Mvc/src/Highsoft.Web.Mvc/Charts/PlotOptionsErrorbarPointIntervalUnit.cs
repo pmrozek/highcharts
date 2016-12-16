@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarPointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarPointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsErrorbarPointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum PlotOptionsErrorbarPointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsFlagsPointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsFlagsPointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsFlagsPointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum PlotOptionsFlagsPointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

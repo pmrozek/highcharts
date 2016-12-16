@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesStep
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesStep
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum AreasplinerangeSeriesStep
-  {
-    False,
-    Left,
-    Center,
-    Right,
-  }
+    public enum AreasplinerangeSeriesStep
+    {
+        False,
+        Left,
+        Center,
+        Right,
+    }
 }

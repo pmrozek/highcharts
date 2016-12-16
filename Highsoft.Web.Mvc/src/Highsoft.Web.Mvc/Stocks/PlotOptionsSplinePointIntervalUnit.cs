@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsSplinePointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsSplinePointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsSplinePointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum PlotOptionsSplinePointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

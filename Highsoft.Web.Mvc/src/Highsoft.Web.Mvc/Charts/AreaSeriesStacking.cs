@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.AreaSeriesStacking
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.AreaSeriesStacking
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum AreaSeriesStacking
-  {
-    Null,
-    Normal,
-    Percent,
-  }
+    public enum AreaSeriesStacking
+    {
+        Null,
+        Normal,
+        Percent,
+    }
 }

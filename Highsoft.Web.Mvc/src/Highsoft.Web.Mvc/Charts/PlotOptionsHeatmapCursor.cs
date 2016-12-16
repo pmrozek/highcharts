@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapCursor
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapCursor
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsHeatmapCursor
-  {
-    Null,
-    Default,
-    None,
-    Help,
-    Pointer,
-    Crosshair,
-  }
+    public enum PlotOptionsHeatmapCursor
+    {
+        Null,
+        Default,
+        None,
+        Help,
+        Pointer,
+        Crosshair,
+    }
 }

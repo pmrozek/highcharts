@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.ExportingButtons
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.ExportingButtons
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public class ExportingButtons : BaseObject
-  {
-    public ExportingButtonsContextButton ContextButton { get; set; }
-
-    private ExportingButtonsContextButton ContextButton_DefaultValue { get; set; }
-
-    public ExportingButtons()
+    public class ExportingButtons : BaseObject
     {
-      this.ContextButton = this.ContextButton_DefaultValue = new ExportingButtonsContextButton();
-    }
+        public ExportingButtonsContextButton ContextButton { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.ContextButton.IsDirty())
-        hashtable.Add((object) "contextButton", (object) this.ContextButton.ToHashtable());
-      return hashtable;
-    }
+        private ExportingButtonsContextButton ContextButton_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public ExportingButtons()
+        {
+            this.ContextButton = this.ContextButton_DefaultValue = new ExportingButtonsContextButton();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.ContextButton.IsDirty())
+                hashtable.Add((object) "contextButton", (object) this.ContextButton.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

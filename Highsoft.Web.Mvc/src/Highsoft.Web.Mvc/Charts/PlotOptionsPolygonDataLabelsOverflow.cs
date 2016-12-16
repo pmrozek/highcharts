@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsPolygonDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsPolygonDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsPolygonDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum PlotOptionsPolygonDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

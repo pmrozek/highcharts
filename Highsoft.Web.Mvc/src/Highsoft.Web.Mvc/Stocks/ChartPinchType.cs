@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.ChartPinchType
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.ChartPinchType
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum ChartPinchType
-  {
-    X,
-    Y,
-    Xy,
-  }
+    public enum ChartPinchType
+    {
+        X,
+        Y,
+        Xy,
+    }
 }

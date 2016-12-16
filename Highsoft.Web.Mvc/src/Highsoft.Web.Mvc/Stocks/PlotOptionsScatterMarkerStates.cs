@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsScatterMarkerStates
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsScatterMarkerStates
 
 
 using System.Collections;
@@ -9,42 +6,42 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public class PlotOptionsScatterMarkerStates : BaseObject
-  {
-    public PlotOptionsScatterMarkerStatesHover Hover { get; set; }
-
-    private PlotOptionsScatterMarkerStatesHover Hover_DefaultValue { get; set; }
-
-    public PlotOptionsScatterMarkerStatesSelect Select { get; set; }
-
-    private PlotOptionsScatterMarkerStatesSelect Select_DefaultValue { get; set; }
-
-    public PlotOptionsScatterMarkerStates()
+    public class PlotOptionsScatterMarkerStates : BaseObject
     {
-      this.Hover = this.Hover_DefaultValue = new PlotOptionsScatterMarkerStatesHover();
-      this.Select = this.Select_DefaultValue = new PlotOptionsScatterMarkerStatesSelect();
-    }
+        public PlotOptionsScatterMarkerStatesHover Hover { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Hover.IsDirty())
-        hashtable.Add((object) "hover", (object) this.Hover.ToHashtable());
-      if (this.Select.IsDirty())
-        hashtable.Add((object) "select", (object) this.Select.ToHashtable());
-      return hashtable;
-    }
+        private PlotOptionsScatterMarkerStatesHover Hover_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public PlotOptionsScatterMarkerStatesSelect Select { get; set; }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        private PlotOptionsScatterMarkerStatesSelect Select_DefaultValue { get; set; }
+
+        public PlotOptionsScatterMarkerStates()
+        {
+            this.Hover = this.Hover_DefaultValue = new PlotOptionsScatterMarkerStatesHover();
+            this.Select = this.Select_DefaultValue = new PlotOptionsScatterMarkerStatesSelect();
+        }
+
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Hover.IsDirty())
+                hashtable.Add((object) "hover", (object) this.Hover.ToHashtable());
+            if (this.Select.IsDirty())
+                hashtable.Add((object) "select", (object) this.Select.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.ColumnrangeSeriesPointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.ColumnrangeSeriesPointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum ColumnrangeSeriesPointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum ColumnrangeSeriesPointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

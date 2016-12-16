@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.OhlcSeriesCursor
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.OhlcSeriesCursor
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum OhlcSeriesCursor
-  {
-    Null,
-    Default,
-    None,
-    Help,
-    Pointer,
-    Crosshair,
-  }
+    public enum OhlcSeriesCursor
+    {
+        Null,
+        Default,
+        None,
+        Help,
+        Pointer,
+        Crosshair,
+    }
 }

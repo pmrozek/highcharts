@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsFunnelCursor
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsFunnelCursor
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsFunnelCursor
-  {
-    Null,
-    Default,
-    None,
-    Help,
-    Pointer,
-    Crosshair,
-  }
+    public enum PlotOptionsFunnelCursor
+    {
+        Null,
+        Default,
+        None,
+        Help,
+        Pointer,
+        Crosshair,
+    }
 }

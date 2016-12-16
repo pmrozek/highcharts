@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.NavigationButtonOptionsVerticalAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.NavigationButtonOptionsVerticalAlign
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum NavigationButtonOptionsVerticalAlign
-  {
-    Top,
-    Middle,
-    Bottom,
-  }
+    public enum NavigationButtonOptionsVerticalAlign
+    {
+        Top,
+        Middle,
+        Bottom,
+    }
 }

@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.OhlcSeriesPoint
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.OhlcSeriesPoint
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public class OhlcSeriesPoint : BaseObject
-  {
-    public OhlcSeriesPointEvents Events { get; set; }
-
-    private OhlcSeriesPointEvents Events_DefaultValue { get; set; }
-
-    public OhlcSeriesPoint()
+    public class OhlcSeriesPoint : BaseObject
     {
-      this.Events = this.Events_DefaultValue = new OhlcSeriesPointEvents();
-    }
+        public OhlcSeriesPointEvents Events { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Events.IsDirty())
-        hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-      return hashtable;
-    }
+        private OhlcSeriesPointEvents Events_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public OhlcSeriesPoint()
+        {
+            this.Events = this.Events_DefaultValue = new OhlcSeriesPointEvents();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Events.IsDirty())
+                hashtable.Add((object) "events", (object) this.Events.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

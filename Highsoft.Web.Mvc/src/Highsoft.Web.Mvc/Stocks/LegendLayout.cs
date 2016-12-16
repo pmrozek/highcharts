@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.LegendLayout
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.LegendLayout
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum LegendLayout
-  {
-    Horizontal,
-    Vertical,
-  }
+    public enum LegendLayout
+    {
+        Horizontal,
+        Vertical,
+    }
 }

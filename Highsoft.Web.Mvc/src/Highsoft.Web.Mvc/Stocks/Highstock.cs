@@ -13,6 +13,10 @@ namespace Highsoft.Web.Mvc.Stocks
     {
         internal static Hashtable functions = new Hashtable();
 
+        public Accessibility Accessibility { get; set; }
+
+        private Accessibility Accessibility_DefaultValue { get; set; }
+
         public Chart Chart { get; set; }
 
         private Chart Chart_DefaultValue { get; set; }
@@ -24,6 +28,10 @@ namespace Highsoft.Web.Mvc.Stocks
         public Credits Credits { get; set; }
 
         private Credits Credits_DefaultValue { get; set; }
+
+        public object Defs { get; set; }
+
+        private object Defs_DefaultValue { get; set; }
 
         public Exporting Exporting { get; set; }
 
@@ -57,6 +65,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private Navigator Navigator_DefaultValue { get; set; }
 
+        public NoData NoData { get; set; }
+
+        private NoData NoData_DefaultValue { get; set; }
+
         public PlotOptions PlotOptions { get; set; }
 
         private PlotOptions PlotOptions_DefaultValue { get; set; }
@@ -64,6 +76,10 @@ namespace Highsoft.Web.Mvc.Stocks
         public RangeSelector RangeSelector { get; set; }
 
         private RangeSelector RangeSelector_DefaultValue { get; set; }
+
+        public Responsive Responsive { get; set; }
+
+        private Responsive Responsive_DefaultValue { get; set; }
 
         public Scrollbar Scrollbar { get; set; }
 
@@ -181,9 +197,11 @@ namespace Highsoft.Web.Mvc.Stocks
 
         public Highstock()
         {
+            this.Accessibility = this.Accessibility_DefaultValue = new Accessibility();
             this.Chart = this.Chart_DefaultValue = new Chart();
             this.Colors = this.Colors_DefaultValue = new List<string>();
             this.Credits = this.Credits_DefaultValue = new Credits();
+            this.Defs = this.Defs_DefaultValue = (object) null;
             this.Exporting = this.Exporting_DefaultValue = new Exporting();
             this.Global = this.Global_DefaultValue = new Global();
             this.Labels = this.Labels_DefaultValue = new Labels();
@@ -192,8 +210,10 @@ namespace Highsoft.Web.Mvc.Stocks
             this.Loading = this.Loading_DefaultValue = new Loading();
             this.Navigation = this.Navigation_DefaultValue = new Navigation();
             this.Navigator = this.Navigator_DefaultValue = new Navigator();
+            this.NoData = this.NoData_DefaultValue = new NoData();
             this.PlotOptions = this.PlotOptions_DefaultValue = new PlotOptions();
             this.RangeSelector = this.RangeSelector_DefaultValue = new RangeSelector();
+            this.Responsive = this.Responsive_DefaultValue = new Responsive();
             this.Scrollbar = this.Scrollbar_DefaultValue = new Scrollbar();
             this.Series = this.Series_DefaultValue = new List<Highsoft.Web.Mvc.Stocks.Series>();
             this.AreaSeries = this.AreaSeries_DefaultValue = new AreaSeries();
@@ -274,8 +294,7 @@ namespace Highsoft.Web.Mvc.Stocks
                 {
                     LineSeries lineSeries = series as LineSeries;
                     lineSeries.Data.ForEach((Action<LineSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 1;
-                    lineSeries.Type = (LineSeriesType) num;
+                    lineSeries.Type = LineSeriesType.Line;
                     hashtable = lineSeries.ToHashtable();
                 }
                 if (series is SplineSeries)
@@ -283,16 +302,14 @@ namespace Highsoft.Web.Mvc.Stocks
                     SplineSeries splineSeries = series as SplineSeries;
                     splineSeries.Data.ForEach(
                         (Action<SplineSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 2;
-                    splineSeries.Type = (SplineSeriesType) num;
+                    splineSeries.Type = SplineSeriesType.Spline;
                     hashtable = splineSeries.ToHashtable();
                 }
                 if (series is AreaSeries)
                 {
                     AreaSeries areaSeries = series as AreaSeries;
                     areaSeries.Data.ForEach((Action<AreaSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 4;
-                    areaSeries.Type = (AreaSeriesType) num;
+                    areaSeries.Type = AreaSeriesType.Area;
                     hashtable = areaSeries.ToHashtable();
                 }
                 if (series is AreasplineSeries)
@@ -300,8 +317,7 @@ namespace Highsoft.Web.Mvc.Stocks
                     AreasplineSeries areasplineSeries = series as AreasplineSeries;
                     areasplineSeries.Data.ForEach(
                         (Action<AreasplineSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 5;
-                    areasplineSeries.Type = (AreasplineSeriesType) num;
+                    areasplineSeries.Type = AreasplineSeriesType.Areaspline;
                     hashtable = areasplineSeries.ToHashtable();
                 }
                 if (series is AreasplinerangeSeries)
@@ -309,8 +325,7 @@ namespace Highsoft.Web.Mvc.Stocks
                     AreasplinerangeSeries areasplinerangeSeries = series as AreasplinerangeSeries;
                     areasplinerangeSeries.Data.ForEach(
                         (Action<AreasplinerangeSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 8;
-                    areasplinerangeSeries.Type = (AreasplinerangeSeriesType) num;
+                    areasplinerangeSeries.Type = AreasplinerangeSeriesType.Areasplinerange;
                     hashtable = areasplinerangeSeries.ToHashtable();
                 }
                 if (series is ArearangeSeries)
@@ -318,8 +333,7 @@ namespace Highsoft.Web.Mvc.Stocks
                     ArearangeSeries arearangeSeries = series as ArearangeSeries;
                     arearangeSeries.Data.ForEach(
                         (Action<ArearangeSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 7;
-                    arearangeSeries.Type = (ArearangeSeriesType) num;
+                    arearangeSeries.Type = ArearangeSeriesType.Arearange;
                     hashtable = arearangeSeries.ToHashtable();
                 }
                 if (series is ColumnrangeSeries)
@@ -327,8 +341,7 @@ namespace Highsoft.Web.Mvc.Stocks
                     ColumnrangeSeries columnrangeSeries = series as ColumnrangeSeries;
                     columnrangeSeries.Data.ForEach(
                         (Action<ColumnrangeSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 11;
-                    columnrangeSeries.Type = (ColumnrangeSeriesType) num;
+                    columnrangeSeries.Type = ColumnrangeSeriesType.Columnrange;
                     hashtable = columnrangeSeries.ToHashtable();
                 }
                 if (series is ColumnSeries)
@@ -336,8 +349,7 @@ namespace Highsoft.Web.Mvc.Stocks
                     ColumnSeries columnSeries = series as ColumnSeries;
                     columnSeries.Data.ForEach(
                         (Action<ColumnSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 3;
-                    columnSeries.Type = (ColumnSeriesType) num;
+                    columnSeries.Type = ColumnSeriesType.Column;
                     hashtable = columnSeries.ToHashtable();
                 }
                 if (series is ScatterSeries)
@@ -345,8 +357,7 @@ namespace Highsoft.Web.Mvc.Stocks
                     ScatterSeries scatterSeries = series as ScatterSeries;
                     scatterSeries.Data.ForEach(
                         (Action<ScatterSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 15;
-                    scatterSeries.Type = (ScatterSeriesType) num;
+                    scatterSeries.Type = ScatterSeriesType.Scatter;
                     hashtable = scatterSeries.ToHashtable();
                 }
                 if (series is PolygonSeries)
@@ -354,8 +365,7 @@ namespace Highsoft.Web.Mvc.Stocks
                     PolygonSeries polygonSeries = series as PolygonSeries;
                     polygonSeries.Data.ForEach(
                         (Action<PolygonSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 21;
-                    polygonSeries.Type = (PolygonSeriesType) num;
+                    polygonSeries.Type = PolygonSeriesType.Polygon;
                     hashtable = polygonSeries.ToHashtable();
                 }
                 if (series is CandleStickSeries)
@@ -363,8 +373,7 @@ namespace Highsoft.Web.Mvc.Stocks
                     CandleStickSeries candleStickSeries = series as CandleStickSeries;
                     candleStickSeries.Data.ForEach(
                         (Action<CandleStickSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 23;
-                    candleStickSeries.Type = (CandleStickSeriesType) num;
+                    candleStickSeries.Type = CandleStickSeriesType.Candlestick;
                     hashtable = candleStickSeries.ToHashtable();
                 }
                 if (series is FlagsSeries)
@@ -372,16 +381,14 @@ namespace Highsoft.Web.Mvc.Stocks
                     FlagsSeries flagsSeries = series as FlagsSeries;
                     flagsSeries.Data.ForEach(
                         (Action<FlagsSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 24;
-                    flagsSeries.Type = (FlagsSeriesType) num;
+                    flagsSeries.Type = FlagsSeriesType.Flags;
                     hashtable = flagsSeries.ToHashtable();
                 }
                 if (series is OhlcSeries)
                 {
                     OhlcSeries ohlcSeries = series as OhlcSeries;
                     ohlcSeries.Data.ForEach((Action<OhlcSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
-                    int num = 17;
-                    ohlcSeries.Type = (OhlcSeriesType) num;
+                    ohlcSeries.Type = OhlcSeriesType.Ohlc;
                     hashtable = ohlcSeries.ToHashtable();
                 }
                 hashtable.Add((object) "data", (object) dataList);
@@ -393,12 +400,16 @@ namespace Highsoft.Web.Mvc.Stocks
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
+            if (this.Accessibility.IsDirty())
+                hashtable.Add((object) "accessibility", (object) this.Accessibility.ToHashtable());
             if (this.Chart.IsDirty())
                 hashtable.Add((object) "chart", (object) this.Chart.ToHashtable());
             if (this.Colors != this.Colors_DefaultValue)
                 hashtable.Add((object) "colors", (object) this.Colors);
             if (this.Credits.IsDirty())
                 hashtable.Add((object) "credits", (object) this.Credits.ToHashtable());
+            if (this.Defs != this.Defs_DefaultValue)
+                hashtable.Add((object) "defs", this.Defs);
             if (this.Exporting.IsDirty())
                 hashtable.Add((object) "exporting", (object) this.Exporting.ToHashtable());
             if (this.Global.IsDirty())
@@ -415,10 +426,14 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "navigation", (object) this.Navigation.ToHashtable());
             if (this.Navigator.IsDirty())
                 hashtable.Add((object) "navigator", (object) this.Navigator.ToHashtable());
+            if (this.NoData.IsDirty())
+                hashtable.Add((object) "noData", (object) this.NoData.ToHashtable());
             if (this.PlotOptions.IsDirty())
                 hashtable.Add((object) "plotOptions", (object) this.PlotOptions.ToHashtable());
             if (this.RangeSelector.IsDirty())
                 hashtable.Add((object) "rangeSelector", (object) this.RangeSelector.ToHashtable());
+            if (this.Responsive.IsDirty())
+                hashtable.Add((object) "responsive", (object) this.Responsive.ToHashtable());
             if (this.Scrollbar.IsDirty())
                 hashtable.Add((object) "scrollbar", (object) this.Scrollbar.ToHashtable());
             if (this.Series != this.Series_DefaultValue)
@@ -465,27 +480,23 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "stops", (object) this.HashifyList((IEnumerable) this.Stops));
             double? nullable1 = this.Min;
             double? nullable2 = this.Min_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "min", (object) this.Min);
             nullable2 = this.Max;
             nullable1 = this.Max_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "max", (object) this.Max);
             bool? nullable3 = this.StartOnTick;
             bool? nullable4 = this.StartOnTick_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "startOnTick", (object) this.StartOnTick);
             nullable4 = this.EndOnTick;
             nullable3 = this.EndOnTick_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "endOnTick", (object) this.EndOnTick);
             if (this.MinColor != this.MinColor_DefaultValue)
                 hashtable.Add((object) "minColor", (object) this.MinColor);

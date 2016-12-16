@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.ColumnrangeSeriesStacking
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.ColumnrangeSeriesStacking
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum ColumnrangeSeriesStacking
-  {
-    Null,
-    Normal,
-    Percent,
-  }
+    public enum ColumnrangeSeriesStacking
+    {
+        Null,
+        Normal,
+        Percent,
+    }
 }

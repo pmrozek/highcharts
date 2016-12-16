@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.SymbolEnum
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.SymbolEnum
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum SymbolEnum
-  {
-    Null,
-    Circle,
-    Square,
-    Diamond,
-    Triangle,
-    Triangledown,
-  }
+    public enum SymbolEnum
+    {
+        Null,
+        Circle,
+        Square,
+        Diamond,
+        Triangle,
+        Triangledown,
+    }
 }

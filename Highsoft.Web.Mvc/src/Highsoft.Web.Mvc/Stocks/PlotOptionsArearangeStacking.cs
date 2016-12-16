@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsArearangeStacking
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsArearangeStacking
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsArearangeStacking
-  {
-    Null,
-    Normal,
-    Percent,
-  }
+    public enum PlotOptionsArearangeStacking
+    {
+        Null,
+        Normal,
+        Percent,
+    }
 }

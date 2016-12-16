@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PieSeriesDataLabelsVerticalAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PieSeriesDataLabelsVerticalAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PieSeriesDataLabelsVerticalAlign
-  {
-    Null,
-    Top,
-    Middle,
-    Bottom,
-  }
+    public enum PieSeriesDataLabelsVerticalAlign
+    {
+        Null,
+        Top,
+        Middle,
+        Bottom,
+    }
 }

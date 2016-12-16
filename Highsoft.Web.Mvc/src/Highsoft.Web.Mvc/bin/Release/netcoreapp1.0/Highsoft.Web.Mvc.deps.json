@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v1.0": {},
     ".NETCoreApp,Version=v1.0/": {
-      "Highsoft.Web.Mvc/1.0.5": {
+      "Highsoft.Web.Mvc/5.0.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc": "1.1.0",
           "NETStandard.Library": "1.6.1",
@@ -1888,7 +1888,7 @@
     }
   },
   "libraries": {
-    "Highsoft.Web.Mvc/1.0.5": {
+    "Highsoft.Web.Mvc/5.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

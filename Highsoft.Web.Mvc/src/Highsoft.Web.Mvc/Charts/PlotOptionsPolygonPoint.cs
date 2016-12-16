@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsPolygonPoint
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsPolygonPoint
 
 
 using System.Collections;
@@ -9,35 +6,35 @@ using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public class PlotOptionsPolygonPoint : BaseObject
-  {
-    public PlotOptionsPolygonPointEvents Events { get; set; }
-
-    private PlotOptionsPolygonPointEvents Events_DefaultValue { get; set; }
-
-    public PlotOptionsPolygonPoint()
+    public class PlotOptionsPolygonPoint : BaseObject
     {
-      this.Events = this.Events_DefaultValue = new PlotOptionsPolygonPointEvents();
-    }
+        public PlotOptionsPolygonPointEvents Events { get; set; }
 
-    internal override Hashtable ToHashtable()
-    {
-      Hashtable hashtable = new Hashtable();
-      if (this.Events.IsDirty())
-        hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-      return hashtable;
-    }
+        private PlotOptionsPolygonPointEvents Events_DefaultValue { get; set; }
 
-    internal override string ToJSON()
-    {
-      if (this.ToHashtable().Count > 0)
-        return JsonConvert.SerializeObject((object) this.ToHashtable());
-      return "";
-    }
+        public PlotOptionsPolygonPoint()
+        {
+            this.Events = this.Events_DefaultValue = new PlotOptionsPolygonPointEvents();
+        }
 
-    internal override bool IsDirty()
-    {
-      return this.ToHashtable().Count > 0;
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable hashtable = new Hashtable();
+            if (this.Events.IsDirty())
+                hashtable.Add((object) "events", (object) this.Events.ToHashtable());
+            return hashtable;
+        }
+
+        internal override string ToJSON()
+        {
+            if (this.ToHashtable().Count > 0)
+                return JsonConvert.SerializeObject((object) this.ToHashtable());
+            return "";
+        }
+
+        internal override bool IsDirty()
+        {
+            return this.ToHashtable().Count > 0;
+        }
     }
-  }
 }

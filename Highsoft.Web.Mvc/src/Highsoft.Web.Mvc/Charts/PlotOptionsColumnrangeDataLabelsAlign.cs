@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeDataLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeDataLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsColumnrangeDataLabelsAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum PlotOptionsColumnrangeDataLabelsAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

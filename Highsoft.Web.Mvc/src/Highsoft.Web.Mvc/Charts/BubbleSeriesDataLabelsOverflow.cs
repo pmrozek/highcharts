@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.BubbleSeriesDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.BubbleSeriesDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum BubbleSeriesDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum BubbleSeriesDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.XAxisTickmarkPlacement
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.XAxisTickmarkPlacement
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum XAxisTickmarkPlacement
-  {
-    Null,
-    On,
-    Between,
-  }
+    public enum XAxisTickmarkPlacement
+    {
+        Null,
+        On,
+        Between,
+    }
 }

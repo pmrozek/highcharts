@@ -1,7 +1,4 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.HtmlHelperExtensions
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.HtmlHelperExtensions
 
 
 using Microsoft.AspNetCore.Html;
@@ -9,11 +6,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public static class HtmlHelperExtensions
-  {
-    public static HighsoftNamespace Highsoft(this IHtmlHelper helper)
+    public static class HtmlHelperExtensions
     {
-      return new HighsoftNamespace();
+        public static HighsoftNamespace Highsoft(this IHtmlHelper helper)
+        {
+            return new HighsoftNamespace();
+        }
     }
-  }
 }

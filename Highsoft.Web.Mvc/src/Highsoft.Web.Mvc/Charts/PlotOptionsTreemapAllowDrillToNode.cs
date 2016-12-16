@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsTreemapAllowDrillToNode
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsTreemapAllowDrillToNode
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsTreemapAllowDrillToNode
-  {
-    False,
-    True,
-  }
+    public enum PlotOptionsTreemapAllowDrillToNode
+    {
+        False,
+        True,
+    }
 }

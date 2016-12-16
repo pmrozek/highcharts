@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.WaterfallSeriesDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.WaterfallSeriesDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum WaterfallSeriesDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum WaterfallSeriesDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

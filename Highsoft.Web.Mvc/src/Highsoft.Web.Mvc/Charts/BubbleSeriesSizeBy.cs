@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.BubbleSeriesSizeBy
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.BubbleSeriesSizeBy
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum BubbleSeriesSizeBy
-  {
-    Area,
-    Width,
-  }
+    public enum BubbleSeriesSizeBy
+    {
+        Area,
+        Width,
+    }
 }

@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.YAxisMinorTickPosition
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.YAxisMinorTickPosition
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum YAxisMinorTickPosition
-  {
-    Inside,
-    Outside,
-  }
+    public enum YAxisMinorTickPosition
+    {
+        Inside,
+        Outside,
+    }
 }

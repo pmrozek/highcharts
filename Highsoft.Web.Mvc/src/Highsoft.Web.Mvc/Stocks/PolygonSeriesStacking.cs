@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PolygonSeriesStacking
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PolygonSeriesStacking
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PolygonSeriesStacking
-  {
-    Null,
-    Normal,
-    Percent,
-  }
+    public enum PolygonSeriesStacking
+    {
+        Null,
+        Normal,
+        Percent,
+    }
 }

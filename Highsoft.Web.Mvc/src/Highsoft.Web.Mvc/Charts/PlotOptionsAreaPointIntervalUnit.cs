@@ -1,15 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsAreaPointIntervalUnit
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsAreaPointIntervalUnit
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsAreaPointIntervalUnit
-  {
-    Null,
-    Month,
-    Year,
-  }
+    public enum PlotOptionsAreaPointIntervalUnit
+    {
+        Null,
+        Day,
+        Month,
+        Year,
+    }
 }

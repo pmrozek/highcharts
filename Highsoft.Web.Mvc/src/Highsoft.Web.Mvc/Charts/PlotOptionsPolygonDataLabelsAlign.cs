@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsPolygonDataLabelsAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsPolygonDataLabelsAlign
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsPolygonDataLabelsAlign
-  {
-    Left,
-    Center,
-    Right,
-  }
+    public enum PlotOptionsPolygonDataLabelsAlign
+    {
+        Left,
+        Center,
+        Right,
+    }
 }

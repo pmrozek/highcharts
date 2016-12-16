@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsPyramidCursor
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsPyramidCursor
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsPyramidCursor
-  {
-    Null,
-    Default,
-    None,
-    Help,
-    Pointer,
-    Crosshair,
-  }
+    public enum PlotOptionsPyramidCursor
+    {
+        Null,
+        Default,
+        None,
+        Help,
+        Pointer,
+        Crosshair,
+    }
 }

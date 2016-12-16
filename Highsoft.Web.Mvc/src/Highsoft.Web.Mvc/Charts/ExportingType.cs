@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.ExportingType
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.ExportingType
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum ExportingType
-  {
-    Imagepng,
-    Imagejpeg,
-    Applicationpdf,
-    Imagesvgxml,
-  }
+    public enum ExportingType
+    {
+        Imagepng,
+        Imagejpeg,
+        Applicationpdf,
+        Imagesvgxml,
+    }
 }

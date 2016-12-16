@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.YAxisGridLineInterpolation
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.YAxisGridLineInterpolation
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum YAxisGridLineInterpolation
-  {
-    Null,
-    Circle,
-    Polygon,
-  }
+    public enum YAxisGridLineInterpolation
+    {
+        Null,
+        Circle,
+        Polygon,
+    }
 }

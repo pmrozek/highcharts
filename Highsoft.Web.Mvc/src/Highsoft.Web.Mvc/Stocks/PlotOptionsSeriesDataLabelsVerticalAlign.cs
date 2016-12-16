@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsSeriesDataLabelsVerticalAlign
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsSeriesDataLabelsVerticalAlign
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsSeriesDataLabelsVerticalAlign
-  {
-    Null,
-    Top,
-    Middle,
-    Bottom,
-  }
+    public enum PlotOptionsSeriesDataLabelsVerticalAlign
+    {
+        Null,
+        Top,
+        Middle,
+        Bottom,
+    }
 }

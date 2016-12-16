@@ -1,23 +1,20 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarStemDashStyle
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarStemDashStyle
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PlotOptionsErrorbarStemDashStyle
-  {
-    Solid,
-    ShortDash,
-    ShortDot,
-    ShortDashDot,
-    ShortDashDotDot,
-    Dot,
-    Dash,
-    LongDash,
-    DashDot,
-    LongDashDot,
-    LongDashDotDot,
-  }
+    public enum PlotOptionsErrorbarStemDashStyle
+    {
+        Solid,
+        ShortDash,
+        ShortDot,
+        ShortDashDot,
+        ShortDashDotDot,
+        Dot,
+        Dash,
+        LongDash,
+        DashDot,
+        LongDashDot,
+        LongDashDotDot,
+    }
 }

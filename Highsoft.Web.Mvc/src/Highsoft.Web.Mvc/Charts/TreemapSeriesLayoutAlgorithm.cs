@@ -1,16 +1,13 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.TreemapSeriesLayoutAlgorithm
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.TreemapSeriesLayoutAlgorithm
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum TreemapSeriesLayoutAlgorithm
-  {
-    SliceAndDice,
-    Stripes,
-    Squarified,
-    Strip,
-  }
+    public enum TreemapSeriesLayoutAlgorithm
+    {
+        SliceAndDice,
+        Stripes,
+        Squarified,
+        Strip,
+    }
 }

@@ -1,14 +1,11 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PyramidSeriesDataLabelsOverflow
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PyramidSeriesDataLabelsOverflow
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PyramidSeriesDataLabelsOverflow
-  {
-    Justify,
-    None,
-  }
+    public enum PyramidSeriesDataLabelsOverflow
+    {
+        Justify,
+        None,
+    }
 }

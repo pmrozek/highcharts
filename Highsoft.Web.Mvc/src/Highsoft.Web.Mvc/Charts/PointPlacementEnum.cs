@@ -1,15 +1,12 @@
-﻿
-// Type: Highsoft.Web.Mvc.Charts.PointPlacementEnum
-
-
+﻿// Type: Highsoft.Web.Mvc.Charts.PointPlacementEnum
 
 
 namespace Highsoft.Web.Mvc.Charts
 {
-  public enum PointPlacementEnum
-  {
-    Null,
-    On,
-    Between,
-  }
+    public enum PointPlacementEnum
+    {
+        Null,
+        On,
+        Between,
+    }
 }

@@ -1,18 +1,15 @@
-﻿
-// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsCandlestickCursor
-
-
+﻿// Type: Highsoft.Web.Mvc.Stocks.PlotOptionsCandlestickCursor
 
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-  public enum PlotOptionsCandlestickCursor
-  {
-    Null,
-    Default,
-    None,
-    Help,
-    Pointer,
-    Crosshair,
-  }
+    public enum PlotOptionsCandlestickCursor
+    {
+        Null,
+        Default,
+        None,
+        Help,
+        Pointer,
+        Crosshair,
+    }
 }
