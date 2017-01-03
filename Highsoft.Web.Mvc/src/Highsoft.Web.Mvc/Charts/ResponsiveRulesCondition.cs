@@ -53,25 +53,29 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "callback", (object) this.Callback);
                 Highcharts.AddFunction("ResponsiveRulesConditionCallback.callback", this.Callback);
             }
-            double? nullable1 = this.MaxHeight;
-            double? nullable2 = this.MaxHeight_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? maxHeight = this.MaxHeight;
+            double? nullable1 = this.MaxHeight_DefaultValue;
+            if ((maxHeight.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (maxHeight.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "maxHeight", (object) this.MaxHeight);
-            nullable2 = this.MaxWidth;
-            nullable1 = this.MaxWidth_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.MaxWidth;
+            double? nullable2 = this.MaxWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "maxWidth", (object) this.MaxWidth);
-            nullable1 = this.MinHeight;
-            nullable2 = this.MinHeight_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.MinHeight;
+            nullable1 = this.MinHeight_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minHeight", (object) this.MinHeight);
-            nullable2 = this.MinWidth;
-            nullable1 = this.MinWidth_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.MinWidth;
+            nullable2 = this.MinWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minWidth", (object) this.MinWidth);
             return hashtable;
         }

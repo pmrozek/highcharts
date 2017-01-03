@@ -111,19 +111,21 @@ namespace Highsoft.Web.Mvc.Charts
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            bool? nullable1 = this.AllowHTML;
-            bool? nullable2 = this.AllowHTML_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            bool? allowHtml = this.AllowHTML;
+            bool? htmlDefaultValue = this.AllowHTML_DefaultValue;
+            if ((allowHtml.GetValueOrDefault() == htmlDefaultValue.GetValueOrDefault()
+                    ? (allowHtml.HasValue != htmlDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "allowHTML", (object) this.AllowHTML);
             if (this.Buttons.IsDirty())
                 hashtable.Add((object) "buttons", (object) this.Buttons.ToHashtable());
             if (this.ChartOptions != this.ChartOptions_DefaultValue)
                 hashtable.Add((object) "chartOptions", this.ChartOptions);
-            nullable2 = this.Enabled;
-            nullable1 = this.Enabled_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            bool? enabled = this.Enabled;
+            bool? nullable1 = this.Enabled_DefaultValue;
+            if ((enabled.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (enabled.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.Error != this.Error_DefaultValue)
             {
@@ -131,9 +133,10 @@ namespace Highsoft.Web.Mvc.Charts
                 Highcharts.AddFunction("ExportingError.error", this.Error);
             }
             nullable1 = this.FallbackToExportServer;
-            nullable2 = this.FallbackToExportServer_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            bool? serverDefaultValue = this.FallbackToExportServer_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == serverDefaultValue.GetValueOrDefault()
+                    ? (nullable1.HasValue != serverDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "fallbackToExportServer", (object) this.FallbackToExportServer);
             if (this.Filename != this.Filename_DefaultValue)
                 hashtable.Add((object) "filename", (object) this.Filename);
@@ -141,34 +144,39 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "formAttributes", this.FormAttributes);
             if (this.LibURL != this.LibURL_DefaultValue)
                 hashtable.Add((object) "libURL", (object) this.LibURL);
-            double? nullable3 = this.PrintMaxWidth;
-            double? nullable4 = this.PrintMaxWidth_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            double? printMaxWidth = this.PrintMaxWidth;
+            double? nullable2 = this.PrintMaxWidth_DefaultValue;
+            if ((printMaxWidth.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (printMaxWidth.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "printMaxWidth", (object) this.PrintMaxWidth);
-            nullable4 = this.Scale;
-            nullable3 = this.Scale_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable2 = this.Scale;
+            double? nullable3 = this.Scale_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "scale", (object) this.Scale);
             nullable3 = this.SourceHeight;
-            nullable4 = this.SourceHeight_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.SourceHeight_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "sourceHeight", (object) this.SourceHeight);
-            nullable4 = this.SourceWidth;
+            nullable2 = this.SourceWidth;
             nullable3 = this.SourceWidth_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            if ((nullable2.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "sourceWidth", (object) this.SourceWidth);
             if (this.Type != this.Type_DefaultValue)
                 hashtable.Add((object) "type", (object) Highcharts.FirstCharacterToLower(this.Type.ToString()));
             if (this.Url != this.Url_DefaultValue)
                 hashtable.Add((object) "url", (object) this.Url);
             nullable3 = this.Width;
-            nullable4 = this.Width_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.Width_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "width", (object) this.Width);
             return hashtable;
         }

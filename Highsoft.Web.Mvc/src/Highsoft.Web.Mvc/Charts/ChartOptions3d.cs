@@ -62,37 +62,43 @@ namespace Highsoft.Web.Mvc.Charts
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            double? nullable1 = this.Alpha;
-            double? nullable2 = this.Alpha_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? alpha = this.Alpha;
+            double? alphaDefaultValue = this.Alpha_DefaultValue;
+            if ((alpha.GetValueOrDefault() == alphaDefaultValue.GetValueOrDefault()
+                    ? (alpha.HasValue != alphaDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "alpha", (object) this.Alpha);
-            nullable2 = this.Beta;
-            nullable1 = this.Beta_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            double? beta = this.Beta;
+            double? nullable1 = this.Beta_DefaultValue;
+            if ((beta.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (beta.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "beta", (object) this.Beta);
             nullable1 = this.Depth;
-            nullable2 = this.Depth_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? nullable2 = this.Depth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "depth", (object) this.Depth);
-            bool? nullable3 = this.Enabled;
-            bool? nullable4 = this.Enabled_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            bool? enabled = this.Enabled;
+            bool? nullable3 = this.Enabled_DefaultValue;
+            if ((enabled.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (enabled.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
-            nullable4 = this.FitToPlot;
-            nullable3 = this.FitToPlot_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.FitToPlot;
+            bool? plotDefaultValue = this.FitToPlot_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == plotDefaultValue.GetValueOrDefault()
+                    ? (nullable3.HasValue != plotDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "fitToPlot", (object) this.FitToPlot);
             if (this.Frame.IsDirty())
                 hashtable.Add((object) "frame", (object) this.Frame.ToHashtable());
             nullable2 = this.ViewDistance;
             nullable1 = this.ViewDistance_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "viewDistance", (object) this.ViewDistance);
             return hashtable;
         }

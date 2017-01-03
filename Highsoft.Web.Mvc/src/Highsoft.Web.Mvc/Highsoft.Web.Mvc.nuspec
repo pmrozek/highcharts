@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<package >
+
+<package>
   <metadata>
     <id>Highsoft.Web.Mvc</id>
     <title>Highsoft.Web.Mvc</title>
-    <version>5.0.2</version>
+    <version>5.0.6</version>
     <authors>Highsoft</authors>
     <owners>Highsoft</owners>
     <licenseUrl>https://github.com/pmrozek/highcharts/blob/master/LICENSE</licenseUrl>
@@ -12,7 +13,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Highcharts provides a way to create easy dynamic charts using Highcharts Js (http://www.highcharts.com/) on ASP.NET MVC Core.</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2017</copyright>
     <tags>Highsoft Highcharts Highstock</tags>
 
     <dependencies>

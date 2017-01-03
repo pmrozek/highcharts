@@ -108,10 +108,11 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "className", (object) this.ClassName);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
-            double? nullable1 = this.ColorIndex;
-            double? nullable2 = this.ColorIndex_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? colorIndex = this.ColorIndex;
+            double? nullable1 = this.ColorIndex_DefaultValue;
+            if ((colorIndex.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (colorIndex.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "colorIndex", (object) this.ColorIndex);
             if (this.DataLabels != this.DataLabels_DefaultValue)
                 hashtable.Add((object) "dataLabels", this.DataLabels);
@@ -123,37 +124,43 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "events", (object) this.Events.ToHashtable());
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
-            bool? nullable3 = this.IsIntermediateSum;
-            bool? nullable4 = this.IsIntermediateSum_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            bool? isIntermediateSum = this.IsIntermediateSum;
+            bool? nullable2 = this.IsIntermediateSum_DefaultValue;
+            if ((isIntermediateSum.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (isIntermediateSum.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "isIntermediateSum", (object) this.IsIntermediateSum);
-            nullable4 = this.IsSum;
-            nullable3 = this.IsSum_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable2 = this.IsSum;
+            bool? nullable3 = this.IsSum_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "isSum", (object) this.IsSum);
-            nullable2 = this.Labelrank;
-            nullable1 = this.Labelrank_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Labelrank;
+            double? nullable4 = this.Labelrank_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable4.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable4.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "labelrank", (object) this.Labelrank);
             if (this.Name != this.Name_DefaultValue)
                 hashtable.Add((object) "name", (object) this.Name);
             nullable3 = this.Selected;
-            nullable4 = this.Selected_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.Selected_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "selected", (object) this.Selected);
-            nullable1 = this.X;
-            nullable2 = this.X_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable4 = this.X;
+            nullable1 = this.X_DefaultValue;
+            if ((nullable4.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable4.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "x", (object) this.X);
-            nullable2 = this.Y;
-            nullable1 = this.Y_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Y;
+            nullable4 = this.Y_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable4.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable4.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }

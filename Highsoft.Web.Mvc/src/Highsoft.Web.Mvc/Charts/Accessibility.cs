@@ -71,15 +71,17 @@ namespace Highsoft.Web.Mvc.Charts
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            bool? nullable1 = this.DescribeSingleSeries;
-            bool? nullable2 = this.DescribeSingleSeries_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            bool? describeSingleSeries = this.DescribeSingleSeries;
+            bool? seriesDefaultValue = this.DescribeSingleSeries_DefaultValue;
+            if ((describeSingleSeries.GetValueOrDefault() == seriesDefaultValue.GetValueOrDefault()
+                    ? (describeSingleSeries.HasValue != seriesDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "describeSingleSeries", (object) this.DescribeSingleSeries);
-            nullable2 = this.Enabled;
-            nullable1 = this.Enabled_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            bool? enabled = this.Enabled;
+            bool? enabledDefaultValue = this.Enabled_DefaultValue;
+            if ((enabled.GetValueOrDefault() == enabledDefaultValue.GetValueOrDefault()
+                    ? (enabled.HasValue != enabledDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.KeyboardNavigation.IsDirty())
                 hashtable.Add((object) "keyboardNavigation", (object) this.KeyboardNavigation.ToHashtable());
@@ -102,12 +104,13 @@ namespace Highsoft.Web.Mvc.Charts
                     this.PointDescriptionFormatter);
             }
             long? descriptionThreshold = this.PointDescriptionThreshold;
-            long? nullable3 = this.PointDescriptionThreshold_DefaultValue;
-            if (descriptionThreshold.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                descriptionThreshold.HasValue != nullable3.HasValue)
+            long? nullable = this.PointDescriptionThreshold_DefaultValue;
+            if ((descriptionThreshold.GetValueOrDefault() == nullable.GetValueOrDefault()
+                    ? (descriptionThreshold.HasValue != nullable.HasValue ? 1 : 0)
+                    : 1) != 0)
             {
-                nullable3 = this.PointDescriptionThreshold;
-                if (nullable3.HasValue)
+                nullable = this.PointDescriptionThreshold;
+                if (nullable.HasValue)
                     hashtable.Add((object) "pointDescriptionThreshold", (object) this.PointDescriptionThreshold);
                 else
                     hashtable.Add((object) "pointDescriptionThreshold", (object) false);

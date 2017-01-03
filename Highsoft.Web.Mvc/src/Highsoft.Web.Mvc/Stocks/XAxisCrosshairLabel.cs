@@ -84,15 +84,17 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "backgroundColor", (object) this.BackgroundColor);
             if (this.BorderColor != this.BorderColor_DefaultValue)
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
-            double? nullable1 = this.BorderRadius;
-            double? nullable2 = this.BorderRadius_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? borderRadius = this.BorderRadius;
+            double? nullable1 = this.BorderRadius_DefaultValue;
+            if ((borderRadius.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (borderRadius.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "borderRadius", (object) this.BorderRadius);
-            nullable2 = this.BorderWidth;
-            nullable1 = this.BorderWidth_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.BorderWidth;
+            double? nullable2 = this.BorderWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.Format != this.Format_DefaultValue)
                 hashtable.Add((object) "format", (object) this.Format);
@@ -101,10 +103,11 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "formatter", (object) this.Formatter);
                 Highstock.AddFunction("XAxisCrosshairLabelFormatter.formatter", this.Formatter);
             }
-            nullable1 = this.Padding;
-            nullable2 = this.Padding_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Padding;
+            nullable1 = this.Padding_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "padding", (object) this.Padding);
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) this.Shape);

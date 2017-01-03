@@ -72,8 +72,9 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "activeDataLabelStyle", (object) this.ActiveDataLabelStyle);
             bool? allowPointDrilldown = this.AllowPointDrilldown;
             bool? drilldownDefaultValue = this.AllowPointDrilldown_DefaultValue;
-            if (allowPointDrilldown.GetValueOrDefault() != drilldownDefaultValue.GetValueOrDefault() ||
-                allowPointDrilldown.HasValue != drilldownDefaultValue.HasValue)
+            if ((allowPointDrilldown.GetValueOrDefault() == drilldownDefaultValue.GetValueOrDefault()
+                    ? (allowPointDrilldown.HasValue != drilldownDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "allowPointDrilldown", (object) this.AllowPointDrilldown);
             if (this.Animation.IsDirty())
                 hashtable.Add((object) "animation", (object) this.Animation.ToJSON());

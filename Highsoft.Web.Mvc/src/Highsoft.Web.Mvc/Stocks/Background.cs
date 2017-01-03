@@ -49,11 +49,11 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "innerRadius", (object) this.InnerRadius);
             if (!string.IsNullOrEmpty(this.OuterRadius))
                 hashtable.Add((object) "outerRadius", (object) this.OuterRadius);
-            if ((uint) this.InnerWidth > 0U)
+            if (this.InnerWidth != 0)
                 hashtable.Add((object) "innerWidth", (object) this.InnerWidth);
-            if ((uint) this.OuterWidth > 0U)
+            if (this.OuterWidth != 0)
                 hashtable.Add((object) "outerWidth", (object) this.OuterWidth);
-            if ((uint) this.BorderWidth > 0U)
+            if (this.BorderWidth != 0)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             return hashtable;
         }

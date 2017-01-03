@@ -31,8 +31,9 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "color", (object) this.Color);
             double? size = this.Size;
             double? sizeDefaultValue = this.Size_DefaultValue;
-            if (size.GetValueOrDefault() != sizeDefaultValue.GetValueOrDefault() ||
-                size.HasValue != sizeDefaultValue.HasValue)
+            if ((size.GetValueOrDefault() == sizeDefaultValue.GetValueOrDefault()
+                    ? (size.HasValue != sizeDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "size", (object) this.Size);
             return hashtable;
         }

@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB5E34AE-9D4D-464C-A32F-B5682D063E88}</ProjectGuid>
+    <ProjectGuid>{EB02ABD3-8BA8-4D8C-9175-88699CEA13B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Highcharts.Web.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ApplicationVersion>5.0.2.15781</ApplicationVersion>
+    <ApplicationVersion>5.0.2.2194</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Highsoft.Web.Mvc.Charts</RootNamespace>
   </PropertyGroup>
@@ -33,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Core" />
     <Reference Include="System.Web.Mvc" />
     <Reference Include="System" />
     <Reference Include="System.Web.Extensions" />

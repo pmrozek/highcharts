@@ -74,24 +74,27 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "events", (object) this.Events.ToHashtable());
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
-            double? nullable1 = this.Labelrank;
-            double? nullable2 = this.Labelrank_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? labelrank = this.Labelrank;
+            double? nullable = this.Labelrank_DefaultValue;
+            if ((labelrank.GetValueOrDefault() == nullable.GetValueOrDefault()
+                    ? (labelrank.HasValue != nullable.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "labelrank", (object) this.Labelrank);
             bool? selected = this.Selected;
             bool? selectedDefaultValue = this.Selected_DefaultValue;
-            if (selected.GetValueOrDefault() != selectedDefaultValue.GetValueOrDefault() ||
-                selected.HasValue != selectedDefaultValue.HasValue)
+            if ((selected.GetValueOrDefault() == selectedDefaultValue.GetValueOrDefault()
+                    ? (selected.HasValue != selectedDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "selected", (object) this.Selected);
             if (this.Text != this.Text_DefaultValue)
                 hashtable.Add((object) "text", (object) this.Text);
             if (this.Title != this.Title_DefaultValue)
                 hashtable.Add((object) "title", (object) this.Title);
-            nullable2 = this.X;
-            nullable1 = this.X_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable = this.X;
+            double? xDefaultValue = this.X_DefaultValue;
+            if ((nullable.GetValueOrDefault() == xDefaultValue.GetValueOrDefault()
+                    ? (nullable.HasValue != xDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "x", (object) this.X);
             return hashtable;
         }

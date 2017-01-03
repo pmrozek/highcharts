@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{759C27E2-C2BA-4D20-AE8D-FB3F3864EC4F}</ProjectGuid>
+    <ProjectGuid>{FD9C1D4F-DCDA-4DC4-BA3F-64AB8936498D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Highstock.Web.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ApplicationVersion>5.0.2.15794</ApplicationVersion>
+    <ApplicationVersion>5.0.2.2188</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Highsoft.Web.Mvc.Stocks</RootNamespace>
   </PropertyGroup>
@@ -33,10 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Core" />
     <Reference Include="System.Web.Mvc" />
     <Reference Include="System" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>

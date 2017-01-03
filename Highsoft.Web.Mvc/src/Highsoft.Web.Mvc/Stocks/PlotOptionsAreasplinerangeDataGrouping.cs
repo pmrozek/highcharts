@@ -61,25 +61,29 @@ namespace Highsoft.Web.Mvc.Stocks
             }
             if (this.DateTimeLabelFormats != this.DateTimeLabelFormats_DefaultValue)
                 hashtable.Add((object) "dateTimeLabelFormats", (object) this.DateTimeLabelFormats);
-            bool? nullable1 = this.Enabled;
-            bool? nullable2 = this.Enabled_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            bool? enabled = this.Enabled;
+            bool? nullable1 = this.Enabled_DefaultValue;
+            if ((enabled.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (enabled.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
-            nullable2 = this.Forced;
-            nullable1 = this.Forced_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Forced;
+            bool? nullable2 = this.Forced_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "forced", (object) this.Forced);
             double? groupPixelWidth = this.GroupPixelWidth;
             double? widthDefaultValue = this.GroupPixelWidth_DefaultValue;
-            if (groupPixelWidth.GetValueOrDefault() != widthDefaultValue.GetValueOrDefault() ||
-                groupPixelWidth.HasValue != widthDefaultValue.HasValue)
+            if ((groupPixelWidth.GetValueOrDefault() == widthDefaultValue.GetValueOrDefault()
+                    ? (groupPixelWidth.HasValue != widthDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "groupPixelWidth", (object) this.GroupPixelWidth);
-            nullable1 = this.Smoothed;
-            nullable2 = this.Smoothed_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Smoothed;
+            nullable1 = this.Smoothed_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "smoothed", (object) this.Smoothed);
             return hashtable;
         }

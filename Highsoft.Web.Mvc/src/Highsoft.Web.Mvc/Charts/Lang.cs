@@ -191,8 +191,9 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "noData", (object) this.NoData);
             double? numericSymbolMagnitude = this.NumericSymbolMagnitude;
             double? magnitudeDefaultValue = this.NumericSymbolMagnitude_DefaultValue;
-            if (numericSymbolMagnitude.GetValueOrDefault() != magnitudeDefaultValue.GetValueOrDefault() ||
-                numericSymbolMagnitude.HasValue != magnitudeDefaultValue.HasValue)
+            if ((numericSymbolMagnitude.GetValueOrDefault() == magnitudeDefaultValue.GetValueOrDefault()
+                    ? (numericSymbolMagnitude.HasValue != magnitudeDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "numericSymbolMagnitude", (object) this.NumericSymbolMagnitude);
             if (this.NumericSymbols != this.NumericSymbols_DefaultValue)
                 hashtable.Add((object) "numericSymbols", (object) this.NumericSymbols);

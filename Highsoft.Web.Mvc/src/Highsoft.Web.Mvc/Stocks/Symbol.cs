@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
             Hashtable hashtable = new Hashtable();
             if (this.Url != null)
                 hashtable.Add((object) "symbol", (object) this.Url);
-            else if ((uint) this.SymbolEnum > 0U)
+            else if (this.SymbolEnum != SymbolEnum.Null)
                 hashtable.Add((object) "symbol", (object) this.SymbolEnum.ToString().ToLower());
             return hashtable;
         }
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
         {
             if (this.Url != null)
                 return this.Url.ToString();
-            if ((uint) this.SymbolEnum > 0U)
+            if (this.SymbolEnum != SymbolEnum.Null)
                 return this.SymbolEnum.ToString().ToLower();
             return "";
         }

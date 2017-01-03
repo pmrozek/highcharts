@@ -421,26 +421,29 @@ namespace Highsoft.Web.Mvc.Charts
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            bool? nullable1 = this.AllowDecimals;
-            bool? nullable2 = this.AllowDecimals_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            bool? allowDecimals = this.AllowDecimals;
+            bool? decimalsDefaultValue = this.AllowDecimals_DefaultValue;
+            if ((allowDecimals.GetValueOrDefault() == decimalsDefaultValue.GetValueOrDefault()
+                    ? (allowDecimals.HasValue != decimalsDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "allowDecimals", (object) this.AllowDecimals);
             if (this.AlternateGridColor != this.AlternateGridColor_DefaultValue)
                 hashtable.Add((object) "alternateGridColor", (object) this.AlternateGridColor);
-            double? nullable3 = this.Angle;
-            double? nullable4 = this.Angle_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            double? angle = this.Angle;
+            double? nullable1 = this.Angle_DefaultValue;
+            if ((angle.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (angle.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "angle", (object) this.Angle);
             if (this.Breaks.IsDirty())
                 hashtable.Add((object) "breaks", (object) this.Breaks.ToHashtable());
             if (this.Categories != this.Categories_DefaultValue)
                 hashtable.Add((object) "categories", (object) this.Categories);
-            nullable4 = this.Ceiling;
-            nullable3 = this.Ceiling_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.Ceiling;
+            double? nullable2 = this.Ceiling_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "ceiling", (object) this.Ceiling);
             if (this.ClassName != this.ClassName_DefaultValue)
                 hashtable.Add((object) "className", (object) this.ClassName);
@@ -450,17 +453,19 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "dateTimeLabelFormats", (object) this.DateTimeLabelFormats);
             if (this.Description != this.Description_DefaultValue)
                 hashtable.Add((object) "description", (object) this.Description);
-            nullable2 = this.EndOnTick;
-            nullable1 = this.EndOnTick_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            bool? endOnTick = this.EndOnTick;
+            bool? nullable3 = this.EndOnTick_DefaultValue;
+            if ((endOnTick.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (endOnTick.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "endOnTick", (object) this.EndOnTick);
             if (this.Events.IsDirty())
                 hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-            nullable3 = this.Floor;
-            nullable4 = this.Floor_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.Floor;
+            nullable1 = this.Floor_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "floor", (object) this.Floor);
             if (this.GridLineColor != this.GridLineColor_DefaultValue)
                 hashtable.Add((object) "gridLineColor", (object) this.GridLineColor);
@@ -470,15 +475,17 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.GridLineInterpolation != this.GridLineInterpolation_DefaultValue)
                 hashtable.Add((object) "gridLineInterpolation",
                     (object) Highcharts.FirstCharacterToLower(this.GridLineInterpolation.ToString()));
-            nullable4 = this.GridLineWidth;
-            nullable3 = this.GridLineWidth_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.GridLineWidth;
+            nullable2 = this.GridLineWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "gridLineWidth", (object) this.GridLineWidth);
-            nullable3 = this.GridZIndex;
-            nullable4 = this.GridZIndex_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.GridZIndex;
+            nullable1 = this.GridZIndex_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "gridZIndex", (object) this.GridZIndex);
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
@@ -486,161 +493,187 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "labels", (object) this.Labels.ToHashtable());
             if (this.LineColor != this.LineColor_DefaultValue)
                 hashtable.Add((object) "lineColor", (object) this.LineColor);
-            nullable4 = this.LineWidth;
-            nullable3 = this.LineWidth_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.LineWidth;
+            nullable2 = this.LineWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "lineWidth", (object) this.LineWidth);
-            nullable3 = this.LinkedTo;
-            nullable4 = this.LinkedTo_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.LinkedTo;
+            nullable1 = this.LinkedTo_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "linkedTo", (object) this.LinkedTo);
-            nullable4 = this.Max;
-            nullable3 = this.Max_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.Max;
+            nullable2 = this.Max_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "max", (object) this.Max);
             if (this.MaxColor != this.MaxColor_DefaultValue)
                 hashtable.Add((object) "maxColor", (object) this.MaxColor);
-            nullable3 = this.MaxPadding;
-            nullable4 = this.MaxPadding_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.MaxPadding;
+            nullable1 = this.MaxPadding_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "maxPadding", (object) this.MaxPadding);
-            nullable4 = this.Min;
-            nullable3 = this.Min_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.Min;
+            nullable2 = this.Min_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "min", (object) this.Min);
             if (this.MinColor != this.MinColor_DefaultValue)
                 hashtable.Add((object) "minColor", (object) this.MinColor);
-            nullable3 = this.MinPadding;
-            nullable4 = this.MinPadding_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.MinPadding;
+            nullable1 = this.MinPadding_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minPadding", (object) this.MinPadding);
-            nullable4 = this.MinRange;
-            nullable3 = this.MinRange_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.MinRange;
+            nullable2 = this.MinRange_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minRange", (object) this.MinRange);
-            nullable3 = this.MinTickInterval;
-            nullable4 = this.MinTickInterval_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.MinTickInterval;
+            nullable1 = this.MinTickInterval_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minTickInterval", (object) this.MinTickInterval);
             if (this.MinorGridLineColor != this.MinorGridLineColor_DefaultValue)
                 hashtable.Add((object) "minorGridLineColor", (object) this.MinorGridLineColor);
             if (this.MinorGridLineDashStyle != this.MinorGridLineDashStyle_DefaultValue)
                 hashtable.Add((object) "minorGridLineDashStyle",
                     (object) Highcharts.FirstCharacterToLower(this.MinorGridLineDashStyle.ToString()));
-            nullable4 = this.MinorGridLineWidth;
-            nullable3 = this.MinorGridLineWidth_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.MinorGridLineWidth;
+            nullable2 = this.MinorGridLineWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minorGridLineWidth", (object) this.MinorGridLineWidth);
             if (this.MinorTickColor != this.MinorTickColor_DefaultValue)
                 hashtable.Add((object) "minorTickColor", (object) this.MinorTickColor);
             if (this.MinorTickInterval != this.MinorTickInterval_DefaultValue)
                 hashtable.Add((object) "minorTickInterval", (object) this.MinorTickInterval);
-            nullable3 = this.MinorTickLength;
-            nullable4 = this.MinorTickLength_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.MinorTickLength;
+            nullable1 = this.MinorTickLength_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minorTickLength", (object) this.MinorTickLength);
             if (this.MinorTickPosition != this.MinorTickPosition_DefaultValue)
                 hashtable.Add((object) "minorTickPosition",
                     (object) Highcharts.FirstCharacterToLower(this.MinorTickPosition.ToString()));
-            nullable4 = this.MinorTickWidth;
-            nullable3 = this.MinorTickWidth_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.MinorTickWidth;
+            nullable2 = this.MinorTickWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minorTickWidth", (object) this.MinorTickWidth);
-            nullable3 = this.Offset;
-            nullable4 = this.Offset_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.Offset;
+            nullable1 = this.Offset_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "offset", (object) this.Offset);
-            nullable1 = this.Opposite;
-            nullable2 = this.Opposite_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable3 = this.Opposite;
+            bool? nullable4 = this.Opposite_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "opposite", (object) this.Opposite);
             if (this.PlotBands != this.PlotBands_DefaultValue)
                 hashtable.Add((object) "plotBands", (object) this.HashifyList((IEnumerable) this.PlotBands));
             if (this.PlotLines != this.PlotLines_DefaultValue)
                 hashtable.Add((object) "plotLines", (object) this.HashifyList((IEnumerable) this.PlotLines));
-            nullable2 = this.Reversed;
-            nullable1 = this.Reversed_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable4 = this.Reversed;
+            nullable3 = this.Reversed_DefaultValue;
+            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "reversed", (object) this.Reversed);
-            nullable1 = this.ReversedStacks;
-            nullable2 = this.ReversedStacks_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable3 = this.ReversedStacks;
+            nullable4 = this.ReversedStacks_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "reversedStacks", (object) this.ReversedStacks);
-            nullable2 = this.ShowEmpty;
-            nullable1 = this.ShowEmpty_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable4 = this.ShowEmpty;
+            nullable3 = this.ShowEmpty_DefaultValue;
+            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "showEmpty", (object) this.ShowEmpty);
-            nullable1 = this.ShowFirstLabel;
-            nullable2 = this.ShowFirstLabel_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable3 = this.ShowFirstLabel;
+            nullable4 = this.ShowFirstLabel_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "showFirstLabel", (object) this.ShowFirstLabel);
-            nullable2 = this.ShowLastLabel;
-            nullable1 = this.ShowLastLabel_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable4 = this.ShowLastLabel;
+            nullable3 = this.ShowLastLabel_DefaultValue;
+            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "showLastLabel", (object) this.ShowLastLabel);
-            nullable4 = this.SoftMax;
-            nullable3 = this.SoftMax_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.SoftMax;
+            nullable2 = this.SoftMax_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "softMax", (object) this.SoftMax);
-            nullable3 = this.SoftMin;
-            nullable4 = this.SoftMin_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.SoftMin;
+            nullable1 = this.SoftMin_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "softMin", (object) this.SoftMin);
             if (this.StackLabels.IsDirty())
                 hashtable.Add((object) "stackLabels", (object) this.StackLabels.ToHashtable());
-            nullable4 = this.StartOfWeek;
-            nullable3 = this.StartOfWeek_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.StartOfWeek;
+            nullable2 = this.StartOfWeek_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "startOfWeek", (object) this.StartOfWeek);
-            nullable1 = this.StartOnTick;
-            nullable2 = this.StartOnTick_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable3 = this.StartOnTick;
+            nullable4 = this.StartOnTick_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "startOnTick", (object) this.StartOnTick);
             if (this.Stops != this.Stops_DefaultValue)
                 hashtable.Add((object) "stops", (object) this.HashifyList((IEnumerable) this.Stops));
-            nullable3 = this.TickAmount;
-            nullable4 = this.TickAmount_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.TickAmount;
+            nullable1 = this.TickAmount_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "tickAmount", (object) this.TickAmount);
             if (this.TickColor != this.TickColor_DefaultValue)
                 hashtable.Add((object) "tickColor", (object) this.TickColor);
-            nullable4 = this.TickInterval;
-            nullable3 = this.TickInterval_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.TickInterval;
+            nullable2 = this.TickInterval_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "tickInterval", (object) this.TickInterval);
-            nullable3 = this.TickLength;
-            nullable4 = this.TickLength_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.TickLength;
+            nullable1 = this.TickLength_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "tickLength", (object) this.TickLength);
-            nullable4 = this.TickPixelInterval;
-            nullable3 = this.TickPixelInterval_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable1 = this.TickPixelInterval;
+            nullable2 = this.TickPixelInterval_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "tickPixelInterval", (object) this.TickPixelInterval);
             if (this.TickPosition != this.TickPosition_DefaultValue)
                 hashtable.Add((object) "tickPosition",
@@ -652,10 +685,11 @@ namespace Highsoft.Web.Mvc.Charts
             }
             if (this.TickPositions != this.TickPositions_DefaultValue)
                 hashtable.Add((object) "tickPositions", (object) this.TickPositions);
-            nullable3 = this.TickWidth;
-            nullable4 = this.TickWidth_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable2 = this.TickWidth;
+            nullable1 = this.TickWidth_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "tickWidth", (object) this.TickWidth);
             if (this.TickmarkPlacement != this.TickmarkPlacement_DefaultValue)
                 hashtable.Add((object) "tickmarkPlacement",
@@ -664,10 +698,11 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "title", (object) this.Title.ToHashtable());
             if (this.Type != this.Type_DefaultValue)
                 hashtable.Add((object) "type", (object) Highcharts.FirstCharacterToLower(this.Type.ToString()));
-            nullable2 = this.Visible;
-            nullable1 = this.Visible_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable4 = this.Visible;
+            nullable3 = this.Visible_DefaultValue;
+            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "visible", (object) this.Visible);
             return hashtable;
         }

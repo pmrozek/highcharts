@@ -40,7 +40,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override bool IsDirty()
         {
-            return !this.Enabled || this.ToHashtable().Count > 0;
+            if (this.Enabled)
+                return this.ToHashtable().Count > 0;
+            return true;
         }
     }
 }

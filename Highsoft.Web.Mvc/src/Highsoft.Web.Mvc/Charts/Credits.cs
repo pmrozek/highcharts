@@ -50,8 +50,9 @@ namespace Highsoft.Web.Mvc.Charts
             Hashtable hashtable = new Hashtable();
             bool? enabled = this.Enabled;
             bool? enabledDefaultValue = this.Enabled_DefaultValue;
-            if (enabled.GetValueOrDefault() != enabledDefaultValue.GetValueOrDefault() ||
-                enabled.HasValue != enabledDefaultValue.HasValue)
+            if ((enabled.GetValueOrDefault() == enabledDefaultValue.GetValueOrDefault()
+                    ? (enabled.HasValue != enabledDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.Href != this.Href_DefaultValue)
                 hashtable.Add((object) "href", (object) this.Href);

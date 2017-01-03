@@ -73,13 +73,15 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "margin", (object) this.Margin);
             double? nullable1 = this.Offset;
             double? nullable2 = this.Offset_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "offset", (object) this.Offset);
             nullable2 = this.Rotation;
             nullable1 = this.Rotation_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "rotation", (object) this.Rotation);
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);
@@ -87,13 +89,15 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "text", (object) this.Text);
             nullable1 = this.X;
             nullable2 = this.X_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "x", (object) this.X);
             nullable2 = this.Y;
             nullable1 = this.Y_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }

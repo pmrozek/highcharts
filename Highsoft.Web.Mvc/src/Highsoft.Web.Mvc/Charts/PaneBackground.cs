@@ -58,8 +58,9 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
             double? borderWidth = this.BorderWidth;
             double? widthDefaultValue = this.BorderWidth_DefaultValue;
-            if (borderWidth.GetValueOrDefault() != widthDefaultValue.GetValueOrDefault() ||
-                borderWidth.HasValue != widthDefaultValue.HasValue)
+            if ((borderWidth.GetValueOrDefault() == widthDefaultValue.GetValueOrDefault()
+                    ? (borderWidth.HasValue != widthDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.ClassName != this.ClassName_DefaultValue)
                 hashtable.Add((object) "className", (object) this.ClassName);

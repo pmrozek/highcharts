@@ -129,10 +129,11 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "className", (object) this.ClassName);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
-            double? nullable1 = this.ColorIndex;
-            double? nullable2 = this.ColorIndex_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? colorIndex = this.ColorIndex;
+            double? nullable1 = this.ColorIndex_DefaultValue;
+            if ((colorIndex.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (colorIndex.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "colorIndex", (object) this.ColorIndex);
             if (this.DataLabels != this.DataLabels_DefaultValue)
                 hashtable.Add((object) "dataLabels", this.DataLabels);
@@ -142,54 +143,63 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "drilldown", (object) this.Drilldown);
             if (this.Events.IsDirty())
                 hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-            nullable2 = this.High;
-            nullable1 = this.High_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.High;
+            double? nullable2 = this.High_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "high", (object) this.High);
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
-            nullable1 = this.Labelrank;
-            nullable2 = this.Labelrank_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Labelrank;
+            nullable1 = this.Labelrank_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "labelrank", (object) this.Labelrank);
-            nullable2 = this.Low;
-            nullable1 = this.Low_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Low;
+            nullable2 = this.Low_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "low", (object) this.Low);
-            nullable1 = this.Median;
-            nullable2 = this.Median_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Median;
+            nullable1 = this.Median_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "median", (object) this.Median);
             if (this.Name != this.Name_DefaultValue)
                 hashtable.Add((object) "name", (object) this.Name);
-            nullable2 = this.Q1;
-            nullable1 = this.Q1_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Q1;
+            nullable2 = this.Q1_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "q1", (object) this.Q1);
-            nullable1 = this.Q3;
-            nullable2 = this.Q3_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Q3;
+            nullable1 = this.Q3_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "q3", (object) this.Q3);
             bool? selected = this.Selected;
             bool? selectedDefaultValue = this.Selected_DefaultValue;
-            if (selected.GetValueOrDefault() != selectedDefaultValue.GetValueOrDefault() ||
-                selected.HasValue != selectedDefaultValue.HasValue)
+            if ((selected.GetValueOrDefault() == selectedDefaultValue.GetValueOrDefault()
+                    ? (selected.HasValue != selectedDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "selected", (object) this.Selected);
-            nullable2 = this.X;
-            nullable1 = this.X_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.X;
+            nullable2 = this.X_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "x", (object) this.X);
-            nullable1 = this.Y;
-            nullable2 = this.Y_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Y;
+            nullable1 = this.Y_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }

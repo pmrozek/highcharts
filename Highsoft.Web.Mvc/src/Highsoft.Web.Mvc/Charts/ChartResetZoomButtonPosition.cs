@@ -44,15 +44,16 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.VerticalAlign != this.VerticalAlign_DefaultValue)
                 hashtable.Add((object) "verticalAlign",
                     (object) Highcharts.FirstCharacterToLower(this.VerticalAlign.ToString()));
-            double? nullable1 = this.X;
-            double? nullable2 = this.X_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? x = this.X;
+            double? nullable = this.X_DefaultValue;
+            if ((x.GetValueOrDefault() == nullable.GetValueOrDefault() ? (x.HasValue != nullable.HasValue ? 1 : 0) : 1) !=
+                0)
                 hashtable.Add((object) "x", (object) this.X);
-            nullable2 = this.Y;
-            nullable1 = this.Y_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable = this.Y;
+            double? yDefaultValue = this.Y_DefaultValue;
+            if ((nullable.GetValueOrDefault() == yDefaultValue.GetValueOrDefault()
+                    ? (nullable.HasValue != yDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }

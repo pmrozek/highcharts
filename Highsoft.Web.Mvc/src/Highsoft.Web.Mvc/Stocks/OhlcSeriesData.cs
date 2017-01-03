@@ -94,10 +94,11 @@ namespace Highsoft.Web.Mvc.Stocks
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            double? nullable1 = this.Close;
-            double? nullable2 = this.Close_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? close = this.Close;
+            double? closeDefaultValue = this.Close_DefaultValue;
+            if ((close.GetValueOrDefault() == closeDefaultValue.GetValueOrDefault()
+                    ? (close.HasValue != closeDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "close", (object) this.Close);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
@@ -107,39 +108,45 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "description", (object) this.Description);
             if (this.Events.IsDirty())
                 hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-            nullable2 = this.High;
-            nullable1 = this.High_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            double? high = this.High;
+            double? nullable1 = this.High_DefaultValue;
+            if ((high.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (high.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "high", (object) this.High);
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
             nullable1 = this.Labelrank;
-            nullable2 = this.Labelrank_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? nullable2 = this.Labelrank_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "labelrank", (object) this.Labelrank);
             nullable2 = this.Low;
             nullable1 = this.Low_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "low", (object) this.Low);
             if (this.Name != this.Name_DefaultValue)
                 hashtable.Add((object) "name", (object) this.Name);
             nullable1 = this.Open;
             nullable2 = this.Open_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "open", (object) this.Open);
             bool? selected = this.Selected;
             bool? selectedDefaultValue = this.Selected_DefaultValue;
-            if (selected.GetValueOrDefault() != selectedDefaultValue.GetValueOrDefault() ||
-                selected.HasValue != selectedDefaultValue.HasValue)
+            if ((selected.GetValueOrDefault() == selectedDefaultValue.GetValueOrDefault()
+                    ? (selected.HasValue != selectedDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "selected", (object) this.Selected);
             nullable2 = this.X;
             nullable1 = this.X_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "x", (object) this.X);
             return hashtable;
         }

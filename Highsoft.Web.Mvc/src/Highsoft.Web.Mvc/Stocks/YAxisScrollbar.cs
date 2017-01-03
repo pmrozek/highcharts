@@ -148,15 +148,17 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "barBackgroundColor", (object) this.BarBackgroundColor);
             if (this.BarBorderColor != this.BarBorderColor_DefaultValue)
                 hashtable.Add((object) "barBorderColor", (object) this.BarBorderColor);
-            double? nullable1 = this.BarBorderRadius;
-            double? nullable2 = this.BarBorderRadius_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? barBorderRadius = this.BarBorderRadius;
+            double? nullable1 = this.BarBorderRadius_DefaultValue;
+            if ((barBorderRadius.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (barBorderRadius.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "barBorderRadius", (object) this.BarBorderRadius);
-            nullable2 = this.BarBorderWidth;
-            nullable1 = this.BarBorderWidth_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.BarBorderWidth;
+            double? nullable2 = this.BarBorderWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "barBorderWidth", (object) this.BarBorderWidth);
             if (this.ButtonArrowColor != this.ButtonArrowColor_DefaultValue)
                 hashtable.Add((object) "buttonArrowColor", (object) this.ButtonArrowColor);
@@ -164,63 +166,73 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "buttonBackgroundColor", (object) this.ButtonBackgroundColor);
             if (this.ButtonBorderColor != this.ButtonBorderColor_DefaultValue)
                 hashtable.Add((object) "buttonBorderColor", (object) this.ButtonBorderColor);
-            nullable1 = this.ButtonBorderRadius;
-            nullable2 = this.ButtonBorderRadius_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.ButtonBorderRadius;
+            nullable1 = this.ButtonBorderRadius_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "buttonBorderRadius", (object) this.ButtonBorderRadius);
-            nullable2 = this.ButtonBorderWidth;
-            nullable1 = this.ButtonBorderWidth_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.ButtonBorderWidth;
+            nullable2 = this.ButtonBorderWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "buttonBorderWidth", (object) this.ButtonBorderWidth);
-            bool? nullable3 = this.Enabled;
-            bool? nullable4 = this.Enabled_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            bool? enabled = this.Enabled;
+            bool? nullable3 = this.Enabled_DefaultValue;
+            if ((enabled.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (enabled.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
-            nullable4 = this.LiveRedraw;
-            nullable3 = this.LiveRedraw_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.LiveRedraw;
+            bool? nullable4 = this.LiveRedraw_DefaultValue;
+            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "liveRedraw", (object) this.LiveRedraw);
             if (this.Margin != this.Margin_DefaultValue)
                 hashtable.Add((object) "margin", (object) this.Margin);
-            nullable1 = this.MinWidth;
-            nullable2 = this.MinWidth_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.MinWidth;
+            nullable1 = this.MinWidth_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "minWidth", (object) this.MinWidth);
             if (this.RifleColor != this.RifleColor_DefaultValue)
                 hashtable.Add((object) "rifleColor", (object) this.RifleColor);
-            nullable3 = this.ShowFull;
-            nullable4 = this.ShowFull_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.ShowFull;
+            nullable3 = this.ShowFull_DefaultValue;
+            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "showFull", (object) this.ShowFull);
-            nullable2 = this.Size;
-            nullable1 = this.Size_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Size;
+            nullable2 = this.Size_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "size", (object) this.Size);
             if (this.TrackBackgroundColor != this.TrackBackgroundColor_DefaultValue)
                 hashtable.Add((object) "trackBackgroundColor", (object) this.TrackBackgroundColor);
             if (this.TrackBorderColor != this.TrackBorderColor_DefaultValue)
                 hashtable.Add((object) "trackBorderColor", (object) this.TrackBorderColor);
-            nullable1 = this.TrackBorderRadius;
-            nullable2 = this.TrackBorderRadius_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.TrackBorderRadius;
+            nullable1 = this.TrackBorderRadius_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "trackBorderRadius", (object) this.TrackBorderRadius);
-            nullable2 = this.TrackBorderWidth;
-            nullable1 = this.TrackBorderWidth_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.TrackBorderWidth;
+            nullable2 = this.TrackBorderWidth_DefaultValue;
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "trackBorderWidth", (object) this.TrackBorderWidth);
-            nullable1 = this.ZIndex;
-            nullable2 = this.ZIndex_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.ZIndex;
+            nullable1 = this.ZIndex_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             return hashtable;
         }

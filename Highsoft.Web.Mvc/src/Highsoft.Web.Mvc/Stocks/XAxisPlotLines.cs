@@ -80,18 +80,21 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "label", (object) this.Label.ToHashtable());
             double? nullable1 = this.Value;
             double? nullable2 = this.Value_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "value", (object) this.Value);
             nullable2 = this.Width;
-            nullable1 = this.Width_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            double? nullable3 = this.Width_DefaultValue;
+            if ((nullable2.GetValueOrDefault() == nullable3.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable3.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "width", (object) this.Width);
-            nullable1 = this.ZIndex;
+            nullable3 = this.ZIndex;
             nullable2 = this.ZIndex_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            if ((nullable3.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable3.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             return hashtable;
         }

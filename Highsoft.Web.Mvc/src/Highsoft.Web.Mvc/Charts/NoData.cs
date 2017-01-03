@@ -51,8 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "style", (object) this.Style);
             bool? useHtml = this.UseHTML;
             bool? htmlDefaultValue = this.UseHTML_DefaultValue;
-            if (useHtml.GetValueOrDefault() != htmlDefaultValue.GetValueOrDefault() ||
-                useHtml.HasValue != htmlDefaultValue.HasValue)
+            if ((useHtml.GetValueOrDefault() == htmlDefaultValue.GetValueOrDefault()
+                    ? (useHtml.HasValue != htmlDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
             return hashtable;
         }

@@ -39,8 +39,9 @@ namespace Highsoft.Web.Mvc.Stocks
             Hashtable hashtable = new Hashtable();
             double? count = this.Count;
             double? countDefaultValue = this.Count_DefaultValue;
-            if (count.GetValueOrDefault() != countDefaultValue.GetValueOrDefault() ||
-                count.HasValue != countDefaultValue.HasValue)
+            if ((count.GetValueOrDefault() == countDefaultValue.GetValueOrDefault()
+                    ? (count.HasValue != countDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "count", (object) this.Count);
             if (this.DataGrouping != this.DataGrouping_DefaultValue)
                 hashtable.Add((object) "dataGrouping", this.DataGrouping);

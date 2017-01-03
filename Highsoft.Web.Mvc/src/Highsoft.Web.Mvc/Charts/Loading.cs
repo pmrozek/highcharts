@@ -52,17 +52,19 @@ namespace Highsoft.Web.Mvc.Charts
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            double? nullable1 = this.HideDuration;
-            double? nullable2 = this.HideDuration_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            double? hideDuration = this.HideDuration;
+            double? durationDefaultValue1 = this.HideDuration_DefaultValue;
+            if ((hideDuration.GetValueOrDefault() == durationDefaultValue1.GetValueOrDefault()
+                    ? (hideDuration.HasValue != durationDefaultValue1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "hideDuration", (object) this.HideDuration);
             if (this.LabelStyle != this.LabelStyle_DefaultValue)
                 hashtable.Add((object) "labelStyle", (object) this.LabelStyle);
-            nullable2 = this.ShowDuration;
-            nullable1 = this.ShowDuration_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            double? showDuration = this.ShowDuration;
+            double? durationDefaultValue2 = this.ShowDuration_DefaultValue;
+            if ((showDuration.GetValueOrDefault() == durationDefaultValue2.GetValueOrDefault()
+                    ? (showDuration.HasValue != durationDefaultValue2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "showDuration", (object) this.ShowDuration);
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);

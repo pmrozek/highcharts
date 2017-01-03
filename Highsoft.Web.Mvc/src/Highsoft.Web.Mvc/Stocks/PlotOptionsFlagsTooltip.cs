@@ -79,20 +79,23 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "dateTimeLabelFormats", (object) this.DateTimeLabelFormats);
             bool? nullable1 = this.FollowPointer;
             bool? nullable2 = this.FollowPointer_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "followPointer", (object) this.FollowPointer);
             nullable2 = this.FollowTouchMove;
             nullable1 = this.FollowTouchMove_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
+                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "followTouchMove", (object) this.FollowTouchMove);
             if (this.HeaderFormat != this.HeaderFormat_DefaultValue)
                 hashtable.Add((object) "headerFormat", (object) this.HeaderFormat);
             double? padding = this.Padding;
             double? paddingDefaultValue = this.Padding_DefaultValue;
-            if (padding.GetValueOrDefault() != paddingDefaultValue.GetValueOrDefault() ||
-                padding.HasValue != paddingDefaultValue.HasValue)
+            if ((padding.GetValueOrDefault() == paddingDefaultValue.GetValueOrDefault()
+                    ? (padding.HasValue != paddingDefaultValue.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "padding", (object) this.Padding);
             if (this.PointFormat != this.PointFormat_DefaultValue)
                 hashtable.Add((object) "pointFormat", (object) this.PointFormat);
@@ -105,8 +108,9 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "shape", (object) this.Shape);
             nullable1 = this.Split;
             nullable2 = this.Split_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
+                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
+                    : 1) != 0)
                 hashtable.Add((object) "split", (object) this.Split);
             if (this.XDateFormat != this.XDateFormat_DefaultValue)
                 hashtable.Add((object) "xDateFormat", (object) this.XDateFormat);
