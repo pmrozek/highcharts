@@ -48,25 +48,22 @@ namespace Highsoft.Web.Mvc.Stocks
             Hashtable hashtable = new Hashtable();
             bool? enabled = this.Enabled;
             bool? enabledDefaultValue = this.Enabled_DefaultValue;
-            if ((enabled.GetValueOrDefault() == enabledDefaultValue.GetValueOrDefault()
-                    ? (enabled.HasValue != enabledDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (enabled.GetValueOrDefault() != enabledDefaultValue.GetValueOrDefault() ||
+                enabled.HasValue != enabledDefaultValue.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.FillColor != this.FillColor_DefaultValue)
                 hashtable.Add((object) "fillColor", (object) this.FillColor);
             if (this.LineColor != this.LineColor_DefaultValue)
                 hashtable.Add((object) "lineColor", (object) this.LineColor);
-            double? lineWidth = this.LineWidth;
-            double? nullable = this.LineWidth_DefaultValue;
-            if ((lineWidth.GetValueOrDefault() == nullable.GetValueOrDefault()
-                    ? (lineWidth.HasValue != nullable.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.LineWidth;
+            double? nullable2 = this.LineWidth_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "lineWidth", (object) this.LineWidth);
-            nullable = this.Radius;
-            double? radiusDefaultValue = this.Radius_DefaultValue;
-            if ((nullable.GetValueOrDefault() == radiusDefaultValue.GetValueOrDefault()
-                    ? (nullable.HasValue != radiusDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.Radius;
+            nullable1 = this.Radius_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "radius", (object) this.Radius);
             return hashtable;
         }

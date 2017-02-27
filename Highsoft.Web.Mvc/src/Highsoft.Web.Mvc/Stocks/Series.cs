@@ -74,17 +74,15 @@ namespace Highsoft.Web.Mvc.Stocks
             Hashtable hashtable = new Hashtable();
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
-            double? index = this.Index;
-            double? nullable1 = this.Index_DefaultValue;
-            if ((index.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (index.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.Index;
+            double? nullable2 = this.Index_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "index", (object) this.Index);
-            nullable1 = this.LegendIndex;
-            double? nullable2 = this.LegendIndex_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.LegendIndex;
+            nullable1 = this.LegendIndex_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "legendIndex", (object) this.LegendIndex);
             if (this.Name != this.Name_DefaultValue)
                 hashtable.Add((object) "name", (object) this.Name);
@@ -96,11 +94,10 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "xAxis", (object) this.XAxis);
             if (this.YAxis != this.YAxis_DefaultValue)
                 hashtable.Add((object) "yAxis", (object) this.YAxis);
-            nullable2 = this.ZIndex;
-            nullable1 = this.ZIndex_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.ZIndex;
+            nullable2 = this.ZIndex_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             return hashtable;
         }

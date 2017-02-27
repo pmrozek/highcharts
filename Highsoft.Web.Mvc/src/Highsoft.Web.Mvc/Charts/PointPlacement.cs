@@ -22,14 +22,14 @@ namespace Highsoft.Web.Mvc.Charts
             Hashtable hashtable = new Hashtable();
             if (this.Value.HasValue)
                 hashtable.Add((object) "pointPlacement", (object) this.Value);
-            else if (this.PointPlacementEnum != PointPlacementEnum.Null)
+            else if ((uint) this.PointPlacementEnum > 0U)
                 hashtable.Add((object) "pointPlacement", (object) this.PointPlacementEnum.ToString().ToLower());
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.PointPlacementEnum != PointPlacementEnum.Null)
+            if ((uint) this.PointPlacementEnum > 0U)
                 return this.PointPlacementEnum.ToString().ToLower();
             return "";
         }

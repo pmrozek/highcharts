@@ -19,11 +19,13 @@ namespace Highsoft.Web.Mvc.Charts
         public Labels()
         {
             this.Items = this.Items_DefaultValue = new LabelsItems();
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "color", (object) "#333333");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#333333"
+                }
+            };
         }
 
         internal override Hashtable ToHashtable()

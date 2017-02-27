@@ -99,33 +99,29 @@ namespace Highsoft.Web.Mvc.Stocks
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            double? changeDecimals = this.ChangeDecimals;
-            double? decimalsDefaultValue1 = this.ChangeDecimals_DefaultValue;
-            if ((changeDecimals.GetValueOrDefault() == decimalsDefaultValue1.GetValueOrDefault()
-                    ? (changeDecimals.HasValue != decimalsDefaultValue1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.ChangeDecimals;
+            double? nullable2 = this.ChangeDecimals_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "changeDecimals", (object) this.ChangeDecimals);
             if (this.DateTimeLabelFormats != this.DateTimeLabelFormats_DefaultValue)
                 hashtable.Add((object) "dateTimeLabelFormats", (object) this.DateTimeLabelFormats);
-            bool? followPointer = this.FollowPointer;
-            bool? nullable1 = this.FollowPointer_DefaultValue;
-            if ((followPointer.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (followPointer.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            bool? nullable3 = this.FollowPointer;
+            bool? nullable4 = this.FollowPointer_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "followPointer", (object) this.FollowPointer);
-            nullable1 = this.FollowTouchMove;
-            bool? nullable2 = this.FollowTouchMove_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable4 = this.FollowTouchMove;
+            nullable3 = this.FollowTouchMove_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "followTouchMove", (object) this.FollowTouchMove);
             if (this.HeaderFormat != this.HeaderFormat_DefaultValue)
                 hashtable.Add((object) "headerFormat", (object) this.HeaderFormat);
-            double? padding = this.Padding;
-            double? nullable3 = this.Padding_DefaultValue;
-            if ((padding.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (padding.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.Padding;
+            nullable1 = this.Padding_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "padding", (object) this.Padding);
             if (this.PointFormat != this.PointFormat_DefaultValue)
                 hashtable.Add((object) "pointFormat", (object) this.PointFormat);
@@ -136,17 +132,15 @@ namespace Highsoft.Web.Mvc.Stocks
             }
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) this.Shape);
-            nullable2 = this.Split;
-            nullable1 = this.Split_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable3 = this.Split;
+            nullable4 = this.Split_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "split", (object) this.Split);
-            nullable3 = this.ValueDecimals;
-            double? decimalsDefaultValue2 = this.ValueDecimals_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == decimalsDefaultValue2.GetValueOrDefault()
-                    ? (nullable3.HasValue != decimalsDefaultValue2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.ValueDecimals;
+            nullable2 = this.ValueDecimals_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "valueDecimals", (object) this.ValueDecimals);
             if (this.ValuePrefix != this.ValuePrefix_DefaultValue)
                 hashtable.Add((object) "valuePrefix", (object) this.ValuePrefix);

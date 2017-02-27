@@ -35,30 +35,51 @@ namespace Highsoft.Web.Mvc.Charts
 
         public Drilldown()
         {
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "cursor", (object) "pointer");
-            hashtable1.Add((object) "color", (object) "#003399");
-            hashtable1.Add((object) "fontWeight", (object) "bold");
-            hashtable1.Add((object) "textDecoration", (object) "underline");
-            Hashtable hashtable2 = hashtable1;
-            this.ActiveAxisLabelStyle_DefaultValue = hashtable1;
-            this.ActiveAxisLabelStyle = hashtable2;
-            Hashtable hashtable3 = new Hashtable();
-            hashtable3.Add((object) "cursor", (object) "pointer");
-            hashtable3.Add((object) "color", (object) "#003399");
-            hashtable3.Add((object) "fontWeight", (object) "bold");
-            hashtable3.Add((object) "textDecoration", (object) "underline");
-            Hashtable hashtable4 = hashtable3;
-            this.ActiveDataLabelStyle_DefaultValue = hashtable3;
-            this.ActiveDataLabelStyle = hashtable4;
+            this.ActiveAxisLabelStyle = this.ActiveAxisLabelStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "cursor",
+                    (object) "pointer"
+                },
+                {
+                    (object) "color",
+                    (object) "#003399"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                },
+                {
+                    (object) "textDecoration",
+                    (object) "underline"
+                }
+            };
+            this.ActiveDataLabelStyle = this.ActiveDataLabelStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "cursor",
+                    (object) "pointer"
+                },
+                {
+                    (object) "color",
+                    (object) "#003399"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                },
+                {
+                    (object) "textDecoration",
+                    (object) "underline"
+                }
+            };
             bool? nullable = new bool?(true);
             this.AllowPointDrilldown_DefaultValue = nullable;
             this.AllowPointDrilldown = nullable;
-            Animation animation1 = new Animation();
-            animation1.Enabled = true;
-            Animation animation2 = animation1;
-            this.Animation_DefaultValue = animation1;
-            this.Animation = animation2;
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
             this.DrillUpButton = this.DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
             this.Series = this.Series_DefaultValue = (List<Highsoft.Web.Mvc.Charts.Series>) null;
         }
@@ -72,9 +93,8 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "activeDataLabelStyle", (object) this.ActiveDataLabelStyle);
             bool? allowPointDrilldown = this.AllowPointDrilldown;
             bool? drilldownDefaultValue = this.AllowPointDrilldown_DefaultValue;
-            if ((allowPointDrilldown.GetValueOrDefault() == drilldownDefaultValue.GetValueOrDefault()
-                    ? (allowPointDrilldown.HasValue != drilldownDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (allowPointDrilldown.GetValueOrDefault() != drilldownDefaultValue.GetValueOrDefault() ||
+                allowPointDrilldown.HasValue != drilldownDefaultValue.HasValue)
                 hashtable.Add((object) "allowPointDrilldown", (object) this.AllowPointDrilldown);
             if (this.Animation.IsDirty())
                 hashtable.Add((object) "animation", (object) this.Animation.ToJSON());

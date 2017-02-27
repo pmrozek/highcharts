@@ -35,13 +35,21 @@ namespace Highsoft.Web.Mvc.Charts
             this.Enabled = nullable;
             this.Href = this.Href_DefaultValue = "http://www.highcharts.com";
             this.Position = this.Position_DefaultValue = new Hashtable();
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "cursor", (object) "pointer");
-            hashtable1.Add((object) "color", (object) "#999999");
-            hashtable1.Add((object) "fontSize", (object) "10px");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "cursor",
+                    (object) "pointer"
+                },
+                {
+                    (object) "color",
+                    (object) "#999999"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "10px"
+                }
+            };
             this.Text = this.Text_DefaultValue = "Highcharts.com";
         }
 
@@ -50,9 +58,8 @@ namespace Highsoft.Web.Mvc.Charts
             Hashtable hashtable = new Hashtable();
             bool? enabled = this.Enabled;
             bool? enabledDefaultValue = this.Enabled_DefaultValue;
-            if ((enabled.GetValueOrDefault() == enabledDefaultValue.GetValueOrDefault()
-                    ? (enabled.HasValue != enabledDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (enabled.GetValueOrDefault() != enabledDefaultValue.GetValueOrDefault() ||
+                enabled.HasValue != enabledDefaultValue.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.Href != this.Href_DefaultValue)
                 hashtable.Add((object) "href", (object) this.Href);

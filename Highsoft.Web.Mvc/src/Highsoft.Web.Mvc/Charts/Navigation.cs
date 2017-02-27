@@ -27,26 +27,47 @@ namespace Highsoft.Web.Mvc.Charts
         public Navigation()
         {
             this.ButtonOptions = this.ButtonOptions_DefaultValue = new NavigationButtonOptions();
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "background", (object) "#335cad");
-            hashtable1.Add((object) "color", (object) "#ffffff");
-            Hashtable hashtable2 = hashtable1;
-            this.MenuItemHoverStyle_DefaultValue = hashtable1;
-            this.MenuItemHoverStyle = hashtable2;
-            Hashtable hashtable3 = new Hashtable();
-            hashtable3.Add((object) "padding", (object) "0.5em 1em");
-            hashtable3.Add((object) "color", (object) "#333333");
-            hashtable3.Add((object) "background", (object) "none");
-            Hashtable hashtable4 = hashtable3;
-            this.MenuItemStyle_DefaultValue = hashtable3;
-            this.MenuItemStyle = hashtable4;
-            Hashtable hashtable5 = new Hashtable();
-            hashtable5.Add((object) "border", (object) "1px solid #999999");
-            hashtable5.Add((object) "background", (object) "#ffffff");
-            hashtable5.Add((object) "padding", (object) "5px 0");
-            Hashtable hashtable6 = hashtable5;
-            this.MenuStyle_DefaultValue = hashtable5;
-            this.MenuStyle = hashtable6;
+            this.MenuItemHoverStyle = this.MenuItemHoverStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "background",
+                    (object) "#335cad"
+                },
+                {
+                    (object) "color",
+                    (object) "#ffffff"
+                }
+            };
+            this.MenuItemStyle = this.MenuItemStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "padding",
+                    (object) "0.5em 1em"
+                },
+                {
+                    (object) "color",
+                    (object) "#333333"
+                },
+                {
+                    (object) "background",
+                    (object) "none"
+                }
+            };
+            this.MenuStyle = this.MenuStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "border",
+                    (object) "1px solid #999999"
+                },
+                {
+                    (object) "background",
+                    (object) "#ffffff"
+                },
+                {
+                    (object) "padding",
+                    (object) "5px 0"
+                }
+            };
         }
 
         internal override Hashtable ToHashtable()

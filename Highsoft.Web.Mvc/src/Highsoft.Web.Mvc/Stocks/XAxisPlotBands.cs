@@ -75,11 +75,10 @@ namespace Highsoft.Web.Mvc.Stocks
             Hashtable hashtable = new Hashtable();
             if (this.BorderColor != this.BorderColor_DefaultValue)
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
-            double? borderWidth = this.BorderWidth;
-            double? nullable1 = this.BorderWidth_DefaultValue;
-            if ((borderWidth.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (borderWidth.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.BorderWidth;
+            double? nullable2 = this.BorderWidth_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.ClassName != this.ClassName_DefaultValue)
                 hashtable.Add((object) "className", (object) this.ClassName);
@@ -87,27 +86,24 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "color", (object) this.Color);
             if (this.Events != this.Events_DefaultValue)
                 hashtable.Add((object) "events", this.Events);
-            nullable1 = this.From;
-            double? nullable2 = this.From_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.From;
+            nullable1 = this.From_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "from", (object) this.From);
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
             if (this.Label.IsDirty())
                 hashtable.Add((object) "label", (object) this.Label.ToHashtable());
-            nullable2 = this.To;
-            nullable1 = this.To_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.To;
+            nullable2 = this.To_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "to", (object) this.To);
-            nullable1 = this.ZIndex;
-            nullable2 = this.ZIndex_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.ZIndex;
+            nullable1 = this.ZIndex_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             return hashtable;
         }

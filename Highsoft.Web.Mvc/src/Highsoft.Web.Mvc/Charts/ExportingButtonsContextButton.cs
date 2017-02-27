@@ -128,15 +128,13 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "align", (object) Highcharts.FirstCharacterToLower(this.Align.ToString()));
             bool? enabled = this.Enabled;
             bool? enabledDefaultValue = this.Enabled_DefaultValue;
-            if ((enabled.GetValueOrDefault() == enabledDefaultValue.GetValueOrDefault()
-                    ? (enabled.HasValue != enabledDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (enabled.GetValueOrDefault() != enabledDefaultValue.GetValueOrDefault() ||
+                enabled.HasValue != enabledDefaultValue.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             double? nullable1 = this.Height;
             double? nullable2 = this.Height_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "height", (object) this.Height);
             if (this.MenuItems != this.MenuItems_DefaultValue)
                 hashtable.Add((object) "menuItems", (object) this.MenuItems);
@@ -151,29 +149,25 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "symbolFill", (object) this.SymbolFill);
             nullable2 = this.SymbolSize;
             nullable1 = this.SymbolSize_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "symbolSize", (object) this.SymbolSize);
             if (this.SymbolStroke != this.SymbolStroke_DefaultValue)
                 hashtable.Add((object) "symbolStroke", (object) this.SymbolStroke);
             nullable1 = this.SymbolStrokeWidth;
             nullable2 = this.SymbolStrokeWidth_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "symbolStrokeWidth", (object) this.SymbolStrokeWidth);
             nullable2 = this.SymbolX;
             nullable1 = this.SymbolX_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "symbolX", (object) this.SymbolX);
             nullable1 = this.SymbolY;
             nullable2 = this.SymbolY_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "symbolY", (object) this.SymbolY);
             if (this.Text != this.Text_DefaultValue)
                 hashtable.Add((object) "text", (object) this.Text);
@@ -184,21 +178,18 @@ namespace Highsoft.Web.Mvc.Charts
                     (object) Highcharts.FirstCharacterToLower(this.VerticalAlign.ToString()));
             nullable2 = this.Width;
             nullable1 = this.Width_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "width", (object) this.Width);
             nullable1 = this.X;
             nullable2 = this.X_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "x", (object) this.X);
             nullable2 = this.Y;
             nullable1 = this.Y_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }

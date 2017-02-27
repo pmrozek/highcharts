@@ -52,9 +52,8 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "fillColor", (object) this.FillColor);
             double? nullable = this.Value;
             double? valueDefaultValue = this.Value_DefaultValue;
-            if ((nullable.GetValueOrDefault() == valueDefaultValue.GetValueOrDefault()
-                    ? (nullable.HasValue != valueDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable.GetValueOrDefault() != valueDefaultValue.GetValueOrDefault() ||
+                nullable.HasValue != valueDefaultValue.HasValue)
                 hashtable.Add((object) "value", (object) this.Value);
             return hashtable;
         }

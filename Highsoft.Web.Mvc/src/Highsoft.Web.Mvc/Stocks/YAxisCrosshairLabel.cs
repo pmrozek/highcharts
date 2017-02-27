@@ -65,14 +65,25 @@ namespace Highsoft.Web.Mvc.Stocks
             this.Padding_DefaultValue = nullable;
             this.Padding = nullable;
             this.Shape = this.Shape_DefaultValue = "callout";
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "color", (object) "white");
-            hashtable1.Add((object) "fontWeight", (object) "normal");
-            hashtable1.Add((object) "fontSize", (object) "11px");
-            hashtable1.Add((object) "textAlign", (object) "center");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "white"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "normal"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                },
+                {
+                    (object) "textAlign",
+                    (object) "center"
+                }
+            };
         }
 
         internal override Hashtable ToHashtable()
@@ -84,17 +95,15 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "backgroundColor", (object) this.BackgroundColor);
             if (this.BorderColor != this.BorderColor_DefaultValue)
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
-            double? borderRadius = this.BorderRadius;
-            double? nullable1 = this.BorderRadius_DefaultValue;
-            if ((borderRadius.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (borderRadius.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.BorderRadius;
+            double? nullable2 = this.BorderRadius_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "borderRadius", (object) this.BorderRadius);
-            nullable1 = this.BorderWidth;
-            double? nullable2 = this.BorderWidth_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.BorderWidth;
+            nullable1 = this.BorderWidth_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.Format != this.Format_DefaultValue)
                 hashtable.Add((object) "format", (object) this.Format);
@@ -103,11 +112,10 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "formatter", (object) this.Formatter);
                 Highstock.AddFunction("YAxisCrosshairLabelFormatter.formatter", this.Formatter);
             }
-            nullable2 = this.Padding;
-            nullable1 = this.Padding_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.Padding;
+            nullable2 = this.Padding_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "padding", (object) this.Padding);
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) this.Shape);

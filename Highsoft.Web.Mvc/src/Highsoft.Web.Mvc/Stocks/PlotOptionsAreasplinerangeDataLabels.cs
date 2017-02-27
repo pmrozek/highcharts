@@ -148,21 +148,30 @@ namespace Highsoft.Web.Mvc.Stocks
             nullable2 = new double?(0.0);
             this.Rotation_DefaultValue = nullable2;
             this.Rotation = nullable2;
-            Shadow shadow1 = new Shadow();
-            shadow1.Enabled = false;
-            Shadow shadow2 = shadow1;
-            this.Shadow_DefaultValue = shadow1;
-            this.Shadow = shadow2;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
             this.Shape = this.Shape_DefaultValue = "square";
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "color", (object) "contrast");
-            hashtable1.Add((object) "fontSize", (object) "11px");
-            hashtable1.Add((object) "fontWeight", (object) "bold");
-            hashtable1.Add((object) "textShadow",
-                (object) "1px 1px contrast},{ -1px -1px contrast},{ -1px 1px contrast},{ 1px -1px contrast");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "contrast"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                },
+                {
+                    (object) "textShadow",
+                    (object) "1px 1px contrast},{ -1px -1px contrast},{ -1px 1px contrast},{ 1px -1px contrast"
+                }
+            };
             nullable3 = new bool?(false);
             this.UseHTML_DefaultValue = nullable3;
             this.UseHTML = nullable3;
@@ -192,23 +201,20 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "align", (object) Highstock.FirstCharacterToLower(this.Align.ToString()));
             bool? nullable1 = this.AllowOverlap;
             bool? nullable2 = this.AllowOverlap_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "allowOverlap", (object) this.AllowOverlap);
             if (this.BorderColor != this.BorderColor_DefaultValue)
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
             double? nullable3 = this.BorderRadius;
             double? nullable4 = this.BorderRadius_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "borderRadius", (object) this.BorderRadius);
             nullable4 = this.BorderWidth;
             nullable3 = this.BorderWidth_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.ClassName != this.ClassName_DefaultValue)
                 hashtable.Add((object) "className", (object) this.ClassName);
@@ -216,21 +222,18 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "color", (object) this.Color);
             nullable2 = this.Crop;
             nullable1 = this.Crop_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "crop", (object) this.Crop);
             nullable1 = this.Defer;
             nullable2 = this.Defer_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "defer", (object) this.Defer);
             nullable2 = this.Enabled;
             nullable1 = this.Enabled_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.Format != this.Format_DefaultValue)
                 hashtable.Add((object) "format", (object) this.Format);
@@ -241,23 +244,20 @@ namespace Highsoft.Web.Mvc.Stocks
             }
             nullable1 = this.Inside;
             nullable2 = this.Inside_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "inside", (object) this.Inside);
             if (this.Overflow != this.Overflow_DefaultValue)
                 hashtable.Add((object) "overflow", (object) Highstock.FirstCharacterToLower(this.Overflow.ToString()));
             nullable3 = this.Padding;
             nullable4 = this.Padding_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "padding", (object) this.Padding);
             nullable4 = this.Rotation;
             nullable3 = this.Rotation_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "rotation", (object) this.Rotation);
             if (this.Shadow != this.Shadow_DefaultValue)
                 hashtable.Add((object) "shadow", (object) this.Shadow);
@@ -267,42 +267,36 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "style", (object) this.Style);
             nullable2 = this.UseHTML;
             nullable1 = this.UseHTML_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
             if (this.VerticalAlign != this.VerticalAlign_DefaultValue)
                 hashtable.Add((object) "verticalAlign",
                     (object) Highstock.FirstCharacterToLower(this.VerticalAlign.ToString()));
             nullable3 = this.XHigh;
             nullable4 = this.XHigh_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "xHigh", (object) this.XHigh);
             nullable4 = this.XLow;
             nullable3 = this.XLow_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "xLow", (object) this.XLow);
             nullable3 = this.YHigh;
             nullable4 = this.YHigh_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "yHigh", (object) this.YHigh);
             nullable4 = this.YLow;
             nullable3 = this.YLow_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "yLow", (object) this.YLow);
             nullable3 = this.ZIndex;
             nullable4 = this.ZIndex_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             return hashtable;
         }

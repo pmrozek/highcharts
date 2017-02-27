@@ -28,13 +28,21 @@ namespace Highsoft.Web.Mvc.Stocks
         {
             this.Attr = this.Attr_DefaultValue = (Hashtable) null;
             this.Position = this.Position_DefaultValue = new Hashtable();
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "fontSize", (object) "12px");
-            hashtable1.Add((object) "fontWeight", (object) "bold");
-            hashtable1.Add((object) "color", (object) "#666666");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "fontSize",
+                    (object) "12px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                },
+                {
+                    (object) "color",
+                    (object) "#666666"
+                }
+            };
             bool? nullable = new bool?(false);
             this.UseHTML_DefaultValue = nullable;
             this.UseHTML = nullable;
@@ -51,9 +59,8 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "style", (object) this.Style);
             bool? useHtml = this.UseHTML;
             bool? htmlDefaultValue = this.UseHTML_DefaultValue;
-            if ((useHtml.GetValueOrDefault() == htmlDefaultValue.GetValueOrDefault()
-                    ? (useHtml.HasValue != htmlDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (useHtml.GetValueOrDefault() != htmlDefaultValue.GetValueOrDefault() ||
+                useHtml.HasValue != htmlDefaultValue.HasValue)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
             return hashtable;
         }

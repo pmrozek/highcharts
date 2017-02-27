@@ -40,9 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override bool IsDirty()
         {
-            if (this.Enabled)
-                return this.ToHashtable().Count > 0;
-            return true;
+            return !this.Enabled || this.ToHashtable().Count > 0;
         }
     }
 }

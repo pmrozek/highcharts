@@ -50,15 +50,13 @@ namespace Highsoft.Web.Mvc.Stocks
             }
             double? timezoneOffset = this.TimezoneOffset;
             double? offsetDefaultValue = this.TimezoneOffset_DefaultValue;
-            if ((timezoneOffset.GetValueOrDefault() == offsetDefaultValue.GetValueOrDefault()
-                    ? (timezoneOffset.HasValue != offsetDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (timezoneOffset.GetValueOrDefault() != offsetDefaultValue.GetValueOrDefault() ||
+                timezoneOffset.HasValue != offsetDefaultValue.HasValue)
                 hashtable.Add((object) "timezoneOffset", (object) this.TimezoneOffset);
             bool? useUtc = this.UseUTC;
             bool? useUtcDefaultValue = this.UseUTC_DefaultValue;
-            if ((useUtc.GetValueOrDefault() == useUtcDefaultValue.GetValueOrDefault()
-                    ? (useUtc.HasValue != useUtcDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (useUtc.GetValueOrDefault() != useUtcDefaultValue.GetValueOrDefault() ||
+                useUtc.HasValue != useUtcDefaultValue.HasValue)
                 hashtable.Add((object) "useUTC", (object) this.UseUTC);
             return hashtable;
         }

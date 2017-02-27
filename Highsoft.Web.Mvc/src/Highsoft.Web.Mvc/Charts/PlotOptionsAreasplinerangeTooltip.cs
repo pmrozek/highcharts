@@ -103,15 +103,13 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "dateTimeLabelFormats", (object) this.DateTimeLabelFormats);
             bool? nullable1 = this.FollowPointer;
             bool? nullable2 = this.FollowPointer_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "followPointer", (object) this.FollowPointer);
             nullable2 = this.FollowTouchMove;
             nullable1 = this.FollowTouchMove_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "followTouchMove", (object) this.FollowTouchMove);
             if (this.FooterFormat != this.FooterFormat_DefaultValue)
                 hashtable.Add((object) "footerFormat", (object) this.FooterFormat);
@@ -119,15 +117,13 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "headerFormat", (object) this.HeaderFormat);
             double? nullable3 = this.HideDelay;
             double? nullable4 = this.HideDelay_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "hideDelay", (object) this.HideDelay);
             nullable4 = this.Padding;
             nullable3 = this.Padding_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "padding", (object) this.Padding);
             if (this.PointFormat != this.PointFormat_DefaultValue)
                 hashtable.Add((object) "pointFormat", (object) this.PointFormat);
@@ -139,15 +135,13 @@ namespace Highsoft.Web.Mvc.Charts
             }
             nullable1 = this.Split;
             nullable2 = this.Split_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "split", (object) this.Split);
             nullable3 = this.ValueDecimals;
             nullable4 = this.ValueDecimals_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "valueDecimals", (object) this.ValueDecimals);
             if (this.ValuePrefix != this.ValuePrefix_DefaultValue)
                 hashtable.Add((object) "valuePrefix", (object) this.ValuePrefix);

@@ -51,17 +51,15 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "center", (object) this.Center);
             double? nullable1 = this.EndAngle;
             double? nullable2 = this.EndAngle_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "endAngle", (object) this.EndAngle);
             if (this.Size != this.Size_DefaultValue)
                 hashtable.Add((object) "size", (object) this.Size);
             nullable2 = this.StartAngle;
             nullable1 = this.StartAngle_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "startAngle", (object) this.StartAngle);
             return hashtable;
         }

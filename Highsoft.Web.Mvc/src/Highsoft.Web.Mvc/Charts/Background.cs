@@ -49,11 +49,11 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "innerRadius", (object) this.InnerRadius);
             if (!string.IsNullOrEmpty(this.OuterRadius))
                 hashtable.Add((object) "outerRadius", (object) this.OuterRadius);
-            if (this.InnerWidth != 0)
+            if ((uint) this.InnerWidth > 0U)
                 hashtable.Add((object) "innerWidth", (object) this.InnerWidth);
-            if (this.OuterWidth != 0)
+            if ((uint) this.OuterWidth > 0U)
                 hashtable.Add((object) "outerWidth", (object) this.OuterWidth);
-            if (this.BorderWidth != 0)
+            if ((uint) this.BorderWidth > 0U)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             return hashtable;
         }

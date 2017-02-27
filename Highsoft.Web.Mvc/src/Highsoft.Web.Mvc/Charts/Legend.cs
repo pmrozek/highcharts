@@ -172,30 +172,45 @@ namespace Highsoft.Web.Mvc.Charts
             nullable1 = new double?(20.0);
             this.ItemDistance_DefaultValue = nullable1;
             this.ItemDistance = nullable1;
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "color", (object) "#cccccc");
-            Hashtable hashtable2 = hashtable1;
-            this.ItemHiddenStyle_DefaultValue = hashtable1;
-            this.ItemHiddenStyle = hashtable2;
-            Hashtable hashtable3 = new Hashtable();
-            hashtable3.Add((object) "color", (object) "#000000");
-            Hashtable hashtable4 = hashtable3;
-            this.ItemHoverStyle_DefaultValue = hashtable3;
-            this.ItemHoverStyle = hashtable4;
+            this.ItemHiddenStyle = this.ItemHiddenStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#cccccc"
+                }
+            };
+            this.ItemHoverStyle = this.ItemHoverStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#000000"
+                }
+            };
             nullable1 = new double?(0.0);
             this.ItemMarginBottom_DefaultValue = nullable1;
             this.ItemMarginBottom = nullable1;
             nullable1 = new double?(0.0);
             this.ItemMarginTop_DefaultValue = nullable1;
             this.ItemMarginTop = nullable1;
-            Hashtable hashtable5 = new Hashtable();
-            hashtable5.Add((object) "color", (object) "#333333");
-            hashtable5.Add((object) "cursor", (object) "pointer");
-            hashtable5.Add((object) "fontSize", (object) "12px");
-            hashtable5.Add((object) "fontWeight", (object) "bold");
-            Hashtable hashtable6 = hashtable5;
-            this.ItemStyle_DefaultValue = hashtable5;
-            this.ItemStyle = hashtable6;
+            this.ItemStyle = this.ItemStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#333333"
+                },
+                {
+                    (object) "cursor",
+                    (object) "pointer"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "12px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                }
+            };
             double? nullable3 = new double?();
             this.ItemWidth_DefaultValue = nullable3;
             this.ItemWidth = nullable3;
@@ -219,11 +234,10 @@ namespace Highsoft.Web.Mvc.Charts
             nullable2 = new bool?(false);
             this.Rtl_DefaultValue = nullable2;
             this.Rtl = nullable2;
-            Shadow shadow1 = new Shadow();
-            shadow1.Enabled = false;
-            Shadow shadow2 = shadow1;
-            this.Shadow_DefaultValue = shadow1;
-            this.Shadow = shadow2;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
             nullable2 = new bool?(true);
             this.SquareSymbol_DefaultValue = nullable2;
             this.SquareSymbol = nullable2;
@@ -266,33 +280,28 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
             double? nullable1 = this.BorderRadius;
             double? nullable2 = this.BorderRadius_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "borderRadius", (object) this.BorderRadius);
             nullable2 = this.BorderWidth;
             nullable1 = this.BorderWidth_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             bool? nullable3 = this.Enabled;
             bool? nullable4 = this.Enabled_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             nullable4 = this.Floating;
             nullable3 = this.Floating_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "floating", (object) this.Floating);
             nullable1 = this.ItemDistance;
             nullable2 = this.ItemDistance_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "itemDistance", (object) this.ItemDistance);
             if (this.ItemHiddenStyle != this.ItemHiddenStyle_DefaultValue)
                 hashtable.Add((object) "itemHiddenStyle", (object) this.ItemHiddenStyle);
@@ -300,23 +309,20 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "itemHoverStyle", (object) this.ItemHoverStyle);
             nullable2 = this.ItemMarginBottom;
             nullable1 = this.ItemMarginBottom_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "itemMarginBottom", (object) this.ItemMarginBottom);
             nullable1 = this.ItemMarginTop;
             nullable2 = this.ItemMarginTop_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "itemMarginTop", (object) this.ItemMarginTop);
             if (this.ItemStyle != this.ItemStyle_DefaultValue)
                 hashtable.Add((object) "itemStyle", (object) this.ItemStyle);
             nullable2 = this.ItemWidth;
             nullable1 = this.ItemWidth_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "itemWidth", (object) this.ItemWidth);
             if (this.LabelFormat != this.LabelFormat_DefaultValue)
                 hashtable.Add((object) "labelFormat", (object) this.LabelFormat);
@@ -329,98 +335,84 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "layout", (object) Highcharts.FirstCharacterToLower(this.Layout.ToString()));
             nullable1 = this.LineHeight;
             nullable2 = this.LineHeight_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "lineHeight", (object) this.LineHeight);
             if (this.Margin != this.Margin_DefaultValue)
                 hashtable.Add((object) "margin", (object) this.Margin);
             nullable2 = this.MaxHeight;
             nullable1 = this.MaxHeight_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "maxHeight", (object) this.MaxHeight);
             if (this.Navigation.IsDirty())
                 hashtable.Add((object) "navigation", (object) this.Navigation.ToHashtable());
             nullable1 = this.Padding;
             nullable2 = this.Padding_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "padding", (object) this.Padding);
             nullable3 = this.Reversed;
             nullable4 = this.Reversed_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "reversed", (object) this.Reversed);
             nullable4 = this.Rtl;
             nullable3 = this.Rtl_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "rtl", (object) this.Rtl);
             if (this.Shadow != this.Shadow_DefaultValue)
                 hashtable.Add((object) "shadow", (object) this.Shadow);
             nullable3 = this.SquareSymbol;
             nullable4 = this.SquareSymbol_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "squareSymbol", (object) this.SquareSymbol);
             nullable2 = this.SymbolHeight;
             nullable1 = this.SymbolHeight_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "symbolHeight", (object) this.SymbolHeight);
             nullable1 = this.SymbolPadding;
             nullable2 = this.SymbolPadding_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "symbolPadding", (object) this.SymbolPadding);
             nullable2 = this.SymbolRadius;
             nullable1 = this.SymbolRadius_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "symbolRadius", (object) this.SymbolRadius);
             nullable1 = this.SymbolWidth;
             nullable2 = this.SymbolWidth_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "symbolWidth", (object) this.SymbolWidth);
             if (this.Title.IsDirty())
                 hashtable.Add((object) "title", (object) this.Title.ToHashtable());
             nullable4 = this.UseHTML;
             nullable3 = this.UseHTML_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
             if (this.VerticalAlign != this.VerticalAlign_DefaultValue)
                 hashtable.Add((object) "verticalAlign",
                     (object) Highcharts.FirstCharacterToLower(this.VerticalAlign.ToString()));
             nullable2 = this.Width;
             nullable1 = this.Width_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "width", (object) this.Width);
             nullable1 = this.X;
             nullable2 = this.X_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "x", (object) this.X);
             nullable2 = this.Y;
             nullable1 = this.Y_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }

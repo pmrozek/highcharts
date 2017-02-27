@@ -100,68 +100,64 @@ namespace Highsoft.Web.Mvc.Charts
             this.DrillUpText = this.DrillUpText_DefaultValue = "Back to {series.name}";
             this.InvalidDate = this.InvalidDate_DefaultValue = "";
             this.Loading = this.Loading_DefaultValue = "Loading...";
-            List<string> stringList1 = new List<string>();
-            stringList1.Add("January");
-            stringList1.Add("February");
-            stringList1.Add("March");
-            stringList1.Add("April");
-            stringList1.Add("May");
-            stringList1.Add("June");
-            stringList1.Add("July");
-            stringList1.Add("August");
-            stringList1.Add("September");
-            stringList1.Add("October");
-            stringList1.Add("November");
-            stringList1.Add("December");
-            List<string> stringList2 = stringList1;
-            this.Months_DefaultValue = stringList1;
-            this.Months = stringList2;
+            this.Months = this.Months_DefaultValue = new List<string>()
+            {
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            };
             this.NoData = this.NoData_DefaultValue = "No data to display";
             double? nullable = new double?(1000.0);
             this.NumericSymbolMagnitude_DefaultValue = nullable;
             this.NumericSymbolMagnitude = nullable;
-            List<string> stringList3 = new List<string>();
-            stringList3.Add("k");
-            stringList3.Add("M");
-            stringList3.Add("G");
-            stringList3.Add("T");
-            stringList3.Add("P");
-            stringList3.Add("E");
-            List<string> stringList4 = stringList3;
-            this.NumericSymbols_DefaultValue = stringList3;
-            this.NumericSymbols = stringList4;
+            this.NumericSymbols = this.NumericSymbols_DefaultValue = new List<string>()
+            {
+                "k",
+                "M",
+                "G",
+                "T",
+                "P",
+                "E"
+            };
             this.PrintChart = this.PrintChart_DefaultValue = "Print chart";
             this.ResetZoom = this.ResetZoom_DefaultValue = "Reset zoom";
             this.ResetZoomTitle = this.ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-            List<string> stringList5 = new List<string>();
-            stringList5.Add("Jan");
-            stringList5.Add("Feb");
-            stringList5.Add("Mar");
-            stringList5.Add("Apr");
-            stringList5.Add("May");
-            stringList5.Add("Jun");
-            stringList5.Add("Jul");
-            stringList5.Add("Aug");
-            stringList5.Add("Sep");
-            stringList5.Add("Oct");
-            stringList5.Add("Nov");
-            stringList5.Add("Dec");
-            List<string> stringList6 = stringList5;
-            this.ShortMonths_DefaultValue = stringList5;
-            this.ShortMonths = stringList6;
+            this.ShortMonths = this.ShortMonths_DefaultValue = new List<string>()
+            {
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+            };
             this.ShortWeekdays = this.ShortWeekdays_DefaultValue = (List<string>) null;
             this.ThousandsSep = this.ThousandsSep_DefaultValue = " ";
-            List<string> stringList7 = new List<string>();
-            stringList7.Add("Sunday");
-            stringList7.Add("Monday");
-            stringList7.Add("Tuesday");
-            stringList7.Add("Wednesday");
-            stringList7.Add("Thursday");
-            stringList7.Add("Friday");
-            stringList7.Add("Saturday");
-            List<string> stringList8 = stringList7;
-            this.Weekdays_DefaultValue = stringList7;
-            this.Weekdays = stringList8;
+            this.Weekdays = this.Weekdays_DefaultValue = new List<string>()
+            {
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            };
         }
 
         internal override Hashtable ToHashtable()
@@ -191,9 +187,8 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "noData", (object) this.NoData);
             double? numericSymbolMagnitude = this.NumericSymbolMagnitude;
             double? magnitudeDefaultValue = this.NumericSymbolMagnitude_DefaultValue;
-            if ((numericSymbolMagnitude.GetValueOrDefault() == magnitudeDefaultValue.GetValueOrDefault()
-                    ? (numericSymbolMagnitude.HasValue != magnitudeDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (numericSymbolMagnitude.GetValueOrDefault() != magnitudeDefaultValue.GetValueOrDefault() ||
+                numericSymbolMagnitude.HasValue != magnitudeDefaultValue.HasValue)
                 hashtable.Add((object) "numericSymbolMagnitude", (object) this.NumericSymbolMagnitude);
             if (this.NumericSymbols != this.NumericSymbols_DefaultValue)
                 hashtable.Add((object) "numericSymbols", (object) this.NumericSymbols);

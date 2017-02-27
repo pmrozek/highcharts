@@ -8,7 +8,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class MenuItem : BaseObject
     {
-        private string Text { get; set; }
+        public string Text { get; set; }
 
         public string OnClick { get; set; }
 

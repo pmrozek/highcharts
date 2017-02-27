@@ -18,11 +18,13 @@ namespace Highsoft.Web.Mvc.Stocks
 
         public LegendTitle()
         {
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "fontWeight", (object) "bold");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                }
+            };
             this.Text = this.Text_DefaultValue = "null";
         }
 

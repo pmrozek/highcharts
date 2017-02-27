@@ -230,11 +230,10 @@ namespace Highsoft.Web.Mvc.Stocks
             nullable1 = new bool?(false);
             this.Selected_DefaultValue = nullable1;
             this.Selected = nullable1;
-            Shadow shadow1 = new Shadow();
-            shadow1.Enabled = false;
-            Shadow shadow2 = shadow1;
-            this.Shadow_DefaultValue = shadow1;
-            this.Shadow = shadow2;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
             this.Shape = this.Shape_DefaultValue = PlotOptionsFlagsShape.Flag;
             nullable1 = new bool?(false);
             this.ShowCheckbox_DefaultValue = nullable1;
@@ -255,12 +254,17 @@ namespace Highsoft.Web.Mvc.Stocks
             nullable4 = new bool?(true);
             this.StickyTracking_DefaultValue = nullable4;
             this.StickyTracking = nullable4;
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "fontSize", (object) "11px");
-            hashtable1.Add((object) "fontWeight", (object) "bold");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                }
+            };
             this.TextAlign = this.TextAlign_DefaultValue = PlotOptionsFlagsTextAlign.Center;
             nullable3 = new double?(0.0);
             this.Threshold_DefaultValue = nullable3;
@@ -283,17 +287,15 @@ namespace Highsoft.Web.Mvc.Stocks
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            bool? allowPointSelect = this.AllowPointSelect;
-            bool? selectDefaultValue = this.AllowPointSelect_DefaultValue;
-            if ((allowPointSelect.GetValueOrDefault() == selectDefaultValue.GetValueOrDefault()
-                    ? (allowPointSelect.HasValue != selectDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            bool? nullable1 = this.AllowPointSelect;
+            bool? nullable2 = this.AllowPointSelect_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "allowPointSelect", (object) this.AllowPointSelect);
-            double? animationLimit = this.AnimationLimit;
-            double? nullable1 = this.AnimationLimit_DefaultValue;
-            if ((animationLimit.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (animationLimit.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable3 = this.AnimationLimit;
+            double? nullable4 = this.AnimationLimit_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "animationLimit", (object) this.AnimationLimit);
             if (this.ClassName != this.ClassName_DefaultValue)
                 hashtable.Add((object) "className", (object) this.ClassName);
@@ -301,11 +303,10 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "color", (object) this.Color);
             if (this.Colors != this.Colors_DefaultValue)
                 hashtable.Add((object) "colors", (object) this.Colors);
-            nullable1 = this.CropThreshold;
-            double? nullable2 = this.CropThreshold_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable4 = this.CropThreshold;
+            nullable3 = this.CropThreshold_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "cropThreshold", (object) this.CropThreshold);
             if (this.Cursor != this.Cursor_DefaultValue)
                 hashtable.Add((object) "cursor", (object) Highstock.FirstCharacterToLower(this.Cursor.ToString()));
@@ -313,43 +314,38 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "dataLabels", (object) this.DataLabels.ToHashtable());
             if (this.Description != this.Description_DefaultValue)
                 hashtable.Add((object) "description", (object) this.Description);
-            bool? enableMouseTracking = this.EnableMouseTracking;
-            bool? nullable3 = this.EnableMouseTracking_DefaultValue;
-            if ((enableMouseTracking.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (enableMouseTracking.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.EnableMouseTracking;
+            nullable1 = this.EnableMouseTracking_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "enableMouseTracking", (object) this.EnableMouseTracking);
             if (this.Events.IsDirty())
                 hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-            nullable3 = this.GetExtremesFromAll;
-            bool? nullable4 = this.GetExtremesFromAll_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.GetExtremesFromAll;
+            nullable2 = this.GetExtremesFromAll_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "getExtremesFromAll", (object) this.GetExtremesFromAll);
             if (this.Keys != this.Keys_DefaultValue)
                 hashtable.Add((object) "keys", (object) this.Keys);
-            nullable2 = this.LegendIndex;
-            nullable1 = this.LegendIndex_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable3 = this.LegendIndex;
+            nullable4 = this.LegendIndex_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "legendIndex", (object) this.LegendIndex);
             if (this.LineColor != this.LineColor_DefaultValue)
                 hashtable.Add((object) "lineColor", (object) this.LineColor);
-            nullable1 = this.LineWidth;
-            nullable2 = this.LineWidth_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable4 = this.LineWidth;
+            nullable3 = this.LineWidth_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "lineWidth", (object) this.LineWidth);
             if (this.LinkedTo != this.LinkedTo_DefaultValue)
                 hashtable.Add((object) "linkedTo", (object) this.LinkedTo);
-            nullable2 = this.MaxPointWidth;
-            nullable1 = this.MaxPointWidth_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable3 = this.MaxPointWidth;
+            nullable4 = this.MaxPointWidth_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "maxPointWidth", (object) this.MaxPointWidth);
             if (this.NavigatorOptions != this.NavigatorOptions_DefaultValue)
                 hashtable.Add((object) "navigatorOptions", this.NavigatorOptions);
@@ -364,85 +360,74 @@ namespace Highsoft.Web.Mvc.Stocks
             if (this.PointIntervalUnit != this.PointIntervalUnit_DefaultValue)
                 hashtable.Add((object) "pointIntervalUnit",
                     (object) Highstock.FirstCharacterToLower(this.PointIntervalUnit.ToString()));
-            nullable4 = this.Selected;
-            nullable3 = this.Selected_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.Selected;
+            nullable1 = this.Selected_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "selected", (object) this.Selected);
             if (this.Shadow != this.Shadow_DefaultValue)
                 hashtable.Add((object) "shadow", (object) this.Shadow);
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) Highstock.FirstCharacterToLower(this.Shape.ToString()));
-            nullable3 = this.ShowCheckbox;
-            nullable4 = this.ShowCheckbox_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.ShowCheckbox;
+            nullable2 = this.ShowCheckbox_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "showCheckbox", (object) this.ShowCheckbox);
-            nullable4 = this.ShowInLegend;
-            nullable3 = this.ShowInLegend_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.ShowInLegend;
+            nullable1 = this.ShowInLegend_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "showInLegend", (object) this.ShowInLegend);
-            nullable3 = this.ShowInNavigator;
-            nullable4 = this.ShowInNavigator_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.ShowInNavigator;
+            nullable2 = this.ShowInNavigator_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "showInNavigator", (object) this.ShowInNavigator);
-            nullable4 = this.SoftThreshold;
-            nullable3 = this.SoftThreshold_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.SoftThreshold;
+            nullable1 = this.SoftThreshold_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "softThreshold", (object) this.SoftThreshold);
-            nullable1 = this.StackDistance;
-            nullable2 = this.StackDistance_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable4 = this.StackDistance;
+            nullable3 = this.StackDistance_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "stackDistance", (object) this.StackDistance);
             if (this.States.IsDirty())
                 hashtable.Add((object) "states", (object) this.States.ToHashtable());
-            nullable3 = this.StickyTracking;
-            nullable4 = this.StickyTracking_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.StickyTracking;
+            nullable2 = this.StickyTracking_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "stickyTracking", (object) this.StickyTracking);
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);
             if (this.TextAlign != this.TextAlign_DefaultValue)
                 hashtable.Add((object) "textAlign", (object) Highstock.FirstCharacterToLower(this.TextAlign.ToString()));
-            nullable2 = this.Threshold;
-            nullable1 = this.Threshold_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable3 = this.Threshold;
+            nullable4 = this.Threshold_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "threshold", (object) this.Threshold);
             if (this.Title != this.Title_DefaultValue)
                 hashtable.Add((object) "title", (object) this.Title);
             if (this.Tooltip.IsDirty())
                 hashtable.Add((object) "tooltip", (object) this.Tooltip.ToHashtable());
-            nullable4 = this.UseHTML;
-            nullable3 = this.UseHTML_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.UseHTML;
+            nullable1 = this.UseHTML_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
-            nullable3 = this.Visible;
-            nullable4 = this.Visible_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.Visible;
+            nullable2 = this.Visible_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "visible", (object) this.Visible);
-            nullable1 = this.Y;
-            nullable2 = this.Y_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable4 = this.Y;
+            nullable3 = this.Y_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             if (this.ZoneAxis != this.ZoneAxis_DefaultValue)
                 hashtable.Add((object) "zoneAxis", (object) this.ZoneAxis);

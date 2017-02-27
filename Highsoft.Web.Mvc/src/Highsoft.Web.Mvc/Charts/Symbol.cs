@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
             Hashtable hashtable = new Hashtable();
             if (this.Url != null)
                 hashtable.Add((object) "symbol", (object) this.Url);
-            else if (this.SymbolEnum != SymbolEnum.Null)
+            else if ((uint) this.SymbolEnum > 0U)
                 hashtable.Add((object) "symbol", (object) this.SymbolEnum.ToString().ToLower());
             return hashtable;
         }
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
         {
             if (this.Url != null)
                 return this.Url.ToString();
-            if (this.SymbolEnum != SymbolEnum.Null)
+            if ((uint) this.SymbolEnum > 0U)
                 return this.SymbolEnum.ToString().ToLower();
             return "";
         }

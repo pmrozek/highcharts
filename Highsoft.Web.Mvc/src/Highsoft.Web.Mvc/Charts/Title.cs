@@ -55,12 +55,17 @@ namespace Highsoft.Web.Mvc.Charts
             this.Floating_DefaultValue = nullable1;
             this.Floating = nullable1;
             this.Margin = this.Margin_DefaultValue = new string[0];
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "color", (object) "#333333");
-            hashtable1.Add((object) "fontSize", (object) "18px");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#333333"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "18px"
+                }
+            };
             this.Text = this.Text_DefaultValue = "Chart title";
             nullable1 = new bool?(false);
             this.UseHTML_DefaultValue = nullable1;
@@ -84,9 +89,8 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "align", (object) Highcharts.FirstCharacterToLower(this.Align.ToString()));
             bool? nullable1 = this.Floating;
             bool? nullable2 = this.Floating_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "floating", (object) this.Floating);
             if (this.Margin != this.Margin_DefaultValue)
                 hashtable.Add((object) "margin", (object) this.Margin);
@@ -96,30 +100,26 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "text", (object) this.Text);
             nullable2 = this.UseHTML;
             nullable1 = this.UseHTML_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
             if (this.VerticalAlign != this.VerticalAlign_DefaultValue)
                 hashtable.Add((object) "verticalAlign",
                     (object) Highcharts.FirstCharacterToLower(this.VerticalAlign.ToString()));
             double? nullable3 = this.WidthAdjust;
             double? nullable4 = this.WidthAdjust_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "widthAdjust", (object) this.WidthAdjust);
             nullable4 = this.X;
             nullable3 = this.X_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "x", (object) this.X);
             nullable3 = this.Y;
             nullable4 = this.Y_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }

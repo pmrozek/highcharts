@@ -35,11 +35,10 @@ namespace Highsoft.Web.Mvc.Stocks
         public LegendNavigation()
         {
             this.ActiveColor = this.ActiveColor_DefaultValue = "#003399";
-            Animation animation1 = new Animation();
-            animation1.Enabled = true;
-            Animation animation2 = animation1;
-            this.Animation_DefaultValue = animation1;
-            this.Animation = animation2;
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
             double? nullable1 = new double?(12.0);
             this.ArrowSize_DefaultValue = nullable1;
             this.ArrowSize = nullable1;
@@ -59,15 +58,13 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "animation", (object) this.Animation.ToJSON());
             double? arrowSize = this.ArrowSize;
             double? sizeDefaultValue = this.ArrowSize_DefaultValue;
-            if ((arrowSize.GetValueOrDefault() == sizeDefaultValue.GetValueOrDefault()
-                    ? (arrowSize.HasValue != sizeDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (arrowSize.GetValueOrDefault() != sizeDefaultValue.GetValueOrDefault() ||
+                arrowSize.HasValue != sizeDefaultValue.HasValue)
                 hashtable.Add((object) "arrowSize", (object) this.ArrowSize);
             bool? enabled = this.Enabled;
             bool? enabledDefaultValue = this.Enabled_DefaultValue;
-            if ((enabled.GetValueOrDefault() == enabledDefaultValue.GetValueOrDefault()
-                    ? (enabled.HasValue != enabledDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (enabled.GetValueOrDefault() != enabledDefaultValue.GetValueOrDefault() ||
+                enabled.HasValue != enabledDefaultValue.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.InactiveColor != this.InactiveColor_DefaultValue)
                 hashtable.Add((object) "inactiveColor", (object) this.InactiveColor);

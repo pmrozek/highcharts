@@ -112,11 +112,13 @@ namespace Highsoft.Web.Mvc.Stocks
             bool? nullable3 = new bool?();
             this.InputEnabled_DefaultValue = nullable3;
             this.InputEnabled = nullable3;
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "align", (object) "right");
-            Hashtable hashtable2 = hashtable1;
-            this.InputPosition_DefaultValue = hashtable1;
-            this.InputPosition = hashtable2;
+            this.InputPosition = this.InputPosition_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "align",
+                    (object) "right"
+                }
+            };
             this.InputStyle = this.InputStyle_DefaultValue = new Hashtable();
             this.LabelStyle = this.LabelStyle_DefaultValue = new Hashtable();
             double? nullable4 = new double?();
@@ -127,19 +129,17 @@ namespace Highsoft.Web.Mvc.Stocks
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            bool? allButtonsEnabled = this.AllButtonsEnabled;
-            bool? enabledDefaultValue1 = this.AllButtonsEnabled_DefaultValue;
-            if ((allButtonsEnabled.GetValueOrDefault() == enabledDefaultValue1.GetValueOrDefault()
-                    ? (allButtonsEnabled.HasValue != enabledDefaultValue1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            bool? nullable1 = this.AllButtonsEnabled;
+            bool? nullable2 = this.AllButtonsEnabled_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "allButtonsEnabled", (object) this.AllButtonsEnabled);
             if (this.ButtonPosition != this.ButtonPosition_DefaultValue)
                 hashtable.Add((object) "buttonPosition", this.ButtonPosition);
-            double? buttonSpacing = this.ButtonSpacing;
-            double? nullable1 = this.ButtonSpacing_DefaultValue;
-            if ((buttonSpacing.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (buttonSpacing.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable3 = this.ButtonSpacing;
+            double? nullable4 = this.ButtonSpacing_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "buttonSpacing", (object) this.ButtonSpacing);
             if (this.ButtonTheme != this.ButtonTheme_DefaultValue)
                 hashtable.Add((object) "buttonTheme", this.ButtonTheme);
@@ -150,31 +150,27 @@ namespace Highsoft.Web.Mvc.Stocks
                     hashtableList.Add(button.ToHashtable());
                 hashtable.Add((object) "buttons", (object) hashtableList);
             }
-            bool? enabled = this.Enabled;
-            bool? nullable2 = this.Enabled_DefaultValue;
-            if ((enabled.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (enabled.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.Enabled;
+            nullable1 = this.Enabled_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
-            nullable1 = this.Height;
-            double? nullable3 = this.Height_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable4 = this.Height;
+            nullable3 = this.Height_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "height", (object) this.Height);
             if (this.InputBoxBorderColor != this.InputBoxBorderColor_DefaultValue)
                 hashtable.Add((object) "inputBoxBorderColor", (object) this.InputBoxBorderColor);
             nullable3 = this.InputBoxHeight;
-            nullable1 = this.InputBoxHeight_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable4 = this.InputBoxHeight_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "inputBoxHeight", (object) this.InputBoxHeight);
-            nullable1 = this.InputBoxWidth;
+            nullable4 = this.InputBoxWidth;
             nullable3 = this.InputBoxWidth_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "inputBoxWidth", (object) this.InputBoxWidth);
             if (this.InputDateFormat != this.InputDateFormat_DefaultValue)
                 hashtable.Add((object) "inputDateFormat", (object) this.InputDateFormat);
@@ -185,11 +181,10 @@ namespace Highsoft.Web.Mvc.Stocks
             }
             if (this.InputEditDateFormat != this.InputEditDateFormat_DefaultValue)
                 hashtable.Add((object) "inputEditDateFormat", (object) this.InputEditDateFormat);
-            nullable2 = this.InputEnabled;
-            bool? enabledDefaultValue2 = this.InputEnabled_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == enabledDefaultValue2.GetValueOrDefault()
-                    ? (nullable2.HasValue != enabledDefaultValue2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.InputEnabled;
+            nullable2 = this.InputEnabled_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "inputEnabled", (object) this.InputEnabled);
             if (this.InputPosition != this.InputPosition_DefaultValue)
                 hashtable.Add((object) "inputPosition", (object) this.InputPosition);
@@ -198,10 +193,9 @@ namespace Highsoft.Web.Mvc.Stocks
             if (this.LabelStyle != this.LabelStyle_DefaultValue)
                 hashtable.Add((object) "labelStyle", (object) this.LabelStyle);
             nullable3 = this.Selected;
-            nullable1 = this.Selected_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable4 = this.Selected_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "selected", (object) this.Selected);
             return hashtable;
         }

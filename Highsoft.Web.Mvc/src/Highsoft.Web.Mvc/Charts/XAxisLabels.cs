@@ -80,11 +80,10 @@ namespace Highsoft.Web.Mvc.Charts
         public XAxisLabels()
         {
             this.Align = this.Align_DefaultValue = XAxisLabelsAlign.Center;
-            List<double> doubleList1 = new List<double>();
-            doubleList1.Add(-45.0);
-            List<double> doubleList2 = doubleList1;
-            this.AutoRotation_DefaultValue = doubleList1;
-            this.AutoRotation = doubleList2;
+            this.AutoRotation = this.AutoRotation_DefaultValue = new List<double>()
+            {
+                -45.0
+            };
             double? nullable1 = new double?(80.0);
             this.AutoRotationLimit_DefaultValue = nullable1;
             this.AutoRotationLimit = nullable1;
@@ -111,13 +110,21 @@ namespace Highsoft.Web.Mvc.Charts
             double? nullable4 = new double?();
             this.Step_DefaultValue = nullable4;
             this.Step = nullable4;
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "color", (object) "#666666");
-            hashtable1.Add((object) "cursor", (object) "default");
-            hashtable1.Add((object) "fontSize", (object) "11px");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#666666"
+                },
+                {
+                    (object) "cursor",
+                    (object) "default"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                }
+            };
             nullable2 = new bool?(false);
             this.UseHTML_DefaultValue = nullable2;
             this.UseHTML = nullable2;
@@ -141,21 +148,18 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "autoRotation", (object) this.AutoRotation);
             double? nullable1 = this.AutoRotationLimit;
             double? nullable2 = this.AutoRotationLimit_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "autoRotationLimit", (object) this.AutoRotationLimit);
             nullable2 = this.Distance;
             nullable1 = this.Distance_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "distance", (object) this.Distance);
             bool? nullable3 = this.Enabled;
             bool? nullable4 = this.Enabled_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.Format != this.Format_DefaultValue)
                 hashtable.Add((object) "format", (object) this.Format);
@@ -166,59 +170,50 @@ namespace Highsoft.Web.Mvc.Charts
             }
             nullable1 = this.Padding;
             nullable2 = this.Padding_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "padding", (object) this.Padding);
             nullable4 = this.ReserveSpace;
             nullable3 = this.ReserveSpace_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "reserveSpace", (object) this.ReserveSpace);
             nullable2 = this.Rotation;
             nullable1 = this.Rotation_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "rotation", (object) this.Rotation);
             nullable1 = this.StaggerLines;
             nullable2 = this.StaggerLines_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "staggerLines", (object) this.StaggerLines);
             nullable2 = this.Step;
             nullable1 = this.Step_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "step", (object) this.Step);
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);
             nullable3 = this.UseHTML;
             nullable4 = this.UseHTML_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
             nullable1 = this.X;
             nullable2 = this.X_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "x", (object) this.X);
             nullable2 = this.Y;
             nullable1 = this.Y_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             nullable1 = this.ZIndex;
             nullable2 = this.ZIndex_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             return hashtable;
         }

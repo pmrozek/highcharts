@@ -4,7 +4,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Highsoft.Web.Mvc.Charts.Rendering;
 
 namespace Highsoft.Web.Mvc.Charts
 {
@@ -301,11 +300,6 @@ namespace Highsoft.Web.Mvc.Charts
             this.MaxColor = this.MaxColor_DefaultValue = (string) null;
         }
 
-        public string ToJsonChartOptions()
-        {
-            return new HighchartsRenderer(this).GetStartupOptions();
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -409,27 +403,23 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "stops", (object) this.HashifyList((IEnumerable) this.Stops));
             double? nullable1 = this.Min;
             double? nullable2 = this.Min_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "min", (object) this.Min);
             nullable2 = this.Max;
             nullable1 = this.Max_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "max", (object) this.Max);
             bool? nullable3 = this.StartOnTick;
             bool? nullable4 = this.StartOnTick_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "startOnTick", (object) this.StartOnTick);
             nullable4 = this.EndOnTick;
             nullable3 = this.EndOnTick_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "endOnTick", (object) this.EndOnTick);
             if (this.MinColor != this.MinColor_DefaultValue)
                 hashtable.Add((object) "minColor", (object) this.MinColor);

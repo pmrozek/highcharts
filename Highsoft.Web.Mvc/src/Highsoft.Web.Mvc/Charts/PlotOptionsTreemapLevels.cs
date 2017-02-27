@@ -64,11 +64,10 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
             if (this.BorderDashStyle != this.BorderDashStyle_DefaultValue)
                 hashtable.Add((object) "borderDashStyle", (object) this.BorderDashStyle);
-            double? borderWidth = this.BorderWidth;
-            double? nullable = this.BorderWidth_DefaultValue;
-            if ((borderWidth.GetValueOrDefault() == nullable.GetValueOrDefault()
-                    ? (borderWidth.HasValue != nullable.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.BorderWidth;
+            double? nullable2 = this.BorderWidth_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
@@ -80,11 +79,10 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.LayoutStartingDirection != this.LayoutStartingDirection_DefaultValue)
                 hashtable.Add((object) "layoutStartingDirection",
                     (object) Highcharts.FirstCharacterToLower(this.LayoutStartingDirection.ToString()));
-            nullable = this.Level;
-            double? levelDefaultValue = this.Level_DefaultValue;
-            if ((nullable.GetValueOrDefault() == levelDefaultValue.GetValueOrDefault()
-                    ? (nullable.HasValue != levelDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.Level;
+            nullable1 = this.Level_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "level", (object) this.Level);
             return hashtable;
         }

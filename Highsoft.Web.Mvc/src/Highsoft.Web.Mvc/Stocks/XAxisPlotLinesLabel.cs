@@ -65,11 +65,10 @@ namespace Highsoft.Web.Mvc.Stocks
             Hashtable hashtable = new Hashtable();
             if (this.Align != this.Align_DefaultValue)
                 hashtable.Add((object) "align", (object) this.Align);
-            double? rotation = this.Rotation;
-            double? nullable1 = this.Rotation_DefaultValue;
-            if ((rotation.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (rotation.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.Rotation;
+            double? nullable2 = this.Rotation_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "rotation", (object) this.Rotation);
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);
@@ -77,24 +76,21 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "textAlign", (object) this.TextAlign);
             bool? useHtml = this.UseHTML;
             bool? htmlDefaultValue = this.UseHTML_DefaultValue;
-            if ((useHtml.GetValueOrDefault() == htmlDefaultValue.GetValueOrDefault()
-                    ? (useHtml.HasValue != htmlDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (useHtml.GetValueOrDefault() != htmlDefaultValue.GetValueOrDefault() ||
+                useHtml.HasValue != htmlDefaultValue.HasValue)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
             if (this.VerticalAlign != this.VerticalAlign_DefaultValue)
                 hashtable.Add((object) "verticalAlign",
                     (object) Highstock.FirstCharacterToLower(this.VerticalAlign.ToString()));
-            nullable1 = this.X;
-            double? nullable2 = this.X_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.X;
+            nullable1 = this.X_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "x", (object) this.X);
-            nullable2 = this.Y;
-            nullable1 = this.Y_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.Y;
+            nullable2 = this.Y_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }

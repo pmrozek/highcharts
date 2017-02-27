@@ -66,21 +66,18 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "label", (object) this.Label.ToHashtable());
             bool? snap = this.Snap;
             bool? snapDefaultValue = this.Snap_DefaultValue;
-            if ((snap.GetValueOrDefault() == snapDefaultValue.GetValueOrDefault()
-                    ? (snap.HasValue != snapDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (snap.GetValueOrDefault() != snapDefaultValue.GetValueOrDefault() ||
+                snap.HasValue != snapDefaultValue.HasValue)
                 hashtable.Add((object) "snap", (object) this.Snap);
-            double? width = this.Width;
-            double? nullable = this.Width_DefaultValue;
-            if ((width.GetValueOrDefault() == nullable.GetValueOrDefault()
-                    ? (width.HasValue != nullable.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.Width;
+            double? nullable2 = this.Width_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "width", (object) this.Width);
-            nullable = this.ZIndex;
-            double? zindexDefaultValue = this.ZIndex_DefaultValue;
-            if ((nullable.GetValueOrDefault() == zindexDefaultValue.GetValueOrDefault()
-                    ? (nullable.HasValue != zindexDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.ZIndex;
+            nullable1 = this.ZIndex_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             return hashtable;
         }

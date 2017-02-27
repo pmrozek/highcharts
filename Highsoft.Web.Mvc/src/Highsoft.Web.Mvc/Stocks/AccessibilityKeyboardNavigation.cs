@@ -29,17 +29,15 @@ namespace Highsoft.Web.Mvc.Stocks
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            bool? enabled = this.Enabled;
-            bool? enabledDefaultValue = this.Enabled_DefaultValue;
-            if ((enabled.GetValueOrDefault() == enabledDefaultValue.GetValueOrDefault()
-                    ? (enabled.HasValue != enabledDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            bool? nullable1 = this.Enabled;
+            bool? nullable2 = this.Enabled_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
-            bool? skipNullPoints = this.SkipNullPoints;
-            bool? pointsDefaultValue = this.SkipNullPoints_DefaultValue;
-            if ((skipNullPoints.GetValueOrDefault() == pointsDefaultValue.GetValueOrDefault()
-                    ? (skipNullPoints.HasValue != pointsDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.SkipNullPoints;
+            nullable1 = this.SkipNullPoints_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "skipNullPoints", (object) this.SkipNullPoints);
             return hashtable;
         }

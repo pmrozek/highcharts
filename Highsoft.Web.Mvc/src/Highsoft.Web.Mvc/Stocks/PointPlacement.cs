@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
             Hashtable hashtable = new Hashtable();
             if (this.Value.HasValue)
                 hashtable.Add((object) "pointPlacement", (object) this.Value);
-            else if (this.PointPlacementEnum != PointPlacementEnum.Null)
+            else if ((uint) this.PointPlacementEnum > 0U)
                 hashtable.Add((object) "pointPlacement", (object) this.PointPlacementEnum.ToString().ToLower());
             return hashtable;
         }
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
         {
             if (this.Value.HasValue)
                 return this.Value.ToString();
-            if (this.PointPlacementEnum != PointPlacementEnum.Null)
+            if ((uint) this.PointPlacementEnum > 0U)
                 return this.PointPlacementEnum.ToString().ToLower();
             return "";
         }

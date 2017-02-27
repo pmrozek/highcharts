@@ -65,29 +65,26 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "backgroundColor", (object) this.BackgroundColor);
             if (this.BaseLength != this.BaseLength_DefaultValue)
                 hashtable.Add((object) "baseLength", (object) this.BaseLength);
-            double? baseWidth = this.BaseWidth;
-            double? nullable1 = this.BaseWidth_DefaultValue;
-            if ((baseWidth.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (baseWidth.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.BaseWidth;
+            double? nullable2 = this.BaseWidth_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "baseWidth", (object) this.BaseWidth);
             if (this.BorderColor != this.BorderColor_DefaultValue)
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
-            nullable1 = this.BorderWidth;
-            double? nullable2 = this.BorderWidth_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.BorderWidth;
+            nullable1 = this.BorderWidth_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.Radius != this.Radius_DefaultValue)
                 hashtable.Add((object) "radius", (object) this.Radius);
             if (this.RearLength != this.RearLength_DefaultValue)
                 hashtable.Add((object) "rearLength", (object) this.RearLength);
-            nullable2 = this.TopWidth;
-            nullable1 = this.TopWidth_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.TopWidth;
+            nullable2 = this.TopWidth_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "topWidth", (object) this.TopWidth);
             return hashtable;
         }

@@ -62,37 +62,32 @@ namespace Highsoft.Web.Mvc.Charts
             Hashtable hashtable = new Hashtable();
             bool? enabled = this.Enabled;
             bool? enabledDefaultValue = this.Enabled_DefaultValue;
-            if ((enabled.GetValueOrDefault() == enabledDefaultValue.GetValueOrDefault()
-                    ? (enabled.HasValue != enabledDefaultValue.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (enabled.GetValueOrDefault() != enabledDefaultValue.GetValueOrDefault() ||
+                enabled.HasValue != enabledDefaultValue.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.FillColor != this.FillColor_DefaultValue)
                 hashtable.Add((object) "fillColor", (object) this.FillColor);
             if (this.LineColor != this.LineColor_DefaultValue)
                 hashtable.Add((object) "lineColor", (object) this.LineColor);
-            double? lineWidth = this.LineWidth;
-            double? nullable1 = this.LineWidth_DefaultValue;
-            if ((lineWidth.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (lineWidth.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            double? nullable1 = this.LineWidth;
+            double? nullable2 = this.LineWidth_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "lineWidth", (object) this.LineWidth);
-            nullable1 = this.LineWidthPlus;
-            double? nullable2 = this.LineWidthPlus_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.LineWidthPlus;
+            nullable1 = this.LineWidthPlus_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "lineWidthPlus", (object) this.LineWidthPlus);
-            nullable2 = this.Radius;
-            nullable1 = this.Radius_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable1 = this.Radius;
+            nullable2 = this.Radius_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "radius", (object) this.Radius);
-            nullable1 = this.RadiusPlus;
-            nullable2 = this.RadiusPlus_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            nullable2 = this.RadiusPlus;
+            nullable1 = this.RadiusPlus_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "radiusPlus", (object) this.RadiusPlus);
             return hashtable;
         }

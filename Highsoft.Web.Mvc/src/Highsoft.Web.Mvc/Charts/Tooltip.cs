@@ -122,11 +122,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         public Tooltip()
         {
-            Animation animation1 = new Animation();
-            animation1.Enabled = true;
-            Animation animation2 = animation1;
-            this.Animation_DefaultValue = animation1;
-            this.Animation = animation2;
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
             this.BackgroundColor = this.BackgroundColor_DefaultValue = "rgba(247,247,247,0.85)";
             this.BorderColor = this.BorderColor_DefaultValue = "null";
             double? nullable1 = new double?(3.0);
@@ -159,11 +158,10 @@ namespace Highsoft.Web.Mvc.Charts
                     "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
             this.PointFormatter = this.PointFormatter_DefaultValue = "";
             this.Positioner = this.Positioner_DefaultValue = "";
-            Shadow shadow1 = new Shadow();
-            shadow1.Enabled = false;
-            Shadow shadow2 = shadow1;
-            this.Shadow_DefaultValue = shadow1;
-            this.Shadow = shadow2;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
             this.Shape = this.Shape_DefaultValue = "callout";
             nullable2 = new bool?(false);
             this.Shared_DefaultValue = nullable2;
@@ -174,15 +172,29 @@ namespace Highsoft.Web.Mvc.Charts
             nullable2 = new bool?(false);
             this.Split_DefaultValue = nullable2;
             this.Split = nullable2;
-            Hashtable hashtable1 = new Hashtable();
-            hashtable1.Add((object) "color", (object) "#333333");
-            hashtable1.Add((object) "cursor", (object) "default");
-            hashtable1.Add((object) "fontSize", (object) "12px");
-            hashtable1.Add((object) "pointerEvents", (object) "none");
-            hashtable1.Add((object) "whiteSpace", (object) "nowrap");
-            Hashtable hashtable2 = hashtable1;
-            this.Style_DefaultValue = hashtable1;
-            this.Style = hashtable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#333333"
+                },
+                {
+                    (object) "cursor",
+                    (object) "default"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "12px"
+                },
+                {
+                    (object) "pointerEvents",
+                    (object) "none"
+                },
+                {
+                    (object) "whiteSpace",
+                    (object) "nowrap"
+                }
+            };
             nullable2 = new bool?(false);
             this.UseHTML_DefaultValue = nullable2;
             this.UseHTML = nullable2;
@@ -205,35 +217,30 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "borderColor", (object) this.BorderColor);
             double? nullable1 = this.BorderRadius;
             double? nullable2 = this.BorderRadius_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "borderRadius", (object) this.BorderRadius);
             nullable2 = this.BorderWidth;
             nullable1 = this.BorderWidth_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.DateTimeLabelFormats != this.DateTimeLabelFormats_DefaultValue)
                 hashtable.Add((object) "dateTimeLabelFormats", (object) this.DateTimeLabelFormats);
             bool? nullable3 = this.Enabled;
             bool? nullable4 = this.Enabled_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             nullable4 = this.FollowPointer;
             nullable3 = this.FollowPointer_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "followPointer", (object) this.FollowPointer);
             nullable3 = this.FollowTouchMove;
             nullable4 = this.FollowTouchMove_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "followTouchMove", (object) this.FollowTouchMove);
             if (this.FooterFormat != this.FooterFormat_DefaultValue)
                 hashtable.Add((object) "footerFormat", (object) this.FooterFormat);
@@ -246,15 +253,13 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "headerFormat", (object) this.HeaderFormat);
             nullable1 = this.HideDelay;
             nullable2 = this.HideDelay_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "hideDelay", (object) this.HideDelay);
             nullable2 = this.Padding;
             nullable1 = this.Padding_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "padding", (object) this.Padding);
             if (this.PointFormat != this.PointFormat_DefaultValue)
                 hashtable.Add((object) "pointFormat", (object) this.PointFormat);
@@ -274,35 +279,30 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "shape", (object) this.Shape);
             nullable4 = this.Shared;
             nullable3 = this.Shared_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "shared", (object) this.Shared);
             nullable1 = this.Snap;
             nullable2 = this.Snap_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "snap", (object) this.Snap);
             nullable3 = this.Split;
             nullable4 = this.Split_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "split", (object) this.Split);
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);
             nullable4 = this.UseHTML;
             nullable3 = this.UseHTML_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "useHTML", (object) this.UseHTML);
             nullable2 = this.ValueDecimals;
             nullable1 = this.ValueDecimals_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "valueDecimals", (object) this.ValueDecimals);
             if (this.ValuePrefix != this.ValuePrefix_DefaultValue)
                 hashtable.Add((object) "valuePrefix", (object) this.ValuePrefix);

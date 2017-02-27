@@ -35,13 +35,13 @@ namespace Highsoft.Web.Mvc.Charts
             Hashtable hashtable = new Hashtable();
             if (!string.IsNullOrEmpty(this.Color))
                 hashtable.Add((object) "color", (object) this.Color);
-            if (this.OffsetX != 0)
+            if ((uint) this.OffsetX > 0U)
                 hashtable.Add((object) "offsetX", (object) this.OffsetX);
-            if (this.OffsetY != 0)
+            if ((uint) this.OffsetY > 0U)
                 hashtable.Add((object) "offsetY", (object) this.OffsetY);
             if (this.Opacity != 0.0)
                 hashtable.Add((object) "opacity", (object) this.Opacity);
-            if (this.Width != 0)
+            if ((uint) this.Width > 0U)
                 hashtable.Add((object) "width", (object) this.Width);
             return hashtable;
         }
@@ -55,9 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override bool IsDirty()
         {
-            if (!this.Enabled)
-                return this.ToHashtable().Count > 0;
-            return true;
+            return this.Enabled || this.ToHashtable().Count > 0;
         }
     }
 }

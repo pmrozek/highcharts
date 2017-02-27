@@ -143,21 +143,18 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "decimalPoint", (object) this.DecimalPoint);
             double? nullable1 = this.EndColumn;
             double? nullable2 = this.EndColumn_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "endColumn", (object) this.EndColumn);
             nullable2 = this.EndRow;
             nullable1 = this.EndRow_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "endRow", (object) this.EndRow);
             bool? nullable3 = this.FirstRowAsNames;
             bool? nullable4 = this.FirstRowAsNames_DefaultValue;
-            if ((nullable3.GetValueOrDefault() == nullable4.GetValueOrDefault()
-                    ? (nullable3.HasValue != nullable4.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "firstRowAsNames", (object) this.FirstRowAsNames);
             if (this.GoogleSpreadsheetKey != this.GoogleSpreadsheetKey_DefaultValue)
                 hashtable.Add((object) "googleSpreadsheetKey", (object) this.GoogleSpreadsheetKey);
@@ -183,21 +180,18 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "seriesMapping", (object) this.SeriesMapping);
             nullable1 = this.StartColumn;
             nullable2 = this.StartColumn_DefaultValue;
-            if ((nullable1.GetValueOrDefault() == nullable2.GetValueOrDefault()
-                    ? (nullable1.HasValue != nullable2.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "startColumn", (object) this.StartColumn);
             nullable2 = this.StartRow;
             nullable1 = this.StartRow_DefaultValue;
-            if ((nullable2.GetValueOrDefault() == nullable1.GetValueOrDefault()
-                    ? (nullable2.HasValue != nullable1.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "startRow", (object) this.StartRow);
             nullable4 = this.SwitchRowsAndColumns;
             nullable3 = this.SwitchRowsAndColumns_DefaultValue;
-            if ((nullable4.GetValueOrDefault() == nullable3.GetValueOrDefault()
-                    ? (nullable4.HasValue != nullable3.HasValue ? 1 : 0)
-                    : 1) != 0)
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "switchRowsAndColumns", (object) this.SwitchRowsAndColumns);
             if (this.Table != this.Table_DefaultValue)
                 hashtable.Add((object) "table", (object) this.Table);
