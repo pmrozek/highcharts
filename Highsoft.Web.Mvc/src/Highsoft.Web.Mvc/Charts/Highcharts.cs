@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Highsoft.Web.Mvc.Charts.Rendering;
 
 namespace Highsoft.Web.Mvc.Charts
 {
@@ -298,6 +299,11 @@ namespace Highsoft.Web.Mvc.Charts
             this.EndOnTick = nullable3;
             this.MinColor = this.MinColor_DefaultValue = (string) null;
             this.MaxColor = this.MaxColor_DefaultValue = (string) null;
+        }
+
+        public string ToJsonOptions()
+        {
+            return new HighchartsRenderer(this).GetJsonOptions();
         }
 
         internal override Hashtable ToHashtable()

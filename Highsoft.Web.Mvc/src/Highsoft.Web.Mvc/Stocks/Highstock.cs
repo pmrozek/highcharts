@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Highsoft.Web.Mvc.Stocks.Rendering;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
@@ -248,6 +249,11 @@ namespace Highsoft.Web.Mvc.Stocks
             this.EndOnTick = nullable3;
             this.MinColor = this.MinColor_DefaultValue = (string) null;
             this.MaxColor = this.MaxColor_DefaultValue = (string) null;
+        }
+
+        public string ToJsonOptions()
+        {
+            return new HighstockRenderer(this).GetJsonOptions();
         }
 
         internal override Hashtable ToHashtable()
