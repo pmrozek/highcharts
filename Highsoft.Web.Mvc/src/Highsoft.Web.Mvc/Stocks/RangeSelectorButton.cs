@@ -8,6 +8,16 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class RangeSelectorButton : BaseObject
     {
+        public RangeSelectorButton()
+        {
+            double? nullable = new double?(0.0);
+            this.Count_DefaultValue = nullable;
+            this.Count = nullable;
+            this.DataGrouping = this.DataGrouping_DefaultValue = (object) null;
+            this.Text = this.Text_DefaultValue = "";
+            this.Type = this.Type_DefaultValue = RangeSelectorButtonsType.Null;
+        }
+
         public double? Count { get; set; }
 
         private double? Count_DefaultValue { get; set; }
@@ -23,16 +33,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public RangeSelectorButtonsType Type { get; set; }
 
         private RangeSelectorButtonsType Type_DefaultValue { get; set; }
-
-        public RangeSelectorButton()
-        {
-            double? nullable = new double?(1.0);
-            this.Count_DefaultValue = nullable;
-            this.Count = nullable;
-            this.DataGrouping = this.DataGrouping_DefaultValue = (object) null;
-            this.Text = this.Text_DefaultValue = "";
-            this.Type = this.Type_DefaultValue = RangeSelectorButtonsType.Null;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -53,7 +53,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,6 +8,91 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Tooltip : BaseObject
     {
+        public Tooltip()
+        {
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
+            this.BackgroundColor = this.BackgroundColor_DefaultValue = "rgba(247,247,247,0.85)";
+            this.BorderColor = this.BorderColor_DefaultValue = "null";
+            double? nullable1 = new double?(3.0);
+            this.BorderRadius_DefaultValue = nullable1;
+            this.BorderRadius = nullable1;
+            nullable1 = new double?(1.0);
+            this.BorderWidth_DefaultValue = nullable1;
+            this.BorderWidth = nullable1;
+            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
+            bool? nullable2 = new bool?(true);
+            this.Enabled_DefaultValue = nullable2;
+            this.Enabled = nullable2;
+            nullable2 = new bool?(false);
+            this.FollowPointer_DefaultValue = nullable2;
+            this.FollowPointer = nullable2;
+            nullable2 = new bool?(true);
+            this.FollowTouchMove_DefaultValue = nullable2;
+            this.FollowTouchMove = nullable2;
+            this.FooterFormat = this.FooterFormat_DefaultValue = "false";
+            this.Formatter = this.Formatter_DefaultValue = "";
+            this.HeaderFormat = this.HeaderFormat_DefaultValue = "";
+            nullable1 = new double?(500.0);
+            this.HideDelay_DefaultValue = nullable1;
+            this.HideDelay = nullable1;
+            nullable1 = new double?(8.0);
+            this.Padding_DefaultValue = nullable1;
+            this.Padding = nullable1;
+            this.PointFormat = this.PointFormat_DefaultValue =
+                "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+            this.PointFormatter = this.PointFormatter_DefaultValue = "";
+            this.Positioner = this.Positioner_DefaultValue = "";
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
+            this.Shape = this.Shape_DefaultValue = "callout";
+            nullable2 = new bool?(false);
+            this.Shared_DefaultValue = nullable2;
+            this.Shared = nullable2;
+            double? nullable3 = new double?();
+            this.Snap_DefaultValue = nullable3;
+            this.Snap = nullable3;
+            nullable2 = new bool?(false);
+            this.Split_DefaultValue = nullable2;
+            this.Split = nullable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#333333"
+                },
+                {
+                    (object) "cursor",
+                    (object) "default"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "12px"
+                },
+                {
+                    (object) "pointerEvents",
+                    (object) "none"
+                },
+                {
+                    (object) "whiteSpace",
+                    (object) "nowrap"
+                }
+            };
+            nullable2 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable2;
+            this.UseHTML = nullable2;
+            double? nullable4 = new double?();
+            this.ValueDecimals_DefaultValue = nullable4;
+            this.ValueDecimals = nullable4;
+            this.ValuePrefix = this.ValuePrefix_DefaultValue = (string) null;
+            this.ValueSuffix = this.ValueSuffix_DefaultValue = (string) null;
+            this.XDateFormat = this.XDateFormat_DefaultValue = (string) null;
+        }
+
         public Animation Animation { get; set; }
 
         private Animation Animation_DefaultValue { get; set; }
@@ -120,92 +205,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string XDateFormat_DefaultValue { get; set; }
 
-        public Tooltip()
-        {
-            this.Animation = this.Animation_DefaultValue = new Animation()
-            {
-                Enabled = true
-            };
-            this.BackgroundColor = this.BackgroundColor_DefaultValue = "rgba(247,247,247,0.85)";
-            this.BorderColor = this.BorderColor_DefaultValue = "null";
-            double? nullable1 = new double?(3.0);
-            this.BorderRadius_DefaultValue = nullable1;
-            this.BorderRadius = nullable1;
-            nullable1 = new double?(1.0);
-            this.BorderWidth_DefaultValue = nullable1;
-            this.BorderWidth = nullable1;
-            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
-            bool? nullable2 = new bool?(true);
-            this.Enabled_DefaultValue = nullable2;
-            this.Enabled = nullable2;
-            nullable2 = new bool?(false);
-            this.FollowPointer_DefaultValue = nullable2;
-            this.FollowPointer = nullable2;
-            nullable2 = new bool?(true);
-            this.FollowTouchMove_DefaultValue = nullable2;
-            this.FollowTouchMove = nullable2;
-            this.FooterFormat = this.FooterFormat_DefaultValue = "false";
-            this.Formatter = this.Formatter_DefaultValue = "";
-            this.HeaderFormat = this.HeaderFormat_DefaultValue = "";
-            nullable1 = new double?(500.0);
-            this.HideDelay_DefaultValue = nullable1;
-            this.HideDelay = nullable1;
-            nullable1 = new double?(8.0);
-            this.Padding_DefaultValue = nullable1;
-            this.Padding = nullable1;
-            this.PointFormat =
-                this.PointFormat_DefaultValue =
-                    "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
-            this.PointFormatter = this.PointFormatter_DefaultValue = "";
-            this.Positioner = this.Positioner_DefaultValue = "";
-            this.Shadow = this.Shadow_DefaultValue = new Shadow()
-            {
-                Enabled = false
-            };
-            this.Shape = this.Shape_DefaultValue = "callout";
-            nullable2 = new bool?(false);
-            this.Shared_DefaultValue = nullable2;
-            this.Shared = nullable2;
-            double? nullable3 = new double?();
-            this.Snap_DefaultValue = nullable3;
-            this.Snap = nullable3;
-            nullable2 = new bool?(false);
-            this.Split_DefaultValue = nullable2;
-            this.Split = nullable2;
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#333333"
-                },
-                {
-                    (object) "cursor",
-                    (object) "default"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "12px"
-                },
-                {
-                    (object) "pointerEvents",
-                    (object) "none"
-                },
-                {
-                    (object) "whiteSpace",
-                    (object) "nowrap"
-                }
-            };
-            nullable2 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable2;
-            this.UseHTML = nullable2;
-            double? nullable4 = new double?();
-            this.ValueDecimals_DefaultValue = nullable4;
-            this.ValueDecimals = nullable4;
-            this.ValuePrefix = this.ValuePrefix_DefaultValue = (string) null;
-            this.ValueSuffix = this.ValueSuffix_DefaultValue = (string) null;
-            this.XDateFormat = this.XDateFormat_DefaultValue = (string) null;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -273,8 +272,8 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "positioner", (object) this.Positioner);
                 Highcharts.AddFunction("TooltipPositioner.positioner", this.Positioner);
             }
-            if (this.Shadow != this.Shadow_DefaultValue)
-                hashtable.Add((object) "shadow", (object) this.Shadow);
+            if (this.Shadow.IsDirty())
+                hashtable.Add((object) "shadow", (object) this.Shadow.ToHashtable());
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) this.Shape);
             nullable4 = this.Shared;
@@ -315,7 +314,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

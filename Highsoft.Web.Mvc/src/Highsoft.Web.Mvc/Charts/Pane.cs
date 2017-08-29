@@ -9,6 +9,19 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Pane : BaseObject
     {
+        public Pane()
+        {
+            this.Background = this.Background_DefaultValue = new List<Highsoft.Web.Mvc.Charts.Background>();
+            this.Center = this.Center_DefaultValue = new string[2];
+            double? nullable1 = new double?();
+            this.EndAngle_DefaultValue = nullable1;
+            this.EndAngle = nullable1;
+            this.Size = this.Size_DefaultValue = "85%";
+            double? nullable2 = new double?();
+            this.StartAngle_DefaultValue = nullable2;
+            this.StartAngle = nullable2;
+        }
+
         public List<Highsoft.Web.Mvc.Charts.Background> Background { get; set; }
 
         private List<Highsoft.Web.Mvc.Charts.Background> Background_DefaultValue { get; set; }
@@ -28,19 +41,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? StartAngle { get; set; }
 
         private double? StartAngle_DefaultValue { get; set; }
-
-        public Pane()
-        {
-            this.Background = this.Background_DefaultValue = new List<Highsoft.Web.Mvc.Charts.Background>();
-            this.Center = this.Center_DefaultValue = new string[2];
-            double? nullable1 = new double?();
-            this.EndAngle_DefaultValue = nullable1;
-            this.EndAngle = nullable1;
-            this.Size = this.Size_DefaultValue = "85%";
-            double? nullable2 = new double?();
-            this.StartAngle_DefaultValue = nullable2;
-            this.StartAngle = nullable2;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -66,7 +66,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

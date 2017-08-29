@@ -8,6 +8,20 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class ColumnrangeSeriesStatesHover : BaseObject
     {
+        public ColumnrangeSeriesStatesHover()
+        {
+            bool? nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.Halo = this.Halo_DefaultValue = new ColumnrangeSeriesStatesHoverHalo();
+            double? nullable2 = new double?(2.0);
+            this.LineWidth_DefaultValue = nullable2;
+            this.LineWidth = nullable2;
+            nullable2 = new double?(1.0);
+            this.LineWidthPlus_DefaultValue = nullable2;
+            this.LineWidthPlus = nullable2;
+        }
+
         public bool? Enabled { get; set; }
 
         private bool? Enabled_DefaultValue { get; set; }
@@ -23,20 +37,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public double? LineWidthPlus { get; set; }
 
         private double? LineWidthPlus_DefaultValue { get; set; }
-
-        public ColumnrangeSeriesStatesHover()
-        {
-            bool? nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.Halo = this.Halo_DefaultValue = new ColumnrangeSeriesStatesHoverHalo();
-            double? nullable2 = new double?(2.0);
-            this.LineWidth_DefaultValue = nullable2;
-            this.LineWidth = nullable2;
-            nullable2 = new double?(1.0);
-            this.LineWidthPlus_DefaultValue = nullable2;
-            this.LineWidthPlus = nullable2;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -63,7 +63,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

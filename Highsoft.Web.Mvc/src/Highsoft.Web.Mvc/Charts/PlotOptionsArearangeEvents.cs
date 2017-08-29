@@ -8,6 +8,18 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PlotOptionsArearangeEvents : BaseObject
     {
+        public PlotOptionsArearangeEvents()
+        {
+            this.AfterAnimate = this.AfterAnimate_DefaultValue = "";
+            this.CheckboxClick = this.CheckboxClick_DefaultValue = "";
+            this.Click = this.Click_DefaultValue = "";
+            this.Hide = this.Hide_DefaultValue = "";
+            this.LegendItemClick = this.LegendItemClick_DefaultValue = "";
+            this.MouseOut = this.MouseOut_DefaultValue = "";
+            this.MouseOver = this.MouseOver_DefaultValue = "";
+            this.Show = this.Show_DefaultValue = "";
+        }
+
         public string AfterAnimate { get; set; }
 
         private string AfterAnimate_DefaultValue { get; set; }
@@ -40,18 +52,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string Show_DefaultValue { get; set; }
 
-        public PlotOptionsArearangeEvents()
-        {
-            this.AfterAnimate = this.AfterAnimate_DefaultValue = "";
-            this.CheckboxClick = this.CheckboxClick_DefaultValue = "";
-            this.Click = this.Click_DefaultValue = "";
-            this.Hide = this.Hide_DefaultValue = "";
-            this.LegendItemClick = this.LegendItemClick_DefaultValue = "";
-            this.MouseOut = this.MouseOut_DefaultValue = "";
-            this.MouseOver = this.MouseOver_DefaultValue = "";
-            this.Show = this.Show_DefaultValue = "";
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -78,7 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.LegendItemClick != this.LegendItemClick_DefaultValue)
             {
                 hashtable.Add((object) "legendItemClick", (object) this.LegendItemClick);
-                Highcharts.AddFunction("PlotOptionsArearangeEventsLegendItemClick.legendItemClick", this.LegendItemClick);
+                Highcharts.AddFunction("PlotOptionsArearangeEventsLegendItemClick.legendItemClick",
+                    this.LegendItemClick);
             }
             if (this.MouseOut != this.MouseOut_DefaultValue)
             {
@@ -100,7 +101,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

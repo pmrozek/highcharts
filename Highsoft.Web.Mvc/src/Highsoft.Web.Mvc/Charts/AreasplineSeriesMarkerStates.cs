@@ -8,6 +8,12 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class AreasplineSeriesMarkerStates : BaseObject
     {
+        public AreasplineSeriesMarkerStates()
+        {
+            this.Hover = this.Hover_DefaultValue = new AreasplineSeriesMarkerStatesHover();
+            this.Select = this.Select_DefaultValue = new AreasplineSeriesMarkerStatesSelect();
+        }
+
         public AreasplineSeriesMarkerStatesHover Hover { get; set; }
 
         private AreasplineSeriesMarkerStatesHover Hover_DefaultValue { get; set; }
@@ -15,12 +21,6 @@ namespace Highsoft.Web.Mvc.Charts
         public AreasplineSeriesMarkerStatesSelect Select { get; set; }
 
         private AreasplineSeriesMarkerStatesSelect Select_DefaultValue { get; set; }
-
-        public AreasplineSeriesMarkerStates()
-        {
-            this.Hover = this.Hover_DefaultValue = new AreasplineSeriesMarkerStatesHover();
-            this.Select = this.Select_DefaultValue = new AreasplineSeriesMarkerStatesSelect();
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -34,7 +34,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

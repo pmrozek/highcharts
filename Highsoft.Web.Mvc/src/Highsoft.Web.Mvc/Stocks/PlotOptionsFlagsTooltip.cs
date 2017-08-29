@@ -8,6 +8,29 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class PlotOptionsFlagsTooltip : BaseObject
     {
+        public PlotOptionsFlagsTooltip()
+        {
+            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
+            bool? nullable1 = new bool?(false);
+            this.FollowPointer_DefaultValue = nullable1;
+            this.FollowPointer = nullable1;
+            nullable1 = new bool?(true);
+            this.FollowTouchMove_DefaultValue = nullable1;
+            this.FollowTouchMove = nullable1;
+            this.HeaderFormat = this.HeaderFormat_DefaultValue = "";
+            double? nullable2 = new double?(8.0);
+            this.Padding_DefaultValue = nullable2;
+            this.Padding = nullable2;
+            this.PointFormat = this.PointFormat_DefaultValue =
+                "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+            this.PointFormatter = this.PointFormatter_DefaultValue = "";
+            this.Shape = this.Shape_DefaultValue = "callout";
+            nullable1 = new bool?(false);
+            this.Split_DefaultValue = nullable1;
+            this.Split = nullable1;
+            this.XDateFormat = this.XDateFormat_DefaultValue = "";
+        }
+
         public Hashtable DateTimeLabelFormats { get; set; }
 
         private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -47,30 +70,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public string XDateFormat { get; set; }
 
         private string XDateFormat_DefaultValue { get; set; }
-
-        public PlotOptionsFlagsTooltip()
-        {
-            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
-            bool? nullable1 = new bool?(false);
-            this.FollowPointer_DefaultValue = nullable1;
-            this.FollowPointer = nullable1;
-            nullable1 = new bool?(true);
-            this.FollowTouchMove_DefaultValue = nullable1;
-            this.FollowTouchMove = nullable1;
-            this.HeaderFormat = this.HeaderFormat_DefaultValue = "";
-            double? nullable2 = new double?(8.0);
-            this.Padding_DefaultValue = nullable2;
-            this.Padding = nullable2;
-            this.PointFormat =
-                this.PointFormat_DefaultValue =
-                    "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
-            this.PointFormatter = this.PointFormatter_DefaultValue = "";
-            this.Shape = this.Shape_DefaultValue = "callout";
-            nullable1 = new bool?(false);
-            this.Split_DefaultValue = nullable1;
-            this.Split = nullable1;
-            this.XDateFormat = this.XDateFormat_DefaultValue = "";
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -115,7 +114,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

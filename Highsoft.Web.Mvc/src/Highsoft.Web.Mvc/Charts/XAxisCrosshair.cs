@@ -8,6 +8,22 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class XAxisCrosshair : BaseObject
     {
+        public XAxisCrosshair()
+        {
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = (string) null;
+            this.DashStyle = this.DashStyle_DefaultValue = XAxisCrosshairDashStyle.Solid;
+            bool? nullable1 = new bool?(true);
+            this.Snap_DefaultValue = nullable1;
+            this.Snap = nullable1;
+            double? nullable2 = new double?();
+            this.Width_DefaultValue = nullable2;
+            this.Width = nullable2;
+            nullable2 = new double?(2.0);
+            this.ZIndex_DefaultValue = nullable2;
+            this.ZIndex = nullable2;
+        }
+
         public string ClassName { get; set; }
 
         private string ClassName_DefaultValue { get; set; }
@@ -32,22 +48,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private double? ZIndex_DefaultValue { get; set; }
 
-        public XAxisCrosshair()
-        {
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = (string) null;
-            this.DashStyle = this.DashStyle_DefaultValue = XAxisCrosshairDashStyle.Solid;
-            bool? nullable1 = new bool?(true);
-            this.Snap_DefaultValue = nullable1;
-            this.Snap = nullable1;
-            double? nullable2 = new double?();
-            this.Width_DefaultValue = nullable2;
-            this.Width = nullable2;
-            nullable2 = new double?(2.0);
-            this.ZIndex_DefaultValue = nullable2;
-            this.ZIndex = nullable2;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -56,7 +56,8 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
             if (this.DashStyle != this.DashStyle_DefaultValue)
-                hashtable.Add((object) "dashStyle", (object) Highcharts.FirstCharacterToLower(this.DashStyle.ToString()));
+                hashtable.Add((object) "dashStyle",
+                    (object) Highcharts.FirstCharacterToLower(this.DashStyle.ToString()));
             bool? snap = this.Snap;
             bool? snapDefaultValue = this.Snap_DefaultValue;
             if (snap.GetValueOrDefault() != snapDefaultValue.GetValueOrDefault() ||
@@ -77,7 +78,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

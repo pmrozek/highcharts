@@ -1,0 +1,9 @@
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\bin\Release\netcoreapp1.1\Highsoft.Web.Mvc.deps.json
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\bin\Release\netcoreapp1.1\Highsoft.Web.Mvc.dll
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\bin\Release\netcoreapp1.1\Highsoft.Web.Mvc.pdb
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\obj\Release\netcoreapp1.1\Highsoft.Web.Mvc.csprojResolveAssemblyReference.cache
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\obj\Release\netcoreapp1.1\Highsoft.Web.Mvc.csproj.CoreCompileInputs.cache
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\obj\Release\netcoreapp1.1\Highsoft.Web.Mvc.AssemblyInfoInputs.cache
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\obj\Release\netcoreapp1.1\Highsoft.Web.Mvc.AssemblyInfo.cs
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\obj\Release\netcoreapp1.1\Highsoft.Web.Mvc.dll
+c:\Users\pmroz\Documents\Visual Studio 2017\Projects\!GitHub\highcharts\Highsoft.Web.Mvc\src\Highsoft.Web.Mvc\obj\Release\netcoreapp1.1\Highsoft.Web.Mvc.pdb

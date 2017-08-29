@@ -8,6 +8,12 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class PolygonSeriesMarkerStates : BaseObject
     {
+        public PolygonSeriesMarkerStates()
+        {
+            this.Hover = this.Hover_DefaultValue = new PolygonSeriesMarkerStatesHover();
+            this.Select = this.Select_DefaultValue = new PolygonSeriesMarkerStatesSelect();
+        }
+
         public PolygonSeriesMarkerStatesHover Hover { get; set; }
 
         private PolygonSeriesMarkerStatesHover Hover_DefaultValue { get; set; }
@@ -15,12 +21,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public PolygonSeriesMarkerStatesSelect Select { get; set; }
 
         private PolygonSeriesMarkerStatesSelect Select_DefaultValue { get; set; }
-
-        public PolygonSeriesMarkerStates()
-        {
-            this.Hover = this.Hover_DefaultValue = new PolygonSeriesMarkerStatesHover();
-            this.Select = this.Select_DefaultValue = new PolygonSeriesMarkerStatesSelect();
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -34,7 +34,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

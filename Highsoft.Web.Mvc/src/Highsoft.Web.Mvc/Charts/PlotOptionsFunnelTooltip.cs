@@ -8,6 +8,37 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PlotOptionsFunnelTooltip : BaseObject
     {
+        public PlotOptionsFunnelTooltip()
+        {
+            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
+            bool? nullable1 = new bool?(false);
+            this.FollowPointer_DefaultValue = nullable1;
+            this.FollowPointer = nullable1;
+            nullable1 = new bool?(true);
+            this.FollowTouchMove_DefaultValue = nullable1;
+            this.FollowTouchMove = nullable1;
+            this.FooterFormat = this.FooterFormat_DefaultValue = "false";
+            this.HeaderFormat = this.HeaderFormat_DefaultValue = "";
+            double? nullable2 = new double?(500.0);
+            this.HideDelay_DefaultValue = nullable2;
+            this.HideDelay = nullable2;
+            nullable2 = new double?(8.0);
+            this.Padding_DefaultValue = nullable2;
+            this.Padding = nullable2;
+            this.PointFormat = this.PointFormat_DefaultValue =
+                "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+            this.PointFormatter = this.PointFormatter_DefaultValue = "";
+            nullable1 = new bool?(false);
+            this.Split_DefaultValue = nullable1;
+            this.Split = nullable1;
+            double? nullable3 = new double?();
+            this.ValueDecimals_DefaultValue = nullable3;
+            this.ValueDecimals = nullable3;
+            this.ValuePrefix = this.ValuePrefix_DefaultValue = (string) null;
+            this.ValueSuffix = this.ValueSuffix_DefaultValue = (string) null;
+            this.XDateFormat = this.XDateFormat_DefaultValue = (string) null;
+        }
+
         public Hashtable DateTimeLabelFormats { get; set; }
 
         private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -63,38 +94,6 @@ namespace Highsoft.Web.Mvc.Charts
         public string XDateFormat { get; set; }
 
         private string XDateFormat_DefaultValue { get; set; }
-
-        public PlotOptionsFunnelTooltip()
-        {
-            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
-            bool? nullable1 = new bool?(false);
-            this.FollowPointer_DefaultValue = nullable1;
-            this.FollowPointer = nullable1;
-            nullable1 = new bool?(true);
-            this.FollowTouchMove_DefaultValue = nullable1;
-            this.FollowTouchMove = nullable1;
-            this.FooterFormat = this.FooterFormat_DefaultValue = "false";
-            this.HeaderFormat = this.HeaderFormat_DefaultValue = "";
-            double? nullable2 = new double?(500.0);
-            this.HideDelay_DefaultValue = nullable2;
-            this.HideDelay = nullable2;
-            nullable2 = new double?(8.0);
-            this.Padding_DefaultValue = nullable2;
-            this.Padding = nullable2;
-            this.PointFormat =
-                this.PointFormat_DefaultValue =
-                    "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
-            this.PointFormatter = this.PointFormatter_DefaultValue = "";
-            nullable1 = new bool?(false);
-            this.Split_DefaultValue = nullable1;
-            this.Split = nullable1;
-            double? nullable3 = new double?();
-            this.ValueDecimals_DefaultValue = nullable3;
-            this.ValueDecimals = nullable3;
-            this.ValuePrefix = this.ValuePrefix_DefaultValue = (string) null;
-            this.ValueSuffix = this.ValueSuffix_DefaultValue = (string) null;
-            this.XDateFormat = this.XDateFormat_DefaultValue = (string) null;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -153,7 +152,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

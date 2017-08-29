@@ -8,15 +8,15 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class MenuItem : BaseObject
     {
-        private string Text { get; set; }
-
-        public string OnClick { get; set; }
-
         public MenuItem()
         {
             this.Text = "";
             this.OnClick = "";
         }
+
+        private string Text { get; set; }
+
+        public string OnClick { get; set; }
 
         internal override Hashtable ToHashtable()
         {

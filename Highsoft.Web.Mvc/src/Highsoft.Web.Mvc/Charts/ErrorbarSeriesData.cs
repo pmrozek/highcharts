@@ -8,6 +8,34 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ErrorbarSeriesData : BaseObject
     {
+        public ErrorbarSeriesData()
+        {
+            this.ClassName = this.ClassName_DefaultValue = (string) null;
+            this.Color = this.Color_DefaultValue = "undefined";
+            double? nullable1 = new double?();
+            this.ColorIndex_DefaultValue = nullable1;
+            this.ColorIndex = nullable1;
+            this.Description = this.Description_DefaultValue = "undefined";
+            this.Events = this.Events_DefaultValue = new ErrorbarSeriesDataEvents();
+            double? nullable2 = new double?();
+            this.High_DefaultValue = nullable2;
+            this.High = nullable2;
+            this.Id = this.Id_DefaultValue = (string) null;
+            double? nullable3 = new double?();
+            this.Labelrank_DefaultValue = nullable3;
+            this.Labelrank = nullable3;
+            double? nullable4 = new double?();
+            this.Low_DefaultValue = nullable4;
+            this.Low = nullable4;
+            this.Name = this.Name_DefaultValue = (string) null;
+            bool? nullable5 = new bool?(false);
+            this.Selected_DefaultValue = nullable5;
+            this.Selected = nullable5;
+            nullable4 = new double?(double.MinValue);
+            this.X_DefaultValue = nullable4;
+            this.X = nullable4;
+        }
+
         public string ClassName { get; set; }
 
         private string ClassName_DefaultValue { get; set; }
@@ -55,34 +83,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? X { get; set; }
 
         private double? X_DefaultValue { get; set; }
-
-        public ErrorbarSeriesData()
-        {
-            this.ClassName = this.ClassName_DefaultValue = (string) null;
-            this.Color = this.Color_DefaultValue = "undefined";
-            double? nullable1 = new double?();
-            this.ColorIndex_DefaultValue = nullable1;
-            this.ColorIndex = nullable1;
-            this.Description = this.Description_DefaultValue = "undefined";
-            this.Events = this.Events_DefaultValue = new ErrorbarSeriesDataEvents();
-            double? nullable2 = new double?();
-            this.High_DefaultValue = nullable2;
-            this.High = nullable2;
-            this.Id = this.Id_DefaultValue = (string) null;
-            double? nullable3 = new double?();
-            this.Labelrank_DefaultValue = nullable3;
-            this.Labelrank = nullable3;
-            double? nullable4 = new double?();
-            this.Low_DefaultValue = nullable4;
-            this.Low = nullable4;
-            this.Name = this.Name_DefaultValue = (string) null;
-            bool? nullable5 = new bool?(false);
-            this.Selected_DefaultValue = nullable5;
-            this.Selected = nullable5;
-            nullable4 = new double?(double.MinValue);
-            this.X_DefaultValue = nullable4;
-            this.X = nullable4;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -134,7 +134,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

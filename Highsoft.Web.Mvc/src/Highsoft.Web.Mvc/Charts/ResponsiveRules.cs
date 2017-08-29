@@ -8,6 +8,12 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ResponsiveRules : BaseObject
     {
+        public ResponsiveRules()
+        {
+            this.ChartOptions = this.ChartOptions_DefaultValue = (object) null;
+            this.Condition = this.Condition_DefaultValue = new ResponsiveRulesCondition();
+        }
+
         public object ChartOptions { get; set; }
 
         private object ChartOptions_DefaultValue { get; set; }
@@ -15,12 +21,6 @@ namespace Highsoft.Web.Mvc.Charts
         public ResponsiveRulesCondition Condition { get; set; }
 
         private ResponsiveRulesCondition Condition_DefaultValue { get; set; }
-
-        public ResponsiveRules()
-        {
-            this.ChartOptions = this.ChartOptions_DefaultValue = (object) "";
-            this.Condition = this.Condition_DefaultValue = new ResponsiveRulesCondition();
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -34,7 +34,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

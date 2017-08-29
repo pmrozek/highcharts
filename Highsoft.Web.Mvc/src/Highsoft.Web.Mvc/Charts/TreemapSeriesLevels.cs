@@ -8,6 +8,23 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class TreemapSeriesLevels : BaseObject
     {
+        public TreemapSeriesLevels()
+        {
+            this.BorderColor = this.BorderColor_DefaultValue = (string) null;
+            this.BorderDashStyle = this.BorderDashStyle_DefaultValue = (string) null;
+            double? nullable1 = new double?();
+            this.BorderWidth_DefaultValue = nullable1;
+            this.BorderWidth = nullable1;
+            this.Color = this.Color_DefaultValue = (string) null;
+            this.DataLabels = this.DataLabels_DefaultValue = new TreemapSeriesDataLabels();
+            this.LayoutAlgorithm = this.LayoutAlgorithm_DefaultValue = TreemapSeriesLevelsLayoutAlgorithm.Null;
+            this.LayoutStartingDirection = this.LayoutStartingDirection_DefaultValue =
+                TreemapSeriesLevelsLayoutStartingDirection.Null;
+            double? nullable2 = new double?();
+            this.Level_DefaultValue = nullable2;
+            this.Level = nullable2;
+        }
+
         public string BorderColor { get; set; }
 
         private string BorderColor_DefaultValue { get; set; }
@@ -24,9 +41,9 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string Color_DefaultValue { get; set; }
 
-        public object DataLabels { get; set; }
+        public TreemapSeriesDataLabels DataLabels { get; set; }
 
-        private object DataLabels_DefaultValue { get; set; }
+        private TreemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
 
         public TreemapSeriesLevelsLayoutAlgorithm LayoutAlgorithm { get; set; }
 
@@ -39,23 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? Level { get; set; }
 
         private double? Level_DefaultValue { get; set; }
-
-        public TreemapSeriesLevels()
-        {
-            this.BorderColor = this.BorderColor_DefaultValue = (string) null;
-            this.BorderDashStyle = this.BorderDashStyle_DefaultValue = (string) null;
-            double? nullable1 = new double?();
-            this.BorderWidth_DefaultValue = nullable1;
-            this.BorderWidth = nullable1;
-            this.Color = this.Color_DefaultValue = (string) null;
-            this.DataLabels = this.DataLabels_DefaultValue = (object) null;
-            this.LayoutAlgorithm = this.LayoutAlgorithm_DefaultValue = TreemapSeriesLevelsLayoutAlgorithm.Null;
-            this.LayoutStartingDirection =
-                this.LayoutStartingDirection_DefaultValue = TreemapSeriesLevelsLayoutStartingDirection.Null;
-            double? nullable2 = new double?();
-            this.Level_DefaultValue = nullable2;
-            this.Level = nullable2;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "borderWidth", (object) this.BorderWidth);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
-            if (this.DataLabels != this.DataLabels_DefaultValue)
-                hashtable.Add((object) "dataLabels", this.DataLabels);
+            if (this.DataLabels.IsDirty())
+                hashtable.Add((object) "dataLabels", (object) this.DataLabels.ToHashtable());
             if (this.LayoutAlgorithm != this.LayoutAlgorithm_DefaultValue)
                 hashtable.Add((object) "layoutAlgorithm",
                     (object) Highcharts.FirstCharacterToLower(this.LayoutAlgorithm.ToString()));
@@ -89,7 +89,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

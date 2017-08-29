@@ -8,6 +8,26 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Accessibility : BaseObject
     {
+        public Accessibility()
+        {
+            bool? nullable1 = new bool?(false);
+            this.DescribeSingleSeries_DefaultValue = nullable1;
+            this.DescribeSingleSeries = nullable1;
+            nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.KeyboardNavigation = this.KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
+            this.OnTableAnchorClick = this.OnTableAnchorClick_DefaultValue = "";
+            this.PointDateFormat = this.PointDateFormat_DefaultValue = (string) null;
+            this.PointDateFormatter = this.PointDateFormatter_DefaultValue = "";
+            this.PointDescriptionFormatter = this.PointDescriptionFormatter_DefaultValue = "";
+            long? nullable2 = new long?(30L);
+            this.PointDescriptionThreshold_DefaultValue = nullable2;
+            this.PointDescriptionThreshold = nullable2;
+            this.ScreenReaderSectionFormatter = this.ScreenReaderSectionFormatter_DefaultValue = "";
+            this.SeriesDescriptionFormatter = this.SeriesDescriptionFormatter_DefaultValue = "";
+        }
+
         public bool? DescribeSingleSeries { get; set; }
 
         private bool? DescribeSingleSeries_DefaultValue { get; set; }
@@ -47,26 +67,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public string SeriesDescriptionFormatter { get; set; }
 
         private string SeriesDescriptionFormatter_DefaultValue { get; set; }
-
-        public Accessibility()
-        {
-            bool? nullable1 = new bool?(false);
-            this.DescribeSingleSeries_DefaultValue = nullable1;
-            this.DescribeSingleSeries = nullable1;
-            nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.KeyboardNavigation = this.KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
-            this.OnTableAnchorClick = this.OnTableAnchorClick_DefaultValue = "";
-            this.PointDateFormat = this.PointDateFormat_DefaultValue = (string) null;
-            this.PointDateFormatter = this.PointDateFormatter_DefaultValue = "";
-            this.PointDescriptionFormatter = this.PointDescriptionFormatter_DefaultValue = "";
-            long? nullable2 = new long?(30L);
-            this.PointDescriptionThreshold_DefaultValue = nullable2;
-            this.PointDescriptionThreshold = nullable2;
-            this.ScreenReaderSectionFormatter = this.ScreenReaderSectionFormatter_DefaultValue = "";
-            this.SeriesDescriptionFormatter = this.SeriesDescriptionFormatter_DefaultValue = "";
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -129,7 +129,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,13 +8,36 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class PolygonSeriesData : BaseObject
     {
+        public PolygonSeriesData()
+        {
+            this.Color = this.Color_DefaultValue = "undefined";
+            this.DataLabels = this.DataLabels_DefaultValue = new PolygonSeriesDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            this.Events = this.Events_DefaultValue = new PolygonSeriesDataEvents();
+            this.Id = this.Id_DefaultValue = "null";
+            double? nullable1 = new double?();
+            this.Labelrank_DefaultValue = nullable1;
+            this.Labelrank = nullable1;
+            this.Marker = this.Marker_DefaultValue = new PolygonSeriesDataMarker();
+            this.Name = this.Name_DefaultValue = (string) null;
+            bool? nullable2 = new bool?(false);
+            this.Selected_DefaultValue = nullable2;
+            this.Selected = nullable2;
+            nullable1 = new double?(double.MinValue);
+            this.X_DefaultValue = nullable1;
+            this.X = nullable1;
+            nullable1 = new double?(double.MinValue);
+            this.Y_DefaultValue = nullable1;
+            this.Y = nullable1;
+        }
+
         public string Color { get; set; }
 
         private string Color_DefaultValue { get; set; }
 
-        public object DataLabels { get; set; }
+        public PolygonSeriesDataLabels DataLabels { get; set; }
 
-        private object DataLabels_DefaultValue { get; set; }
+        private PolygonSeriesDataLabels DataLabels_DefaultValue { get; set; }
 
         public string Description { get; set; }
 
@@ -52,36 +75,13 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? Y_DefaultValue { get; set; }
 
-        public PolygonSeriesData()
-        {
-            this.Color = this.Color_DefaultValue = "undefined";
-            this.DataLabels = this.DataLabels_DefaultValue = (object) null;
-            this.Description = this.Description_DefaultValue = "undefined";
-            this.Events = this.Events_DefaultValue = new PolygonSeriesDataEvents();
-            this.Id = this.Id_DefaultValue = "null";
-            double? nullable1 = new double?();
-            this.Labelrank_DefaultValue = nullable1;
-            this.Labelrank = nullable1;
-            this.Marker = this.Marker_DefaultValue = new PolygonSeriesDataMarker();
-            this.Name = this.Name_DefaultValue = (string) null;
-            bool? nullable2 = new bool?(false);
-            this.Selected_DefaultValue = nullable2;
-            this.Selected = nullable2;
-            nullable1 = new double?(double.MinValue);
-            this.X_DefaultValue = nullable1;
-            this.X = nullable1;
-            nullable1 = new double?(double.MinValue);
-            this.Y_DefaultValue = nullable1;
-            this.Y = nullable1;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
-            if (this.DataLabels != this.DataLabels_DefaultValue)
-                hashtable.Add((object) "dataLabels", this.DataLabels);
+            if (this.DataLabels.IsDirty())
+                hashtable.Add((object) "dataLabels", (object) this.DataLabels.ToHashtable());
             if (this.Description != this.Description_DefaultValue)
                 hashtable.Add((object) "description", (object) this.Description);
             if (this.Events.IsDirty())
@@ -117,7 +117,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

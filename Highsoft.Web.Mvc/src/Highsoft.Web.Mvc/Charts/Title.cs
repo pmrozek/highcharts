@@ -8,6 +8,42 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Title : BaseObject
     {
+        public Title()
+        {
+            this.Align = this.Align_DefaultValue = TitleAlign.Center;
+            bool? nullable1 = new bool?(false);
+            this.Floating_DefaultValue = nullable1;
+            this.Floating = nullable1;
+            double? nullable2 = new double?();
+            this.Margin_DefaultValue = nullable2;
+            this.Margin = nullable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#333333"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "18px"
+                }
+            };
+            this.Text = this.Text_DefaultValue = "Chart title";
+            nullable1 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable1;
+            this.UseHTML = nullable1;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = TitleVerticalAlign.Null;
+            nullable2 = new double?(-44.0);
+            this.WidthAdjust_DefaultValue = nullable2;
+            this.WidthAdjust = nullable2;
+            nullable2 = new double?(0.0);
+            this.X_DefaultValue = nullable2;
+            this.X = nullable2;
+            double? nullable3 = new double?();
+            this.Y_DefaultValue = nullable3;
+            this.Y = nullable3;
+        }
+
         public TitleAlign Align { get; set; }
 
         private TitleAlign Align_DefaultValue { get; set; }
@@ -16,9 +52,9 @@ namespace Highsoft.Web.Mvc.Charts
 
         private bool? Floating_DefaultValue { get; set; }
 
-        public string[] Margin { get; set; }
+        public double? Margin { get; set; }
 
-        private string[] Margin_DefaultValue { get; set; }
+        private double? Margin_DefaultValue { get; set; }
 
         public Hashtable Style { get; set; }
 
@@ -48,40 +84,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private double? Y_DefaultValue { get; set; }
 
-        public Title()
-        {
-            this.Align = this.Align_DefaultValue = TitleAlign.Center;
-            bool? nullable1 = new bool?(false);
-            this.Floating_DefaultValue = nullable1;
-            this.Floating = nullable1;
-            this.Margin = this.Margin_DefaultValue = new string[0];
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#333333"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "18px"
-                }
-            };
-            this.Text = this.Text_DefaultValue = "Chart title";
-            nullable1 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable1;
-            this.UseHTML = nullable1;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = TitleVerticalAlign.Null;
-            double? nullable2 = new double?(-44.0);
-            this.WidthAdjust_DefaultValue = nullable2;
-            this.WidthAdjust = nullable2;
-            nullable2 = new double?(0.0);
-            this.X_DefaultValue = nullable2;
-            this.X = nullable2;
-            double? nullable3 = new double?();
-            this.Y_DefaultValue = nullable3;
-            this.Y = nullable3;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -92,7 +94,10 @@ namespace Highsoft.Web.Mvc.Charts
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "floating", (object) this.Floating);
-            if (this.Margin != this.Margin_DefaultValue)
+            double? nullable3 = this.Margin;
+            double? nullable4 = this.Margin_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "margin", (object) this.Margin);
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);
@@ -106,27 +111,30 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.VerticalAlign != this.VerticalAlign_DefaultValue)
                 hashtable.Add((object) "verticalAlign",
                     (object) Highcharts.FirstCharacterToLower(this.VerticalAlign.ToString()));
-            double? nullable3 = this.WidthAdjust;
-            double? nullable4 = this.WidthAdjust_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
-                hashtable.Add((object) "widthAdjust", (object) this.WidthAdjust);
-            nullable4 = this.X;
-            nullable3 = this.X_DefaultValue;
+            nullable4 = this.WidthAdjust;
+            nullable3 = this.WidthAdjust_DefaultValue;
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
-                hashtable.Add((object) "x", (object) this.X);
-            nullable3 = this.Y;
-            nullable4 = this.Y_DefaultValue;
+                hashtable.Add((object) "widthAdjust", (object) this.WidthAdjust);
+            nullable3 = this.X;
+            nullable4 = this.X_DefaultValue;
             if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
                 nullable3.HasValue != nullable4.HasValue)
+                hashtable.Add((object) "x", (object) this.X);
+            nullable4 = this.Y;
+            nullable3 = this.Y_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

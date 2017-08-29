@@ -1,16 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{96AA0267-8066-42E6-AABE-5480CEBDF869}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CE278C1F-5FD6-4601-9405-E639049B7FBC}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Highsoft.Web.Mvc", "src\Highsoft.Web.Mvc\Highsoft.Web.Mvc.xproj", "{77982D40-26C4-4E10-BF54-7B37F099E461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Highsoft.Web.Mvc", "src\Highsoft.Web.Mvc\Highsoft.Web.Mvc.csproj", "{77982D40-26C4-4E10-BF54-7B37F099E461}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,14 +24,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{77982D40-26C4-4E10-BF54-7B37F099E461} = {96AA0267-8066-42E6-AABE-5480CEBDF869}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://softwareuk.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = src\\Highsoft.Web.Mvc\\Highsoft.Web.Mvc.xproj
-		SccProjectTopLevelParentUniqueName1 = Highsoft.Web.Mvc.sln
-		SccProjectName1 = src/Highsoft.Web.Mvc
-		SccLocalPath1 = src\\Highsoft.Web.Mvc
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEF65884-358F-4F59-BD1C-7191D1D92FBD}
 	EndGlobalSection
 EndGlobal

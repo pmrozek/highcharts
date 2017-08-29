@@ -9,6 +9,46 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ExportingButtonsContextButton : BaseObject
     {
+        public ExportingButtonsContextButton()
+        {
+            this.Align = this.Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
+            bool? nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            double? nullable2 = new double?(20.0);
+            this.Height_DefaultValue = nullable2;
+            this.Height = nullable2;
+            this.MenuItems = this.MenuItems_DefaultValue = new List<MenuItem>();
+            this.Onclick = this.Onclick_DefaultValue = "";
+            this.Symbol = this.Symbol_DefaultValue = "menu";
+            this.SymbolFill = this.SymbolFill_DefaultValue = "#666666";
+            nullable2 = new double?(14.0);
+            this.SymbolSize_DefaultValue = nullable2;
+            this.SymbolSize = nullable2;
+            this.SymbolStroke = this.SymbolStroke_DefaultValue = "#666666";
+            nullable2 = new double?(1.0);
+            this.SymbolStrokeWidth_DefaultValue = nullable2;
+            this.SymbolStrokeWidth = nullable2;
+            nullable2 = new double?(12.5);
+            this.SymbolX_DefaultValue = nullable2;
+            this.SymbolX = nullable2;
+            nullable2 = new double?(10.5);
+            this.SymbolY_DefaultValue = nullable2;
+            this.SymbolY = nullable2;
+            this.Text = this.Text_DefaultValue = "null";
+            this.Theme = this.Theme_DefaultValue = (object) "";
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = ExportingButtonsContextButtonVerticalAlign.Top;
+            nullable2 = new double?(24.0);
+            this.Width_DefaultValue = nullable2;
+            this.Width = nullable2;
+            nullable2 = new double?(-10.0);
+            this.X_DefaultValue = nullable2;
+            this.X = nullable2;
+            nullable2 = new double?(0.0);
+            this.Y_DefaultValue = nullable2;
+            this.Y = nullable2;
+        }
+
         public ExportingButtonsContextButtonAlign Align { get; set; }
 
         private ExportingButtonsContextButtonAlign Align_DefaultValue { get; set; }
@@ -80,46 +120,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? Y { get; set; }
 
         private double? Y_DefaultValue { get; set; }
-
-        public ExportingButtonsContextButton()
-        {
-            this.Align = this.Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
-            bool? nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            double? nullable2 = new double?(20.0);
-            this.Height_DefaultValue = nullable2;
-            this.Height = nullable2;
-            this.MenuItems = this.MenuItems_DefaultValue = new List<MenuItem>();
-            this.Onclick = this.Onclick_DefaultValue = "";
-            this.Symbol = this.Symbol_DefaultValue = "menu";
-            this.SymbolFill = this.SymbolFill_DefaultValue = "#666666";
-            nullable2 = new double?(14.0);
-            this.SymbolSize_DefaultValue = nullable2;
-            this.SymbolSize = nullable2;
-            this.SymbolStroke = this.SymbolStroke_DefaultValue = "#666666";
-            nullable2 = new double?(1.0);
-            this.SymbolStrokeWidth_DefaultValue = nullable2;
-            this.SymbolStrokeWidth = nullable2;
-            nullable2 = new double?(12.5);
-            this.SymbolX_DefaultValue = nullable2;
-            this.SymbolX = nullable2;
-            nullable2 = new double?(10.5);
-            this.SymbolY_DefaultValue = nullable2;
-            this.SymbolY = nullable2;
-            this.Text = this.Text_DefaultValue = "null";
-            this.Theme = this.Theme_DefaultValue = (object) "";
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = ExportingButtonsContextButtonVerticalAlign.Top;
-            nullable2 = new double?(24.0);
-            this.Width_DefaultValue = nullable2;
-            this.Width = nullable2;
-            nullable2 = new double?(-10.0);
-            this.X_DefaultValue = nullable2;
-            this.X = nullable2;
-            nullable2 = new double?(0.0);
-            this.Y_DefaultValue = nullable2;
-            this.Y = nullable2;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -196,7 +196,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

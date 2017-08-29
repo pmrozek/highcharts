@@ -8,18 +8,18 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Animation : BaseObject
     {
-        public bool Enabled { get; set; }
-
-        public int Duration { get; set; }
-
-        public string Easing { get; set; }
-
         public Animation()
         {
             this.Enabled = true;
             this.Duration = 0;
             this.Easing = "";
         }
+
+        public bool Enabled { get; set; }
+
+        public int Duration { get; set; }
+
+        public string Easing { get; set; }
 
         internal override Hashtable ToHashtable()
         {

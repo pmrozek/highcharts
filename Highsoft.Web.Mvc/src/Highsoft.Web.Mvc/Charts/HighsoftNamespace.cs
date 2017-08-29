@@ -18,6 +18,14 @@ namespace Highsoft.Web.Mvc.Charts
             return new HtmlString(highchartsRenderer.RenderHtml());
         }
 
+        public HtmlString GetHighcharts(Highcharts chart, string id)
+        {
+            HighchartsRenderer highchartsRenderer = new HighchartsRenderer(chart);
+            chart.ID = id;
+            chart.Chart.RenderTo = id;
+            return new HtmlString(highchartsRenderer.RenderHtml());
+        }
+
         [EditorBrowsable(EditorBrowsableState.Never)]
         private new bool Equals(object value)
         {

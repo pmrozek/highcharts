@@ -9,6 +9,109 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class PlotOptionsFlags : BaseObject
     {
+        public PlotOptionsFlags()
+        {
+            bool? nullable1 = new bool?(false);
+            this.AllowPointSelect_DefaultValue = nullable1;
+            this.AllowPointSelect = nullable1;
+            double? nullable2 = new double?();
+            this.AnimationLimit_DefaultValue = nullable2;
+            this.AnimationLimit = nullable2;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = (string) null;
+            double? nullable3 = new double?();
+            this.ColorIndex_DefaultValue = nullable3;
+            this.ColorIndex = nullable3;
+            this.Colors = this.Colors_DefaultValue = new List<string>();
+            this.CompareBase = this.CompareBase_DefaultValue = PlotOptionsFlagsCompareBase.Min;
+            nullable3 = new double?(50.0);
+            this.CropThreshold_DefaultValue = nullable3;
+            this.CropThreshold = nullable3;
+            this.Cursor = this.Cursor_DefaultValue = PlotOptionsFlagsCursor.Null;
+            this.DataLabels = this.DataLabels_DefaultValue = new PlotOptionsFlagsDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            nullable1 = new bool?(true);
+            this.EnableMouseTracking_DefaultValue = nullable1;
+            this.EnableMouseTracking = nullable1;
+            this.Events = this.Events_DefaultValue = new PlotOptionsFlagsEvents();
+            nullable1 = new bool?(false);
+            this.GetExtremesFromAll_DefaultValue = nullable1;
+            this.GetExtremesFromAll = nullable1;
+            this.Keys = this.Keys_DefaultValue = new List<string>();
+            nullable3 = new double?(0.0);
+            this.LegendIndex_DefaultValue = nullable3;
+            this.LegendIndex = nullable3;
+            this.LineColor = this.LineColor_DefaultValue = "#000000";
+            nullable3 = new double?(1.0);
+            this.LineWidth_DefaultValue = nullable3;
+            this.LineWidth = nullable3;
+            this.LinkedTo = this.LinkedTo_DefaultValue = "";
+            double? nullable4 = new double?();
+            this.MaxPointWidth_DefaultValue = nullable4;
+            this.MaxPointWidth = nullable4;
+            this.NavigatorOptions = this.NavigatorOptions_DefaultValue = (object) null;
+            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
+            this.OnKey = this.OnKey_DefaultValue = PlotOptionsFlagsOnKey.Y;
+            this.OnSeries = this.OnSeries_DefaultValue = "undefined";
+            this.Point = this.Point_DefaultValue = new PlotOptionsFlagsPoint();
+            this.PointIntervalUnit = this.PointIntervalUnit_DefaultValue = PlotOptionsFlagsPointIntervalUnit.Null;
+            nullable1 = new bool?(false);
+            this.Selected_DefaultValue = nullable1;
+            this.Selected = nullable1;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
+            this.Shape = this.Shape_DefaultValue = PlotOptionsFlagsShape.Flag;
+            nullable1 = new bool?(false);
+            this.ShowCheckbox_DefaultValue = nullable1;
+            this.ShowCheckbox = nullable1;
+            nullable1 = new bool?(true);
+            this.ShowInLegend_DefaultValue = nullable1;
+            this.ShowInLegend = nullable1;
+            bool? nullable5 = new bool?();
+            this.ShowInNavigator_DefaultValue = nullable5;
+            this.ShowInNavigator = nullable5;
+            nullable5 = new bool?(false);
+            this.SoftThreshold_DefaultValue = nullable5;
+            this.SoftThreshold = nullable5;
+            nullable4 = new double?(12.0);
+            this.StackDistance_DefaultValue = nullable4;
+            this.StackDistance = nullable4;
+            this.States = this.States_DefaultValue = new PlotOptionsFlagsStates();
+            nullable5 = new bool?(true);
+            this.StickyTracking_DefaultValue = nullable5;
+            this.StickyTracking = nullable5;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                }
+            };
+            this.TextAlign = this.TextAlign_DefaultValue = PlotOptionsFlagsTextAlign.Center;
+            nullable4 = new double?(0.0);
+            this.Threshold_DefaultValue = nullable4;
+            this.Threshold = nullable4;
+            this.Title = this.Title_DefaultValue = "A";
+            this.Tooltip = this.Tooltip_DefaultValue = new PlotOptionsFlagsTooltip();
+            nullable5 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable5;
+            this.UseHTML = nullable5;
+            nullable5 = new bool?(true);
+            this.Visible_DefaultValue = nullable5;
+            this.Visible = nullable5;
+            nullable4 = new double?(-30.0);
+            this.Y_DefaultValue = nullable4;
+            this.Y = nullable4;
+            this.ZoneAxis = this.ZoneAxis_DefaultValue = "y";
+            this.Zones = this.Zones_DefaultValue = new List<PlotOptionsFlagsZone>();
+        }
+
         public bool? AllowPointSelect { get; set; }
 
         private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -25,9 +128,17 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string Color_DefaultValue { get; set; }
 
+        public double? ColorIndex { get; set; }
+
+        private double? ColorIndex_DefaultValue { get; set; }
+
         public List<string> Colors { get; set; }
 
         private List<string> Colors_DefaultValue { get; set; }
+
+        public PlotOptionsFlagsCompareBase CompareBase { get; set; }
+
+        private PlotOptionsFlagsCompareBase CompareBase_DefaultValue { get; set; }
 
         public double? CropThreshold { get; set; }
 
@@ -181,108 +292,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string ZoneAxis_DefaultValue { get; set; }
 
-        public PlotOptionsFlagsZones Zones { get; set; }
+        public List<PlotOptionsFlagsZone> Zones { get; set; }
 
-        private PlotOptionsFlagsZones Zones_DefaultValue { get; set; }
-
-        public PlotOptionsFlags()
-        {
-            bool? nullable1 = new bool?(false);
-            this.AllowPointSelect_DefaultValue = nullable1;
-            this.AllowPointSelect = nullable1;
-            double? nullable2 = new double?();
-            this.AnimationLimit_DefaultValue = nullable2;
-            this.AnimationLimit = nullable2;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = (string) null;
-            this.Colors = this.Colors_DefaultValue = new List<string>();
-            nullable2 = new double?(50.0);
-            this.CropThreshold_DefaultValue = nullable2;
-            this.CropThreshold = nullable2;
-            this.Cursor = this.Cursor_DefaultValue = PlotOptionsFlagsCursor.Null;
-            this.DataLabels = this.DataLabels_DefaultValue = new PlotOptionsFlagsDataLabels();
-            this.Description = this.Description_DefaultValue = "undefined";
-            nullable1 = new bool?(true);
-            this.EnableMouseTracking_DefaultValue = nullable1;
-            this.EnableMouseTracking = nullable1;
-            this.Events = this.Events_DefaultValue = new PlotOptionsFlagsEvents();
-            nullable1 = new bool?(false);
-            this.GetExtremesFromAll_DefaultValue = nullable1;
-            this.GetExtremesFromAll = nullable1;
-            this.Keys = this.Keys_DefaultValue = new List<string>();
-            nullable2 = new double?(0.0);
-            this.LegendIndex_DefaultValue = nullable2;
-            this.LegendIndex = nullable2;
-            this.LineColor = this.LineColor_DefaultValue = "#000000";
-            nullable2 = new double?(1.0);
-            this.LineWidth_DefaultValue = nullable2;
-            this.LineWidth = nullable2;
-            this.LinkedTo = this.LinkedTo_DefaultValue = "";
-            double? nullable3 = new double?();
-            this.MaxPointWidth_DefaultValue = nullable3;
-            this.MaxPointWidth = nullable3;
-            this.NavigatorOptions = this.NavigatorOptions_DefaultValue = (object) null;
-            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
-            this.OnKey = this.OnKey_DefaultValue = PlotOptionsFlagsOnKey.Y;
-            this.OnSeries = this.OnSeries_DefaultValue = "undefined";
-            this.Point = this.Point_DefaultValue = new PlotOptionsFlagsPoint();
-            this.PointIntervalUnit = this.PointIntervalUnit_DefaultValue = PlotOptionsFlagsPointIntervalUnit.Null;
-            nullable1 = new bool?(false);
-            this.Selected_DefaultValue = nullable1;
-            this.Selected = nullable1;
-            this.Shadow = this.Shadow_DefaultValue = new Shadow()
-            {
-                Enabled = false
-            };
-            this.Shape = this.Shape_DefaultValue = PlotOptionsFlagsShape.Flag;
-            nullable1 = new bool?(false);
-            this.ShowCheckbox_DefaultValue = nullable1;
-            this.ShowCheckbox = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowInLegend_DefaultValue = nullable1;
-            this.ShowInLegend = nullable1;
-            bool? nullable4 = new bool?();
-            this.ShowInNavigator_DefaultValue = nullable4;
-            this.ShowInNavigator = nullable4;
-            nullable4 = new bool?(false);
-            this.SoftThreshold_DefaultValue = nullable4;
-            this.SoftThreshold = nullable4;
-            nullable3 = new double?(12.0);
-            this.StackDistance_DefaultValue = nullable3;
-            this.StackDistance = nullable3;
-            this.States = this.States_DefaultValue = new PlotOptionsFlagsStates();
-            nullable4 = new bool?(true);
-            this.StickyTracking_DefaultValue = nullable4;
-            this.StickyTracking = nullable4;
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "fontSize",
-                    (object) "11px"
-                },
-                {
-                    (object) "fontWeight",
-                    (object) "bold"
-                }
-            };
-            this.TextAlign = this.TextAlign_DefaultValue = PlotOptionsFlagsTextAlign.Center;
-            nullable3 = new double?(0.0);
-            this.Threshold_DefaultValue = nullable3;
-            this.Threshold = nullable3;
-            this.Title = this.Title_DefaultValue = "A";
-            this.Tooltip = this.Tooltip_DefaultValue = new PlotOptionsFlagsTooltip();
-            nullable4 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable4;
-            this.UseHTML = nullable4;
-            nullable4 = new bool?(true);
-            this.Visible_DefaultValue = nullable4;
-            this.Visible = nullable4;
-            nullable3 = new double?(-30.0);
-            this.Y_DefaultValue = nullable3;
-            this.Y = nullable3;
-            this.ZoneAxis = this.ZoneAxis_DefaultValue = "y";
-            this.Zones = this.Zones_DefaultValue = new PlotOptionsFlagsZones();
-        }
+        private List<PlotOptionsFlagsZone> Zones_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -301,12 +313,20 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "className", (object) this.ClassName);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
-            if (this.Colors != this.Colors_DefaultValue)
-                hashtable.Add((object) "colors", (object) this.Colors);
-            nullable4 = this.CropThreshold;
-            nullable3 = this.CropThreshold_DefaultValue;
+            nullable4 = this.ColorIndex;
+            nullable3 = this.ColorIndex_DefaultValue;
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
+                hashtable.Add((object) "colorIndex", (object) this.ColorIndex);
+            if (this.Colors != this.Colors_DefaultValue)
+                hashtable.Add((object) "colors", (object) this.Colors);
+            if (this.CompareBase != this.CompareBase_DefaultValue)
+                hashtable.Add((object) "compareBase",
+                    (object) Highstock.FirstCharacterToLower(this.CompareBase.ToString()));
+            nullable3 = this.CropThreshold;
+            nullable4 = this.CropThreshold_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "cropThreshold", (object) this.CropThreshold);
             if (this.Cursor != this.Cursor_DefaultValue)
                 hashtable.Add((object) "cursor", (object) Highstock.FirstCharacterToLower(this.Cursor.ToString()));
@@ -328,24 +348,24 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "getExtremesFromAll", (object) this.GetExtremesFromAll);
             if (this.Keys != this.Keys_DefaultValue)
                 hashtable.Add((object) "keys", (object) this.Keys);
-            nullable3 = this.LegendIndex;
-            nullable4 = this.LegendIndex_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.LegendIndex;
+            nullable3 = this.LegendIndex_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "legendIndex", (object) this.LegendIndex);
             if (this.LineColor != this.LineColor_DefaultValue)
                 hashtable.Add((object) "lineColor", (object) this.LineColor);
-            nullable4 = this.LineWidth;
-            nullable3 = this.LineWidth_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.LineWidth;
+            nullable4 = this.LineWidth_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "lineWidth", (object) this.LineWidth);
             if (this.LinkedTo != this.LinkedTo_DefaultValue)
                 hashtable.Add((object) "linkedTo", (object) this.LinkedTo);
-            nullable3 = this.MaxPointWidth;
-            nullable4 = this.MaxPointWidth_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.MaxPointWidth;
+            nullable3 = this.MaxPointWidth_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "maxPointWidth", (object) this.MaxPointWidth);
             if (this.NavigatorOptions != this.NavigatorOptions_DefaultValue)
                 hashtable.Add((object) "navigatorOptions", this.NavigatorOptions);
@@ -365,8 +385,8 @@ namespace Highsoft.Web.Mvc.Stocks
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "selected", (object) this.Selected);
-            if (this.Shadow != this.Shadow_DefaultValue)
-                hashtable.Add((object) "shadow", (object) this.Shadow);
+            if (this.Shadow.IsDirty())
+                hashtable.Add((object) "shadow", (object) this.Shadow.ToHashtable());
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) Highstock.FirstCharacterToLower(this.Shape.ToString()));
             nullable1 = this.ShowCheckbox;
@@ -389,10 +409,10 @@ namespace Highsoft.Web.Mvc.Stocks
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "softThreshold", (object) this.SoftThreshold);
-            nullable4 = this.StackDistance;
-            nullable3 = this.StackDistance_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.StackDistance;
+            nullable4 = this.StackDistance_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "stackDistance", (object) this.StackDistance);
             if (this.States.IsDirty())
                 hashtable.Add((object) "states", (object) this.States.ToHashtable());
@@ -404,11 +424,12 @@ namespace Highsoft.Web.Mvc.Stocks
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);
             if (this.TextAlign != this.TextAlign_DefaultValue)
-                hashtable.Add((object) "textAlign", (object) Highstock.FirstCharacterToLower(this.TextAlign.ToString()));
-            nullable3 = this.Threshold;
-            nullable4 = this.Threshold_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+                hashtable.Add((object) "textAlign",
+                    (object) Highstock.FirstCharacterToLower(this.TextAlign.ToString()));
+            nullable4 = this.Threshold;
+            nullable3 = this.Threshold_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "threshold", (object) this.Threshold);
             if (this.Title != this.Title_DefaultValue)
                 hashtable.Add((object) "title", (object) this.Title);
@@ -424,21 +445,24 @@ namespace Highsoft.Web.Mvc.Stocks
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "visible", (object) this.Visible);
-            nullable4 = this.Y;
-            nullable3 = this.Y_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.Y;
+            nullable4 = this.Y_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             if (this.ZoneAxis != this.ZoneAxis_DefaultValue)
                 hashtable.Add((object) "zoneAxis", (object) this.ZoneAxis);
-            if (this.Zones.IsDirty())
-                hashtable.Add((object) "zones", (object) this.Zones.ToHashtable());
+            if (this.Zones != this.Zones_DefaultValue)
+                hashtable.Add((object) "zones", (object) this.HashifyList((IEnumerable) this.Zones));
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

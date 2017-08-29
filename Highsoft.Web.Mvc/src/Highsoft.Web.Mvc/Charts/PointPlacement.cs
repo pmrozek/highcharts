@@ -7,14 +7,33 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PointPlacement : BaseObject
     {
-        public double? Value { get; set; }
-
-        public PointPlacementEnum PointPlacementEnum { get; set; }
+        private double? _Value;
+        private PointPlacementEnum _PointPlacementEnum;
 
         public PointPlacement()
         {
-            this.Value = new double?();
-            this.PointPlacementEnum = PointPlacementEnum.Null;
+            this._Value = new double?();
+            this._PointPlacementEnum = PointPlacementEnum.Null;
+        }
+
+        public double? Value
+        {
+            get { return this._Value; }
+            set
+            {
+                this._Value = value;
+                this._PointPlacementEnum = PointPlacementEnum.Null;
+            }
+        }
+
+        public PointPlacementEnum PointPlacementEnum
+        {
+            get { return this._PointPlacementEnum; }
+            set
+            {
+                this._PointPlacementEnum = value;
+                this._Value = new double?();
+            }
         }
 
         internal override Hashtable ToHashtable()
@@ -31,14 +50,7 @@ namespace Highsoft.Web.Mvc.Charts
         {
             if ((uint) this.PointPlacementEnum > 0U)
                 return this.PointPlacementEnum.ToString().ToLower();
-            return "";
-        }
-
-        internal double? ToJSONDouble()
-        {
-            if (this.Value.HasValue)
-                return this.Value;
-            return new double?(0.0);
+            return (string) null;
         }
 
         internal override bool IsDirty()

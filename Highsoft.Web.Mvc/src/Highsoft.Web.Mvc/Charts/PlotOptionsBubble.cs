@@ -9,6 +9,101 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PlotOptionsBubble : BaseObject
     {
+        public PlotOptionsBubble()
+        {
+            bool? nullable1 = new bool?(false);
+            this.AllowPointSelect_DefaultValue = nullable1;
+            this.AllowPointSelect = nullable1;
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
+            double? nullable2 = new double?();
+            this.AnimationLimit_DefaultValue = nullable2;
+            this.AnimationLimit = nullable2;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = (string) null;
+            double? nullable3 = new double?();
+            this.ColorIndex_DefaultValue = nullable3;
+            this.ColorIndex = nullable3;
+            nullable3 = new double?(300.0);
+            this.CropThreshold_DefaultValue = nullable3;
+            this.CropThreshold = nullable3;
+            this.Cursor = this.Cursor_DefaultValue = PlotOptionsBubbleCursor.Null;
+            this.DashStyle = this.DashStyle_DefaultValue = PlotOptionsBubbleDashStyle.Solid;
+            this.DataLabels = this.DataLabels_DefaultValue = new PlotOptionsBubbleDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            nullable1 = new bool?(true);
+            this.DisplayNegative_DefaultValue = nullable1;
+            this.DisplayNegative = nullable1;
+            nullable1 = new bool?(true);
+            this.EnableMouseTracking_DefaultValue = nullable1;
+            this.EnableMouseTracking = nullable1;
+            this.Events = this.Events_DefaultValue = new PlotOptionsBubbleEvents();
+            nullable1 = new bool?(false);
+            this.GetExtremesFromAll_DefaultValue = nullable1;
+            this.GetExtremesFromAll = nullable1;
+            this.Keys = this.Keys_DefaultValue = new List<string>();
+            nullable3 = new double?(0.0);
+            this.LineWidth_DefaultValue = nullable3;
+            this.LineWidth = nullable3;
+            this.LinkedTo = this.LinkedTo_DefaultValue = "";
+            this.Marker = this.Marker_DefaultValue = new PlotOptionsBubbleMarker();
+            this.MaxSize = this.MaxSize_DefaultValue = "20%";
+            this.MinSize = this.MinSize_DefaultValue = "8";
+            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
+            this.Point = this.Point_DefaultValue = new PlotOptionsBubblePoint();
+            nullable3 = new double?(1.0);
+            this.PointInterval_DefaultValue = nullable3;
+            this.PointInterval = nullable3;
+            this.PointIntervalUnit = this.PointIntervalUnit_DefaultValue = PlotOptionsBubblePointIntervalUnit.Null;
+            nullable3 = new double?(0.0);
+            this.PointStart_DefaultValue = nullable3;
+            this.PointStart = nullable3;
+            nullable1 = new bool?(false);
+            this.Selected_DefaultValue = nullable1;
+            this.Selected = nullable1;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
+            nullable1 = new bool?(false);
+            this.ShowCheckbox_DefaultValue = nullable1;
+            this.ShowCheckbox = nullable1;
+            nullable1 = new bool?(true);
+            this.ShowInLegend_DefaultValue = nullable1;
+            this.ShowInLegend = nullable1;
+            this.SizeBy = this.SizeBy_DefaultValue = PlotOptionsBubbleSizeBy.Area;
+            nullable1 = new bool?(false);
+            this.SizeByAbsoluteValue_DefaultValue = nullable1;
+            this.SizeByAbsoluteValue = nullable1;
+            nullable1 = new bool?(false);
+            this.SoftThreshold_DefaultValue = nullable1;
+            this.SoftThreshold = nullable1;
+            this.States = this.States_DefaultValue = new PlotOptionsBubbleStates();
+            nullable1 = new bool?(false);
+            this.StickyTracking_DefaultValue = nullable1;
+            this.StickyTracking = nullable1;
+            nullable3 = new double?(0.0);
+            this.Threshold_DefaultValue = nullable3;
+            this.Threshold = nullable3;
+            this.Tooltip = this.Tooltip_DefaultValue = new PlotOptionsBubbleTooltip();
+            nullable1 = new bool?(true);
+            this.Visible_DefaultValue = nullable1;
+            this.Visible = nullable1;
+            double? nullable4 = new double?();
+            this.ZMax_DefaultValue = nullable4;
+            this.ZMax = nullable4;
+            double? nullable5 = new double?();
+            this.ZMin_DefaultValue = nullable5;
+            this.ZMin = nullable5;
+            nullable5 = new double?(0.0);
+            this.ZThreshold_DefaultValue = nullable5;
+            this.ZThreshold = nullable5;
+            this.ZoneAxis = this.ZoneAxis_DefaultValue = "y";
+            this.Zones = this.Zones_DefaultValue = new List<PlotOptionsBubbleZone>();
+        }
+
         public bool? AllowPointSelect { get; set; }
 
         private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -28,6 +123,10 @@ namespace Highsoft.Web.Mvc.Charts
         public string Color { get; set; }
 
         private string Color_DefaultValue { get; set; }
+
+        public double? ColorIndex { get; set; }
+
+        private double? ColorIndex_DefaultValue { get; set; }
 
         public double? CropThreshold { get; set; }
 
@@ -173,101 +272,9 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string ZoneAxis_DefaultValue { get; set; }
 
-        public PlotOptionsBubbleZones Zones { get; set; }
+        public List<PlotOptionsBubbleZone> Zones { get; set; }
 
-        private PlotOptionsBubbleZones Zones_DefaultValue { get; set; }
-
-        public PlotOptionsBubble()
-        {
-            bool? nullable1 = new bool?(false);
-            this.AllowPointSelect_DefaultValue = nullable1;
-            this.AllowPointSelect = nullable1;
-            this.Animation = this.Animation_DefaultValue = new Animation()
-            {
-                Enabled = true
-            };
-            double? nullable2 = new double?();
-            this.AnimationLimit_DefaultValue = nullable2;
-            this.AnimationLimit = nullable2;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = (string) null;
-            nullable2 = new double?(300.0);
-            this.CropThreshold_DefaultValue = nullable2;
-            this.CropThreshold = nullable2;
-            this.Cursor = this.Cursor_DefaultValue = PlotOptionsBubbleCursor.Null;
-            this.DashStyle = this.DashStyle_DefaultValue = PlotOptionsBubbleDashStyle.Solid;
-            this.DataLabels = this.DataLabels_DefaultValue = new PlotOptionsBubbleDataLabels();
-            this.Description = this.Description_DefaultValue = "undefined";
-            nullable1 = new bool?(true);
-            this.DisplayNegative_DefaultValue = nullable1;
-            this.DisplayNegative = nullable1;
-            nullable1 = new bool?(true);
-            this.EnableMouseTracking_DefaultValue = nullable1;
-            this.EnableMouseTracking = nullable1;
-            this.Events = this.Events_DefaultValue = new PlotOptionsBubbleEvents();
-            nullable1 = new bool?(false);
-            this.GetExtremesFromAll_DefaultValue = nullable1;
-            this.GetExtremesFromAll = nullable1;
-            this.Keys = this.Keys_DefaultValue = new List<string>();
-            nullable2 = new double?(0.0);
-            this.LineWidth_DefaultValue = nullable2;
-            this.LineWidth = nullable2;
-            this.LinkedTo = this.LinkedTo_DefaultValue = "";
-            this.Marker = this.Marker_DefaultValue = new PlotOptionsBubbleMarker();
-            this.MaxSize = this.MaxSize_DefaultValue = "20%";
-            this.MinSize = this.MinSize_DefaultValue = "8";
-            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
-            this.Point = this.Point_DefaultValue = new PlotOptionsBubblePoint();
-            nullable2 = new double?(1.0);
-            this.PointInterval_DefaultValue = nullable2;
-            this.PointInterval = nullable2;
-            this.PointIntervalUnit = this.PointIntervalUnit_DefaultValue = PlotOptionsBubblePointIntervalUnit.Null;
-            nullable2 = new double?(0.0);
-            this.PointStart_DefaultValue = nullable2;
-            this.PointStart = nullable2;
-            nullable1 = new bool?(false);
-            this.Selected_DefaultValue = nullable1;
-            this.Selected = nullable1;
-            this.Shadow = this.Shadow_DefaultValue = new Shadow()
-            {
-                Enabled = false
-            };
-            nullable1 = new bool?(false);
-            this.ShowCheckbox_DefaultValue = nullable1;
-            this.ShowCheckbox = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowInLegend_DefaultValue = nullable1;
-            this.ShowInLegend = nullable1;
-            this.SizeBy = this.SizeBy_DefaultValue = PlotOptionsBubbleSizeBy.Area;
-            nullable1 = new bool?(false);
-            this.SizeByAbsoluteValue_DefaultValue = nullable1;
-            this.SizeByAbsoluteValue = nullable1;
-            nullable1 = new bool?(false);
-            this.SoftThreshold_DefaultValue = nullable1;
-            this.SoftThreshold = nullable1;
-            this.States = this.States_DefaultValue = new PlotOptionsBubbleStates();
-            nullable1 = new bool?(false);
-            this.StickyTracking_DefaultValue = nullable1;
-            this.StickyTracking = nullable1;
-            nullable2 = new double?(0.0);
-            this.Threshold_DefaultValue = nullable2;
-            this.Threshold = nullable2;
-            this.Tooltip = this.Tooltip_DefaultValue = new PlotOptionsBubbleTooltip();
-            nullable1 = new bool?(true);
-            this.Visible_DefaultValue = nullable1;
-            this.Visible = nullable1;
-            double? nullable3 = new double?();
-            this.ZMax_DefaultValue = nullable3;
-            this.ZMax = nullable3;
-            double? nullable4 = new double?();
-            this.ZMin_DefaultValue = nullable4;
-            this.ZMin = nullable4;
-            nullable4 = new double?(0.0);
-            this.ZThreshold_DefaultValue = nullable4;
-            this.ZThreshold = nullable4;
-            this.ZoneAxis = this.ZoneAxis_DefaultValue = "y";
-            this.Zones = this.Zones_DefaultValue = new PlotOptionsBubbleZones();
-        }
+        private List<PlotOptionsBubbleZone> Zones_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -288,15 +295,21 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "className", (object) this.ClassName);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
-            nullable4 = this.CropThreshold;
-            nullable3 = this.CropThreshold_DefaultValue;
+            nullable4 = this.ColorIndex;
+            nullable3 = this.ColorIndex_DefaultValue;
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
+                hashtable.Add((object) "colorIndex", (object) this.ColorIndex);
+            nullable3 = this.CropThreshold;
+            nullable4 = this.CropThreshold_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "cropThreshold", (object) this.CropThreshold);
             if (this.Cursor != this.Cursor_DefaultValue)
                 hashtable.Add((object) "cursor", (object) Highcharts.FirstCharacterToLower(this.Cursor.ToString()));
             if (this.DashStyle != this.DashStyle_DefaultValue)
-                hashtable.Add((object) "dashStyle", (object) Highcharts.FirstCharacterToLower(this.DashStyle.ToString()));
+                hashtable.Add((object) "dashStyle",
+                    (object) Highcharts.FirstCharacterToLower(this.DashStyle.ToString()));
             if (this.DataLabels.IsDirty())
                 hashtable.Add((object) "dataLabels", (object) this.DataLabels.ToHashtable());
             if (this.Description != this.Description_DefaultValue)
@@ -320,10 +333,10 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "getExtremesFromAll", (object) this.GetExtremesFromAll);
             if (this.Keys != this.Keys_DefaultValue)
                 hashtable.Add((object) "keys", (object) this.Keys);
-            nullable3 = this.LineWidth;
-            nullable4 = this.LineWidth_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.LineWidth;
+            nullable3 = this.LineWidth_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "lineWidth", (object) this.LineWidth);
             if (this.LinkedTo != this.LinkedTo_DefaultValue)
                 hashtable.Add((object) "linkedTo", (object) this.LinkedTo);
@@ -337,26 +350,26 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "negativeColor", (object) this.NegativeColor);
             if (this.Point.IsDirty())
                 hashtable.Add((object) "point", (object) this.Point.ToHashtable());
-            nullable4 = this.PointInterval;
-            nullable3 = this.PointInterval_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.PointInterval;
+            nullable4 = this.PointInterval_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "pointInterval", (object) this.PointInterval);
             if (this.PointIntervalUnit != this.PointIntervalUnit_DefaultValue)
                 hashtable.Add((object) "pointIntervalUnit",
                     (object) Highcharts.FirstCharacterToLower(this.PointIntervalUnit.ToString()));
-            nullable3 = this.PointStart;
-            nullable4 = this.PointStart_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.PointStart;
+            nullable3 = this.PointStart_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "pointStart", (object) this.PointStart);
             nullable1 = this.Selected;
             nullable2 = this.Selected_DefaultValue;
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "selected", (object) this.Selected);
-            if (this.Shadow != this.Shadow_DefaultValue)
-                hashtable.Add((object) "shadow", (object) this.Shadow);
+            if (this.Shadow.IsDirty())
+                hashtable.Add((object) "shadow", (object) this.Shadow.ToHashtable());
             nullable2 = this.ShowCheckbox;
             nullable1 = this.ShowCheckbox_DefaultValue;
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
@@ -386,10 +399,10 @@ namespace Highsoft.Web.Mvc.Charts
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "stickyTracking", (object) this.StickyTracking);
-            nullable4 = this.Threshold;
-            nullable3 = this.Threshold_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.Threshold;
+            nullable4 = this.Threshold_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "threshold", (object) this.Threshold);
             if (this.Tooltip.IsDirty())
                 hashtable.Add((object) "tooltip", (object) this.Tooltip.ToHashtable());
@@ -398,31 +411,34 @@ namespace Highsoft.Web.Mvc.Charts
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "visible", (object) this.Visible);
-            nullable3 = this.ZMax;
-            nullable4 = this.ZMax_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
-                hashtable.Add((object) "zMax", (object) this.ZMax);
-            nullable4 = this.ZMin;
-            nullable3 = this.ZMin_DefaultValue;
+            nullable4 = this.ZMax;
+            nullable3 = this.ZMax_DefaultValue;
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
-                hashtable.Add((object) "zMin", (object) this.ZMin);
-            nullable3 = this.ZThreshold;
-            nullable4 = this.ZThreshold_DefaultValue;
+                hashtable.Add((object) "zMax", (object) this.ZMax);
+            nullable3 = this.ZMin;
+            nullable4 = this.ZMin_DefaultValue;
             if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
                 nullable3.HasValue != nullable4.HasValue)
+                hashtable.Add((object) "zMin", (object) this.ZMin);
+            nullable4 = this.ZThreshold;
+            nullable3 = this.ZThreshold_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "zThreshold", (object) this.ZThreshold);
             if (this.ZoneAxis != this.ZoneAxis_DefaultValue)
                 hashtable.Add((object) "zoneAxis", (object) this.ZoneAxis);
-            if (this.Zones.IsDirty())
-                hashtable.Add((object) "zones", (object) this.Zones.ToHashtable());
+            if (this.Zones != this.Zones_DefaultValue)
+                hashtable.Add((object) "zones", (object) this.HashifyList((IEnumerable) this.Zones));
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

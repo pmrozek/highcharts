@@ -9,6 +9,25 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class ColorAxis : BaseObject
     {
+        public ColorAxis()
+        {
+            this.Stops = this.Stops_DefaultValue = (List<Stop>) null;
+            double? nullable1 = new double?();
+            this.Min_DefaultValue = nullable1;
+            this.Min = nullable1;
+            double? nullable2 = new double?();
+            this.Max_DefaultValue = nullable2;
+            this.Max = nullable2;
+            bool? nullable3 = new bool?(false);
+            this.StartOnTick_DefaultValue = nullable3;
+            this.StartOnTick = nullable3;
+            nullable3 = new bool?(false);
+            this.EndOnTick_DefaultValue = nullable3;
+            this.EndOnTick = nullable3;
+            this.MinColor = this.MinColor_DefaultValue = (string) null;
+            this.MaxColor = this.MaxColor_DefaultValue = (string) null;
+        }
+
         public List<Stop> Stops { get; set; }
 
         private List<Stop> Stops_DefaultValue { get; set; }
@@ -36,25 +55,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public string MaxColor { get; set; }
 
         private string MaxColor_DefaultValue { get; set; }
-
-        public ColorAxis()
-        {
-            this.Stops = this.Stops_DefaultValue = (List<Stop>) null;
-            double? nullable1 = new double?();
-            this.Min_DefaultValue = nullable1;
-            this.Min = nullable1;
-            double? nullable2 = new double?();
-            this.Max_DefaultValue = nullable2;
-            this.Max = nullable2;
-            bool? nullable3 = new bool?(false);
-            this.StartOnTick_DefaultValue = nullable3;
-            this.StartOnTick = nullable3;
-            nullable3 = new bool?(false);
-            this.EndOnTick_DefaultValue = nullable3;
-            this.EndOnTick = nullable3;
-            this.MinColor = this.MinColor_DefaultValue = (string) null;
-            this.MaxColor = this.MaxColor_DefaultValue = (string) null;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -90,7 +90,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

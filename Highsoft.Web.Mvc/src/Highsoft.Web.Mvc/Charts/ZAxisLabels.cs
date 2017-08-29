@@ -9,6 +9,68 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ZAxisLabels : BaseObject
     {
+        public ZAxisLabels()
+        {
+            this.Align = this.Align_DefaultValue = ZAxisLabelsAlign.Null;
+            this.AutoRotation = this.AutoRotation_DefaultValue = new List<double>()
+            {
+                -45.0
+            };
+            double? nullable1 = new double?(80.0);
+            this.AutoRotationLimit_DefaultValue = nullable1;
+            this.AutoRotationLimit = nullable1;
+            nullable1 = new double?(15.0);
+            this.Distance_DefaultValue = nullable1;
+            this.Distance = nullable1;
+            bool? nullable2 = new bool?(true);
+            this.Enabled_DefaultValue = nullable2;
+            this.Enabled = nullable2;
+            this.Format = this.Format_DefaultValue = "{value}";
+            this.Formatter = this.Formatter_DefaultValue = "";
+            nullable1 = new double?(5.0);
+            this.Padding_DefaultValue = nullable1;
+            this.Padding = nullable1;
+            nullable2 = new bool?(true);
+            this.ReserveSpace_DefaultValue = nullable2;
+            this.ReserveSpace = nullable2;
+            nullable1 = new double?(0.0);
+            this.Rotation_DefaultValue = nullable1;
+            this.Rotation = nullable1;
+            double? nullable3 = new double?();
+            this.StaggerLines_DefaultValue = nullable3;
+            this.StaggerLines = nullable3;
+            double? nullable4 = new double?();
+            this.Step_DefaultValue = nullable4;
+            this.Step = nullable4;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#666666"
+                },
+                {
+                    (object) "cursor",
+                    (object) "default"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                }
+            };
+            nullable2 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable2;
+            this.UseHTML = nullable2;
+            nullable4 = new double?(0.0);
+            this.X_DefaultValue = nullable4;
+            this.X = nullable4;
+            double? nullable5 = new double?();
+            this.Y_DefaultValue = nullable5;
+            this.Y = nullable5;
+            nullable5 = new double?(7.0);
+            this.ZIndex_DefaultValue = nullable5;
+            this.ZIndex = nullable5;
+        }
+
         public ZAxisLabelsAlign Align { get; set; }
 
         private ZAxisLabelsAlign Align_DefaultValue { get; set; }
@@ -76,68 +138,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? ZIndex { get; set; }
 
         private double? ZIndex_DefaultValue { get; set; }
-
-        public ZAxisLabels()
-        {
-            this.Align = this.Align_DefaultValue = ZAxisLabelsAlign.Center;
-            this.AutoRotation = this.AutoRotation_DefaultValue = new List<double>()
-            {
-                -45.0
-            };
-            double? nullable1 = new double?(80.0);
-            this.AutoRotationLimit_DefaultValue = nullable1;
-            this.AutoRotationLimit = nullable1;
-            nullable1 = new double?(15.0);
-            this.Distance_DefaultValue = nullable1;
-            this.Distance = nullable1;
-            bool? nullable2 = new bool?(true);
-            this.Enabled_DefaultValue = nullable2;
-            this.Enabled = nullable2;
-            this.Format = this.Format_DefaultValue = "{value}";
-            this.Formatter = this.Formatter_DefaultValue = "";
-            nullable1 = new double?(5.0);
-            this.Padding_DefaultValue = nullable1;
-            this.Padding = nullable1;
-            nullable2 = new bool?(true);
-            this.ReserveSpace_DefaultValue = nullable2;
-            this.ReserveSpace = nullable2;
-            nullable1 = new double?(0.0);
-            this.Rotation_DefaultValue = nullable1;
-            this.Rotation = nullable1;
-            double? nullable3 = new double?();
-            this.StaggerLines_DefaultValue = nullable3;
-            this.StaggerLines = nullable3;
-            double? nullable4 = new double?();
-            this.Step_DefaultValue = nullable4;
-            this.Step = nullable4;
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#666666"
-                },
-                {
-                    (object) "cursor",
-                    (object) "default"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "11px"
-                }
-            };
-            nullable2 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable2;
-            this.UseHTML = nullable2;
-            nullable4 = new double?(0.0);
-            this.X_DefaultValue = nullable4;
-            this.X = nullable4;
-            double? nullable5 = new double?();
-            this.Y_DefaultValue = nullable5;
-            this.Y = nullable5;
-            nullable5 = new double?(7.0);
-            this.ZIndex_DefaultValue = nullable5;
-            this.ZIndex = nullable5;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -220,7 +220,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

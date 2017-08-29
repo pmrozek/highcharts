@@ -8,22 +8,6 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Loading : BaseObject
     {
-        public double? HideDuration { get; set; }
-
-        private double? HideDuration_DefaultValue { get; set; }
-
-        public Hashtable LabelStyle { get; set; }
-
-        private Hashtable LabelStyle_DefaultValue { get; set; }
-
-        public double? ShowDuration { get; set; }
-
-        private double? ShowDuration_DefaultValue { get; set; }
-
-        public Hashtable Style { get; set; }
-
-        private Hashtable Style_DefaultValue { get; set; }
-
         public Loading()
         {
             double? nullable = new double?(100.0);
@@ -68,6 +52,22 @@ namespace Highsoft.Web.Mvc.Stocks
             };
         }
 
+        public double? HideDuration { get; set; }
+
+        private double? HideDuration_DefaultValue { get; set; }
+
+        public Hashtable LabelStyle { get; set; }
+
+        private Hashtable LabelStyle_DefaultValue { get; set; }
+
+        public double? ShowDuration { get; set; }
+
+        private double? ShowDuration_DefaultValue { get; set; }
+
+        public Hashtable Style { get; set; }
+
+        private Hashtable Style_DefaultValue { get; set; }
+
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -90,7 +90,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

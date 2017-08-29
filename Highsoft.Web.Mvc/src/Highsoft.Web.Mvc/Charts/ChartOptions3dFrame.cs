@@ -8,6 +8,13 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ChartOptions3dFrame : BaseObject
     {
+        public ChartOptions3dFrame()
+        {
+            this.Back = this.Back_DefaultValue = new ChartOptions3dFrameBack();
+            this.Bottom = this.Bottom_DefaultValue = new ChartOptions3dFrameBottom();
+            this.Side = this.Side_DefaultValue = new ChartOptions3dFrameSide();
+        }
+
         public ChartOptions3dFrameBack Back { get; set; }
 
         private ChartOptions3dFrameBack Back_DefaultValue { get; set; }
@@ -19,13 +26,6 @@ namespace Highsoft.Web.Mvc.Charts
         public ChartOptions3dFrameSide Side { get; set; }
 
         private ChartOptions3dFrameSide Side_DefaultValue { get; set; }
-
-        public ChartOptions3dFrame()
-        {
-            this.Back = this.Back_DefaultValue = new ChartOptions3dFrameBack();
-            this.Bottom = this.Bottom_DefaultValue = new ChartOptions3dFrameBottom();
-            this.Side = this.Side_DefaultValue = new ChartOptions3dFrameSide();
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -41,7 +41,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

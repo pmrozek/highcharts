@@ -8,6 +8,13 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class XAxisEvents : BaseObject
     {
+        public XAxisEvents()
+        {
+            this.AfterSetExtremes = this.AfterSetExtremes_DefaultValue = "";
+            this.PointInBreak = this.PointInBreak_DefaultValue = "";
+            this.SetExtremes = this.SetExtremes_DefaultValue = "";
+        }
+
         public string AfterSetExtremes { get; set; }
 
         private string AfterSetExtremes_DefaultValue { get; set; }
@@ -19,13 +26,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public string SetExtremes { get; set; }
 
         private string SetExtremes_DefaultValue { get; set; }
-
-        public XAxisEvents()
-        {
-            this.AfterSetExtremes = this.AfterSetExtremes_DefaultValue = "";
-            this.PointInBreak = this.PointInBreak_DefaultValue = "";
-            this.SetExtremes = this.SetExtremes_DefaultValue = "";
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -50,7 +50,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

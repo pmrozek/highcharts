@@ -8,14 +8,14 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Responsive : BaseObject
     {
-        public ResponsiveRules Rules { get; set; }
-
-        private ResponsiveRules Rules_DefaultValue { get; set; }
-
         public Responsive()
         {
             this.Rules = this.Rules_DefaultValue = new ResponsiveRules();
         }
+
+        public ResponsiveRules Rules { get; set; }
+
+        private ResponsiveRules Rules_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -27,7 +27,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

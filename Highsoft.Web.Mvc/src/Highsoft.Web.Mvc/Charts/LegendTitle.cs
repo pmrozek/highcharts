@@ -8,14 +8,6 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class LegendTitle : BaseObject
     {
-        public Hashtable Style { get; set; }
-
-        private Hashtable Style_DefaultValue { get; set; }
-
-        public string Text { get; set; }
-
-        private string Text_DefaultValue { get; set; }
-
         public LegendTitle()
         {
             this.Style = this.Style_DefaultValue = new Hashtable()
@@ -27,6 +19,14 @@ namespace Highsoft.Web.Mvc.Charts
             };
             this.Text = this.Text_DefaultValue = "null";
         }
+
+        public Hashtable Style { get; set; }
+
+        private Hashtable Style_DefaultValue { get; set; }
+
+        public string Text { get; set; }
+
+        private string Text_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -40,7 +40,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,6 +8,19 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PaneBackground : BaseObject
     {
+        public PaneBackground()
+        {
+            this.BackgroundColor = this.BackgroundColor_DefaultValue = "";
+            this.BorderColor = this.BorderColor_DefaultValue = "#cccccc";
+            double? nullable = new double?(1.0);
+            this.BorderWidth_DefaultValue = nullable;
+            this.BorderWidth = nullable;
+            this.ClassName = this.ClassName_DefaultValue = "highcharts-pane";
+            this.InnerRadius = this.InnerRadius_DefaultValue = "0";
+            this.OuterRadius = this.OuterRadius_DefaultValue = "105%";
+            this.Shape = this.Shape_DefaultValue = PaneBackgroundShape.Solid;
+        }
+
         public string BackgroundColor { get; set; }
 
         private string BackgroundColor_DefaultValue { get; set; }
@@ -36,19 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private PaneBackgroundShape Shape_DefaultValue { get; set; }
 
-        public PaneBackground()
-        {
-            this.BackgroundColor = this.BackgroundColor_DefaultValue = "";
-            this.BorderColor = this.BorderColor_DefaultValue = "#cccccc";
-            double? nullable = new double?(1.0);
-            this.BorderWidth_DefaultValue = nullable;
-            this.BorderWidth = nullable;
-            this.ClassName = this.ClassName_DefaultValue = "highcharts-pane";
-            this.InnerRadius = this.InnerRadius_DefaultValue = "0";
-            this.OuterRadius = this.OuterRadius_DefaultValue = "105%";
-            this.Shape = this.Shape_DefaultValue = PaneBackgroundShape.Solid;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -74,7 +74,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

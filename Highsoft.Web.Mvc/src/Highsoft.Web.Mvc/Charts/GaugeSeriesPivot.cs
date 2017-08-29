@@ -8,6 +8,18 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class GaugeSeriesPivot : BaseObject
     {
+        public GaugeSeriesPivot()
+        {
+            this.BackgroundColor = this.BackgroundColor_DefaultValue = "#000000";
+            this.BorderColor = this.BorderColor_DefaultValue = "#cccccc";
+            double? nullable = new double?(0.0);
+            this.BorderWidth_DefaultValue = nullable;
+            this.BorderWidth = nullable;
+            nullable = new double?(5.0);
+            this.Radius_DefaultValue = nullable;
+            this.Radius = nullable;
+        }
+
         public string BackgroundColor { get; set; }
 
         private string BackgroundColor_DefaultValue { get; set; }
@@ -23,18 +35,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? Radius { get; set; }
 
         private double? Radius_DefaultValue { get; set; }
-
-        public GaugeSeriesPivot()
-        {
-            this.BackgroundColor = this.BackgroundColor_DefaultValue = "#000000";
-            this.BorderColor = this.BorderColor_DefaultValue = "#cccccc";
-            double? nullable = new double?(0.0);
-            this.BorderWidth_DefaultValue = nullable;
-            this.BorderWidth = nullable;
-            nullable = new double?(5.0);
-            this.Radius_DefaultValue = nullable;
-            this.Radius = nullable;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -58,7 +58,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

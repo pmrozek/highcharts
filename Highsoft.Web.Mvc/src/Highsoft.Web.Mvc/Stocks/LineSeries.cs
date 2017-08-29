@@ -10,6 +10,122 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class LineSeries : Series
     {
+        public LineSeries()
+        {
+            bool? nullable1 = new bool?(false);
+            this.AllowPointSelect_DefaultValue = nullable1;
+            this.AllowPointSelect = nullable1;
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
+            double? nullable2 = new double?();
+            this.AnimationLimit_DefaultValue = nullable2;
+            this.AnimationLimit = nullable2;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = (string) null;
+            double? nullable3 = new double?();
+            this.ColorIndex_DefaultValue = nullable3;
+            this.ColorIndex = nullable3;
+            this.Compare = this.Compare_DefaultValue = "undefined";
+            this.CompareBase = this.CompareBase_DefaultValue = LineSeriesCompareBase.Min;
+            nullable1 = new bool?(false);
+            this.ConnectNulls_DefaultValue = nullable1;
+            this.ConnectNulls = nullable1;
+            nullable3 = new double?(300.0);
+            this.CropThreshold_DefaultValue = nullable3;
+            this.CropThreshold = nullable3;
+            this.Cursor = this.Cursor_DefaultValue = LineSeriesCursor.Null;
+            this.DashStyle = this.DashStyle_DefaultValue = LineSeriesDashStyle.Solid;
+            this.Data = this.Data_DefaultValue = new List<LineSeriesData>();
+            this.DataGrouping = this.DataGrouping_DefaultValue = new LineSeriesDataGrouping();
+            this.DataLabels = this.DataLabels_DefaultValue = new LineSeriesDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            nullable1 = new bool?(true);
+            this.EnableMouseTracking_DefaultValue = nullable1;
+            this.EnableMouseTracking = nullable1;
+            this.Events = this.Events_DefaultValue = new LineSeriesEvents();
+            nullable3 = new double?(0.0);
+            this.GapSize_DefaultValue = nullable3;
+            this.GapSize = nullable3;
+            nullable1 = new bool?(false);
+            this.GetExtremesFromAll_DefaultValue = nullable1;
+            this.GetExtremesFromAll = nullable1;
+            this.Id = this.Id_DefaultValue = "";
+            double? nullable4 = new double?();
+            this.Index_DefaultValue = nullable4;
+            this.Index = nullable4;
+            this.Keys = this.Keys_DefaultValue = new List<string>();
+            double? nullable5 = new double?();
+            this.LegendIndex_DefaultValue = nullable5;
+            this.LegendIndex = nullable5;
+            nullable5 = new double?(2.0);
+            this.LineWidth_DefaultValue = nullable5;
+            this.LineWidth = nullable5;
+            this.Linecap = this.Linecap_DefaultValue = LineSeriesLinecap.Round;
+            this.LinkedTo = this.LinkedTo_DefaultValue = "";
+            this.Marker = this.Marker_DefaultValue = new LineSeriesMarker();
+            this.Name = this.Name_DefaultValue = (string) null;
+            this.NavigatorOptions = this.NavigatorOptions_DefaultValue = (object) null;
+            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
+            this.Point = this.Point_DefaultValue = new LineSeriesPoint();
+            nullable5 = new double?(1.0);
+            this.PointInterval_DefaultValue = nullable5;
+            this.PointInterval = nullable5;
+            this.PointIntervalUnit = this.PointIntervalUnit_DefaultValue = LineSeriesPointIntervalUnit.Null;
+            this.PointPlacement = this.PointPlacement_DefaultValue = new PointPlacement();
+            nullable5 = new double?(0.0);
+            this.PointRange_DefaultValue = nullable5;
+            this.PointRange = nullable5;
+            nullable5 = new double?(0.0);
+            this.PointStart_DefaultValue = nullable5;
+            this.PointStart = nullable5;
+            nullable1 = new bool?(false);
+            this.Selected_DefaultValue = nullable1;
+            this.Selected = nullable1;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
+            nullable1 = new bool?(false);
+            this.ShowCheckbox_DefaultValue = nullable1;
+            this.ShowCheckbox = nullable1;
+            nullable1 = new bool?(true);
+            this.ShowInLegend_DefaultValue = nullable1;
+            this.ShowInLegend = nullable1;
+            bool? nullable6 = new bool?();
+            this.ShowInNavigator_DefaultValue = nullable6;
+            this.ShowInNavigator = nullable6;
+            nullable6 = new bool?(true);
+            this.SoftThreshold_DefaultValue = nullable6;
+            this.SoftThreshold = nullable6;
+            this.Stack = this.Stack_DefaultValue = "null";
+            this.Stacking = this.Stacking_DefaultValue = LineSeriesStacking.Null;
+            this.States = this.States_DefaultValue = new LineSeriesStates();
+            this.Step = this.Step_DefaultValue = LineSeriesStep.False;
+            nullable6 = new bool?(true);
+            this.StickyTracking_DefaultValue = nullable6;
+            this.StickyTracking = nullable6;
+            nullable5 = new double?(0.0);
+            this.Threshold_DefaultValue = nullable5;
+            this.Threshold = nullable5;
+            this.Tooltip = this.Tooltip_DefaultValue = new LineSeriesTooltip();
+            nullable5 = new double?(1000.0);
+            this.TurboThreshold_DefaultValue = nullable5;
+            this.TurboThreshold = nullable5;
+            this.Type = this.Type_DefaultValue = LineSeriesType.Null;
+            nullable6 = new bool?(true);
+            this.Visible_DefaultValue = nullable6;
+            this.Visible = nullable6;
+            this.XAxis = this.XAxis_DefaultValue = "0";
+            this.YAxis = this.YAxis_DefaultValue = "0";
+            double? nullable7 = new double?();
+            this.ZIndex_DefaultValue = nullable7;
+            this.ZIndex = nullable7;
+            this.ZoneAxis = this.ZoneAxis_DefaultValue = "y";
+            this.Zones = this.Zones_DefaultValue = new List<LineSeriesZone>();
+        }
+
         public bool? AllowPointSelect { get; set; }
 
         private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -30,9 +146,17 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string Color_DefaultValue { get; set; }
 
+        public double? ColorIndex { get; set; }
+
+        private double? ColorIndex_DefaultValue { get; set; }
+
         public string Compare { get; set; }
 
         private string Compare_DefaultValue { get; set; }
+
+        public LineSeriesCompareBase CompareBase { get; set; }
+
+        private LineSeriesCompareBase CompareBase_DefaultValue { get; set; }
 
         public bool? ConnectNulls { get; set; }
 
@@ -230,121 +354,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string ZoneAxis_DefaultValue { get; set; }
 
-        public LineSeriesZones Zones { get; set; }
+        public List<LineSeriesZone> Zones { get; set; }
 
-        private LineSeriesZones Zones_DefaultValue { get; set; }
-
-        public LineSeries()
-        {
-            bool? nullable1 = new bool?(false);
-            this.AllowPointSelect_DefaultValue = nullable1;
-            this.AllowPointSelect = nullable1;
-            this.Animation = this.Animation_DefaultValue = new Animation()
-            {
-                Enabled = true
-            };
-            double? nullable2 = new double?();
-            this.AnimationLimit_DefaultValue = nullable2;
-            this.AnimationLimit = nullable2;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = (string) null;
-            this.Compare = this.Compare_DefaultValue = "undefined";
-            nullable1 = new bool?(false);
-            this.ConnectNulls_DefaultValue = nullable1;
-            this.ConnectNulls = nullable1;
-            nullable2 = new double?(300.0);
-            this.CropThreshold_DefaultValue = nullable2;
-            this.CropThreshold = nullable2;
-            this.Cursor = this.Cursor_DefaultValue = LineSeriesCursor.Null;
-            this.DashStyle = this.DashStyle_DefaultValue = LineSeriesDashStyle.Solid;
-            this.Data = this.Data_DefaultValue = new List<LineSeriesData>();
-            this.DataGrouping = this.DataGrouping_DefaultValue = new LineSeriesDataGrouping();
-            this.DataLabels = this.DataLabels_DefaultValue = new LineSeriesDataLabels();
-            this.Description = this.Description_DefaultValue = "undefined";
-            nullable1 = new bool?(true);
-            this.EnableMouseTracking_DefaultValue = nullable1;
-            this.EnableMouseTracking = nullable1;
-            this.Events = this.Events_DefaultValue = new LineSeriesEvents();
-            nullable2 = new double?(0.0);
-            this.GapSize_DefaultValue = nullable2;
-            this.GapSize = nullable2;
-            nullable1 = new bool?(false);
-            this.GetExtremesFromAll_DefaultValue = nullable1;
-            this.GetExtremesFromAll = nullable1;
-            this.Id = this.Id_DefaultValue = "";
-            double? nullable3 = new double?();
-            this.Index_DefaultValue = nullable3;
-            this.Index = nullable3;
-            this.Keys = this.Keys_DefaultValue = new List<string>();
-            double? nullable4 = new double?();
-            this.LegendIndex_DefaultValue = nullable4;
-            this.LegendIndex = nullable4;
-            nullable4 = new double?(2.0);
-            this.LineWidth_DefaultValue = nullable4;
-            this.LineWidth = nullable4;
-            this.Linecap = this.Linecap_DefaultValue = LineSeriesLinecap.Round;
-            this.LinkedTo = this.LinkedTo_DefaultValue = "";
-            this.Marker = this.Marker_DefaultValue = new LineSeriesMarker();
-            this.Name = this.Name_DefaultValue = (string) null;
-            this.NavigatorOptions = this.NavigatorOptions_DefaultValue = (object) null;
-            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
-            this.Point = this.Point_DefaultValue = new LineSeriesPoint();
-            nullable4 = new double?(1.0);
-            this.PointInterval_DefaultValue = nullable4;
-            this.PointInterval = nullable4;
-            this.PointIntervalUnit = this.PointIntervalUnit_DefaultValue = LineSeriesPointIntervalUnit.Null;
-            this.PointPlacement = this.PointPlacement_DefaultValue = new PointPlacement();
-            nullable4 = new double?(0.0);
-            this.PointRange_DefaultValue = nullable4;
-            this.PointRange = nullable4;
-            nullable4 = new double?(0.0);
-            this.PointStart_DefaultValue = nullable4;
-            this.PointStart = nullable4;
-            nullable1 = new bool?(false);
-            this.Selected_DefaultValue = nullable1;
-            this.Selected = nullable1;
-            this.Shadow = this.Shadow_DefaultValue = new Shadow()
-            {
-                Enabled = false
-            };
-            nullable1 = new bool?(false);
-            this.ShowCheckbox_DefaultValue = nullable1;
-            this.ShowCheckbox = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowInLegend_DefaultValue = nullable1;
-            this.ShowInLegend = nullable1;
-            bool? nullable5 = new bool?();
-            this.ShowInNavigator_DefaultValue = nullable5;
-            this.ShowInNavigator = nullable5;
-            nullable5 = new bool?(true);
-            this.SoftThreshold_DefaultValue = nullable5;
-            this.SoftThreshold = nullable5;
-            this.Stack = this.Stack_DefaultValue = "null";
-            this.Stacking = this.Stacking_DefaultValue = LineSeriesStacking.Null;
-            this.States = this.States_DefaultValue = new LineSeriesStates();
-            this.Step = this.Step_DefaultValue = LineSeriesStep.False;
-            nullable5 = new bool?(true);
-            this.StickyTracking_DefaultValue = nullable5;
-            this.StickyTracking = nullable5;
-            nullable4 = new double?(0.0);
-            this.Threshold_DefaultValue = nullable4;
-            this.Threshold = nullable4;
-            this.Tooltip = this.Tooltip_DefaultValue = new LineSeriesTooltip();
-            nullable4 = new double?(1000.0);
-            this.TurboThreshold_DefaultValue = nullable4;
-            this.TurboThreshold = nullable4;
-            this.Type = this.Type_DefaultValue = LineSeriesType.Null;
-            nullable5 = new bool?(true);
-            this.Visible_DefaultValue = nullable5;
-            this.Visible = nullable5;
-            this.XAxis = this.XAxis_DefaultValue = "0";
-            this.YAxis = this.YAxis_DefaultValue = "0";
-            double? nullable6 = new double?();
-            this.ZIndex_DefaultValue = nullable6;
-            this.ZIndex = nullable6;
-            this.ZoneAxis = this.ZoneAxis_DefaultValue = "y";
-            this.Zones = this.Zones_DefaultValue = new LineSeriesZones();
-        }
+        private List<LineSeriesZone> Zones_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -365,22 +377,31 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "className", (object) this.ClassName);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
+            nullable4 = this.ColorIndex;
+            nullable3 = this.ColorIndex_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
+                hashtable.Add((object) "colorIndex", (object) this.ColorIndex);
             if (this.Compare != this.Compare_DefaultValue)
                 hashtable.Add((object) "compare", (object) this.Compare);
+            if (this.CompareBase != this.CompareBase_DefaultValue)
+                hashtable.Add((object) "compareBase",
+                    (object) Highstock.FirstCharacterToLower(this.CompareBase.ToString()));
             nullable2 = this.ConnectNulls;
             nullable1 = this.ConnectNulls_DefaultValue;
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "connectNulls", (object) this.ConnectNulls);
-            nullable4 = this.CropThreshold;
-            nullable3 = this.CropThreshold_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.CropThreshold;
+            nullable4 = this.CropThreshold_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "cropThreshold", (object) this.CropThreshold);
             if (this.Cursor != this.Cursor_DefaultValue)
                 hashtable.Add((object) "cursor", (object) Highstock.FirstCharacterToLower(this.Cursor.ToString()));
             if (this.DashStyle != this.DashStyle_DefaultValue)
-                hashtable.Add((object) "dashStyle", (object) Highstock.FirstCharacterToLower(this.DashStyle.ToString()));
+                hashtable.Add((object) "dashStyle",
+                    (object) Highstock.FirstCharacterToLower(this.DashStyle.ToString()));
             if (this.Data.Any<LineSeriesData>())
                 hashtable.Add((object) "data", (object) this.HashifyList((IEnumerable) this.Data));
             if (this.DataGrouping.IsDirty())
@@ -396,10 +417,10 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "enableMouseTracking", (object) this.EnableMouseTracking);
             if (this.Events.IsDirty())
                 hashtable.Add((object) "events", (object) this.Events.ToHashtable());
-            nullable3 = this.GapSize;
-            nullable4 = this.GapSize_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.GapSize;
+            nullable3 = this.GapSize_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "gapSize", (object) this.GapSize);
             nullable2 = this.GetExtremesFromAll;
             nullable1 = this.GetExtremesFromAll_DefaultValue;
@@ -408,22 +429,22 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "getExtremesFromAll", (object) this.GetExtremesFromAll);
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
-            nullable4 = this.Index;
-            nullable3 = this.Index_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.Index;
+            nullable4 = this.Index_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "index", (object) this.Index);
             if (this.Keys != this.Keys_DefaultValue)
                 hashtable.Add((object) "keys", (object) this.Keys);
-            nullable3 = this.LegendIndex;
-            nullable4 = this.LegendIndex_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
-                hashtable.Add((object) "legendIndex", (object) this.LegendIndex);
-            nullable4 = this.LineWidth;
-            nullable3 = this.LineWidth_DefaultValue;
+            nullable4 = this.LegendIndex;
+            nullable3 = this.LegendIndex_DefaultValue;
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
+                hashtable.Add((object) "legendIndex", (object) this.LegendIndex);
+            nullable3 = this.LineWidth;
+            nullable4 = this.LineWidth_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "lineWidth", (object) this.LineWidth);
             if (this.Linecap != this.Linecap_DefaultValue)
                 hashtable.Add((object) "linecap", (object) Highstock.FirstCharacterToLower(this.Linecap.ToString()));
@@ -439,33 +460,39 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "negativeColor", (object) this.NegativeColor);
             if (this.Point.IsDirty())
                 hashtable.Add((object) "point", (object) this.Point.ToHashtable());
-            nullable3 = this.PointInterval;
-            nullable4 = this.PointInterval_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.PointInterval;
+            nullable3 = this.PointInterval_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "pointInterval", (object) this.PointInterval);
             if (this.PointIntervalUnit != this.PointIntervalUnit_DefaultValue)
                 hashtable.Add((object) "pointIntervalUnit",
                     (object) Highstock.FirstCharacterToLower(this.PointIntervalUnit.ToString()));
             if (this.PointPlacement.IsDirty())
-                hashtable.Add((object) "pointPlacement", (object) this.PointPlacement.ToJSON());
-            nullable4 = this.PointRange;
-            nullable3 = this.PointRange_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
-                hashtable.Add((object) "pointRange", (object) this.PointRange);
-            nullable3 = this.PointStart;
-            nullable4 = this.PointStart_DefaultValue;
+            {
+                nullable3 = this.PointPlacement.Value;
+                if (nullable3.HasValue)
+                    hashtable.Add((object) "pointPlacement", (object) this.PointPlacement.Value);
+                else
+                    hashtable.Add((object) "pointPlacement", (object) this.PointPlacement.ToJSON());
+            }
+            nullable3 = this.PointRange;
+            nullable4 = this.PointRange_DefaultValue;
             if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
                 nullable3.HasValue != nullable4.HasValue)
+                hashtable.Add((object) "pointRange", (object) this.PointRange);
+            nullable4 = this.PointStart;
+            nullable3 = this.PointStart_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "pointStart", (object) this.PointStart);
             nullable1 = this.Selected;
             nullable2 = this.Selected_DefaultValue;
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "selected", (object) this.Selected);
-            if (this.Shadow != this.Shadow_DefaultValue)
-                hashtable.Add((object) "shadow", (object) this.Shadow);
+            if (this.Shadow.IsDirty())
+                hashtable.Add((object) "shadow", (object) this.Shadow.ToHashtable());
             nullable2 = this.ShowCheckbox;
             nullable1 = this.ShowCheckbox_DefaultValue;
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
@@ -499,17 +526,17 @@ namespace Highsoft.Web.Mvc.Stocks
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "stickyTracking", (object) this.StickyTracking);
-            nullable4 = this.Threshold;
-            nullable3 = this.Threshold_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.Threshold;
+            nullable4 = this.Threshold_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "threshold", (object) this.Threshold);
             if (this.Tooltip.IsDirty())
                 hashtable.Add((object) "tooltip", (object) this.Tooltip.ToHashtable());
-            nullable3 = this.TurboThreshold;
-            nullable4 = this.TurboThreshold_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.TurboThreshold;
+            nullable3 = this.TurboThreshold_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "turboThreshold", (object) this.TurboThreshold);
             if (this.Type != this.Type_DefaultValue)
                 hashtable.Add((object) "type", (object) Highstock.FirstCharacterToLower(this.Type.ToString()));
@@ -522,21 +549,24 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "xAxis", (object) this.XAxis);
             if (this.YAxis != this.YAxis_DefaultValue)
                 hashtable.Add((object) "yAxis", (object) this.YAxis);
-            nullable4 = this.ZIndex;
-            nullable3 = this.ZIndex_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.ZIndex;
+            nullable4 = this.ZIndex_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             if (this.ZoneAxis != this.ZoneAxis_DefaultValue)
                 hashtable.Add((object) "zoneAxis", (object) this.ZoneAxis);
-            if (this.Zones.IsDirty())
-                hashtable.Add((object) "zones", (object) this.Zones.ToHashtable());
+            if (this.Zones != this.Zones_DefaultValue)
+                hashtable.Add((object) "zones", (object) this.HashifyList((IEnumerable) this.Zones));
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

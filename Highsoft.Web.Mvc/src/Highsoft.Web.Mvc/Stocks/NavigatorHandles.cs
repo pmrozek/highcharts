@@ -8,6 +8,12 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class NavigatorHandles : BaseObject
     {
+        public NavigatorHandles()
+        {
+            this.BackgroundColor = this.BackgroundColor_DefaultValue = "#f2f2f2";
+            this.BorderColor = this.BorderColor_DefaultValue = "#999999";
+        }
+
         public string BackgroundColor { get; set; }
 
         private string BackgroundColor_DefaultValue { get; set; }
@@ -15,12 +21,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public string BorderColor { get; set; }
 
         private string BorderColor_DefaultValue { get; set; }
-
-        public NavigatorHandles()
-        {
-            this.BackgroundColor = this.BackgroundColor_DefaultValue = "#f2f2f2";
-            this.BorderColor = this.BorderColor_DefaultValue = "#999999";
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -34,7 +34,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

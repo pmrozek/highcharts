@@ -8,6 +8,49 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class YAxisStackLabels : BaseObject
     {
+        public YAxisStackLabels()
+        {
+            this.Align = this.Align_DefaultValue = YAxisStackLabelsAlign.Null;
+            bool? nullable1 = new bool?(false);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.Format = this.Format_DefaultValue = "{total}";
+            this.Formatter = this.Formatter_DefaultValue = "";
+            double? nullable2 = new double?(0.0);
+            this.Rotation_DefaultValue = nullable2;
+            this.Rotation = nullable2;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#000000"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                },
+                {
+                    (object) "textShadow",
+                    (object) "1px 1px contrast},{ -1px -1px contrast},{ -1px 1px contrast},{ 1px -1px contrast"
+                }
+            };
+            this.TextAlign = this.TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
+            nullable1 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable1;
+            this.UseHTML = nullable1;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
+            double? nullable3 = new double?();
+            this.X_DefaultValue = nullable3;
+            this.X = nullable3;
+            double? nullable4 = new double?();
+            this.Y_DefaultValue = nullable4;
+            this.Y = nullable4;
+        }
+
         public YAxisStackLabelsAlign Align { get; set; }
 
         private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
@@ -52,49 +95,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private double? Y_DefaultValue { get; set; }
 
-        public YAxisStackLabels()
-        {
-            this.Align = this.Align_DefaultValue = YAxisStackLabelsAlign.Null;
-            bool? nullable1 = new bool?(false);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.Format = this.Format_DefaultValue = "{total}";
-            this.Formatter = this.Formatter_DefaultValue = "";
-            double? nullable2 = new double?(0.0);
-            this.Rotation_DefaultValue = nullable2;
-            this.Rotation = nullable2;
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#000000"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "11px"
-                },
-                {
-                    (object) "fontWeight",
-                    (object) "bold"
-                },
-                {
-                    (object) "textShadow",
-                    (object) "1px 1px contrast},{ -1px -1px contrast},{ -1px 1px contrast},{ 1px -1px contrast"
-                }
-            };
-            this.TextAlign = this.TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
-            nullable1 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable1;
-            this.UseHTML = nullable1;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
-            double? nullable3 = new double?();
-            this.X_DefaultValue = nullable3;
-            this.X = nullable3;
-            double? nullable4 = new double?();
-            this.Y_DefaultValue = nullable4;
-            this.Y = nullable4;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -120,7 +120,8 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.Style != this.Style_DefaultValue)
                 hashtable.Add((object) "style", (object) this.Style);
             if (this.TextAlign != this.TextAlign_DefaultValue)
-                hashtable.Add((object) "textAlign", (object) Highcharts.FirstCharacterToLower(this.TextAlign.ToString()));
+                hashtable.Add((object) "textAlign",
+                    (object) Highcharts.FirstCharacterToLower(this.TextAlign.ToString()));
             nullable2 = this.UseHTML;
             nullable1 = this.UseHTML_DefaultValue;
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
@@ -144,7 +145,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -18,6 +18,14 @@ namespace Highsoft.Web.Mvc.Stocks
             return new HtmlString(highstockRenderer.RenderHtml());
         }
 
+        public HtmlString GetHighstock(Highstock chart, string id)
+        {
+            HighstockRenderer highstockRenderer = new HighstockRenderer(chart);
+            chart.ID = id;
+            chart.Chart.RenderTo = id;
+            return new HtmlString(highstockRenderer.RenderHtml());
+        }
+
         [EditorBrowsable(EditorBrowsableState.Never)]
         private new bool Equals(object value)
         {

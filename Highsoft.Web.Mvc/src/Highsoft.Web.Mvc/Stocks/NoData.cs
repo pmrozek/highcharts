@@ -8,22 +8,6 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class NoData : BaseObject
     {
-        public Hashtable Attr { get; set; }
-
-        private Hashtable Attr_DefaultValue { get; set; }
-
-        public Hashtable Position { get; set; }
-
-        private Hashtable Position_DefaultValue { get; set; }
-
-        public Hashtable Style { get; set; }
-
-        private Hashtable Style_DefaultValue { get; set; }
-
-        public bool? UseHTML { get; set; }
-
-        private bool? UseHTML_DefaultValue { get; set; }
-
         public NoData()
         {
             this.Attr = this.Attr_DefaultValue = (Hashtable) null;
@@ -48,6 +32,22 @@ namespace Highsoft.Web.Mvc.Stocks
             this.UseHTML = nullable;
         }
 
+        public Hashtable Attr { get; set; }
+
+        private Hashtable Attr_DefaultValue { get; set; }
+
+        public Hashtable Position { get; set; }
+
+        private Hashtable Position_DefaultValue { get; set; }
+
+        public Hashtable Style { get; set; }
+
+        private Hashtable Style_DefaultValue { get; set; }
+
+        public bool? UseHTML { get; set; }
+
+        private bool? UseHTML_DefaultValue { get; set; }
+
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -67,7 +67,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,6 +8,17 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PlotOptionsArearangePointEvents : BaseObject
     {
+        public PlotOptionsArearangePointEvents()
+        {
+            this.Click = this.Click_DefaultValue = "";
+            this.MouseOut = this.MouseOut_DefaultValue = "";
+            this.MouseOver = this.MouseOver_DefaultValue = "";
+            this.Remove = this.Remove_DefaultValue = "";
+            this.Select = this.Select_DefaultValue = "";
+            this.Unselect = this.Unselect_DefaultValue = "";
+            this.Update = this.Update_DefaultValue = "";
+        }
+
         public string Click { get; set; }
 
         private string Click_DefaultValue { get; set; }
@@ -35,17 +46,6 @@ namespace Highsoft.Web.Mvc.Charts
         public string Update { get; set; }
 
         private string Update_DefaultValue { get; set; }
-
-        public PlotOptionsArearangePointEvents()
-        {
-            this.Click = this.Click_DefaultValue = "";
-            this.MouseOut = this.MouseOut_DefaultValue = "";
-            this.MouseOver = this.MouseOver_DefaultValue = "";
-            this.Remove = this.Remove_DefaultValue = "";
-            this.Select = this.Select_DefaultValue = "";
-            this.Unselect = this.Unselect_DefaultValue = "";
-            this.Update = this.Update_DefaultValue = "";
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -90,7 +90,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,6 +8,29 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ChartOptions3d : BaseObject
     {
+        public ChartOptions3d()
+        {
+            double? nullable1 = new double?(0.0);
+            this.Alpha_DefaultValue = nullable1;
+            this.Alpha = nullable1;
+            nullable1 = new double?(0.0);
+            this.Beta_DefaultValue = nullable1;
+            this.Beta = nullable1;
+            nullable1 = new double?(100.0);
+            this.Depth_DefaultValue = nullable1;
+            this.Depth = nullable1;
+            bool? nullable2 = new bool?(false);
+            this.Enabled_DefaultValue = nullable2;
+            this.Enabled = nullable2;
+            nullable2 = new bool?(true);
+            this.FitToPlot_DefaultValue = nullable2;
+            this.FitToPlot = nullable2;
+            this.Frame = this.Frame_DefaultValue = new ChartOptions3dFrame();
+            nullable1 = new double?(100.0);
+            this.ViewDistance_DefaultValue = nullable1;
+            this.ViewDistance = nullable1;
+        }
+
         public double? Alpha { get; set; }
 
         private double? Alpha_DefaultValue { get; set; }
@@ -35,29 +58,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? ViewDistance { get; set; }
 
         private double? ViewDistance_DefaultValue { get; set; }
-
-        public ChartOptions3d()
-        {
-            double? nullable1 = new double?(0.0);
-            this.Alpha_DefaultValue = nullable1;
-            this.Alpha = nullable1;
-            nullable1 = new double?(0.0);
-            this.Beta_DefaultValue = nullable1;
-            this.Beta = nullable1;
-            nullable1 = new double?(100.0);
-            this.Depth_DefaultValue = nullable1;
-            this.Depth = nullable1;
-            bool? nullable2 = new bool?(false);
-            this.Enabled_DefaultValue = nullable2;
-            this.Enabled = nullable2;
-            nullable2 = new bool?(true);
-            this.FitToPlot_DefaultValue = nullable2;
-            this.FitToPlot = nullable2;
-            this.Frame = this.Frame_DefaultValue = new ChartOptions3dFrame();
-            nullable1 = new double?(100.0);
-            this.ViewDistance_DefaultValue = nullable1;
-            this.ViewDistance = nullable1;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -99,7 +99,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

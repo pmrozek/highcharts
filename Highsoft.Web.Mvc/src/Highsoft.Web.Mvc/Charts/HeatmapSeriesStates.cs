@@ -8,14 +8,14 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class HeatmapSeriesStates : BaseObject
     {
-        public HeatmapSeriesStatesHover Hover { get; set; }
-
-        private HeatmapSeriesStatesHover Hover_DefaultValue { get; set; }
-
         public HeatmapSeriesStates()
         {
             this.Hover = this.Hover_DefaultValue = new HeatmapSeriesStatesHover();
         }
+
+        public HeatmapSeriesStatesHover Hover { get; set; }
+
+        private HeatmapSeriesStatesHover Hover_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -27,7 +27,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

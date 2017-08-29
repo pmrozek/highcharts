@@ -8,6 +8,18 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ChartResetZoomButtonPosition : BaseObject
     {
+        public ChartResetZoomButtonPosition()
+        {
+            this.Align = this.Align_DefaultValue = (string) null;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = ChartResetZoomButtonPositionVerticalAlign.Top;
+            double? nullable = new double?(-10.0);
+            this.X_DefaultValue = nullable;
+            this.X = nullable;
+            nullable = new double?(10.0);
+            this.Y_DefaultValue = nullable;
+            this.Y = nullable;
+        }
+
         public string Align { get; set; }
 
         private string Align_DefaultValue { get; set; }
@@ -23,18 +35,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? Y { get; set; }
 
         private double? Y_DefaultValue { get; set; }
-
-        public ChartResetZoomButtonPosition()
-        {
-            this.Align = this.Align_DefaultValue = (string) null;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = ChartResetZoomButtonPositionVerticalAlign.Top;
-            double? nullable = new double?(-10.0);
-            this.X_DefaultValue = nullable;
-            this.X = nullable;
-            nullable = new double?(10.0);
-            this.Y_DefaultValue = nullable;
-            this.Y = nullable;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -59,7 +59,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,6 +8,25 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class XAxisPlotLines : BaseObject
     {
+        public XAxisPlotLines()
+        {
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = "null";
+            this.DashStyle = this.DashStyle_DefaultValue = XAxisPlotLinesDashStyle.Solid;
+            this.Events = this.Events_DefaultValue = (object) null;
+            this.Id = this.Id_DefaultValue = "null";
+            this.Label = this.Label_DefaultValue = new XAxisPlotLinesLabel();
+            double? nullable1 = new double?();
+            this.Value_DefaultValue = nullable1;
+            this.Value = nullable1;
+            double? nullable2 = new double?();
+            this.Width_DefaultValue = nullable2;
+            this.Width = nullable2;
+            double? nullable3 = new double?();
+            this.ZIndex_DefaultValue = nullable3;
+            this.ZIndex = nullable3;
+        }
+
         public string ClassName { get; set; }
 
         private string ClassName_DefaultValue { get; set; }
@@ -44,25 +63,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? ZIndex_DefaultValue { get; set; }
 
-        public XAxisPlotLines()
-        {
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = "null";
-            this.DashStyle = this.DashStyle_DefaultValue = XAxisPlotLinesDashStyle.Solid;
-            this.Events = this.Events_DefaultValue = (object) null;
-            this.Id = this.Id_DefaultValue = "null";
-            this.Label = this.Label_DefaultValue = new XAxisPlotLinesLabel();
-            double? nullable1 = new double?();
-            this.Value_DefaultValue = nullable1;
-            this.Value = nullable1;
-            double? nullable2 = new double?();
-            this.Width_DefaultValue = nullable2;
-            this.Width = nullable2;
-            double? nullable3 = new double?();
-            this.ZIndex_DefaultValue = nullable3;
-            this.ZIndex = nullable3;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -71,7 +71,8 @@ namespace Highsoft.Web.Mvc.Stocks
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
             if (this.DashStyle != this.DashStyle_DefaultValue)
-                hashtable.Add((object) "dashStyle", (object) Highstock.FirstCharacterToLower(this.DashStyle.ToString()));
+                hashtable.Add((object) "dashStyle",
+                    (object) Highstock.FirstCharacterToLower(this.DashStyle.ToString()));
             if (this.Events != this.Events_DefaultValue)
                 hashtable.Add((object) "events", this.Events);
             if (this.Id != this.Id_DefaultValue)
@@ -98,7 +99,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

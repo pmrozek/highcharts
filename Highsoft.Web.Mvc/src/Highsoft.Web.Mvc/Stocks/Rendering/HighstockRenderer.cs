@@ -11,44 +11,43 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 {
     public class HighstockRenderer
     {
-        private readonly Highstock chart;
+        private readonly Highstock _chart;
 
         public HighstockRenderer(Highstock chart)
         {
-            this.chart = chart;
+            _chart = chart;
         }
 
         public string RenderHtml()
         {
-            return this.GetStartupJavascript();
+            return GetStartupJavascript();
         }
 
         public string GetJsonOptions()
         {
-            return this.GetStartupOptions();
+            return GetStartupOptions();
         }
 
         private string GetStartupJavascript()
         {
             StringBuilder stringBuilder1 = new StringBuilder();
-            this.chart.Chart.RenderTo = this.chart.ID;
+            _chart.Chart.RenderTo = _chart.ID;
             StringBuilder stringBuilder2 = stringBuilder1;
             string format = "<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>";
-            string id = this.chart.ID;
-            double? nullable = this.chart.Chart.Height;
+            string id = _chart.ID;
+            double? nullable = _chart.Chart.Height;
             string str1 = nullable.ToString();
-            nullable = this.chart.Chart.Width;
+            nullable = _chart.Chart.Width;
             string str2 = nullable.ToString();
             stringBuilder2.AppendFormat(format, (object) id, (object) str1, (object) str2);
             stringBuilder1.Append("<script type='text/javascript'>");
-            stringBuilder1.Append(
-                string.Format(
-                    "if (document.addEventListener) {{document.addEventListener(\"DOMContentLoaded\", function() {{createChart{0}();}});}} else if (document.attachEvent) {{document.attachEvent(\"onreadystatechange\", function(){{if (document.readyState === \"complete\"){{document.detachEvent(\"onreadystatechange\", arguments.callee);createChart{1}();}}}});}}",
-                    (object) this.chart.ID, (object) this.chart.ID));
-            stringBuilder1.Append(string.Format("function createChart{0}() {{", (object) this.chart.ID));
-            stringBuilder1.Append(string.Format("var ChartOptions = {0};", (object) this.GetStartupOptions()));
+            stringBuilder1.Append(string.Format(
+                "if (document.addEventListener) {{document.addEventListener(\"DOMContentLoaded\", function() {{createChart{0}();}});}} else if (document.attachEvent) {{document.attachEvent(\"onreadystatechange\", function(){{if (document.readyState === \"complete\"){{document.detachEvent(\"onreadystatechange\", arguments.callee);createChart{1}();}}}});}}",
+                (object) _chart.ID, (object) _chart.ID));
+            stringBuilder1.Append(string.Format("function createChart{0}() {{", (object) _chart.ID));
+            stringBuilder1.Append(string.Format("var ChartOptions = {0};", (object) GetStartupOptions()));
             stringBuilder1.Append(string.Format("new Highcharts.StockChart(\"{0}\",ChartOptions);",
-                (object) this.chart.ID));
+                (object) _chart.ID));
             stringBuilder1.Append("}");
             stringBuilder1.Append("</script>");
             return stringBuilder1.ToString();
@@ -57,22 +56,22 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
         private string GetStartupOptions()
         {
             StringBuilder s = new StringBuilder();
-            this.RenderChartSettings(s);
+            RenderChartSettings(s);
             return s.ToString();
         }
 
         private void RenderChartSettings(StringBuilder s)
         {
-            Hashtable hashtable = this.chart.ToHashtable();
+            Hashtable hashtable = _chart.ToHashtable();
             List<Hashtable> hashtableList1 = new List<Hashtable>();
             List<Hashtable> hashtableList2 = new List<Hashtable>();
-            if (this.chart.Series != null)
-                hashtableList1 = this.SeriesToHashtables(this.chart.Series);
+            if (_chart.Series != null)
+                hashtableList1 = SeriesToHashtables(_chart.Series);
             if (hashtableList1.Count > 0)
                 hashtable[(object) "series"] = (object) hashtableList1;
             if (hashtableList2.Count > 0)
                 (hashtable[(object) "drilldown"] as Hashtable)[(object) "series"] = (object) hashtableList2;
-            string str1 = JsonConvert.SerializeObject((object) hashtable);
+            var str1 = JsonConvert.SerializeObject(hashtable);
             Hashtable functions = Highstock.functions;
             foreach (string key in (IEnumerable) functions.Keys)
             {
@@ -101,22 +100,24 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                         continue;
                     }
                     LineSeries lineSeries = series as LineSeries;
-                    lineSeries.Data.ForEach((Action<LineSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
+                    lineSeries.Data.ForEach(
+                        (Action<LineSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
                     lineSeries.Type = LineSeriesType.Line;
                     hashtable1 = lineSeries.ToHashtable();
                 }
                 if (series is SplineSeries)
                 {
                     SplineSeries splineSeries = series as SplineSeries;
-                    splineSeries.Data.ForEach(
-                        (Action<SplineSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
+                    splineSeries.Data.ForEach((Action<SplineSeriesData>) (data =>
+                        dataList.Add((object) data.ToHashtable())));
                     splineSeries.Type = SplineSeriesType.Spline;
                     hashtable1 = splineSeries.ToHashtable();
                 }
                 if (series is AreaSeries)
                 {
                     AreaSeries areaSeries = series as AreaSeries;
-                    areaSeries.Data.ForEach((Action<AreaSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
+                    areaSeries.Data.ForEach(
+                        (Action<AreaSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
                     areaSeries.Type = AreaSeriesType.Area;
                     hashtable1 = areaSeries.ToHashtable();
                 }
@@ -155,8 +156,8 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 if (series is ColumnSeries)
                 {
                     ColumnSeries columnSeries = series as ColumnSeries;
-                    columnSeries.Data.ForEach(
-                        (Action<ColumnSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
+                    columnSeries.Data.ForEach((Action<ColumnSeriesData>) (data =>
+                        dataList.Add((object) data.ToHashtable())));
                     columnSeries.Type = ColumnSeriesType.Column;
                     hashtable1 = columnSeries.ToHashtable();
                 }
@@ -187,19 +188,19 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 if (series is FlagsSeries)
                 {
                     FlagsSeries flagsSeries = series as FlagsSeries;
-                    flagsSeries.Data.ForEach(
-                        (Action<FlagsSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
+                    flagsSeries.Data.ForEach((Action<FlagsSeriesData>) (data =>
+                        dataList.Add((object) data.ToHashtable())));
                     flagsSeries.Type = FlagsSeriesType.Flags;
                     hashtable1 = flagsSeries.ToHashtable();
                 }
                 if (series is OhlcSeries)
                 {
                     OhlcSeries ohlcSeries = series as OhlcSeries;
-                    ohlcSeries.Data.ForEach((Action<OhlcSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
+                    ohlcSeries.Data.ForEach(
+                        (Action<OhlcSeriesData>) (data => dataList.Add((object) data.ToHashtable())));
                     ohlcSeries.Type = OhlcSeriesType.Ohlc;
                     hashtable1 = ohlcSeries.ToHashtable();
                 }
-                hashtable1.Add((object) "data", (object) dataList);
                 hashtableList.Add(hashtable1);
             }
             return hashtableList;

@@ -8,6 +8,20 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Global : BaseObject
     {
+        public Global()
+        {
+            this.VMLRadialGradientURL = this.VMLRadialGradientURL_DefaultValue =
+                "http://code.highcharts.com/{version}/gfx/vml-radial-gradient.png";
+            this.GetTimezoneOffset = this.GetTimezoneOffset_DefaultValue = "";
+            this.Timezone = this.Timezone_DefaultValue = "undefined";
+            double? nullable1 = new double?(0.0);
+            this.TimezoneOffset_DefaultValue = nullable1;
+            this.TimezoneOffset = nullable1;
+            bool? nullable2 = new bool?(true);
+            this.UseUTC_DefaultValue = nullable2;
+            this.UseUTC = nullable2;
+        }
+
         public string VMLRadialGradientURL { get; set; }
 
         private string VMLRadialGradientURL_DefaultValue { get; set; }
@@ -16,6 +30,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string GetTimezoneOffset_DefaultValue { get; set; }
 
+        public string Timezone { get; set; }
+
+        private string Timezone_DefaultValue { get; set; }
+
         public double? TimezoneOffset { get; set; }
 
         private double? TimezoneOffset_DefaultValue { get; set; }
@@ -23,20 +41,6 @@ namespace Highsoft.Web.Mvc.Charts
         public bool? UseUTC { get; set; }
 
         private bool? UseUTC_DefaultValue { get; set; }
-
-        public Global()
-        {
-            this.VMLRadialGradientURL =
-                this.VMLRadialGradientURL_DefaultValue =
-                    "http://code.highcharts.com/{version}/gfx/vml-radial-gradient.png";
-            this.GetTimezoneOffset = this.GetTimezoneOffset_DefaultValue = "";
-            double? nullable1 = new double?(0.0);
-            this.TimezoneOffset_DefaultValue = nullable1;
-            this.TimezoneOffset = nullable1;
-            bool? nullable2 = new bool?(true);
-            this.UseUTC_DefaultValue = nullable2;
-            this.UseUTC = nullable2;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -48,6 +52,8 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "getTimezoneOffset", (object) this.GetTimezoneOffset);
                 Highcharts.AddFunction("GlobalGetTimezoneOffset.getTimezoneOffset", this.GetTimezoneOffset);
             }
+            if (this.Timezone != this.Timezone_DefaultValue)
+                hashtable.Add((object) "timezone", (object) this.Timezone);
             double? timezoneOffset = this.TimezoneOffset;
             double? offsetDefaultValue = this.TimezoneOffset_DefaultValue;
             if (timezoneOffset.GetValueOrDefault() != offsetDefaultValue.GetValueOrDefault() ||
@@ -63,7 +69,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

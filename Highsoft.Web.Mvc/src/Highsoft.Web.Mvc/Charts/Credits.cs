@@ -8,26 +8,6 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Credits : BaseObject
     {
-        public bool? Enabled { get; set; }
-
-        private bool? Enabled_DefaultValue { get; set; }
-
-        public string Href { get; set; }
-
-        private string Href_DefaultValue { get; set; }
-
-        public Hashtable Position { get; set; }
-
-        private Hashtable Position_DefaultValue { get; set; }
-
-        public Hashtable Style { get; set; }
-
-        private Hashtable Style_DefaultValue { get; set; }
-
-        public string Text { get; set; }
-
-        private string Text_DefaultValue { get; set; }
-
         public Credits()
         {
             bool? nullable = new bool?(true);
@@ -53,6 +33,26 @@ namespace Highsoft.Web.Mvc.Charts
             this.Text = this.Text_DefaultValue = "Highcharts.com";
         }
 
+        public bool? Enabled { get; set; }
+
+        private bool? Enabled_DefaultValue { get; set; }
+
+        public string Href { get; set; }
+
+        private string Href_DefaultValue { get; set; }
+
+        public Hashtable Position { get; set; }
+
+        private Hashtable Position_DefaultValue { get; set; }
+
+        public Hashtable Style { get; set; }
+
+        private Hashtable Style_DefaultValue { get; set; }
+
+        public string Text { get; set; }
+
+        private string Text_DefaultValue { get; set; }
+
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -74,7 +74,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

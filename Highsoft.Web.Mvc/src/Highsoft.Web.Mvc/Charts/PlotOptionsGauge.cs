@@ -9,6 +9,63 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PlotOptionsGauge : BaseObject
     {
+        public PlotOptionsGauge()
+        {
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
+            double? nullable1 = new double?();
+            this.AnimationLimit_DefaultValue = nullable1;
+            this.AnimationLimit = nullable1;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = (string) null;
+            double? nullable2 = new double?();
+            this.ColorIndex_DefaultValue = nullable2;
+            this.ColorIndex = nullable2;
+            this.Cursor = this.Cursor_DefaultValue = PlotOptionsGaugeCursor.Null;
+            this.DataLabels = this.DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            this.Dial = this.Dial_DefaultValue = new PlotOptionsGaugeDial();
+            bool? nullable3 = new bool?(true);
+            this.EnableMouseTracking_DefaultValue = nullable3;
+            this.EnableMouseTracking = nullable3;
+            this.Events = this.Events_DefaultValue = new PlotOptionsGaugeEvents();
+            nullable3 = new bool?(false);
+            this.GetExtremesFromAll_DefaultValue = nullable3;
+            this.GetExtremesFromAll = nullable3;
+            this.Keys = this.Keys_DefaultValue = new List<string>();
+            this.LinkedTo = this.LinkedTo_DefaultValue = "";
+            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
+            nullable2 = new double?(0.0);
+            this.Overshoot_DefaultValue = nullable2;
+            this.Overshoot = nullable2;
+            this.Pivot = this.Pivot_DefaultValue = new PlotOptionsGaugePivot();
+            this.Point = this.Point_DefaultValue = new PlotOptionsGaugePoint();
+            nullable3 = new bool?(false);
+            this.Selected_DefaultValue = nullable3;
+            this.Selected = nullable3;
+            nullable3 = new bool?(false);
+            this.ShowCheckbox_DefaultValue = nullable3;
+            this.ShowCheckbox = nullable3;
+            bool? nullable4 = new bool?();
+            this.ShowInLegend_DefaultValue = nullable4;
+            this.ShowInLegend = nullable4;
+            nullable4 = new bool?(true);
+            this.StickyTracking_DefaultValue = nullable4;
+            this.StickyTracking = nullable4;
+            nullable2 = new double?(0.0);
+            this.Threshold_DefaultValue = nullable2;
+            this.Threshold = nullable2;
+            this.Tooltip = this.Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
+            nullable4 = new bool?(true);
+            this.Visible_DefaultValue = nullable4;
+            this.Visible = nullable4;
+            nullable4 = new bool?(true);
+            this.Wrap_DefaultValue = nullable4;
+            this.Wrap = nullable4;
+        }
+
         public Animation Animation { get; set; }
 
         private Animation Animation_DefaultValue { get; set; }
@@ -24,6 +81,10 @@ namespace Highsoft.Web.Mvc.Charts
         public string Color { get; set; }
 
         private string Color_DefaultValue { get; set; }
+
+        public double? ColorIndex { get; set; }
+
+        private double? ColorIndex_DefaultValue { get; set; }
 
         public PlotOptionsGaugeCursor Cursor { get; set; }
 
@@ -109,60 +170,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private bool? Wrap_DefaultValue { get; set; }
 
-        public PlotOptionsGauge()
-        {
-            this.Animation = this.Animation_DefaultValue = new Animation()
-            {
-                Enabled = true
-            };
-            double? nullable1 = new double?();
-            this.AnimationLimit_DefaultValue = nullable1;
-            this.AnimationLimit = nullable1;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = (string) null;
-            this.Cursor = this.Cursor_DefaultValue = PlotOptionsGaugeCursor.Null;
-            this.DataLabels = this.DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
-            this.Description = this.Description_DefaultValue = "undefined";
-            this.Dial = this.Dial_DefaultValue = new PlotOptionsGaugeDial();
-            bool? nullable2 = new bool?(true);
-            this.EnableMouseTracking_DefaultValue = nullable2;
-            this.EnableMouseTracking = nullable2;
-            this.Events = this.Events_DefaultValue = new PlotOptionsGaugeEvents();
-            nullable2 = new bool?(false);
-            this.GetExtremesFromAll_DefaultValue = nullable2;
-            this.GetExtremesFromAll = nullable2;
-            this.Keys = this.Keys_DefaultValue = new List<string>();
-            this.LinkedTo = this.LinkedTo_DefaultValue = "";
-            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
-            nullable1 = new double?(0.0);
-            this.Overshoot_DefaultValue = nullable1;
-            this.Overshoot = nullable1;
-            this.Pivot = this.Pivot_DefaultValue = new PlotOptionsGaugePivot();
-            this.Point = this.Point_DefaultValue = new PlotOptionsGaugePoint();
-            nullable2 = new bool?(false);
-            this.Selected_DefaultValue = nullable2;
-            this.Selected = nullable2;
-            nullable2 = new bool?(false);
-            this.ShowCheckbox_DefaultValue = nullable2;
-            this.ShowCheckbox = nullable2;
-            bool? nullable3 = new bool?();
-            this.ShowInLegend_DefaultValue = nullable3;
-            this.ShowInLegend = nullable3;
-            nullable3 = new bool?(true);
-            this.StickyTracking_DefaultValue = nullable3;
-            this.StickyTracking = nullable3;
-            nullable1 = new double?(0.0);
-            this.Threshold_DefaultValue = nullable1;
-            this.Threshold = nullable1;
-            this.Tooltip = this.Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
-            nullable3 = new bool?(true);
-            this.Visible_DefaultValue = nullable3;
-            this.Visible = nullable3;
-            nullable3 = new bool?(true);
-            this.Wrap_DefaultValue = nullable3;
-            this.Wrap = nullable3;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -177,6 +184,11 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "className", (object) this.ClassName);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
+            nullable2 = this.ColorIndex;
+            nullable1 = this.ColorIndex_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
+                hashtable.Add((object) "colorIndex", (object) this.ColorIndex);
             if (this.Cursor != this.Cursor_DefaultValue)
                 hashtable.Add((object) "cursor", (object) Highcharts.FirstCharacterToLower(this.Cursor.ToString()));
             if (this.DataLabels.IsDirty())
@@ -203,10 +215,10 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "linkedTo", (object) this.LinkedTo);
             if (this.NegativeColor != this.NegativeColor_DefaultValue)
                 hashtable.Add((object) "negativeColor", (object) this.NegativeColor);
-            nullable2 = this.Overshoot;
-            nullable1 = this.Overshoot_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Overshoot;
+            nullable2 = this.Overshoot_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "overshoot", (object) this.Overshoot);
             if (this.Pivot.IsDirty())
                 hashtable.Add((object) "pivot", (object) this.Pivot.ToHashtable());
@@ -232,10 +244,10 @@ namespace Highsoft.Web.Mvc.Charts
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "stickyTracking", (object) this.StickyTracking);
-            nullable1 = this.Threshold;
-            nullable2 = this.Threshold_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Threshold;
+            nullable1 = this.Threshold_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "threshold", (object) this.Threshold);
             if (this.Tooltip.IsDirty())
                 hashtable.Add((object) "tooltip", (object) this.Tooltip.ToHashtable());
@@ -254,7 +266,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

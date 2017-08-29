@@ -8,6 +8,44 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class XAxisCrosshairLabel : BaseObject
     {
+        public XAxisCrosshairLabel()
+        {
+            this.Align = this.Align_DefaultValue = "";
+            this.BackgroundColor = this.BackgroundColor_DefaultValue = (string) null;
+            this.BorderColor = this.BorderColor_DefaultValue = "";
+            double? nullable = new double?(3.0);
+            this.BorderRadius_DefaultValue = nullable;
+            this.BorderRadius = nullable;
+            nullable = new double?(0.0);
+            this.BorderWidth_DefaultValue = nullable;
+            this.BorderWidth = nullable;
+            this.Format = this.Format_DefaultValue = "";
+            this.Formatter = this.Formatter_DefaultValue = "";
+            nullable = new double?(8.0);
+            this.Padding_DefaultValue = nullable;
+            this.Padding = nullable;
+            this.Shape = this.Shape_DefaultValue = "callout";
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "white"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "normal"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                },
+                {
+                    (object) "textAlign",
+                    (object) "center"
+                }
+            };
+        }
+
         public string Align { get; set; }
 
         private string Align_DefaultValue { get; set; }
@@ -47,44 +85,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public Hashtable Style { get; set; }
 
         private Hashtable Style_DefaultValue { get; set; }
-
-        public XAxisCrosshairLabel()
-        {
-            this.Align = this.Align_DefaultValue = "";
-            this.BackgroundColor = this.BackgroundColor_DefaultValue = (string) null;
-            this.BorderColor = this.BorderColor_DefaultValue = "";
-            double? nullable = new double?(3.0);
-            this.BorderRadius_DefaultValue = nullable;
-            this.BorderRadius = nullable;
-            nullable = new double?(0.0);
-            this.BorderWidth_DefaultValue = nullable;
-            this.BorderWidth = nullable;
-            this.Format = this.Format_DefaultValue = "";
-            this.Formatter = this.Formatter_DefaultValue = "";
-            nullable = new double?(8.0);
-            this.Padding_DefaultValue = nullable;
-            this.Padding = nullable;
-            this.Shape = this.Shape_DefaultValue = "callout";
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "white"
-                },
-                {
-                    (object) "fontWeight",
-                    (object) "normal"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "11px"
-                },
-                {
-                    (object) "textAlign",
-                    (object) "center"
-                }
-            };
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -126,7 +126,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

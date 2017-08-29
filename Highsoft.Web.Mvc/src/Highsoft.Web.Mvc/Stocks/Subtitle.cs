@@ -8,6 +8,35 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Subtitle : BaseObject
     {
+        public Subtitle()
+        {
+            this.Align = this.Align_DefaultValue = SubtitleAlign.Center;
+            bool? nullable1 = new bool?(false);
+            this.Floating_DefaultValue = nullable1;
+            this.Floating = nullable1;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#666666"
+                }
+            };
+            this.Text = this.Text_DefaultValue = (string) null;
+            nullable1 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable1;
+            this.UseHTML = nullable1;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = SubtitleVerticalAlign.Top;
+            double? nullable2 = new double?(-44.0);
+            this.WidthAdjust_DefaultValue = nullable2;
+            this.WidthAdjust = nullable2;
+            nullable2 = new double?(0.0);
+            this.X_DefaultValue = nullable2;
+            this.X = nullable2;
+            double? nullable3 = new double?();
+            this.Y_DefaultValue = nullable3;
+            this.Y = nullable3;
+        }
+
         public SubtitleAlign Align { get; set; }
 
         private SubtitleAlign Align_DefaultValue { get; set; }
@@ -43,35 +72,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public double? Y { get; set; }
 
         private double? Y_DefaultValue { get; set; }
-
-        public Subtitle()
-        {
-            this.Align = this.Align_DefaultValue = SubtitleAlign.Center;
-            bool? nullable1 = new bool?(false);
-            this.Floating_DefaultValue = nullable1;
-            this.Floating = nullable1;
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#666666"
-                }
-            };
-            this.Text = this.Text_DefaultValue = (string) null;
-            nullable1 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable1;
-            this.UseHTML = nullable1;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = SubtitleVerticalAlign.Top;
-            double? nullable2 = new double?(-44.0);
-            this.WidthAdjust_DefaultValue = nullable2;
-            this.WidthAdjust = nullable2;
-            nullable2 = new double?(0.0);
-            this.X_DefaultValue = nullable2;
-            this.X = nullable2;
-            double? nullable3 = new double?();
-            this.Y_DefaultValue = nullable3;
-            this.Y = nullable3;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -115,7 +115,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

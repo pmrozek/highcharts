@@ -7,15 +7,15 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Symbol : BaseObject
     {
-        public string Url { get; set; }
-
-        public SymbolEnum SymbolEnum { get; set; }
-
         public Symbol()
         {
             this.Url = "";
             this.SymbolEnum = SymbolEnum.Null;
         }
+
+        public string Url { get; set; }
+
+        public SymbolEnum SymbolEnum { get; set; }
 
         internal override Hashtable ToHashtable()
         {

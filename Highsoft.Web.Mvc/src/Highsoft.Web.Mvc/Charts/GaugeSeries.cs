@@ -3,12 +3,85 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
     public class GaugeSeries : Series
     {
+        public GaugeSeries()
+        {
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
+            double? nullable1 = new double?();
+            this.AnimationLimit_DefaultValue = nullable1;
+            this.AnimationLimit = nullable1;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = (string) null;
+            double? nullable2 = new double?();
+            this.ColorIndex_DefaultValue = nullable2;
+            this.ColorIndex = nullable2;
+            this.Cursor = this.Cursor_DefaultValue = GaugeSeriesCursor.Null;
+            this.Data = this.Data_DefaultValue = new List<GaugeSeriesData>();
+            this.DataLabels = this.DataLabels_DefaultValue = new GaugeSeriesDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            this.Dial = this.Dial_DefaultValue = new GaugeSeriesDial();
+            bool? nullable3 = new bool?(true);
+            this.EnableMouseTracking_DefaultValue = nullable3;
+            this.EnableMouseTracking = nullable3;
+            this.Events = this.Events_DefaultValue = new GaugeSeriesEvents();
+            nullable3 = new bool?(false);
+            this.GetExtremesFromAll_DefaultValue = nullable3;
+            this.GetExtremesFromAll = nullable3;
+            this.Id = this.Id_DefaultValue = "";
+            double? nullable4 = new double?();
+            this.Index_DefaultValue = nullable4;
+            this.Index = nullable4;
+            this.Keys = this.Keys_DefaultValue = new List<string>();
+            double? nullable5 = new double?();
+            this.LegendIndex_DefaultValue = nullable5;
+            this.LegendIndex = nullable5;
+            this.LinkedTo = this.LinkedTo_DefaultValue = "";
+            this.Name = this.Name_DefaultValue = (string) null;
+            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
+            nullable5 = new double?(0.0);
+            this.Overshoot_DefaultValue = nullable5;
+            this.Overshoot = nullable5;
+            this.Pivot = this.Pivot_DefaultValue = new GaugeSeriesPivot();
+            this.Point = this.Point_DefaultValue = new GaugeSeriesPoint();
+            nullable3 = new bool?(false);
+            this.Selected_DefaultValue = nullable3;
+            this.Selected = nullable3;
+            nullable3 = new bool?(false);
+            this.ShowCheckbox_DefaultValue = nullable3;
+            this.ShowCheckbox = nullable3;
+            bool? nullable6 = new bool?();
+            this.ShowInLegend_DefaultValue = nullable6;
+            this.ShowInLegend = nullable6;
+            nullable6 = new bool?(true);
+            this.StickyTracking_DefaultValue = nullable6;
+            this.StickyTracking = nullable6;
+            nullable5 = new double?(0.0);
+            this.Threshold_DefaultValue = nullable5;
+            this.Threshold = nullable5;
+            this.Tooltip = this.Tooltip_DefaultValue = new GaugeSeriesTooltip();
+            this.Type = this.Type_DefaultValue = GaugeSeriesType.Null;
+            nullable6 = new bool?(true);
+            this.Visible_DefaultValue = nullable6;
+            this.Visible = nullable6;
+            nullable6 = new bool?(true);
+            this.Wrap_DefaultValue = nullable6;
+            this.Wrap = nullable6;
+            this.XAxis = this.XAxis_DefaultValue = "0";
+            this.YAxis = this.YAxis_DefaultValue = "0";
+            double? nullable7 = new double?();
+            this.ZIndex_DefaultValue = nullable7;
+            this.ZIndex = nullable7;
+        }
+
         public Animation Animation { get; set; }
 
         private Animation Animation_DefaultValue { get; set; }
@@ -24,6 +97,10 @@ namespace Highsoft.Web.Mvc.Charts
         public string Color { get; set; }
 
         private string Color_DefaultValue { get; set; }
+
+        public double? ColorIndex { get; set; }
+
+        private double? ColorIndex_DefaultValue { get; set; }
 
         public GaugeSeriesCursor Cursor { get; set; }
 
@@ -145,75 +222,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private double? ZIndex_DefaultValue { get; set; }
 
-        public GaugeSeries()
-        {
-            this.Animation = this.Animation_DefaultValue = new Animation()
-            {
-                Enabled = true
-            };
-            double? nullable1 = new double?();
-            this.AnimationLimit_DefaultValue = nullable1;
-            this.AnimationLimit = nullable1;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = (string) null;
-            this.Cursor = this.Cursor_DefaultValue = GaugeSeriesCursor.Null;
-            this.Data = this.Data_DefaultValue = new List<GaugeSeriesData>();
-            this.DataLabels = this.DataLabels_DefaultValue = new GaugeSeriesDataLabels();
-            this.Description = this.Description_DefaultValue = "undefined";
-            this.Dial = this.Dial_DefaultValue = new GaugeSeriesDial();
-            bool? nullable2 = new bool?(true);
-            this.EnableMouseTracking_DefaultValue = nullable2;
-            this.EnableMouseTracking = nullable2;
-            this.Events = this.Events_DefaultValue = new GaugeSeriesEvents();
-            nullable2 = new bool?(false);
-            this.GetExtremesFromAll_DefaultValue = nullable2;
-            this.GetExtremesFromAll = nullable2;
-            this.Id = this.Id_DefaultValue = "";
-            double? nullable3 = new double?();
-            this.Index_DefaultValue = nullable3;
-            this.Index = nullable3;
-            this.Keys = this.Keys_DefaultValue = new List<string>();
-            double? nullable4 = new double?();
-            this.LegendIndex_DefaultValue = nullable4;
-            this.LegendIndex = nullable4;
-            this.LinkedTo = this.LinkedTo_DefaultValue = "";
-            this.Name = this.Name_DefaultValue = (string) null;
-            this.NegativeColor = this.NegativeColor_DefaultValue = "null";
-            nullable4 = new double?(0.0);
-            this.Overshoot_DefaultValue = nullable4;
-            this.Overshoot = nullable4;
-            this.Pivot = this.Pivot_DefaultValue = new GaugeSeriesPivot();
-            this.Point = this.Point_DefaultValue = new GaugeSeriesPoint();
-            nullable2 = new bool?(false);
-            this.Selected_DefaultValue = nullable2;
-            this.Selected = nullable2;
-            nullable2 = new bool?(false);
-            this.ShowCheckbox_DefaultValue = nullable2;
-            this.ShowCheckbox = nullable2;
-            bool? nullable5 = new bool?();
-            this.ShowInLegend_DefaultValue = nullable5;
-            this.ShowInLegend = nullable5;
-            nullable5 = new bool?(true);
-            this.StickyTracking_DefaultValue = nullable5;
-            this.StickyTracking = nullable5;
-            nullable4 = new double?(0.0);
-            this.Threshold_DefaultValue = nullable4;
-            this.Threshold = nullable4;
-            this.Tooltip = this.Tooltip_DefaultValue = new GaugeSeriesTooltip();
-            this.Type = this.Type_DefaultValue = GaugeSeriesType.Null;
-            nullable5 = new bool?(true);
-            this.Visible_DefaultValue = nullable5;
-            this.Visible = nullable5;
-            nullable5 = new bool?(true);
-            this.Wrap_DefaultValue = nullable5;
-            this.Wrap = nullable5;
-            this.XAxis = this.XAxis_DefaultValue = "0";
-            this.YAxis = this.YAxis_DefaultValue = "0";
-            double? nullable6 = new double?();
-            this.ZIndex_DefaultValue = nullable6;
-            this.ZIndex = nullable6;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -228,8 +236,15 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "className", (object) this.ClassName);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
+            nullable2 = this.ColorIndex;
+            nullable1 = this.ColorIndex_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
+                hashtable.Add((object) "colorIndex", (object) this.ColorIndex);
             if (this.Cursor != this.Cursor_DefaultValue)
                 hashtable.Add((object) "cursor", (object) Highcharts.FirstCharacterToLower(this.Cursor.ToString()));
+            if (this.Data.Any<GaugeSeriesData>())
+                hashtable.Add((object) "data", (object) this.HashifyList((IEnumerable) this.Data));
             if (this.DataLabels.IsDirty())
                 hashtable.Add((object) "dataLabels", (object) this.DataLabels.ToHashtable());
             if (this.Description != this.Description_DefaultValue)
@@ -250,17 +265,17 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "getExtremesFromAll", (object) this.GetExtremesFromAll);
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
-            nullable2 = this.Index;
-            nullable1 = this.Index_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Index;
+            nullable2 = this.Index_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "index", (object) this.Index);
             if (this.Keys != this.Keys_DefaultValue)
                 hashtable.Add((object) "keys", (object) this.Keys);
-            nullable1 = this.LegendIndex;
-            nullable2 = this.LegendIndex_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.LegendIndex;
+            nullable1 = this.LegendIndex_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "legendIndex", (object) this.LegendIndex);
             if (this.LinkedTo != this.LinkedTo_DefaultValue)
                 hashtable.Add((object) "linkedTo", (object) this.LinkedTo);
@@ -268,10 +283,10 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "name", (object) this.Name);
             if (this.NegativeColor != this.NegativeColor_DefaultValue)
                 hashtable.Add((object) "negativeColor", (object) this.NegativeColor);
-            nullable2 = this.Overshoot;
-            nullable1 = this.Overshoot_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Overshoot;
+            nullable2 = this.Overshoot_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "overshoot", (object) this.Overshoot);
             if (this.Pivot.IsDirty())
                 hashtable.Add((object) "pivot", (object) this.Pivot.ToHashtable());
@@ -297,10 +312,10 @@ namespace Highsoft.Web.Mvc.Charts
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "stickyTracking", (object) this.StickyTracking);
-            nullable1 = this.Threshold;
-            nullable2 = this.Threshold_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Threshold;
+            nullable1 = this.Threshold_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "threshold", (object) this.Threshold);
             if (this.Tooltip.IsDirty())
                 hashtable.Add((object) "tooltip", (object) this.Tooltip.ToHashtable());
@@ -320,17 +335,20 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "xAxis", (object) this.XAxis);
             if (this.YAxis != this.YAxis_DefaultValue)
                 hashtable.Add((object) "yAxis", (object) this.YAxis);
-            nullable2 = this.ZIndex;
-            nullable1 = this.ZIndex_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.ZIndex;
+            nullable2 = this.ZIndex_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

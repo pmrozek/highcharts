@@ -8,6 +8,87 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class ColumnrangeSeriesDataLabels : BaseObject
     {
+        public ColumnrangeSeriesDataLabels()
+        {
+            this.Align = this.Align_DefaultValue = ColumnrangeSeriesDataLabelsAlign.Center;
+            bool? nullable1 = new bool?(false);
+            this.AllowOverlap_DefaultValue = nullable1;
+            this.AllowOverlap = nullable1;
+            this.BorderColor = this.BorderColor_DefaultValue = "undefined";
+            double? nullable2 = new double?(0.0);
+            this.BorderRadius_DefaultValue = nullable2;
+            this.BorderRadius = nullable2;
+            nullable2 = new double?(0.0);
+            this.BorderWidth_DefaultValue = nullable2;
+            this.BorderWidth = nullable2;
+            this.ClassName = this.ClassName_DefaultValue = (string) null;
+            this.Color = this.Color_DefaultValue = (string) null;
+            nullable1 = new bool?(true);
+            this.Crop_DefaultValue = nullable1;
+            this.Crop = nullable1;
+            nullable1 = new bool?(true);
+            this.Defer_DefaultValue = nullable1;
+            this.Defer = nullable1;
+            nullable1 = new bool?(false);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.Format = this.Format_DefaultValue = "{y}";
+            this.Formatter = this.Formatter_DefaultValue = "";
+            bool? nullable3 = new bool?();
+            this.Inside_DefaultValue = nullable3;
+            this.Inside = nullable3;
+            this.Overflow = this.Overflow_DefaultValue = ColumnrangeSeriesDataLabelsOverflow.Justify;
+            nullable2 = new double?(5.0);
+            this.Padding_DefaultValue = nullable2;
+            this.Padding = nullable2;
+            nullable2 = new double?(0.0);
+            this.Rotation_DefaultValue = nullable2;
+            this.Rotation = nullable2;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
+            this.Shape = this.Shape_DefaultValue = "square";
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "contrast"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                },
+                {
+                    (object) "textOutline",
+                    (object) "1px 1px contrast"
+                }
+            };
+            nullable3 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable3;
+            this.UseHTML = nullable3;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = ColumnrangeSeriesDataLabelsVerticalAlign.Null;
+            nullable2 = new double?(0.0);
+            this.XHigh_DefaultValue = nullable2;
+            this.XHigh = nullable2;
+            nullable2 = new double?(0.0);
+            this.XLow_DefaultValue = nullable2;
+            this.XLow = nullable2;
+            nullable2 = new double?(-6.0);
+            this.YHigh_DefaultValue = nullable2;
+            this.YHigh = nullable2;
+            nullable2 = new double?(16.0);
+            this.YLow_DefaultValue = nullable2;
+            this.YLow = nullable2;
+            nullable2 = new double?(6.0);
+            this.ZIndex_DefaultValue = nullable2;
+            this.ZIndex = nullable2;
+        }
+
         public ColumnrangeSeriesDataLabelsAlign Align { get; set; }
 
         private ColumnrangeSeriesDataLabelsAlign Align_DefaultValue { get; set; }
@@ -112,87 +193,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? ZIndex_DefaultValue { get; set; }
 
-        public ColumnrangeSeriesDataLabels()
-        {
-            this.Align = this.Align_DefaultValue = ColumnrangeSeriesDataLabelsAlign.Center;
-            bool? nullable1 = new bool?(false);
-            this.AllowOverlap_DefaultValue = nullable1;
-            this.AllowOverlap = nullable1;
-            this.BorderColor = this.BorderColor_DefaultValue = "undefined";
-            double? nullable2 = new double?(0.0);
-            this.BorderRadius_DefaultValue = nullable2;
-            this.BorderRadius = nullable2;
-            nullable2 = new double?(0.0);
-            this.BorderWidth_DefaultValue = nullable2;
-            this.BorderWidth = nullable2;
-            this.ClassName = this.ClassName_DefaultValue = (string) null;
-            this.Color = this.Color_DefaultValue = (string) null;
-            nullable1 = new bool?(true);
-            this.Crop_DefaultValue = nullable1;
-            this.Crop = nullable1;
-            nullable1 = new bool?(true);
-            this.Defer_DefaultValue = nullable1;
-            this.Defer = nullable1;
-            nullable1 = new bool?(false);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.Format = this.Format_DefaultValue = "{y}";
-            this.Formatter = this.Formatter_DefaultValue = "";
-            bool? nullable3 = new bool?();
-            this.Inside_DefaultValue = nullable3;
-            this.Inside = nullable3;
-            this.Overflow = this.Overflow_DefaultValue = ColumnrangeSeriesDataLabelsOverflow.Justify;
-            nullable2 = new double?(5.0);
-            this.Padding_DefaultValue = nullable2;
-            this.Padding = nullable2;
-            nullable2 = new double?(0.0);
-            this.Rotation_DefaultValue = nullable2;
-            this.Rotation = nullable2;
-            this.Shadow = this.Shadow_DefaultValue = new Shadow()
-            {
-                Enabled = false
-            };
-            this.Shape = this.Shape_DefaultValue = "square";
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "contrast"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "11px"
-                },
-                {
-                    (object) "fontWeight",
-                    (object) "bold"
-                },
-                {
-                    (object) "textShadow",
-                    (object) "1px 1px contrast},{ -1px -1px contrast},{ -1px 1px contrast},{ 1px -1px contrast"
-                }
-            };
-            nullable3 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable3;
-            this.UseHTML = nullable3;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = ColumnrangeSeriesDataLabelsVerticalAlign.Null;
-            nullable2 = new double?(0.0);
-            this.XHigh_DefaultValue = nullable2;
-            this.XHigh = nullable2;
-            nullable2 = new double?(0.0);
-            this.XLow_DefaultValue = nullable2;
-            this.XLow = nullable2;
-            nullable2 = new double?(-6.0);
-            this.YHigh_DefaultValue = nullable2;
-            this.YHigh = nullable2;
-            nullable2 = new double?(16.0);
-            this.YLow_DefaultValue = nullable2;
-            this.YLow = nullable2;
-            nullable2 = new double?(6.0);
-            this.ZIndex_DefaultValue = nullable2;
-            this.ZIndex = nullable2;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -258,8 +258,8 @@ namespace Highsoft.Web.Mvc.Stocks
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "rotation", (object) this.Rotation);
-            if (this.Shadow != this.Shadow_DefaultValue)
-                hashtable.Add((object) "shadow", (object) this.Shadow);
+            if (this.Shadow.IsDirty())
+                hashtable.Add((object) "shadow", (object) this.Shadow.ToHashtable());
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) this.Shape);
             if (this.Style != this.Style_DefaultValue)
@@ -302,7 +302,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

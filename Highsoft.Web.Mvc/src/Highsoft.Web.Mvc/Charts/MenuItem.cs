@@ -8,15 +8,15 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class MenuItem : BaseObject
     {
-        public string Text { get; set; }
-
-        public string OnClick { get; set; }
-
         public MenuItem()
         {
             this.Text = "";
             this.OnClick = "";
         }
+
+        public string Text { get; set; }
+
+        public string OnClick { get; set; }
 
         internal override Hashtable ToHashtable()
         {

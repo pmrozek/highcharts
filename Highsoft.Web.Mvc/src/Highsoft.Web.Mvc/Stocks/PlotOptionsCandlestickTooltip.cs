@@ -8,6 +8,37 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class PlotOptionsCandlestickTooltip : BaseObject
     {
+        public PlotOptionsCandlestickTooltip()
+        {
+            double? nullable1 = new double?();
+            this.ChangeDecimals_DefaultValue = nullable1;
+            this.ChangeDecimals = nullable1;
+            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
+            bool? nullable2 = new bool?(false);
+            this.FollowPointer_DefaultValue = nullable2;
+            this.FollowPointer = nullable2;
+            nullable2 = new bool?(true);
+            this.FollowTouchMove_DefaultValue = nullable2;
+            this.FollowTouchMove = nullable2;
+            this.HeaderFormat = this.HeaderFormat_DefaultValue = "";
+            nullable1 = new double?(8.0);
+            this.Padding_DefaultValue = nullable1;
+            this.Padding = nullable1;
+            this.PointFormat = this.PointFormat_DefaultValue =
+                "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+            this.PointFormatter = this.PointFormatter_DefaultValue = "";
+            this.Shape = this.Shape_DefaultValue = "callout";
+            nullable2 = new bool?(false);
+            this.Split_DefaultValue = nullable2;
+            this.Split = nullable2;
+            double? nullable3 = new double?();
+            this.ValueDecimals_DefaultValue = nullable3;
+            this.ValueDecimals = nullable3;
+            this.ValuePrefix = this.ValuePrefix_DefaultValue = (string) null;
+            this.ValueSuffix = this.ValueSuffix_DefaultValue = (string) null;
+            this.XDateFormat = this.XDateFormat_DefaultValue = "";
+        }
+
         public double? ChangeDecimals { get; set; }
 
         private double? ChangeDecimals_DefaultValue { get; set; }
@@ -64,38 +95,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string XDateFormat_DefaultValue { get; set; }
 
-        public PlotOptionsCandlestickTooltip()
-        {
-            double? nullable1 = new double?();
-            this.ChangeDecimals_DefaultValue = nullable1;
-            this.ChangeDecimals = nullable1;
-            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
-            bool? nullable2 = new bool?(false);
-            this.FollowPointer_DefaultValue = nullable2;
-            this.FollowPointer = nullable2;
-            nullable2 = new bool?(true);
-            this.FollowTouchMove_DefaultValue = nullable2;
-            this.FollowTouchMove = nullable2;
-            this.HeaderFormat = this.HeaderFormat_DefaultValue = "";
-            nullable1 = new double?(8.0);
-            this.Padding_DefaultValue = nullable1;
-            this.Padding = nullable1;
-            this.PointFormat =
-                this.PointFormat_DefaultValue =
-                    "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
-            this.PointFormatter = this.PointFormatter_DefaultValue = "";
-            this.Shape = this.Shape_DefaultValue = "callout";
-            nullable2 = new bool?(false);
-            this.Split_DefaultValue = nullable2;
-            this.Split = nullable2;
-            double? nullable3 = new double?();
-            this.ValueDecimals_DefaultValue = nullable3;
-            this.ValueDecimals = nullable3;
-            this.ValuePrefix = this.ValuePrefix_DefaultValue = (string) null;
-            this.ValueSuffix = this.ValueSuffix_DefaultValue = (string) null;
-            this.XDateFormat = this.XDateFormat_DefaultValue = "";
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -128,7 +127,8 @@ namespace Highsoft.Web.Mvc.Stocks
             if (this.PointFormatter != this.PointFormatter_DefaultValue)
             {
                 hashtable.Add((object) "pointFormatter", (object) this.PointFormatter);
-                Highstock.AddFunction("PlotOptionsCandlestickTooltipPointFormatter.pointFormatter", this.PointFormatter);
+                Highstock.AddFunction("PlotOptionsCandlestickTooltipPointFormatter.pointFormatter",
+                    this.PointFormatter);
             }
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) this.Shape);
@@ -153,7 +153,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -9,30 +9,6 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Drilldown : BaseObject
     {
-        public Hashtable ActiveAxisLabelStyle { get; set; }
-
-        private Hashtable ActiveAxisLabelStyle_DefaultValue { get; set; }
-
-        public Hashtable ActiveDataLabelStyle { get; set; }
-
-        private Hashtable ActiveDataLabelStyle_DefaultValue { get; set; }
-
-        public bool? AllowPointDrilldown { get; set; }
-
-        private bool? AllowPointDrilldown_DefaultValue { get; set; }
-
-        public Animation Animation { get; set; }
-
-        private Animation Animation_DefaultValue { get; set; }
-
-        public DrilldownDrillUpButton DrillUpButton { get; set; }
-
-        private DrilldownDrillUpButton DrillUpButton_DefaultValue { get; set; }
-
-        public List<Highsoft.Web.Mvc.Charts.Series> Series { get; set; }
-
-        private List<Highsoft.Web.Mvc.Charts.Series> Series_DefaultValue { get; set; }
-
         public Drilldown()
         {
             this.ActiveAxisLabelStyle = this.ActiveAxisLabelStyle_DefaultValue = new Hashtable()
@@ -84,6 +60,30 @@ namespace Highsoft.Web.Mvc.Charts
             this.Series = this.Series_DefaultValue = (List<Highsoft.Web.Mvc.Charts.Series>) null;
         }
 
+        public Hashtable ActiveAxisLabelStyle { get; set; }
+
+        private Hashtable ActiveAxisLabelStyle_DefaultValue { get; set; }
+
+        public Hashtable ActiveDataLabelStyle { get; set; }
+
+        private Hashtable ActiveDataLabelStyle_DefaultValue { get; set; }
+
+        public bool? AllowPointDrilldown { get; set; }
+
+        private bool? AllowPointDrilldown_DefaultValue { get; set; }
+
+        public Animation Animation { get; set; }
+
+        private Animation Animation_DefaultValue { get; set; }
+
+        public DrilldownDrillUpButton DrillUpButton { get; set; }
+
+        private DrilldownDrillUpButton DrillUpButton_DefaultValue { get; set; }
+
+        public List<Highsoft.Web.Mvc.Charts.Series> Series { get; set; }
+
+        private List<Highsoft.Web.Mvc.Charts.Series> Series_DefaultValue { get; set; }
+
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -107,7 +107,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

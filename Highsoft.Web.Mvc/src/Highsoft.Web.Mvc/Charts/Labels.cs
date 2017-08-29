@@ -8,14 +8,6 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Labels : BaseObject
     {
-        public LabelsItems Items { get; set; }
-
-        private LabelsItems Items_DefaultValue { get; set; }
-
-        public Hashtable Style { get; set; }
-
-        private Hashtable Style_DefaultValue { get; set; }
-
         public Labels()
         {
             this.Items = this.Items_DefaultValue = new LabelsItems();
@@ -27,6 +19,14 @@ namespace Highsoft.Web.Mvc.Charts
                 }
             };
         }
+
+        public LabelsItems Items { get; set; }
+
+        private LabelsItems Items_DefaultValue { get; set; }
+
+        public Hashtable Style { get; set; }
+
+        private Hashtable Style_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -40,7 +40,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -21,5 +21,13 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtableList.Add(baseObject.ToHashtable());
             return hashtableList;
         }
+
+        internal List<List<object>> GetLists(IEnumerable list)
+        {
+            List<List<object>> objectListList = new List<List<object>>();
+            foreach (IObjectList objectList in list)
+                objectListList.Add(objectList.ToList());
+            return objectListList;
+        }
     }
 }

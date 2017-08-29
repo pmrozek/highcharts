@@ -8,14 +8,6 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class AccessibilityKeyboardNavigation : BaseObject
     {
-        public bool? Enabled { get; set; }
-
-        private bool? Enabled_DefaultValue { get; set; }
-
-        public bool? SkipNullPoints { get; set; }
-
-        private bool? SkipNullPoints_DefaultValue { get; set; }
-
         public AccessibilityKeyboardNavigation()
         {
             bool? nullable = new bool?(true);
@@ -25,6 +17,14 @@ namespace Highsoft.Web.Mvc.Stocks
             this.SkipNullPoints_DefaultValue = nullable;
             this.SkipNullPoints = nullable;
         }
+
+        public bool? Enabled { get; set; }
+
+        private bool? Enabled_DefaultValue { get; set; }
+
+        public bool? SkipNullPoints { get; set; }
+
+        private bool? SkipNullPoints_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -44,7 +44,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

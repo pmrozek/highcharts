@@ -8,22 +8,6 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class XAxisBreaks : BaseObject
     {
-        public double? BreakSize { get; set; }
-
-        private double? BreakSize_DefaultValue { get; set; }
-
-        public double? From { get; set; }
-
-        private double? From_DefaultValue { get; set; }
-
-        public double? Repeat { get; set; }
-
-        private double? Repeat_DefaultValue { get; set; }
-
-        public double? To { get; set; }
-
-        private double? To_DefaultValue { get; set; }
-
         public XAxisBreaks()
         {
             double? nullable1 = new double?(0.0);
@@ -39,6 +23,22 @@ namespace Highsoft.Web.Mvc.Stocks
             this.To_DefaultValue = nullable3;
             this.To = nullable3;
         }
+
+        public double? BreakSize { get; set; }
+
+        private double? BreakSize_DefaultValue { get; set; }
+
+        public double? From { get; set; }
+
+        private double? From_DefaultValue { get; set; }
+
+        public double? Repeat { get; set; }
+
+        private double? Repeat_DefaultValue { get; set; }
+
+        public double? To { get; set; }
+
+        private double? To_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -68,7 +68,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

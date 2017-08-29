@@ -8,15 +8,15 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Stop : BaseObject
     {
-        public double Position { get; set; }
-
-        public string Color { get; set; }
-
         public Stop()
         {
             this.Position = 0.0;
             this.Color = "";
         }
+
+        public double Position { get; set; }
+
+        public string Color { get; set; }
 
         internal override Hashtable ToHashtable()
         {

@@ -8,6 +8,13 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class DrilldownDrillUpButton : BaseObject
     {
+        public DrilldownDrillUpButton()
+        {
+            this.Position = this.Position_DefaultValue = new Hashtable();
+            this.RelativeTo = this.RelativeTo_DefaultValue = "plotBox";
+            this.Theme = this.Theme_DefaultValue = (object) null;
+        }
+
         public Hashtable Position { get; set; }
 
         private Hashtable Position_DefaultValue { get; set; }
@@ -19,13 +26,6 @@ namespace Highsoft.Web.Mvc.Charts
         public object Theme { get; set; }
 
         private object Theme_DefaultValue { get; set; }
-
-        public DrilldownDrillUpButton()
-        {
-            this.Position = this.Position_DefaultValue = new Hashtable();
-            this.RelativeTo = this.RelativeTo_DefaultValue = "plotBox";
-            this.Theme = this.Theme_DefaultValue = (object) null;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -41,7 +41,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

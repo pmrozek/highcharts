@@ -9,6 +9,42 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Data : BaseObject
     {
+        public Data()
+        {
+            this.Columns = this.Columns_DefaultValue = new List<List<object>>();
+            this.Complete = this.Complete_DefaultValue = "";
+            this.Csv = this.Csv_DefaultValue = (string) null;
+            this.DateFormat = this.DateFormat_DefaultValue = (string) null;
+            this.DecimalPoint = this.DecimalPoint_DefaultValue = ".";
+            double? nullable1 = new double?();
+            this.EndColumn_DefaultValue = nullable1;
+            this.EndColumn = nullable1;
+            double? nullable2 = new double?();
+            this.EndRow_DefaultValue = nullable2;
+            this.EndRow = nullable2;
+            bool? nullable3 = new bool?(true);
+            this.FirstRowAsNames_DefaultValue = nullable3;
+            this.FirstRowAsNames = nullable3;
+            this.GoogleSpreadsheetKey = this.GoogleSpreadsheetKey_DefaultValue = "";
+            this.GoogleSpreadsheetWorksheet = this.GoogleSpreadsheetWorksheet_DefaultValue = (string) null;
+            this.ItemDelimiter = this.ItemDelimiter_DefaultValue = "";
+            this.LineDelimiter = this.LineDelimiter_DefaultValue = "\n";
+            this.ParseDate = this.ParseDate_DefaultValue = "";
+            this.Parsed = this.Parsed_DefaultValue = "";
+            this.Rows = this.Rows_DefaultValue = new List<List<object>>();
+            this.SeriesMapping = this.SeriesMapping_DefaultValue = new List<object>();
+            nullable2 = new double?(0.0);
+            this.StartColumn_DefaultValue = nullable2;
+            this.StartColumn = nullable2;
+            nullable2 = new double?(0.0);
+            this.StartRow_DefaultValue = nullable2;
+            this.StartRow = nullable2;
+            nullable3 = new bool?(false);
+            this.SwitchRowsAndColumns_DefaultValue = nullable3;
+            this.SwitchRowsAndColumns = nullable3;
+            this.Table = this.Table_DefaultValue = "";
+        }
+
         public List<List<object>> Columns { get; set; }
 
         private List<List<object>> Columns_DefaultValue { get; set; }
@@ -89,42 +125,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string Table_DefaultValue { get; set; }
 
-        public Data()
-        {
-            this.Columns = this.Columns_DefaultValue = new List<List<object>>();
-            this.Complete = this.Complete_DefaultValue = "";
-            this.Csv = this.Csv_DefaultValue = (string) null;
-            this.DateFormat = this.DateFormat_DefaultValue = (string) null;
-            this.DecimalPoint = this.DecimalPoint_DefaultValue = ".";
-            double? nullable1 = new double?();
-            this.EndColumn_DefaultValue = nullable1;
-            this.EndColumn = nullable1;
-            double? nullable2 = new double?();
-            this.EndRow_DefaultValue = nullable2;
-            this.EndRow = nullable2;
-            bool? nullable3 = new bool?(true);
-            this.FirstRowAsNames_DefaultValue = nullable3;
-            this.FirstRowAsNames = nullable3;
-            this.GoogleSpreadsheetKey = this.GoogleSpreadsheetKey_DefaultValue = "";
-            this.GoogleSpreadsheetWorksheet = this.GoogleSpreadsheetWorksheet_DefaultValue = (string) null;
-            this.ItemDelimiter = this.ItemDelimiter_DefaultValue = "";
-            this.LineDelimiter = this.LineDelimiter_DefaultValue = "\n";
-            this.ParseDate = this.ParseDate_DefaultValue = "";
-            this.Parsed = this.Parsed_DefaultValue = "";
-            this.Rows = this.Rows_DefaultValue = new List<List<object>>();
-            this.SeriesMapping = this.SeriesMapping_DefaultValue = new List<object>();
-            nullable2 = new double?(0.0);
-            this.StartColumn_DefaultValue = nullable2;
-            this.StartColumn = nullable2;
-            nullable2 = new double?(0.0);
-            this.StartRow_DefaultValue = nullable2;
-            this.StartRow = nullable2;
-            nullable3 = new bool?(false);
-            this.SwitchRowsAndColumns_DefaultValue = nullable3;
-            this.SwitchRowsAndColumns = nullable3;
-            this.Table = this.Table_DefaultValue = "";
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -200,7 +200,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

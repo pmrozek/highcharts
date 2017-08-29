@@ -8,6 +8,18 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Background : BaseObject
     {
+        public Background()
+        {
+            this.BackgroundColor = "";
+            this.InnerWidth = 0;
+            this.OuterWidth = 0;
+            this.BorderWidth = 0;
+            this.BorderColor = "";
+            this.InnerRadius = "";
+            this.OuterRadius = "";
+            this.Shape = "";
+        }
+
         public string Shape { get; set; }
 
         public string InnerRadius { get; set; }
@@ -23,18 +35,6 @@ namespace Highsoft.Web.Mvc.Charts
         public int BorderWidth { get; set; }
 
         public string BorderColor { get; set; }
-
-        public Background()
-        {
-            this.BackgroundColor = "";
-            this.InnerWidth = 0;
-            this.OuterWidth = 0;
-            this.BorderWidth = 0;
-            this.BorderColor = "";
-            this.InnerRadius = "";
-            this.OuterRadius = "";
-            this.Shape = "";
-        }
 
         internal override Hashtable ToHashtable()
         {

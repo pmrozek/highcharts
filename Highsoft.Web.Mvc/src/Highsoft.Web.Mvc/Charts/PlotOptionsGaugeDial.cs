@@ -8,6 +8,24 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PlotOptionsGaugeDial : BaseObject
     {
+        public PlotOptionsGaugeDial()
+        {
+            this.BackgroundColor = this.BackgroundColor_DefaultValue = "#000000";
+            this.BaseLength = this.BaseLength_DefaultValue = "70%";
+            double? nullable = new double?(3.0);
+            this.BaseWidth_DefaultValue = nullable;
+            this.BaseWidth = nullable;
+            this.BorderColor = this.BorderColor_DefaultValue = "#cccccc";
+            nullable = new double?(0.0);
+            this.BorderWidth_DefaultValue = nullable;
+            this.BorderWidth = nullable;
+            this.Radius = this.Radius_DefaultValue = "80%";
+            this.RearLength = this.RearLength_DefaultValue = "10%";
+            nullable = new double?(1.0);
+            this.TopWidth_DefaultValue = nullable;
+            this.TopWidth = nullable;
+        }
+
         public string BackgroundColor { get; set; }
 
         private string BackgroundColor_DefaultValue { get; set; }
@@ -39,24 +57,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? TopWidth { get; set; }
 
         private double? TopWidth_DefaultValue { get; set; }
-
-        public PlotOptionsGaugeDial()
-        {
-            this.BackgroundColor = this.BackgroundColor_DefaultValue = "#000000";
-            this.BaseLength = this.BaseLength_DefaultValue = "70%";
-            double? nullable = new double?(3.0);
-            this.BaseWidth_DefaultValue = nullable;
-            this.BaseWidth = nullable;
-            this.BorderColor = this.BorderColor_DefaultValue = "#cccccc";
-            nullable = new double?(0.0);
-            this.BorderWidth_DefaultValue = nullable;
-            this.BorderWidth = nullable;
-            this.Radius = this.Radius_DefaultValue = "80%";
-            this.RearLength = this.RearLength_DefaultValue = "10%";
-            nullable = new double?(1.0);
-            this.TopWidth_DefaultValue = nullable;
-            this.TopWidth = nullable;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -91,7 +91,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -9,6 +9,77 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Lang : BaseObject
     {
+        public Lang()
+        {
+            this.ContextButtonTitle = this.ContextButtonTitle_DefaultValue = "Chart context menu";
+            this.DecimalPoint = this.DecimalPoint_DefaultValue = ".";
+            this.DownloadJPEG = this.DownloadJPEG_DefaultValue = "Download JPEG image";
+            this.DownloadPDF = this.DownloadPDF_DefaultValue = "Download PDF document";
+            this.DownloadPNG = this.DownloadPNG_DefaultValue = "Download PNG image";
+            this.DownloadSVG = this.DownloadSVG_DefaultValue = "Download SVG vector image";
+            this.DrillUpText = this.DrillUpText_DefaultValue = "Back to {series.name}";
+            this.InvalidDate = this.InvalidDate_DefaultValue = "";
+            this.Loading = this.Loading_DefaultValue = "Loading...";
+            this.Months = this.Months_DefaultValue = new List<string>()
+            {
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            };
+            this.NoData = this.NoData_DefaultValue = "No data to display";
+            double? nullable = new double?(1000.0);
+            this.NumericSymbolMagnitude_DefaultValue = nullable;
+            this.NumericSymbolMagnitude = nullable;
+            this.NumericSymbols = this.NumericSymbols_DefaultValue = new List<string>()
+            {
+                "k",
+                "M",
+                "G",
+                "T",
+                "P",
+                "E"
+            };
+            this.PrintChart = this.PrintChart_DefaultValue = "Print chart";
+            this.ResetZoom = this.ResetZoom_DefaultValue = "Reset zoom";
+            this.ResetZoomTitle = this.ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
+            this.ShortMonths = this.ShortMonths_DefaultValue = new List<string>()
+            {
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+            };
+            this.ShortWeekdays = this.ShortWeekdays_DefaultValue = (List<string>) null;
+            this.ThousandsSep = this.ThousandsSep_DefaultValue = " ";
+            this.Weekdays = this.Weekdays_DefaultValue = new List<string>()
+            {
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            };
+        }
+
         public string ContextButtonTitle { get; set; }
 
         private string ContextButtonTitle_DefaultValue { get; set; }
@@ -89,77 +160,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private List<string> Weekdays_DefaultValue { get; set; }
 
-        public Lang()
-        {
-            this.ContextButtonTitle = this.ContextButtonTitle_DefaultValue = "Chart context menu";
-            this.DecimalPoint = this.DecimalPoint_DefaultValue = ".";
-            this.DownloadJPEG = this.DownloadJPEG_DefaultValue = "Download JPEG image";
-            this.DownloadPDF = this.DownloadPDF_DefaultValue = "Download PDF document";
-            this.DownloadPNG = this.DownloadPNG_DefaultValue = "Download PNG image";
-            this.DownloadSVG = this.DownloadSVG_DefaultValue = "Download SVG vector image";
-            this.DrillUpText = this.DrillUpText_DefaultValue = "Back to {series.name}";
-            this.InvalidDate = this.InvalidDate_DefaultValue = "";
-            this.Loading = this.Loading_DefaultValue = "Loading...";
-            this.Months = this.Months_DefaultValue = new List<string>()
-            {
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
-            };
-            this.NoData = this.NoData_DefaultValue = "No data to display";
-            double? nullable = new double?(1000.0);
-            this.NumericSymbolMagnitude_DefaultValue = nullable;
-            this.NumericSymbolMagnitude = nullable;
-            this.NumericSymbols = this.NumericSymbols_DefaultValue = new List<string>()
-            {
-                "k",
-                "M",
-                "G",
-                "T",
-                "P",
-                "E"
-            };
-            this.PrintChart = this.PrintChart_DefaultValue = "Print chart";
-            this.ResetZoom = this.ResetZoom_DefaultValue = "Reset zoom";
-            this.ResetZoomTitle = this.ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-            this.ShortMonths = this.ShortMonths_DefaultValue = new List<string>()
-            {
-                "Jan",
-                "Feb",
-                "Mar",
-                "Apr",
-                "May",
-                "Jun",
-                "Jul",
-                "Aug",
-                "Sep",
-                "Oct",
-                "Nov",
-                "Dec"
-            };
-            this.ShortWeekdays = this.ShortWeekdays_DefaultValue = (List<string>) null;
-            this.ThousandsSep = this.ThousandsSep_DefaultValue = " ";
-            this.Weekdays = this.Weekdays_DefaultValue = new List<string>()
-            {
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-            };
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -211,7 +211,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

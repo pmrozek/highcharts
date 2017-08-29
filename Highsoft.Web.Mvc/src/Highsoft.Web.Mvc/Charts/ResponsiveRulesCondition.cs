@@ -8,6 +8,23 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ResponsiveRulesCondition : BaseObject
     {
+        public ResponsiveRulesCondition()
+        {
+            this.Callback = this.Callback_DefaultValue = "";
+            double? nullable1 = new double?();
+            this.MaxHeight_DefaultValue = nullable1;
+            this.MaxHeight = nullable1;
+            double? nullable2 = new double?();
+            this.MaxWidth_DefaultValue = nullable2;
+            this.MaxWidth = nullable2;
+            nullable2 = new double?(0.0);
+            this.MinHeight_DefaultValue = nullable2;
+            this.MinHeight = nullable2;
+            nullable2 = new double?(0.0);
+            this.MinWidth_DefaultValue = nullable2;
+            this.MinWidth = nullable2;
+        }
+
         public string Callback { get; set; }
 
         private string Callback_DefaultValue { get; set; }
@@ -27,23 +44,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? MinWidth { get; set; }
 
         private double? MinWidth_DefaultValue { get; set; }
-
-        public ResponsiveRulesCondition()
-        {
-            this.Callback = this.Callback_DefaultValue = "";
-            double? nullable1 = new double?();
-            this.MaxHeight_DefaultValue = nullable1;
-            this.MaxHeight = nullable1;
-            double? nullable2 = new double?();
-            this.MaxWidth_DefaultValue = nullable2;
-            this.MaxWidth = nullable2;
-            nullable2 = new double?(0.0);
-            this.MinHeight_DefaultValue = nullable2;
-            this.MinHeight = nullable2;
-            nullable2 = new double?(0.0);
-            this.MinWidth_DefaultValue = nullable2;
-            this.MinWidth = nullable2;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -78,7 +78,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

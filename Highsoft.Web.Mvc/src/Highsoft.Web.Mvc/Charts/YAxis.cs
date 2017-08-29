@@ -3,12 +3,154 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
     public class YAxis : BaseObject
     {
+        public YAxis()
+        {
+            bool? nullable1 = new bool?(true);
+            this.AllowDecimals_DefaultValue = nullable1;
+            this.AllowDecimals = nullable1;
+            this.AlternateGridColor = this.AlternateGridColor_DefaultValue = (string) null;
+            double? nullable2 = new double?(0.0);
+            this.Angle_DefaultValue = nullable2;
+            this.Angle = nullable2;
+            this.Breaks = this.Breaks_DefaultValue = new YAxisBreaks();
+            this.Categories = this.Categories_DefaultValue = (List<string>) null;
+            double? nullable3 = new double?();
+            this.Ceiling_DefaultValue = nullable3;
+            this.Ceiling = nullable3;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Crosshair = this.Crosshair_DefaultValue = new YAxisCrosshair();
+            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
+            this.Description = this.Description_DefaultValue = "undefined";
+            nullable1 = new bool?(true);
+            this.EndOnTick_DefaultValue = nullable1;
+            this.EndOnTick = nullable1;
+            this.Events = this.Events_DefaultValue = new YAxisEvents();
+            double? nullable4 = new double?();
+            this.Floor_DefaultValue = nullable4;
+            this.Floor = nullable4;
+            this.GridLineColor = this.GridLineColor_DefaultValue = "#e6e6e6";
+            this.GridLineDashStyle = this.GridLineDashStyle_DefaultValue = YAxisGridLineDashStyle.Solid;
+            this.GridLineInterpolation = this.GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
+            nullable4 = new double?(1.0);
+            this.GridLineWidth_DefaultValue = nullable4;
+            this.GridLineWidth = nullable4;
+            nullable4 = new double?(1.0);
+            this.GridZIndex_DefaultValue = nullable4;
+            this.GridZIndex = nullable4;
+            this.Id = this.Id_DefaultValue = (string) null;
+            this.Labels = this.Labels_DefaultValue = new YAxisLabels();
+            this.LineColor = this.LineColor_DefaultValue = "#ccd6eb";
+            nullable4 = new double?(0.0);
+            this.LineWidth_DefaultValue = nullable4;
+            this.LineWidth = nullable4;
+            double? nullable5 = new double?();
+            this.LinkedTo_DefaultValue = nullable5;
+            this.LinkedTo = nullable5;
+            double? nullable6 = new double?();
+            this.Max_DefaultValue = nullable6;
+            this.Max = nullable6;
+            this.MaxColor = this.MaxColor_DefaultValue = "#003399";
+            nullable6 = new double?(0.05);
+            this.MaxPadding_DefaultValue = nullable6;
+            this.MaxPadding = nullable6;
+            double? nullable7 = new double?();
+            this.Min_DefaultValue = nullable7;
+            this.Min = nullable7;
+            this.MinColor = this.MinColor_DefaultValue = "#e6ebf5";
+            nullable7 = new double?(0.05);
+            this.MinPadding_DefaultValue = nullable7;
+            this.MinPadding = nullable7;
+            double? nullable8 = new double?();
+            this.MinRange_DefaultValue = nullable8;
+            this.MinRange = nullable8;
+            double? nullable9 = new double?();
+            this.MinTickInterval_DefaultValue = nullable9;
+            this.MinTickInterval = nullable9;
+            this.MinorGridLineColor = this.MinorGridLineColor_DefaultValue = "#f2f2f2";
+            this.MinorGridLineDashStyle = this.MinorGridLineDashStyle_DefaultValue = YAxisMinorGridLineDashStyle.Solid;
+            nullable9 = new double?(1.0);
+            this.MinorGridLineWidth_DefaultValue = nullable9;
+            this.MinorGridLineWidth = nullable9;
+            this.MinorTickColor = this.MinorTickColor_DefaultValue = "#999999";
+            this.MinorTickInterval = this.MinorTickInterval_DefaultValue = (string) null;
+            nullable9 = new double?(2.0);
+            this.MinorTickLength_DefaultValue = nullable9;
+            this.MinorTickLength = nullable9;
+            this.MinorTickPosition = this.MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
+            nullable9 = new double?(0.0);
+            this.MinorTickWidth_DefaultValue = nullable9;
+            this.MinorTickWidth = nullable9;
+            nullable9 = new double?(0.0);
+            this.Offset_DefaultValue = nullable9;
+            this.Offset = nullable9;
+            nullable1 = new bool?(false);
+            this.Opposite_DefaultValue = nullable1;
+            this.Opposite = nullable1;
+            this.PlotBands = this.PlotBands_DefaultValue = new List<YAxisPlotBands>();
+            this.PlotLines = this.PlotLines_DefaultValue = new List<YAxisPlotLines>();
+            nullable1 = new bool?(false);
+            this.Reversed_DefaultValue = nullable1;
+            this.Reversed = nullable1;
+            nullable1 = new bool?(true);
+            this.ReversedStacks_DefaultValue = nullable1;
+            this.ReversedStacks = nullable1;
+            nullable1 = new bool?(true);
+            this.ShowEmpty_DefaultValue = nullable1;
+            this.ShowEmpty = nullable1;
+            nullable1 = new bool?(true);
+            this.ShowFirstLabel_DefaultValue = nullable1;
+            this.ShowFirstLabel = nullable1;
+            bool? nullable10 = new bool?();
+            this.ShowLastLabel_DefaultValue = nullable10;
+            this.ShowLastLabel = nullable10;
+            double? nullable11 = new double?();
+            this.SoftMax_DefaultValue = nullable11;
+            this.SoftMax = nullable11;
+            double? nullable12 = new double?();
+            this.SoftMin_DefaultValue = nullable12;
+            this.SoftMin = nullable12;
+            this.StackLabels = this.StackLabels_DefaultValue = new YAxisStackLabels();
+            nullable12 = new double?(1.0);
+            this.StartOfWeek_DefaultValue = nullable12;
+            this.StartOfWeek = nullable12;
+            nullable10 = new bool?(true);
+            this.StartOnTick_DefaultValue = nullable10;
+            this.StartOnTick = nullable10;
+            this.Stops = this.Stops_DefaultValue = new List<Stop>();
+            double? nullable13 = new double?();
+            this.TickAmount_DefaultValue = nullable13;
+            this.TickAmount = nullable13;
+            this.TickColor = this.TickColor_DefaultValue = "#ccd6eb";
+            double? nullable14 = new double?();
+            this.TickInterval_DefaultValue = nullable14;
+            this.TickInterval = nullable14;
+            nullable14 = new double?(10.0);
+            this.TickLength_DefaultValue = nullable14;
+            this.TickLength = nullable14;
+            double? nullable15 = new double?();
+            this.TickPixelInterval_DefaultValue = nullable15;
+            this.TickPixelInterval = nullable15;
+            this.TickPosition = this.TickPosition_DefaultValue = YAxisTickPosition.Outside;
+            this.TickPositioner = this.TickPositioner_DefaultValue = "";
+            this.TickPositions = this.TickPositions_DefaultValue = (List<double>) null;
+            nullable15 = new double?(0.0);
+            this.TickWidth_DefaultValue = nullable15;
+            this.TickWidth = nullable15;
+            this.TickmarkPlacement = this.TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Null;
+            this.Title = this.Title_DefaultValue = new YAxisTitle();
+            this.Type = this.Type_DefaultValue = YAxisType.Linear;
+            nullable10 = new bool?(true);
+            this.Visible_DefaultValue = nullable10;
+            this.Visible = nullable10;
+        }
+
         public bool? AllowDecimals { get; set; }
 
         private bool? AllowDecimals_DefaultValue { get; set; }
@@ -277,147 +419,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private bool? Visible_DefaultValue { get; set; }
 
-        public YAxis()
-        {
-            bool? nullable1 = new bool?(true);
-            this.AllowDecimals_DefaultValue = nullable1;
-            this.AllowDecimals = nullable1;
-            this.AlternateGridColor = this.AlternateGridColor_DefaultValue = (string) null;
-            double? nullable2 = new double?(0.0);
-            this.Angle_DefaultValue = nullable2;
-            this.Angle = nullable2;
-            this.Breaks = this.Breaks_DefaultValue = new YAxisBreaks();
-            this.Categories = this.Categories_DefaultValue = (List<string>) null;
-            double? nullable3 = new double?();
-            this.Ceiling_DefaultValue = nullable3;
-            this.Ceiling = nullable3;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Crosshair = this.Crosshair_DefaultValue = new YAxisCrosshair();
-            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
-            this.Description = this.Description_DefaultValue = "undefined";
-            nullable1 = new bool?(true);
-            this.EndOnTick_DefaultValue = nullable1;
-            this.EndOnTick = nullable1;
-            this.Events = this.Events_DefaultValue = new YAxisEvents();
-            double? nullable4 = new double?();
-            this.Floor_DefaultValue = nullable4;
-            this.Floor = nullable4;
-            this.GridLineColor = this.GridLineColor_DefaultValue = "#e6e6e6";
-            this.GridLineDashStyle = this.GridLineDashStyle_DefaultValue = YAxisGridLineDashStyle.Solid;
-            this.GridLineInterpolation = this.GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
-            nullable4 = new double?(1.0);
-            this.GridLineWidth_DefaultValue = nullable4;
-            this.GridLineWidth = nullable4;
-            nullable4 = new double?(1.0);
-            this.GridZIndex_DefaultValue = nullable4;
-            this.GridZIndex = nullable4;
-            this.Id = this.Id_DefaultValue = (string) null;
-            this.Labels = this.Labels_DefaultValue = new YAxisLabels();
-            this.LineColor = this.LineColor_DefaultValue = "#ccd6eb";
-            nullable4 = new double?(0.0);
-            this.LineWidth_DefaultValue = nullable4;
-            this.LineWidth = nullable4;
-            double? nullable5 = new double?();
-            this.LinkedTo_DefaultValue = nullable5;
-            this.LinkedTo = nullable5;
-            double? nullable6 = new double?();
-            this.Max_DefaultValue = nullable6;
-            this.Max = nullable6;
-            this.MaxColor = this.MaxColor_DefaultValue = "#003399";
-            nullable6 = new double?(0.05);
-            this.MaxPadding_DefaultValue = nullable6;
-            this.MaxPadding = nullable6;
-            double? nullable7 = new double?();
-            this.Min_DefaultValue = nullable7;
-            this.Min = nullable7;
-            this.MinColor = this.MinColor_DefaultValue = "#e6ebf5";
-            nullable7 = new double?(0.05);
-            this.MinPadding_DefaultValue = nullable7;
-            this.MinPadding = nullable7;
-            double? nullable8 = new double?();
-            this.MinRange_DefaultValue = nullable8;
-            this.MinRange = nullable8;
-            double? nullable9 = new double?();
-            this.MinTickInterval_DefaultValue = nullable9;
-            this.MinTickInterval = nullable9;
-            this.MinorGridLineColor = this.MinorGridLineColor_DefaultValue = "#f2f2f2";
-            this.MinorGridLineDashStyle = this.MinorGridLineDashStyle_DefaultValue = YAxisMinorGridLineDashStyle.Solid;
-            nullable9 = new double?(1.0);
-            this.MinorGridLineWidth_DefaultValue = nullable9;
-            this.MinorGridLineWidth = nullable9;
-            this.MinorTickColor = this.MinorTickColor_DefaultValue = "#999999";
-            this.MinorTickInterval = this.MinorTickInterval_DefaultValue = (string) null;
-            nullable9 = new double?(2.0);
-            this.MinorTickLength_DefaultValue = nullable9;
-            this.MinorTickLength = nullable9;
-            this.MinorTickPosition = this.MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
-            nullable9 = new double?(0.0);
-            this.MinorTickWidth_DefaultValue = nullable9;
-            this.MinorTickWidth = nullable9;
-            nullable9 = new double?(0.0);
-            this.Offset_DefaultValue = nullable9;
-            this.Offset = nullable9;
-            nullable1 = new bool?(false);
-            this.Opposite_DefaultValue = nullable1;
-            this.Opposite = nullable1;
-            this.PlotBands = this.PlotBands_DefaultValue = new List<YAxisPlotBands>();
-            this.PlotLines = this.PlotLines_DefaultValue = new List<YAxisPlotLines>();
-            nullable1 = new bool?(false);
-            this.Reversed_DefaultValue = nullable1;
-            this.Reversed = nullable1;
-            nullable1 = new bool?(true);
-            this.ReversedStacks_DefaultValue = nullable1;
-            this.ReversedStacks = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowEmpty_DefaultValue = nullable1;
-            this.ShowEmpty = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowFirstLabel_DefaultValue = nullable1;
-            this.ShowFirstLabel = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowLastLabel_DefaultValue = nullable1;
-            this.ShowLastLabel = nullable1;
-            double? nullable10 = new double?();
-            this.SoftMax_DefaultValue = nullable10;
-            this.SoftMax = nullable10;
-            double? nullable11 = new double?();
-            this.SoftMin_DefaultValue = nullable11;
-            this.SoftMin = nullable11;
-            this.StackLabels = this.StackLabels_DefaultValue = new YAxisStackLabels();
-            nullable11 = new double?(1.0);
-            this.StartOfWeek_DefaultValue = nullable11;
-            this.StartOfWeek = nullable11;
-            nullable1 = new bool?(true);
-            this.StartOnTick_DefaultValue = nullable1;
-            this.StartOnTick = nullable1;
-            this.Stops = this.Stops_DefaultValue = (List<Stop>) null;
-            double? nullable12 = new double?();
-            this.TickAmount_DefaultValue = nullable12;
-            this.TickAmount = nullable12;
-            this.TickColor = this.TickColor_DefaultValue = "#ccd6eb";
-            double? nullable13 = new double?();
-            this.TickInterval_DefaultValue = nullable13;
-            this.TickInterval = nullable13;
-            nullable13 = new double?(10.0);
-            this.TickLength_DefaultValue = nullable13;
-            this.TickLength = nullable13;
-            double? nullable14 = new double?();
-            this.TickPixelInterval_DefaultValue = nullable14;
-            this.TickPixelInterval = nullable14;
-            this.TickPosition = this.TickPosition_DefaultValue = YAxisTickPosition.Outside;
-            this.TickPositioner = this.TickPositioner_DefaultValue = "";
-            this.TickPositions = this.TickPositions_DefaultValue = (List<double>) null;
-            nullable14 = new double?(0.0);
-            this.TickWidth_DefaultValue = nullable14;
-            this.TickWidth = nullable14;
-            this.TickmarkPlacement = this.TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Null;
-            this.Title = this.Title_DefaultValue = new YAxisTitle();
-            this.Type = this.Type_DefaultValue = YAxisType.Linear;
-            nullable1 = new bool?(true);
-            this.Visible_DefaultValue = nullable1;
-            this.Visible = nullable1;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -444,8 +445,8 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "ceiling", (object) this.Ceiling);
             if (this.ClassName != this.ClassName_DefaultValue)
                 hashtable.Add((object) "className", (object) this.ClassName);
-            if (this.Crosshair != this.Crosshair_DefaultValue)
-                hashtable.Add((object) "crosshair", (object) this.Crosshair);
+            if (this.Crosshair.IsDirty())
+                hashtable.Add((object) "crosshair", (object) this.Crosshair.ToHashtable());
             if (this.DateTimeLabelFormats != this.DateTimeLabelFormats_DefaultValue)
                 hashtable.Add((object) "dateTimeLabelFormats", (object) this.DateTimeLabelFormats);
             if (this.Description != this.Description_DefaultValue)
@@ -618,8 +619,8 @@ namespace Highsoft.Web.Mvc.Charts
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "startOnTick", (object) this.StartOnTick);
-            if (this.Stops != this.Stops_DefaultValue)
-                hashtable.Add((object) "stops", (object) this.HashifyList((IEnumerable) this.Stops));
+            if (this.Stops.Any<Stop>())
+                hashtable.Add((object) "stops", (object) this.GetLists((IEnumerable) this.Stops));
             nullable3 = this.TickAmount;
             nullable4 = this.TickAmount_DefaultValue;
             if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
@@ -674,7 +675,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

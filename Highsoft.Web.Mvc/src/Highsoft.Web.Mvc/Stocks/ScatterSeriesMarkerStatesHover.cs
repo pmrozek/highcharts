@@ -8,13 +8,34 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class ScatterSeriesMarkerStatesHover : BaseObject
     {
+        public ScatterSeriesMarkerStatesHover()
+        {
+            bool? nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.FillColor = this.FillColor_DefaultValue = (object) null;
+            this.LineColor = this.LineColor_DefaultValue = "#ffffff";
+            double? nullable2 = new double?(0.0);
+            this.LineWidth_DefaultValue = nullable2;
+            this.LineWidth = nullable2;
+            nullable2 = new double?(1.0);
+            this.LineWidthPlus_DefaultValue = nullable2;
+            this.LineWidthPlus = nullable2;
+            double? nullable3 = new double?();
+            this.Radius_DefaultValue = nullable3;
+            this.Radius = nullable3;
+            nullable3 = new double?(2.0);
+            this.RadiusPlus_DefaultValue = nullable3;
+            this.RadiusPlus = nullable3;
+        }
+
         public bool? Enabled { get; set; }
 
         private bool? Enabled_DefaultValue { get; set; }
 
-        public string FillColor { get; set; }
+        public object FillColor { get; set; }
 
-        private string FillColor_DefaultValue { get; set; }
+        private object FillColor_DefaultValue { get; set; }
 
         public string LineColor { get; set; }
 
@@ -36,27 +57,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? RadiusPlus_DefaultValue { get; set; }
 
-        public ScatterSeriesMarkerStatesHover()
-        {
-            bool? nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.FillColor = this.FillColor_DefaultValue = "null";
-            this.LineColor = this.LineColor_DefaultValue = "#ffffff";
-            double? nullable2 = new double?(0.0);
-            this.LineWidth_DefaultValue = nullable2;
-            this.LineWidth = nullable2;
-            nullable2 = new double?(1.0);
-            this.LineWidthPlus_DefaultValue = nullable2;
-            this.LineWidthPlus = nullable2;
-            double? nullable3 = new double?();
-            this.Radius_DefaultValue = nullable3;
-            this.Radius = nullable3;
-            nullable3 = new double?(2.0);
-            this.RadiusPlus_DefaultValue = nullable3;
-            this.RadiusPlus = nullable3;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
                 enabled.HasValue != enabledDefaultValue.HasValue)
                 hashtable.Add((object) "enabled", (object) this.Enabled);
             if (this.FillColor != this.FillColor_DefaultValue)
-                hashtable.Add((object) "fillColor", (object) this.FillColor);
+                hashtable.Add((object) "fillColor", this.FillColor);
             if (this.LineColor != this.LineColor_DefaultValue)
                 hashtable.Add((object) "lineColor", (object) this.LineColor);
             double? nullable1 = this.LineWidth;
@@ -94,7 +94,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

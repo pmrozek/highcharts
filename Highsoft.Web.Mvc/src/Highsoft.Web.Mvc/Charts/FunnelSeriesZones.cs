@@ -20,9 +20,9 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string DashStyle_DefaultValue { get; set; }
 
-        public string FillColor { get; set; }
+        public object FillColor { get; set; }
 
-        private string FillColor_DefaultValue { get; set; }
+        private object FillColor_DefaultValue { get; set; }
 
         public double? Value { get; set; }
 
@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
             this.ClassName = this.ClassName_DefaultValue = "";
             this.Color = this.Color_DefaultValue = (string) null;
             this.DashStyle = this.DashStyle_DefaultValue = (string) null;
-            this.FillColor = this.FillColor_DefaultValue = "";
+            this.FillColor = this.FillColor_DefaultValue = (object) null;
             double? nullable = new double?();
             this.Value_DefaultValue = nullable;
             this.Value = nullable;
@@ -49,7 +49,7 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.DashStyle != this.DashStyle_DefaultValue)
                 hashtable.Add((object) "dashStyle", (object) this.DashStyle);
             if (this.FillColor != this.FillColor_DefaultValue)
-                hashtable.Add((object) "fillColor", (object) this.FillColor);
+                hashtable.Add((object) "fillColor", this.FillColor);
             double? nullable = this.Value;
             double? valueDefaultValue = this.Value_DefaultValue;
             if (nullable.GetValueOrDefault() != valueDefaultValue.GetValueOrDefault() ||
@@ -60,7 +60,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

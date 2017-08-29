@@ -8,6 +8,42 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Exporting : BaseObject
     {
+        public Exporting()
+        {
+            bool? nullable1 = new bool?(false);
+            this.AllowHTML_DefaultValue = nullable1;
+            this.AllowHTML = nullable1;
+            this.Buttons = this.Buttons_DefaultValue = new ExportingButtons();
+            this.ChartOptions = this.ChartOptions_DefaultValue = (object) null;
+            nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.Error = this.Error_DefaultValue = "";
+            nullable1 = new bool?(true);
+            this.FallbackToExportServer_DefaultValue = nullable1;
+            this.FallbackToExportServer = nullable1;
+            this.Filename = this.Filename_DefaultValue = "chart";
+            this.FormAttributes = this.FormAttributes_DefaultValue = (object) "";
+            this.LibURL = this.LibURL_DefaultValue = "https://code.highcharts.com/{version}/lib";
+            double? nullable2 = new double?(780.0);
+            this.PrintMaxWidth_DefaultValue = nullable2;
+            this.PrintMaxWidth = nullable2;
+            nullable2 = new double?(2.0);
+            this.Scale_DefaultValue = nullable2;
+            this.Scale = nullable2;
+            double? nullable3 = new double?();
+            this.SourceHeight_DefaultValue = nullable3;
+            this.SourceHeight = nullable3;
+            double? nullable4 = new double?();
+            this.SourceWidth_DefaultValue = nullable4;
+            this.SourceWidth = nullable4;
+            this.Type = this.Type_DefaultValue = ExportingType.Imagepng;
+            this.Url = this.Url_DefaultValue = "https://export.highcharts.com";
+            double? nullable5 = new double?();
+            this.Width_DefaultValue = nullable5;
+            this.Width = nullable5;
+        }
+
         public bool? AllowHTML { get; set; }
 
         private bool? AllowHTML_DefaultValue { get; set; }
@@ -71,42 +107,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? Width { get; set; }
 
         private double? Width_DefaultValue { get; set; }
-
-        public Exporting()
-        {
-            bool? nullable1 = new bool?(false);
-            this.AllowHTML_DefaultValue = nullable1;
-            this.AllowHTML = nullable1;
-            this.Buttons = this.Buttons_DefaultValue = new ExportingButtons();
-            this.ChartOptions = this.ChartOptions_DefaultValue = (object) null;
-            nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.Error = this.Error_DefaultValue = "";
-            nullable1 = new bool?(true);
-            this.FallbackToExportServer_DefaultValue = nullable1;
-            this.FallbackToExportServer = nullable1;
-            this.Filename = this.Filename_DefaultValue = "chart";
-            this.FormAttributes = this.FormAttributes_DefaultValue = (object) "";
-            this.LibURL = this.LibURL_DefaultValue = "https://code.highcharts.com/{version}/lib";
-            double? nullable2 = new double?(780.0);
-            this.PrintMaxWidth_DefaultValue = nullable2;
-            this.PrintMaxWidth = nullable2;
-            nullable2 = new double?(2.0);
-            this.Scale_DefaultValue = nullable2;
-            this.Scale = nullable2;
-            double? nullable3 = new double?();
-            this.SourceHeight_DefaultValue = nullable3;
-            this.SourceHeight = nullable3;
-            double? nullable4 = new double?();
-            this.SourceWidth_DefaultValue = nullable4;
-            this.SourceWidth = nullable4;
-            this.Type = this.Type_DefaultValue = ExportingType.Imagepng;
-            this.Url = this.Url_DefaultValue = "https://export.highcharts.com";
-            double? nullable5 = new double?();
-            this.Width_DefaultValue = nullable5;
-            this.Width = nullable5;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -175,7 +175,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

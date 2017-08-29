@@ -8,6 +8,18 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class ChartEvents : BaseObject
     {
+        public ChartEvents()
+        {
+            this.AddSeries = this.AddSeries_DefaultValue = "";
+            this.AfterPrint = this.AfterPrint_DefaultValue = "";
+            this.BeforePrint = this.BeforePrint_DefaultValue = "";
+            this.Click = this.Click_DefaultValue = "";
+            this.Load = this.Load_DefaultValue = "";
+            this.Redraw = this.Redraw_DefaultValue = "";
+            this.Render = this.Render_DefaultValue = "";
+            this.Selection = this.Selection_DefaultValue = "";
+        }
+
         public string AddSeries { get; set; }
 
         private string AddSeries_DefaultValue { get; set; }
@@ -32,20 +44,13 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string Redraw_DefaultValue { get; set; }
 
+        public string Render { get; set; }
+
+        private string Render_DefaultValue { get; set; }
+
         public string Selection { get; set; }
 
         private string Selection_DefaultValue { get; set; }
-
-        public ChartEvents()
-        {
-            this.AddSeries = this.AddSeries_DefaultValue = "";
-            this.AfterPrint = this.AfterPrint_DefaultValue = "";
-            this.BeforePrint = this.BeforePrint_DefaultValue = "";
-            this.Click = this.Click_DefaultValue = "";
-            this.Load = this.Load_DefaultValue = "";
-            this.Redraw = this.Redraw_DefaultValue = "";
-            this.Selection = this.Selection_DefaultValue = "";
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -80,6 +85,11 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "redraw", (object) this.Redraw);
                 Highstock.AddFunction("ChartEventsRedraw.redraw", this.Redraw);
             }
+            if (this.Render != this.Render_DefaultValue)
+            {
+                hashtable.Add((object) "render", (object) this.Render);
+                Highstock.AddFunction("ChartEventsRender.render", this.Render);
+            }
             if (this.Selection != this.Selection_DefaultValue)
             {
                 hashtable.Add((object) "selection", (object) this.Selection);
@@ -90,7 +100,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

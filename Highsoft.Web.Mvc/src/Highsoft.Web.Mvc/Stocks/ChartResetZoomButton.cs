@@ -8,6 +8,13 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class ChartResetZoomButton : BaseObject
     {
+        public ChartResetZoomButton()
+        {
+            this.Position = this.Position_DefaultValue = new Hashtable();
+            this.RelativeTo = this.RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
+            this.Theme = this.Theme_DefaultValue = (object) null;
+        }
+
         public Hashtable Position { get; set; }
 
         private Hashtable Position_DefaultValue { get; set; }
@@ -19,13 +26,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public object Theme { get; set; }
 
         private object Theme_DefaultValue { get; set; }
-
-        public ChartResetZoomButton()
-        {
-            this.Position = this.Position_DefaultValue = new Hashtable();
-            this.RelativeTo = this.RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
-            this.Theme = this.Theme_DefaultValue = (object) null;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -42,7 +42,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

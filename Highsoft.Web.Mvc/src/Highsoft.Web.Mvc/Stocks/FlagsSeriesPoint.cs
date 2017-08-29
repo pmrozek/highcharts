@@ -8,14 +8,14 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class FlagsSeriesPoint : BaseObject
     {
-        public FlagsSeriesPointEvents Events { get; set; }
-
-        private FlagsSeriesPointEvents Events_DefaultValue { get; set; }
-
         public FlagsSeriesPoint()
         {
             this.Events = this.Events_DefaultValue = new FlagsSeriesPointEvents();
         }
+
+        public FlagsSeriesPointEvents Events { get; set; }
+
+        private FlagsSeriesPointEvents Events_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -27,7 +27,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

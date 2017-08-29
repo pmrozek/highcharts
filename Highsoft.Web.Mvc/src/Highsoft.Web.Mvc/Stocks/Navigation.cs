@@ -8,22 +8,6 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Navigation : BaseObject
     {
-        public NavigationButtonOptions ButtonOptions { get; set; }
-
-        private NavigationButtonOptions ButtonOptions_DefaultValue { get; set; }
-
-        public Hashtable MenuItemHoverStyle { get; set; }
-
-        private Hashtable MenuItemHoverStyle_DefaultValue { get; set; }
-
-        public Hashtable MenuItemStyle { get; set; }
-
-        private Hashtable MenuItemStyle_DefaultValue { get; set; }
-
-        public Hashtable MenuStyle { get; set; }
-
-        private Hashtable MenuStyle_DefaultValue { get; set; }
-
         public Navigation()
         {
             this.ButtonOptions = this.ButtonOptions_DefaultValue = new NavigationButtonOptions();
@@ -70,6 +54,22 @@ namespace Highsoft.Web.Mvc.Stocks
             };
         }
 
+        public NavigationButtonOptions ButtonOptions { get; set; }
+
+        private NavigationButtonOptions ButtonOptions_DefaultValue { get; set; }
+
+        public Hashtable MenuItemHoverStyle { get; set; }
+
+        private Hashtable MenuItemHoverStyle_DefaultValue { get; set; }
+
+        public Hashtable MenuItemStyle { get; set; }
+
+        private Hashtable MenuItemStyle_DefaultValue { get; set; }
+
+        public Hashtable MenuStyle { get; set; }
+
+        private Hashtable MenuStyle_DefaultValue { get; set; }
+
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -86,7 +86,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,6 +8,23 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class LegendNavigation : BaseObject
     {
+        public LegendNavigation()
+        {
+            this.ActiveColor = this.ActiveColor_DefaultValue = "#003399";
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
+            double? nullable1 = new double?(12.0);
+            this.ArrowSize_DefaultValue = nullable1;
+            this.ArrowSize = nullable1;
+            bool? nullable2 = new bool?(true);
+            this.Enabled_DefaultValue = nullable2;
+            this.Enabled = nullable2;
+            this.InactiveColor = this.InactiveColor_DefaultValue = "#cccccc";
+            this.Style = this.Style_DefaultValue = new Hashtable();
+        }
+
         public string ActiveColor { get; set; }
 
         private string ActiveColor_DefaultValue { get; set; }
@@ -31,23 +48,6 @@ namespace Highsoft.Web.Mvc.Charts
         public Hashtable Style { get; set; }
 
         private Hashtable Style_DefaultValue { get; set; }
-
-        public LegendNavigation()
-        {
-            this.ActiveColor = this.ActiveColor_DefaultValue = "#003399";
-            this.Animation = this.Animation_DefaultValue = new Animation()
-            {
-                Enabled = true
-            };
-            double? nullable1 = new double?(12.0);
-            this.ArrowSize_DefaultValue = nullable1;
-            this.ArrowSize = nullable1;
-            bool? nullable2 = new bool?(true);
-            this.Enabled_DefaultValue = nullable2;
-            this.Enabled = nullable2;
-            this.InactiveColor = this.InactiveColor_DefaultValue = "#cccccc";
-            this.Style = this.Style_DefaultValue = new Hashtable();
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -75,7 +75,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

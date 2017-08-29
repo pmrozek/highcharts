@@ -3,14 +3,58 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using Highsoft.Web.Mvc.Stocks.Rendering;
+using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
     public class Highstock : BaseObject
     {
         internal static Hashtable functions = new Hashtable();
+
+        public Highstock()
+        {
+            this.Accessibility = this.Accessibility_DefaultValue = new Accessibility();
+            this.Chart = this.Chart_DefaultValue = new Chart();
+            this.Colors = this.Colors_DefaultValue = new List<string>();
+            this.Credits = this.Credits_DefaultValue = new Credits();
+            this.Defs = this.Defs_DefaultValue = (object) null;
+            this.Exporting = this.Exporting_DefaultValue = new Exporting();
+            this.Global = this.Global_DefaultValue = new Global();
+            this.Labels = this.Labels_DefaultValue = new Labels();
+            this.Lang = this.Lang_DefaultValue = new Lang();
+            this.Legend = this.Legend_DefaultValue = new Legend();
+            this.Loading = this.Loading_DefaultValue = new Loading();
+            this.Navigation = this.Navigation_DefaultValue = new Navigation();
+            this.Navigator = this.Navigator_DefaultValue = new Navigator();
+            this.NoData = this.NoData_DefaultValue = new NoData();
+            this.PlotOptions = this.PlotOptions_DefaultValue = new PlotOptions();
+            this.RangeSelector = this.RangeSelector_DefaultValue = new RangeSelector();
+            this.Responsive = this.Responsive_DefaultValue = new Responsive();
+            this.Scrollbar = this.Scrollbar_DefaultValue = new Scrollbar();
+            this.Series = this.Series_DefaultValue = new List<Highsoft.Web.Mvc.Stocks.Series>();
+            this.Subtitle = this.Subtitle_DefaultValue = new Subtitle();
+            this.Title = this.Title_DefaultValue = new Title();
+            this.Tooltip = this.Tooltip_DefaultValue = new Tooltip();
+            this.XAxis = this.XAxis_DefaultValue = new List<Highsoft.Web.Mvc.Stocks.XAxis>();
+            this.YAxis = this.YAxis_DefaultValue = new List<Highsoft.Web.Mvc.Stocks.YAxis>();
+            this.ColorAxis = this.ColorAxis_DefaultValue = new ColorAxis();
+            this.Stops = this.Stops_DefaultValue = (List<Stop>) null;
+            double? nullable1 = new double?();
+            this.Min_DefaultValue = nullable1;
+            this.Min = nullable1;
+            double? nullable2 = new double?();
+            this.Max_DefaultValue = nullable2;
+            this.Max = nullable2;
+            bool? nullable3 = new bool?(false);
+            this.StartOnTick_DefaultValue = nullable3;
+            this.StartOnTick = nullable3;
+            nullable3 = new bool?(false);
+            this.EndOnTick_DefaultValue = nullable3;
+            this.EndOnTick = nullable3;
+            this.MinColor = this.MinColor_DefaultValue = (string) null;
+            this.MaxColor = this.MaxColor_DefaultValue = (string) null;
+        }
 
         public Accessibility Accessibility { get; set; }
 
@@ -88,58 +132,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private List<Highsoft.Web.Mvc.Stocks.Series> Series_DefaultValue { get; set; }
 
-        public AreaSeries AreaSeries { get; set; }
-
-        private AreaSeries AreaSeries_DefaultValue { get; set; }
-
-        public ArearangeSeries ArearangeSeries { get; set; }
-
-        private ArearangeSeries ArearangeSeries_DefaultValue { get; set; }
-
-        public AreasplineSeries AreasplineSeries { get; set; }
-
-        private AreasplineSeries AreasplineSeries_DefaultValue { get; set; }
-
-        public AreasplinerangeSeries AreasplinerangeSeries { get; set; }
-
-        private AreasplinerangeSeries AreasplinerangeSeries_DefaultValue { get; set; }
-
-        public CandleStickSeries CandleStickSeries { get; set; }
-
-        private CandleStickSeries CandleStickSeries_DefaultValue { get; set; }
-
-        public ColumnSeries ColumnSeries { get; set; }
-
-        private ColumnSeries ColumnSeries_DefaultValue { get; set; }
-
-        public ColumnrangeSeries ColumnrangeSeries { get; set; }
-
-        private ColumnrangeSeries ColumnrangeSeries_DefaultValue { get; set; }
-
-        public FlagsSeries FlagsSeries { get; set; }
-
-        private FlagsSeries FlagsSeries_DefaultValue { get; set; }
-
-        public LineSeries LineSeries { get; set; }
-
-        private LineSeries LineSeries_DefaultValue { get; set; }
-
-        public OhlcSeries OhlcSeries { get; set; }
-
-        private OhlcSeries OhlcSeries_DefaultValue { get; set; }
-
-        public PolygonSeries PolygonSeries { get; set; }
-
-        private PolygonSeries PolygonSeries_DefaultValue { get; set; }
-
-        public ScatterSeries ScatterSeries { get; set; }
-
-        private ScatterSeries ScatterSeries_DefaultValue { get; set; }
-
-        public SplineSeries SplineSeries { get; set; }
-
-        private SplineSeries SplineSeries_DefaultValue { get; set; }
-
         public Subtitle Subtitle { get; set; }
 
         private Subtitle Subtitle_DefaultValue { get; set; }
@@ -192,65 +184,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string MaxColor_DefaultValue { get; set; }
 
-        public string ID { get; set; }
-
-        public Highstock()
-        {
-            this.Accessibility = this.Accessibility_DefaultValue = new Accessibility();
-            this.Chart = this.Chart_DefaultValue = new Chart();
-            this.Colors = this.Colors_DefaultValue = new List<string>();
-            this.Credits = this.Credits_DefaultValue = new Credits();
-            this.Defs = this.Defs_DefaultValue = (object) null;
-            this.Exporting = this.Exporting_DefaultValue = new Exporting();
-            this.Global = this.Global_DefaultValue = new Global();
-            this.Labels = this.Labels_DefaultValue = new Labels();
-            this.Lang = this.Lang_DefaultValue = new Lang();
-            this.Legend = this.Legend_DefaultValue = new Legend();
-            this.Loading = this.Loading_DefaultValue = new Loading();
-            this.Navigation = this.Navigation_DefaultValue = new Navigation();
-            this.Navigator = this.Navigator_DefaultValue = new Navigator();
-            this.NoData = this.NoData_DefaultValue = new NoData();
-            this.PlotOptions = this.PlotOptions_DefaultValue = new PlotOptions();
-            this.RangeSelector = this.RangeSelector_DefaultValue = new RangeSelector();
-            this.Responsive = this.Responsive_DefaultValue = new Responsive();
-            this.Scrollbar = this.Scrollbar_DefaultValue = new Scrollbar();
-            this.Series = this.Series_DefaultValue = new List<Highsoft.Web.Mvc.Stocks.Series>();
-            this.AreaSeries = this.AreaSeries_DefaultValue = new AreaSeries();
-            this.ArearangeSeries = this.ArearangeSeries_DefaultValue = new ArearangeSeries();
-            this.AreasplineSeries = this.AreasplineSeries_DefaultValue = new AreasplineSeries();
-            this.AreasplinerangeSeries = this.AreasplinerangeSeries_DefaultValue = new AreasplinerangeSeries();
-            this.CandleStickSeries = this.CandleStickSeries_DefaultValue = new CandleStickSeries();
-            this.ColumnSeries = this.ColumnSeries_DefaultValue = new ColumnSeries();
-            this.ColumnrangeSeries = this.ColumnrangeSeries_DefaultValue = new ColumnrangeSeries();
-            this.FlagsSeries = this.FlagsSeries_DefaultValue = new FlagsSeries();
-            this.LineSeries = this.LineSeries_DefaultValue = new LineSeries();
-            this.OhlcSeries = this.OhlcSeries_DefaultValue = new OhlcSeries();
-            this.PolygonSeries = this.PolygonSeries_DefaultValue = new PolygonSeries();
-            this.ScatterSeries = this.ScatterSeries_DefaultValue = new ScatterSeries();
-            this.SplineSeries = this.SplineSeries_DefaultValue = new SplineSeries();
-            this.Subtitle = this.Subtitle_DefaultValue = new Subtitle();
-            this.Title = this.Title_DefaultValue = new Title();
-            this.Tooltip = this.Tooltip_DefaultValue = new Tooltip();
-            this.XAxis = this.XAxis_DefaultValue = new List<Highsoft.Web.Mvc.Stocks.XAxis>();
-            this.YAxis = this.YAxis_DefaultValue = new List<Highsoft.Web.Mvc.Stocks.YAxis>();
-            this.ColorAxis = this.ColorAxis_DefaultValue = new ColorAxis();
-            this.Stops = this.Stops_DefaultValue = (List<Stop>) null;
-            double? nullable1 = new double?();
-            this.Min_DefaultValue = nullable1;
-            this.Min = nullable1;
-            double? nullable2 = new double?();
-            this.Max_DefaultValue = nullable2;
-            this.Max = nullable2;
-            bool? nullable3 = new bool?(false);
-            this.StartOnTick_DefaultValue = nullable3;
-            this.StartOnTick = nullable3;
-            nullable3 = new bool?(false);
-            this.EndOnTick_DefaultValue = nullable3;
-            this.EndOnTick = nullable3;
-            this.MinColor = this.MinColor_DefaultValue = (string) null;
-            this.MaxColor = this.MaxColor_DefaultValue = (string) null;
-        }
-
         public string ToJsonOptions()
         {
             return new HighstockRenderer(this).GetJsonOptions();
@@ -297,32 +230,6 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "scrollbar", (object) this.Scrollbar.ToHashtable());
             if (this.Series != this.Series_DefaultValue)
                 hashtable.Add((object) "series", (object) this.Series);
-            if (this.AreaSeries.IsDirty())
-                hashtable.Add((object) "areaSeries", (object) this.AreaSeries.ToHashtable());
-            if (this.ArearangeSeries.IsDirty())
-                hashtable.Add((object) "arearangeSeries", (object) this.ArearangeSeries.ToHashtable());
-            if (this.AreasplineSeries.IsDirty())
-                hashtable.Add((object) "areasplineSeries", (object) this.AreasplineSeries.ToHashtable());
-            if (this.AreasplinerangeSeries.IsDirty())
-                hashtable.Add((object) "areasplinerangeSeries", (object) this.AreasplinerangeSeries.ToHashtable());
-            if (this.CandleStickSeries.IsDirty())
-                hashtable.Add((object) "candleStickSeries", (object) this.CandleStickSeries.ToHashtable());
-            if (this.ColumnSeries.IsDirty())
-                hashtable.Add((object) "columnSeries", (object) this.ColumnSeries.ToHashtable());
-            if (this.ColumnrangeSeries.IsDirty())
-                hashtable.Add((object) "columnrangeSeries", (object) this.ColumnrangeSeries.ToHashtable());
-            if (this.FlagsSeries.IsDirty())
-                hashtable.Add((object) "flagsSeries", (object) this.FlagsSeries.ToHashtable());
-            if (this.LineSeries.IsDirty())
-                hashtable.Add((object) "lineSeries", (object) this.LineSeries.ToHashtable());
-            if (this.OhlcSeries.IsDirty())
-                hashtable.Add((object) "ohlcSeries", (object) this.OhlcSeries.ToHashtable());
-            if (this.PolygonSeries.IsDirty())
-                hashtable.Add((object) "polygonSeries", (object) this.PolygonSeries.ToHashtable());
-            if (this.ScatterSeries.IsDirty())
-                hashtable.Add((object) "scatterSeries", (object) this.ScatterSeries.ToHashtable());
-            if (this.SplineSeries.IsDirty())
-                hashtable.Add((object) "splineSeries", (object) this.SplineSeries.ToHashtable());
             if (this.Subtitle.IsDirty())
                 hashtable.Add((object) "subtitle", (object) this.Subtitle.ToHashtable());
             if (this.Title.IsDirty())
@@ -366,7 +273,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }
@@ -387,5 +295,7 @@ namespace Highsoft.Web.Mvc.Stocks
                 return str;
             return char.ToLowerInvariant(str[0]).ToString() + str.Substring(1);
         }
+
+        public string ID { get; set; }
     }
 }

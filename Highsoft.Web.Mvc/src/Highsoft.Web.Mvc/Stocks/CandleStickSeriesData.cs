@@ -8,6 +8,37 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class CandleStickSeriesData : BaseObject
     {
+        public CandleStickSeriesData()
+        {
+            double? nullable1 = new double?();
+            this.Close_DefaultValue = nullable1;
+            this.Close = nullable1;
+            this.Color = this.Color_DefaultValue = "undefined";
+            this.DataLabels = this.DataLabels_DefaultValue = new CandleStickSeriesDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            this.Events = this.Events_DefaultValue = new CandleStickSeriesDataEvents();
+            double? nullable2 = new double?();
+            this.High_DefaultValue = nullable2;
+            this.High = nullable2;
+            this.Id = this.Id_DefaultValue = "null";
+            double? nullable3 = new double?();
+            this.Labelrank_DefaultValue = nullable3;
+            this.Labelrank = nullable3;
+            double? nullable4 = new double?();
+            this.Low_DefaultValue = nullable4;
+            this.Low = nullable4;
+            this.Name = this.Name_DefaultValue = (string) null;
+            double? nullable5 = new double?();
+            this.Open_DefaultValue = nullable5;
+            this.Open = nullable5;
+            bool? nullable6 = new bool?(false);
+            this.Selected_DefaultValue = nullable6;
+            this.Selected = nullable6;
+            nullable5 = new double?(double.MinValue);
+            this.X_DefaultValue = nullable5;
+            this.X = nullable5;
+        }
+
         public double? Close { get; set; }
 
         private double? Close_DefaultValue { get; set; }
@@ -16,9 +47,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string Color_DefaultValue { get; set; }
 
-        public object DataLabels { get; set; }
+        public CandleStickSeriesDataLabels DataLabels { get; set; }
 
-        private object DataLabels_DefaultValue { get; set; }
+        private CandleStickSeriesDataLabels DataLabels_DefaultValue { get; set; }
 
         public string Description { get; set; }
 
@@ -60,37 +91,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? X_DefaultValue { get; set; }
 
-        public CandleStickSeriesData()
-        {
-            double? nullable1 = new double?();
-            this.Close_DefaultValue = nullable1;
-            this.Close = nullable1;
-            this.Color = this.Color_DefaultValue = "undefined";
-            this.DataLabels = this.DataLabels_DefaultValue = (object) null;
-            this.Description = this.Description_DefaultValue = "undefined";
-            this.Events = this.Events_DefaultValue = new CandleStickSeriesDataEvents();
-            double? nullable2 = new double?();
-            this.High_DefaultValue = nullable2;
-            this.High = nullable2;
-            this.Id = this.Id_DefaultValue = "null";
-            double? nullable3 = new double?();
-            this.Labelrank_DefaultValue = nullable3;
-            this.Labelrank = nullable3;
-            double? nullable4 = new double?();
-            this.Low_DefaultValue = nullable4;
-            this.Low = nullable4;
-            this.Name = this.Name_DefaultValue = (string) null;
-            double? nullable5 = new double?();
-            this.Open_DefaultValue = nullable5;
-            this.Open = nullable5;
-            bool? nullable6 = new bool?(false);
-            this.Selected_DefaultValue = nullable6;
-            this.Selected = nullable6;
-            nullable5 = new double?(double.MinValue);
-            this.X_DefaultValue = nullable5;
-            this.X = nullable5;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -101,8 +101,8 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "close", (object) this.Close);
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
-            if (this.DataLabels != this.DataLabels_DefaultValue)
-                hashtable.Add((object) "dataLabels", this.DataLabels);
+            if (this.DataLabels.IsDirty())
+                hashtable.Add((object) "dataLabels", (object) this.DataLabels.ToHashtable());
             if (this.Description != this.Description_DefaultValue)
                 hashtable.Add((object) "description", (object) this.Description);
             if (this.Events.IsDirty())
@@ -146,7 +146,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,6 +8,18 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class NoDataPosition : BaseObject
     {
+        public NoDataPosition()
+        {
+            this.Align = this.Align_DefaultValue = NoDataPositionAlign.Center;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = NoDataPositionVerticalAlign.Middle;
+            double? nullable = new double?(0.0);
+            this.X_DefaultValue = nullable;
+            this.X = nullable;
+            nullable = new double?(0.0);
+            this.Y_DefaultValue = nullable;
+            this.Y = nullable;
+        }
+
         public NoDataPositionAlign Align { get; set; }
 
         private NoDataPositionAlign Align_DefaultValue { get; set; }
@@ -23,18 +35,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? Y { get; set; }
 
         private double? Y_DefaultValue { get; set; }
-
-        public NoDataPosition()
-        {
-            this.Align = this.Align_DefaultValue = NoDataPositionAlign.Center;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = NoDataPositionVerticalAlign.Middle;
-            double? nullable = new double?(0.0);
-            this.X_DefaultValue = nullable;
-            this.X = nullable;
-            nullable = new double?(0.0);
-            this.Y_DefaultValue = nullable;
-            this.Y = nullable;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -59,7 +59,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

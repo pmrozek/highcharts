@@ -8,6 +8,17 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PolygonSeriesStatesHoverHalo : BaseObject
     {
+        public PolygonSeriesStatesHoverHalo()
+        {
+            this.Attributes = this.Attributes_DefaultValue = (object) "";
+            double? nullable = new double?(0.25);
+            this.Opacity_DefaultValue = nullable;
+            this.Opacity = nullable;
+            nullable = new double?(10.0);
+            this.Size_DefaultValue = nullable;
+            this.Size = nullable;
+        }
+
         public object Attributes { get; set; }
 
         private object Attributes_DefaultValue { get; set; }
@@ -19,17 +30,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double? Size { get; set; }
 
         private double? Size_DefaultValue { get; set; }
-
-        public PolygonSeriesStatesHoverHalo()
-        {
-            this.Attributes = this.Attributes_DefaultValue = (object) "";
-            double? nullable = new double?(0.25);
-            this.Opacity_DefaultValue = nullable;
-            this.Opacity = nullable;
-            nullable = new double?(10.0);
-            this.Size_DefaultValue = nullable;
-            this.Size = nullable;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -51,7 +51,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

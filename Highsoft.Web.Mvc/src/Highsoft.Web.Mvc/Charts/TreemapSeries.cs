@@ -3,12 +3,121 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
     public class TreemapSeries : Series
     {
+        public TreemapSeries()
+        {
+            this.AllowDrillToNode = this.AllowDrillToNode_DefaultValue = TreemapSeriesAllowDrillToNode.False;
+            bool? nullable1 = new bool?(false);
+            this.AllowPointSelect_DefaultValue = nullable1;
+            this.AllowPointSelect = nullable1;
+            nullable1 = new bool?(false);
+            this.AlternateStartingDirection_DefaultValue = nullable1;
+            this.AlternateStartingDirection = nullable1;
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
+            double? nullable2 = new double?();
+            this.AnimationLimit_DefaultValue = nullable2;
+            this.AnimationLimit = nullable2;
+            this.BorderColor = this.BorderColor_DefaultValue = "#e6e6e6";
+            nullable2 = new double?(1.0);
+            this.BorderWidth_DefaultValue = nullable2;
+            this.BorderWidth = nullable2;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = "null";
+            nullable1 = new bool?(false);
+            this.ColorByPoint_DefaultValue = nullable1;
+            this.ColorByPoint = nullable1;
+            double? nullable3 = new double?();
+            this.ColorIndex_DefaultValue = nullable3;
+            this.ColorIndex = nullable3;
+            this.Colors = this.Colors_DefaultValue = new List<string>();
+            nullable3 = new double?(300.0);
+            this.CropThreshold_DefaultValue = nullable3;
+            this.CropThreshold = nullable3;
+            this.Cursor = this.Cursor_DefaultValue = TreemapSeriesCursor.Null;
+            this.Data = this.Data_DefaultValue = new List<TreemapSeriesData>();
+            this.DataLabels = this.DataLabels_DefaultValue = new TreemapSeriesDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            nullable1 = new bool?(true);
+            this.EnableMouseTracking_DefaultValue = nullable1;
+            this.EnableMouseTracking = nullable1;
+            this.Events = this.Events_DefaultValue = new TreemapSeriesEvents();
+            nullable1 = new bool?(false);
+            this.GetExtremesFromAll_DefaultValue = nullable1;
+            this.GetExtremesFromAll = nullable1;
+            this.Id = this.Id_DefaultValue = "";
+            nullable1 = new bool?(true);
+            this.IgnoreHiddenPoint_DefaultValue = nullable1;
+            this.IgnoreHiddenPoint = nullable1;
+            double? nullable4 = new double?();
+            this.Index_DefaultValue = nullable4;
+            this.Index = nullable4;
+            bool? nullable5 = new bool?();
+            this.InteractByLeaf_DefaultValue = nullable5;
+            this.InteractByLeaf = nullable5;
+            this.Keys = this.Keys_DefaultValue = new List<string>();
+            this.LayoutAlgorithm = this.LayoutAlgorithm_DefaultValue = TreemapSeriesLayoutAlgorithm.SliceAndDice;
+            this.LayoutStartingDirection = this.LayoutStartingDirection_DefaultValue =
+                TreemapSeriesLayoutStartingDirection.Vertical;
+            double? nullable6 = new double?();
+            this.LegendIndex_DefaultValue = nullable6;
+            this.LegendIndex = nullable6;
+            this.LevelIsConstant = this.LevelIsConstant_DefaultValue = TreemapSeriesLevelIsConstant.True;
+            this.Levels = this.Levels_DefaultValue = new List<TreemapSeriesLevels>();
+            this.LinkedTo = this.LinkedTo_DefaultValue = "";
+            double? nullable7 = new double?();
+            this.MaxPointWidth_DefaultValue = nullable7;
+            this.MaxPointWidth = nullable7;
+            this.Name = this.Name_DefaultValue = (string) null;
+            nullable7 = new double?(0.15);
+            this.Opacity_DefaultValue = nullable7;
+            this.Opacity = nullable7;
+            this.Point = this.Point_DefaultValue = new TreemapSeriesPoint();
+            nullable5 = new bool?(false);
+            this.Selected_DefaultValue = nullable5;
+            this.Selected = nullable5;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
+            nullable5 = new bool?(false);
+            this.ShowCheckbox_DefaultValue = nullable5;
+            this.ShowCheckbox = nullable5;
+            nullable5 = new bool?(false);
+            this.ShowInLegend_DefaultValue = nullable5;
+            this.ShowInLegend = nullable5;
+            double? nullable8 = new double?();
+            this.SortIndex_DefaultValue = nullable8;
+            this.SortIndex = nullable8;
+            this.States = this.States_DefaultValue = new TreemapSeriesStates();
+            nullable5 = new bool?(true);
+            this.StickyTracking_DefaultValue = nullable5;
+            this.StickyTracking = nullable5;
+            this.Tooltip = this.Tooltip_DefaultValue = new TreemapSeriesTooltip();
+            nullable8 = new double?(1000.0);
+            this.TurboThreshold_DefaultValue = nullable8;
+            this.TurboThreshold = nullable8;
+            this.Type = this.Type_DefaultValue = TreemapSeriesType.Null;
+            nullable5 = new bool?(true);
+            this.Visible_DefaultValue = nullable5;
+            this.Visible = nullable5;
+            this.XAxis = this.XAxis_DefaultValue = "0";
+            this.YAxis = this.YAxis_DefaultValue = "0";
+            double? nullable9 = new double?();
+            this.ZIndex_DefaultValue = nullable9;
+            this.ZIndex = nullable9;
+            this.ZoneAxis = this.ZoneAxis_DefaultValue = "y";
+            this.Zones = this.Zones_DefaultValue = new List<TreemapSeriesZone>();
+        }
+
         public TreemapSeriesAllowDrillToNode AllowDrillToNode { get; set; }
 
         private TreemapSeriesAllowDrillToNode AllowDrillToNode_DefaultValue { get; set; }
@@ -49,6 +158,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         private bool? ColorByPoint_DefaultValue { get; set; }
 
+        public double? ColorIndex { get; set; }
+
+        private double? ColorIndex_DefaultValue { get; set; }
+
         public List<string> Colors { get; set; }
 
         private List<string> Colors_DefaultValue { get; set; }
@@ -88,6 +201,10 @@ namespace Highsoft.Web.Mvc.Charts
         public new string Id { get; set; }
 
         private string Id_DefaultValue { get; set; }
+
+        public bool? IgnoreHiddenPoint { get; set; }
+
+        private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
 
         public new double? Index { get; set; }
 
@@ -132,6 +249,10 @@ namespace Highsoft.Web.Mvc.Charts
         public new string Name { get; set; }
 
         private string Name_DefaultValue { get; set; }
+
+        public double? Opacity { get; set; }
+
+        private double? Opacity_DefaultValue { get; set; }
 
         public TreemapSeriesPoint Point { get; set; }
 
@@ -197,108 +318,9 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string ZoneAxis_DefaultValue { get; set; }
 
-        public TreemapSeriesZones Zones { get; set; }
+        public List<TreemapSeriesZone> Zones { get; set; }
 
-        private TreemapSeriesZones Zones_DefaultValue { get; set; }
-
-        public TreemapSeries()
-        {
-            this.AllowDrillToNode = this.AllowDrillToNode_DefaultValue = TreemapSeriesAllowDrillToNode.False;
-            bool? nullable1 = new bool?(false);
-            this.AllowPointSelect_DefaultValue = nullable1;
-            this.AllowPointSelect = nullable1;
-            nullable1 = new bool?(false);
-            this.AlternateStartingDirection_DefaultValue = nullable1;
-            this.AlternateStartingDirection = nullable1;
-            this.Animation = this.Animation_DefaultValue = new Animation()
-            {
-                Enabled = true
-            };
-            double? nullable2 = new double?();
-            this.AnimationLimit_DefaultValue = nullable2;
-            this.AnimationLimit = nullable2;
-            this.BorderColor = this.BorderColor_DefaultValue = "#e6e6e6";
-            nullable2 = new double?(1.0);
-            this.BorderWidth_DefaultValue = nullable2;
-            this.BorderWidth = nullable2;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = "null";
-            nullable1 = new bool?(false);
-            this.ColorByPoint_DefaultValue = nullable1;
-            this.ColorByPoint = nullable1;
-            this.Colors = this.Colors_DefaultValue = new List<string>();
-            nullable2 = new double?(300.0);
-            this.CropThreshold_DefaultValue = nullable2;
-            this.CropThreshold = nullable2;
-            this.Cursor = this.Cursor_DefaultValue = TreemapSeriesCursor.Null;
-            this.Data = this.Data_DefaultValue = new List<TreemapSeriesData>();
-            this.DataLabels = this.DataLabels_DefaultValue = new TreemapSeriesDataLabels();
-            this.Description = this.Description_DefaultValue = "undefined";
-            nullable1 = new bool?(true);
-            this.EnableMouseTracking_DefaultValue = nullable1;
-            this.EnableMouseTracking = nullable1;
-            this.Events = this.Events_DefaultValue = new TreemapSeriesEvents();
-            nullable1 = new bool?(false);
-            this.GetExtremesFromAll_DefaultValue = nullable1;
-            this.GetExtremesFromAll = nullable1;
-            this.Id = this.Id_DefaultValue = "";
-            double? nullable3 = new double?();
-            this.Index_DefaultValue = nullable3;
-            this.Index = nullable3;
-            bool? nullable4 = new bool?();
-            this.InteractByLeaf_DefaultValue = nullable4;
-            this.InteractByLeaf = nullable4;
-            this.Keys = this.Keys_DefaultValue = new List<string>();
-            this.LayoutAlgorithm = this.LayoutAlgorithm_DefaultValue = TreemapSeriesLayoutAlgorithm.SliceAndDice;
-            this.LayoutStartingDirection =
-                this.LayoutStartingDirection_DefaultValue = TreemapSeriesLayoutStartingDirection.Vertical;
-            double? nullable5 = new double?();
-            this.LegendIndex_DefaultValue = nullable5;
-            this.LegendIndex = nullable5;
-            this.LevelIsConstant = this.LevelIsConstant_DefaultValue = TreemapSeriesLevelIsConstant.True;
-            this.Levels = this.Levels_DefaultValue = new List<TreemapSeriesLevels>();
-            this.LinkedTo = this.LinkedTo_DefaultValue = "";
-            double? nullable6 = new double?();
-            this.MaxPointWidth_DefaultValue = nullable6;
-            this.MaxPointWidth = nullable6;
-            this.Name = this.Name_DefaultValue = (string) null;
-            this.Point = this.Point_DefaultValue = new TreemapSeriesPoint();
-            nullable4 = new bool?(false);
-            this.Selected_DefaultValue = nullable4;
-            this.Selected = nullable4;
-            this.Shadow = this.Shadow_DefaultValue = new Shadow()
-            {
-                Enabled = false
-            };
-            nullable4 = new bool?(false);
-            this.ShowCheckbox_DefaultValue = nullable4;
-            this.ShowCheckbox = nullable4;
-            nullable4 = new bool?(false);
-            this.ShowInLegend_DefaultValue = nullable4;
-            this.ShowInLegend = nullable4;
-            double? nullable7 = new double?();
-            this.SortIndex_DefaultValue = nullable7;
-            this.SortIndex = nullable7;
-            this.States = this.States_DefaultValue = new TreemapSeriesStates();
-            nullable4 = new bool?(true);
-            this.StickyTracking_DefaultValue = nullable4;
-            this.StickyTracking = nullable4;
-            this.Tooltip = this.Tooltip_DefaultValue = new TreemapSeriesTooltip();
-            nullable7 = new double?(1000.0);
-            this.TurboThreshold_DefaultValue = nullable7;
-            this.TurboThreshold = nullable7;
-            this.Type = this.Type_DefaultValue = TreemapSeriesType.Null;
-            nullable4 = new bool?(true);
-            this.Visible_DefaultValue = nullable4;
-            this.Visible = nullable4;
-            this.XAxis = this.XAxis_DefaultValue = "0";
-            this.YAxis = this.YAxis_DefaultValue = "0";
-            double? nullable8 = new double?();
-            this.ZIndex_DefaultValue = nullable8;
-            this.ZIndex = nullable8;
-            this.ZoneAxis = this.ZoneAxis_DefaultValue = "y";
-            this.Zones = this.Zones_DefaultValue = new TreemapSeriesZones();
-        }
+        private List<TreemapSeriesZone> Zones_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -339,15 +361,22 @@ namespace Highsoft.Web.Mvc.Charts
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "colorByPoint", (object) this.ColorByPoint);
-            if (this.Colors != this.Colors_DefaultValue)
-                hashtable.Add((object) "colors", (object) this.Colors);
-            nullable3 = this.CropThreshold;
-            nullable4 = this.CropThreshold_DefaultValue;
+            nullable3 = this.ColorIndex;
+            nullable4 = this.ColorIndex_DefaultValue;
             if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
                 nullable3.HasValue != nullable4.HasValue)
+                hashtable.Add((object) "colorIndex", (object) this.ColorIndex);
+            if (this.Colors != this.Colors_DefaultValue)
+                hashtable.Add((object) "colors", (object) this.Colors);
+            nullable4 = this.CropThreshold;
+            nullable3 = this.CropThreshold_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "cropThreshold", (object) this.CropThreshold);
             if (this.Cursor != this.Cursor_DefaultValue)
                 hashtable.Add((object) "cursor", (object) Highcharts.FirstCharacterToLower(this.Cursor.ToString()));
+            if (this.Data.Any<TreemapSeriesData>())
+                hashtable.Add((object) "data", (object) this.HashifyList((IEnumerable) this.Data));
             if (this.DataLabels.IsDirty())
                 hashtable.Add((object) "dataLabels", (object) this.DataLabels.ToHashtable());
             if (this.Description != this.Description_DefaultValue)
@@ -366,15 +395,20 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "getExtremesFromAll", (object) this.GetExtremesFromAll);
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
-            nullable4 = this.Index;
-            nullable3 = this.Index_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
-                hashtable.Add((object) "index", (object) this.Index);
-            nullable2 = this.InteractByLeaf;
-            nullable1 = this.InteractByLeaf_DefaultValue;
+            nullable2 = this.IgnoreHiddenPoint;
+            nullable1 = this.IgnoreHiddenPoint_DefaultValue;
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
+                hashtable.Add((object) "ignoreHiddenPoint", (object) this.IgnoreHiddenPoint);
+            nullable3 = this.Index;
+            nullable4 = this.Index_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
+                hashtable.Add((object) "index", (object) this.Index);
+            nullable1 = this.InteractByLeaf;
+            nullable2 = this.InteractByLeaf_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "interactByLeaf", (object) this.InteractByLeaf);
             if (this.Keys != this.Keys_DefaultValue)
                 hashtable.Add((object) "keys", (object) this.Keys);
@@ -384,10 +418,10 @@ namespace Highsoft.Web.Mvc.Charts
             if (this.LayoutStartingDirection != this.LayoutStartingDirection_DefaultValue)
                 hashtable.Add((object) "layoutStartingDirection",
                     (object) Highcharts.FirstCharacterToLower(this.LayoutStartingDirection.ToString()));
-            nullable3 = this.LegendIndex;
-            nullable4 = this.LegendIndex_DefaultValue;
-            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
-                nullable3.HasValue != nullable4.HasValue)
+            nullable4 = this.LegendIndex;
+            nullable3 = this.LegendIndex_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "legendIndex", (object) this.LegendIndex);
             if (this.LevelIsConstant != this.LevelIsConstant_DefaultValue)
                 hashtable.Add((object) "levelIsConstant",
@@ -396,31 +430,36 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "levels", (object) this.HashifyList((IEnumerable) this.Levels));
             if (this.LinkedTo != this.LinkedTo_DefaultValue)
                 hashtable.Add((object) "linkedTo", (object) this.LinkedTo);
-            nullable4 = this.MaxPointWidth;
-            nullable3 = this.MaxPointWidth_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.MaxPointWidth;
+            nullable4 = this.MaxPointWidth_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "maxPointWidth", (object) this.MaxPointWidth);
             if (this.Name != this.Name_DefaultValue)
                 hashtable.Add((object) "name", (object) this.Name);
+            nullable4 = this.Opacity;
+            nullable3 = this.Opacity_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
+                hashtable.Add((object) "opacity", (object) this.Opacity);
             if (this.Point.IsDirty())
                 hashtable.Add((object) "point", (object) this.Point.ToHashtable());
-            nullable1 = this.Selected;
-            nullable2 = this.Selected_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
-                hashtable.Add((object) "selected", (object) this.Selected);
-            if (this.Shadow != this.Shadow_DefaultValue)
-                hashtable.Add((object) "shadow", (object) this.Shadow);
-            nullable2 = this.ShowCheckbox;
-            nullable1 = this.ShowCheckbox_DefaultValue;
+            nullable2 = this.Selected;
+            nullable1 = this.Selected_DefaultValue;
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
-                hashtable.Add((object) "showCheckbox", (object) this.ShowCheckbox);
-            nullable1 = this.ShowInLegend;
-            nullable2 = this.ShowInLegend_DefaultValue;
+                hashtable.Add((object) "selected", (object) this.Selected);
+            if (this.Shadow.IsDirty())
+                hashtable.Add((object) "shadow", (object) this.Shadow.ToHashtable());
+            nullable1 = this.ShowCheckbox;
+            nullable2 = this.ShowCheckbox_DefaultValue;
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
+                hashtable.Add((object) "showCheckbox", (object) this.ShowCheckbox);
+            nullable2 = this.ShowInLegend;
+            nullable1 = this.ShowInLegend_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "showInLegend", (object) this.ShowInLegend);
             nullable3 = this.SortIndex;
             nullable4 = this.SortIndex_DefaultValue;
@@ -429,10 +468,10 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "sortIndex", (object) this.SortIndex);
             if (this.States.IsDirty())
                 hashtable.Add((object) "states", (object) this.States.ToHashtable());
-            nullable2 = this.StickyTracking;
-            nullable1 = this.StickyTracking_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.StickyTracking;
+            nullable2 = this.StickyTracking_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "stickyTracking", (object) this.StickyTracking);
             if (this.Tooltip.IsDirty())
                 hashtable.Add((object) "tooltip", (object) this.Tooltip.ToHashtable());
@@ -443,10 +482,10 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "turboThreshold", (object) this.TurboThreshold);
             if (this.Type != this.Type_DefaultValue)
                 hashtable.Add((object) "type", (object) Highcharts.FirstCharacterToLower(this.Type.ToString()));
-            nullable1 = this.Visible;
-            nullable2 = this.Visible_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.Visible;
+            nullable1 = this.Visible_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "visible", (object) this.Visible);
             if (this.XAxis != this.XAxis_DefaultValue)
                 hashtable.Add((object) "xAxis", (object) this.XAxis);
@@ -459,14 +498,17 @@ namespace Highsoft.Web.Mvc.Charts
                 hashtable.Add((object) "zIndex", (object) this.ZIndex);
             if (this.ZoneAxis != this.ZoneAxis_DefaultValue)
                 hashtable.Add((object) "zoneAxis", (object) this.ZoneAxis);
-            if (this.Zones.IsDirty())
-                hashtable.Add((object) "zones", (object) this.Zones.ToHashtable());
+            if (this.Zones != this.Zones_DefaultValue)
+                hashtable.Add((object) "zones", (object) this.HashifyList((IEnumerable) this.Zones));
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

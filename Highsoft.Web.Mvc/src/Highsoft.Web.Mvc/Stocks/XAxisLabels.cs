@@ -9,6 +9,56 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class XAxisLabels : BaseObject
     {
+        public XAxisLabels()
+        {
+            this.Align = this.Align_DefaultValue = XAxisLabelsAlign.Null;
+            this.AutoRotation = this.AutoRotation_DefaultValue = new List<double>()
+            {
+                -45.0
+            };
+            bool? nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.Format = this.Format_DefaultValue = "{value}";
+            this.Formatter = this.Formatter_DefaultValue = "";
+            double? nullable2 = new double?(0.0);
+            this.Rotation_DefaultValue = nullable2;
+            this.Rotation = nullable2;
+            double? nullable3 = new double?();
+            this.StaggerLines_DefaultValue = nullable3;
+            this.StaggerLines = nullable3;
+            double? nullable4 = new double?();
+            this.Step_DefaultValue = nullable4;
+            this.Step = nullable4;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#666666"
+                },
+                {
+                    (object) "cursor",
+                    (object) "default"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                }
+            };
+            nullable1 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable1;
+            this.UseHTML = nullable1;
+            nullable4 = new double?(0.0);
+            this.X_DefaultValue = nullable4;
+            this.X = nullable4;
+            double? nullable5 = new double?();
+            this.Y_DefaultValue = nullable5;
+            this.Y = nullable5;
+            nullable5 = new double?(7.0);
+            this.ZIndex_DefaultValue = nullable5;
+            this.ZIndex = nullable5;
+        }
+
         public XAxisLabelsAlign Align { get; set; }
 
         private XAxisLabelsAlign Align_DefaultValue { get; set; }
@@ -60,56 +110,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public double? ZIndex { get; set; }
 
         private double? ZIndex_DefaultValue { get; set; }
-
-        public XAxisLabels()
-        {
-            this.Align = this.Align_DefaultValue = XAxisLabelsAlign.Center;
-            this.AutoRotation = this.AutoRotation_DefaultValue = new List<double>()
-            {
-                -45.0
-            };
-            bool? nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.Format = this.Format_DefaultValue = "{value}";
-            this.Formatter = this.Formatter_DefaultValue = "";
-            double? nullable2 = new double?(0.0);
-            this.Rotation_DefaultValue = nullable2;
-            this.Rotation = nullable2;
-            double? nullable3 = new double?();
-            this.StaggerLines_DefaultValue = nullable3;
-            this.StaggerLines = nullable3;
-            double? nullable4 = new double?();
-            this.Step_DefaultValue = nullable4;
-            this.Step = nullable4;
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#666666"
-                },
-                {
-                    (object) "cursor",
-                    (object) "default"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "11px"
-                }
-            };
-            nullable1 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable1;
-            this.UseHTML = nullable1;
-            nullable4 = new double?(0.0);
-            this.X_DefaultValue = nullable4;
-            this.X = nullable4;
-            double? nullable5 = new double?();
-            this.Y_DefaultValue = nullable5;
-            this.Y = nullable5;
-            nullable5 = new double?(7.0);
-            this.ZIndex_DefaultValue = nullable5;
-            this.ZIndex = nullable5;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -172,7 +172,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

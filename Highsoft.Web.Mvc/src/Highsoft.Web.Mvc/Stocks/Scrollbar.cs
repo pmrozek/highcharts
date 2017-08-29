@@ -8,6 +8,51 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Scrollbar : BaseObject
     {
+        public Scrollbar()
+        {
+            this.BarBackgroundColor = this.BarBackgroundColor_DefaultValue = "#cccccc";
+            this.BarBorderColor = this.BarBorderColor_DefaultValue = "#cccccc";
+            double? nullable1 = new double?(0.0);
+            this.BarBorderRadius_DefaultValue = nullable1;
+            this.BarBorderRadius = nullable1;
+            nullable1 = new double?(1.0);
+            this.BarBorderWidth_DefaultValue = nullable1;
+            this.BarBorderWidth = nullable1;
+            this.ButtonArrowColor = this.ButtonArrowColor_DefaultValue = "#333333";
+            this.ButtonBackgroundColor = this.ButtonBackgroundColor_DefaultValue = "#e6e6e6";
+            this.ButtonBorderColor = this.ButtonBorderColor_DefaultValue = "#cccccc";
+            nullable1 = new double?(0.0);
+            this.ButtonBorderRadius_DefaultValue = nullable1;
+            this.ButtonBorderRadius = nullable1;
+            nullable1 = new double?(1.0);
+            this.ButtonBorderWidth_DefaultValue = nullable1;
+            this.ButtonBorderWidth = nullable1;
+            bool? nullable2 = new bool?(true);
+            this.Enabled_DefaultValue = nullable2;
+            this.Enabled = nullable2;
+            double? nullable3 = new double?();
+            this.Height_DefaultValue = nullable3;
+            this.Height = nullable3;
+            nullable2 = new bool?(true);
+            this.LiveRedraw_DefaultValue = nullable2;
+            this.LiveRedraw = nullable2;
+            nullable3 = new double?(6.0);
+            this.MinWidth_DefaultValue = nullable3;
+            this.MinWidth = nullable3;
+            this.RifleColor = this.RifleColor_DefaultValue = "#333333";
+            nullable2 = new bool?(true);
+            this.ShowFull_DefaultValue = nullable2;
+            this.ShowFull = nullable2;
+            this.TrackBackgroundColor = this.TrackBackgroundColor_DefaultValue = "#f2f2f2";
+            this.TrackBorderColor = this.TrackBorderColor_DefaultValue = "#f2f2f2";
+            nullable3 = new double?(0.0);
+            this.TrackBorderRadius_DefaultValue = nullable3;
+            this.TrackBorderRadius = nullable3;
+            nullable3 = new double?(1.0);
+            this.TrackBorderWidth_DefaultValue = nullable3;
+            this.TrackBorderWidth = nullable3;
+        }
+
         public string BarBackgroundColor { get; set; }
 
         private string BarBackgroundColor_DefaultValue { get; set; }
@@ -83,51 +128,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public double? TrackBorderWidth { get; set; }
 
         private double? TrackBorderWidth_DefaultValue { get; set; }
-
-        public Scrollbar()
-        {
-            this.BarBackgroundColor = this.BarBackgroundColor_DefaultValue = "#cccccc";
-            this.BarBorderColor = this.BarBorderColor_DefaultValue = "#cccccc";
-            double? nullable1 = new double?(0.0);
-            this.BarBorderRadius_DefaultValue = nullable1;
-            this.BarBorderRadius = nullable1;
-            nullable1 = new double?(1.0);
-            this.BarBorderWidth_DefaultValue = nullable1;
-            this.BarBorderWidth = nullable1;
-            this.ButtonArrowColor = this.ButtonArrowColor_DefaultValue = "#333333";
-            this.ButtonBackgroundColor = this.ButtonBackgroundColor_DefaultValue = "#e6e6e6";
-            this.ButtonBorderColor = this.ButtonBorderColor_DefaultValue = "#cccccc";
-            nullable1 = new double?(0.0);
-            this.ButtonBorderRadius_DefaultValue = nullable1;
-            this.ButtonBorderRadius = nullable1;
-            nullable1 = new double?(1.0);
-            this.ButtonBorderWidth_DefaultValue = nullable1;
-            this.ButtonBorderWidth = nullable1;
-            bool? nullable2 = new bool?(true);
-            this.Enabled_DefaultValue = nullable2;
-            this.Enabled = nullable2;
-            double? nullable3 = new double?();
-            this.Height_DefaultValue = nullable3;
-            this.Height = nullable3;
-            nullable2 = new bool?(true);
-            this.LiveRedraw_DefaultValue = nullable2;
-            this.LiveRedraw = nullable2;
-            nullable3 = new double?(6.0);
-            this.MinWidth_DefaultValue = nullable3;
-            this.MinWidth = nullable3;
-            this.RifleColor = this.RifleColor_DefaultValue = "#333333";
-            nullable2 = new bool?(true);
-            this.ShowFull_DefaultValue = nullable2;
-            this.ShowFull = nullable2;
-            this.TrackBackgroundColor = this.TrackBackgroundColor_DefaultValue = "#f2f2f2";
-            this.TrackBorderColor = this.TrackBorderColor_DefaultValue = "#f2f2f2";
-            nullable3 = new double?(0.0);
-            this.TrackBorderRadius_DefaultValue = nullable3;
-            this.TrackBorderRadius = nullable3;
-            nullable3 = new double?(1.0);
-            this.TrackBorderWidth_DefaultValue = nullable3;
-            this.TrackBorderWidth = nullable3;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -208,7 +208,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

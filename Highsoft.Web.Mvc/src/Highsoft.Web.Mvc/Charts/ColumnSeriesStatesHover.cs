@@ -8,6 +8,28 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ColumnSeriesStatesHover : BaseObject
     {
+        public ColumnSeriesStatesHover()
+        {
+            this.Animation = this.Animation_DefaultValue = new Animation()
+            {
+                Enabled = true
+            };
+            bool? nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.Halo = this.Halo_DefaultValue = new ColumnSeriesStatesHoverHalo();
+            double? nullable2 = new double?(2.0);
+            this.LineWidth_DefaultValue = nullable2;
+            this.LineWidth = nullable2;
+            nullable2 = new double?(1.0);
+            this.LineWidthPlus_DefaultValue = nullable2;
+            this.LineWidthPlus = nullable2;
+        }
+
+        public Animation Animation { get; set; }
+
+        private Animation Animation_DefaultValue { get; set; }
+
         public bool? Enabled { get; set; }
 
         private bool? Enabled_DefaultValue { get; set; }
@@ -24,23 +46,11 @@ namespace Highsoft.Web.Mvc.Charts
 
         private double? LineWidthPlus_DefaultValue { get; set; }
 
-        public ColumnSeriesStatesHover()
-        {
-            bool? nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.Halo = this.Halo_DefaultValue = new ColumnSeriesStatesHoverHalo();
-            double? nullable2 = new double?(2.0);
-            this.LineWidth_DefaultValue = nullable2;
-            this.LineWidth = nullable2;
-            nullable2 = new double?(1.0);
-            this.LineWidthPlus_DefaultValue = nullable2;
-            this.LineWidthPlus = nullable2;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
+            if (this.Animation.IsDirty())
+                hashtable.Add((object) "animation", (object) this.Animation.ToJSON());
             bool? enabled = this.Enabled;
             bool? enabledDefaultValue = this.Enabled_DefaultValue;
             if (enabled.GetValueOrDefault() != enabledDefaultValue.GetValueOrDefault() ||
@@ -63,7 +73,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

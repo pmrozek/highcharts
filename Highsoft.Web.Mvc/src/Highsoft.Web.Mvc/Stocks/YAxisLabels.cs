@@ -9,50 +9,6 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class YAxisLabels : BaseObject
     {
-        public YAxisLabelsAlign Align { get; set; }
-
-        private YAxisLabelsAlign Align_DefaultValue { get; set; }
-
-        public List<double> AutoRotation { get; set; }
-
-        private List<double> AutoRotation_DefaultValue { get; set; }
-
-        public bool? Enabled { get; set; }
-
-        private bool? Enabled_DefaultValue { get; set; }
-
-        public string Format { get; set; }
-
-        private string Format_DefaultValue { get; set; }
-
-        public string Formatter { get; set; }
-
-        private string Formatter_DefaultValue { get; set; }
-
-        public double? Rotation { get; set; }
-
-        private double? Rotation_DefaultValue { get; set; }
-
-        public Hashtable Style { get; set; }
-
-        private Hashtable Style_DefaultValue { get; set; }
-
-        public bool? UseHTML { get; set; }
-
-        private bool? UseHTML_DefaultValue { get; set; }
-
-        public double? X { get; set; }
-
-        private double? X_DefaultValue { get; set; }
-
-        public double? Y { get; set; }
-
-        private double? Y_DefaultValue { get; set; }
-
-        public double? ZIndex { get; set; }
-
-        private double? ZIndex_DefaultValue { get; set; }
-
         public YAxisLabels()
         {
             this.Align = this.Align_DefaultValue = YAxisLabelsAlign.Left;
@@ -96,6 +52,50 @@ namespace Highsoft.Web.Mvc.Stocks
             this.ZIndex_DefaultValue = nullable2;
             this.ZIndex = nullable2;
         }
+
+        public YAxisLabelsAlign Align { get; set; }
+
+        private YAxisLabelsAlign Align_DefaultValue { get; set; }
+
+        public List<double> AutoRotation { get; set; }
+
+        private List<double> AutoRotation_DefaultValue { get; set; }
+
+        public bool? Enabled { get; set; }
+
+        private bool? Enabled_DefaultValue { get; set; }
+
+        public string Format { get; set; }
+
+        private string Format_DefaultValue { get; set; }
+
+        public string Formatter { get; set; }
+
+        private string Formatter_DefaultValue { get; set; }
+
+        public double? Rotation { get; set; }
+
+        private double? Rotation_DefaultValue { get; set; }
+
+        public Hashtable Style { get; set; }
+
+        private Hashtable Style_DefaultValue { get; set; }
+
+        public bool? UseHTML { get; set; }
+
+        private bool? UseHTML_DefaultValue { get; set; }
+
+        public double? X { get; set; }
+
+        private double? X_DefaultValue { get; set; }
+
+        public double? Y { get; set; }
+
+        private double? Y_DefaultValue { get; set; }
+
+        public double? ZIndex { get; set; }
+
+        private double? ZIndex_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -148,7 +148,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

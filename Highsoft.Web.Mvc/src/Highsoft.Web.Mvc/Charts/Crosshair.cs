@@ -8,15 +8,15 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Crosshair : BaseObject
     {
-        public bool XAxis { get; set; }
-
-        public bool YAxis { get; set; }
-
         public Crosshair()
         {
             this.XAxis = false;
             this.YAxis = false;
         }
+
+        public bool XAxis { get; set; }
+
+        public bool YAxis { get; set; }
 
         internal override Hashtable ToHashtable()
         {

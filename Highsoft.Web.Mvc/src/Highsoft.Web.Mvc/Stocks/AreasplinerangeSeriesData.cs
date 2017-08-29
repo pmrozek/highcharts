@@ -8,13 +8,38 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class AreasplinerangeSeriesData : BaseObject
     {
+        public AreasplinerangeSeriesData()
+        {
+            this.Color = this.Color_DefaultValue = "undefined";
+            this.DataLabels = this.DataLabels_DefaultValue = new AreasplinerangeSeriesDataLabels();
+            this.Description = this.Description_DefaultValue = "undefined";
+            this.Events = this.Events_DefaultValue = new AreasplinerangeSeriesDataEvents();
+            double? nullable1 = new double?();
+            this.High_DefaultValue = nullable1;
+            this.High = nullable1;
+            this.Id = this.Id_DefaultValue = "null";
+            double? nullable2 = new double?();
+            this.Labelrank_DefaultValue = nullable2;
+            this.Labelrank = nullable2;
+            double? nullable3 = new double?();
+            this.Low_DefaultValue = nullable3;
+            this.Low = nullable3;
+            this.Name = this.Name_DefaultValue = (string) null;
+            bool? nullable4 = new bool?(false);
+            this.Selected_DefaultValue = nullable4;
+            this.Selected = nullable4;
+            nullable3 = new double?(double.MinValue);
+            this.X_DefaultValue = nullable3;
+            this.X = nullable3;
+        }
+
         public string Color { get; set; }
 
         private string Color_DefaultValue { get; set; }
 
-        public object DataLabels { get; set; }
+        public AreasplinerangeSeriesDataLabels DataLabels { get; set; }
 
-        private object DataLabels_DefaultValue { get; set; }
+        private AreasplinerangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 
         public string Description { get; set; }
 
@@ -52,38 +77,13 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? X_DefaultValue { get; set; }
 
-        public AreasplinerangeSeriesData()
-        {
-            this.Color = this.Color_DefaultValue = "undefined";
-            this.DataLabels = this.DataLabels_DefaultValue = (object) null;
-            this.Description = this.Description_DefaultValue = "undefined";
-            this.Events = this.Events_DefaultValue = new AreasplinerangeSeriesDataEvents();
-            double? nullable1 = new double?();
-            this.High_DefaultValue = nullable1;
-            this.High = nullable1;
-            this.Id = this.Id_DefaultValue = "null";
-            double? nullable2 = new double?();
-            this.Labelrank_DefaultValue = nullable2;
-            this.Labelrank = nullable2;
-            double? nullable3 = new double?();
-            this.Low_DefaultValue = nullable3;
-            this.Low = nullable3;
-            this.Name = this.Name_DefaultValue = (string) null;
-            bool? nullable4 = new bool?(false);
-            this.Selected_DefaultValue = nullable4;
-            this.Selected = nullable4;
-            nullable3 = new double?(double.MinValue);
-            this.X_DefaultValue = nullable3;
-            this.X = nullable3;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
             if (this.Color != this.Color_DefaultValue)
                 hashtable.Add((object) "color", (object) this.Color);
-            if (this.DataLabels != this.DataLabels_DefaultValue)
-                hashtable.Add((object) "dataLabels", this.DataLabels);
+            if (this.DataLabels.IsDirty())
+                hashtable.Add((object) "dataLabels", (object) this.DataLabels.ToHashtable());
             if (this.Description != this.Description_DefaultValue)
                 hashtable.Add((object) "description", (object) this.Description);
             if (this.Events.IsDirty())
@@ -122,7 +122,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

@@ -8,6 +8,37 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Navigator : BaseObject
     {
+        public Navigator()
+        {
+            bool? nullable1 = new bool?(true);
+            this.AdaptToUpdatedData_DefaultValue = nullable1;
+            this.AdaptToUpdatedData = nullable1;
+            nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            this.Handles = this.Handles_DefaultValue = new NavigatorHandles();
+            double? nullable2 = new double?(40.0);
+            this.Height_DefaultValue = nullable2;
+            this.Height = nullable2;
+            double? nullable3 = new double?();
+            this.Margin_DefaultValue = nullable3;
+            this.Margin = nullable3;
+            this.MaskFill = this.MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
+            nullable1 = new bool?(true);
+            this.MaskInside_DefaultValue = nullable1;
+            this.MaskInside = nullable1;
+            nullable1 = new bool?(false);
+            this.Opposite_DefaultValue = nullable1;
+            this.Opposite = nullable1;
+            this.OutlineColor = this.OutlineColor_DefaultValue = "#cccccc";
+            nullable3 = new double?(2.0);
+            this.OutlineWidth_DefaultValue = nullable3;
+            this.OutlineWidth = nullable3;
+            this.Series = this.Series_DefaultValue = (Series) null;
+            this.XAxis = this.XAxis_DefaultValue = new XAxis();
+            this.YAxis = this.YAxis_DefaultValue = new YAxis();
+        }
+
         public bool? AdaptToUpdatedData { get; set; }
 
         private bool? AdaptToUpdatedData_DefaultValue { get; set; }
@@ -24,9 +55,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? Height_DefaultValue { get; set; }
 
-        public string[] Margin { get; set; }
+        public double? Margin { get; set; }
 
-        private string[] Margin_DefaultValue { get; set; }
+        private double? Margin_DefaultValue { get; set; }
 
         public string MaskFill { get; set; }
 
@@ -35,6 +66,10 @@ namespace Highsoft.Web.Mvc.Stocks
         public bool? MaskInside { get; set; }
 
         private bool? MaskInside_DefaultValue { get; set; }
+
+        public bool? Opposite { get; set; }
+
+        private bool? Opposite_DefaultValue { get; set; }
 
         public string OutlineColor { get; set; }
 
@@ -48,39 +83,13 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private Series Series_DefaultValue { get; set; }
 
-        public object XAxis { get; set; }
+        public XAxis XAxis { get; set; }
 
-        private object XAxis_DefaultValue { get; set; }
+        private XAxis XAxis_DefaultValue { get; set; }
 
-        public object YAxis { get; set; }
+        public YAxis YAxis { get; set; }
 
-        private object YAxis_DefaultValue { get; set; }
-
-        public Navigator()
-        {
-            bool? nullable1 = new bool?(true);
-            this.AdaptToUpdatedData_DefaultValue = nullable1;
-            this.AdaptToUpdatedData = nullable1;
-            nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            this.Handles = this.Handles_DefaultValue = new NavigatorHandles();
-            double? nullable2 = new double?(40.0);
-            this.Height_DefaultValue = nullable2;
-            this.Height = nullable2;
-            this.Margin = this.Margin_DefaultValue = new string[0];
-            this.MaskFill = this.MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
-            nullable1 = new bool?(true);
-            this.MaskInside_DefaultValue = nullable1;
-            this.MaskInside = nullable1;
-            this.OutlineColor = this.OutlineColor_DefaultValue = "#cccccc";
-            nullable2 = new double?(2.0);
-            this.OutlineWidth_DefaultValue = nullable2;
-            this.OutlineWidth = nullable2;
-            this.Series = this.Series_DefaultValue = (Series) null;
-            this.XAxis = this.XAxis_DefaultValue = (object) null;
-            this.YAxis = this.YAxis_DefaultValue = (object) "";
-        }
+        private YAxis YAxis_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -102,7 +111,10 @@ namespace Highsoft.Web.Mvc.Stocks
             if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
                 nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "height", (object) this.Height);
-            if (this.Margin != this.Margin_DefaultValue)
+            nullable4 = this.Margin;
+            nullable3 = this.Margin_DefaultValue;
+            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
+                nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "margin", (object) this.Margin);
             if (this.MaskFill != this.MaskFill_DefaultValue)
                 hashtable.Add((object) "maskFill", (object) this.MaskFill);
@@ -111,25 +123,33 @@ namespace Highsoft.Web.Mvc.Stocks
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "maskInside", (object) this.MaskInside);
+            nullable2 = this.Opposite;
+            nullable1 = this.Opposite_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
+                hashtable.Add((object) "opposite", (object) this.Opposite);
             if (this.OutlineColor != this.OutlineColor_DefaultValue)
                 hashtable.Add((object) "outlineColor", (object) this.OutlineColor);
-            nullable4 = this.OutlineWidth;
-            nullable3 = this.OutlineWidth_DefaultValue;
-            if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
-                nullable4.HasValue != nullable3.HasValue)
+            nullable3 = this.OutlineWidth;
+            nullable4 = this.OutlineWidth_DefaultValue;
+            if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
+                nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "outlineWidth", (object) this.OutlineWidth);
             if (this.Series != this.Series_DefaultValue)
                 hashtable.Add((object) "series", (object) this.Series.ToHashtable());
-            if (this.XAxis != this.XAxis_DefaultValue)
-                hashtable.Add((object) "xAxis", this.XAxis);
-            if (this.YAxis != this.YAxis_DefaultValue)
-                hashtable.Add((object) "yAxis", this.YAxis);
+            if (this.XAxis.IsDirty())
+                hashtable.Add((object) "xAxis", (object) this.XAxis.ToHashtable());
+            if (this.YAxis.IsDirty())
+                hashtable.Add((object) "yAxis", (object) this.YAxis.ToHashtable());
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

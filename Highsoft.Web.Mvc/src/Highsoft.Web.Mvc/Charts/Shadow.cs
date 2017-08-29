@@ -8,6 +8,16 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class Shadow : BaseObject
     {
+        public Shadow()
+        {
+            this.Enabled = false;
+            this.Color = "";
+            this.OffsetX = 0;
+            this.OffsetY = 0;
+            this.Opacity = 0.0;
+            this.Width = 0;
+        }
+
         public bool Enabled { get; set; }
 
         public string Color { get; set; }
@@ -19,16 +29,6 @@ namespace Highsoft.Web.Mvc.Charts
         public double Opacity { get; set; }
 
         public int Width { get; set; }
-
-        public Shadow()
-        {
-            this.Enabled = false;
-            this.Color = "";
-            this.OffsetX = 0;
-            this.OffsetY = 0;
-            this.Opacity = 0.0;
-            this.Width = 0;
-        }
 
         internal override Hashtable ToHashtable()
         {

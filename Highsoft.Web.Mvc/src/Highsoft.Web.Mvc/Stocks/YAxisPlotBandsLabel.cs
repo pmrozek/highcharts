@@ -8,6 +8,26 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class YAxisPlotBandsLabel : BaseObject
     {
+        public YAxisPlotBandsLabel()
+        {
+            this.Align = this.Align_DefaultValue = "center";
+            double? nullable1 = new double?(0.0);
+            this.Rotation_DefaultValue = nullable1;
+            this.Rotation = nullable1;
+            this.Style = this.Style_DefaultValue = new Hashtable();
+            this.TextAlign = this.TextAlign_DefaultValue = "";
+            bool? nullable2 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable2;
+            this.UseHTML = nullable2;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = "top";
+            double? nullable3 = new double?();
+            this.X_DefaultValue = nullable3;
+            this.X = nullable3;
+            double? nullable4 = new double?();
+            this.Y_DefaultValue = nullable4;
+            this.Y = nullable4;
+        }
+
         public string Align { get; set; }
 
         private string Align_DefaultValue { get; set; }
@@ -39,26 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public double? Y { get; set; }
 
         private double? Y_DefaultValue { get; set; }
-
-        public YAxisPlotBandsLabel()
-        {
-            this.Align = this.Align_DefaultValue = "center";
-            double? nullable1 = new double?(0.0);
-            this.Rotation_DefaultValue = nullable1;
-            this.Rotation = nullable1;
-            this.Style = this.Style_DefaultValue = new Hashtable();
-            this.TextAlign = this.TextAlign_DefaultValue = "";
-            bool? nullable2 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable2;
-            this.UseHTML = nullable2;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = "top";
-            double? nullable3 = new double?();
-            this.X_DefaultValue = nullable3;
-            this.X = nullable3;
-            double? nullable4 = new double?();
-            this.Y_DefaultValue = nullable4;
-            this.Y = nullable4;
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -96,7 +96,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

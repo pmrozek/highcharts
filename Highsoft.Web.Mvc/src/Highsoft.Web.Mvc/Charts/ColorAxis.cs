@@ -3,12 +3,32 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
     public class ColorAxis : BaseObject
     {
+        public ColorAxis()
+        {
+            this.Stops = this.Stops_DefaultValue = new List<Stop>();
+            double? nullable1 = new double?();
+            this.Min_DefaultValue = nullable1;
+            this.Min = nullable1;
+            double? nullable2 = new double?();
+            this.Max_DefaultValue = nullable2;
+            this.Max = nullable2;
+            bool? nullable3 = new bool?(false);
+            this.StartOnTick_DefaultValue = nullable3;
+            this.StartOnTick = nullable3;
+            nullable3 = new bool?(false);
+            this.EndOnTick_DefaultValue = nullable3;
+            this.EndOnTick = nullable3;
+            this.MinColor = this.MinColor_DefaultValue = (string) null;
+            this.MaxColor = this.MaxColor_DefaultValue = (string) null;
+        }
+
         public List<Stop> Stops { get; set; }
 
         private List<Stop> Stops_DefaultValue { get; set; }
@@ -37,30 +57,11 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string MaxColor_DefaultValue { get; set; }
 
-        public ColorAxis()
-        {
-            this.Stops = this.Stops_DefaultValue = (List<Stop>) null;
-            double? nullable1 = new double?();
-            this.Min_DefaultValue = nullable1;
-            this.Min = nullable1;
-            double? nullable2 = new double?();
-            this.Max_DefaultValue = nullable2;
-            this.Max = nullable2;
-            bool? nullable3 = new bool?(false);
-            this.StartOnTick_DefaultValue = nullable3;
-            this.StartOnTick = nullable3;
-            nullable3 = new bool?(false);
-            this.EndOnTick_DefaultValue = nullable3;
-            this.EndOnTick = nullable3;
-            this.MinColor = this.MinColor_DefaultValue = (string) null;
-            this.MaxColor = this.MaxColor_DefaultValue = (string) null;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
-            if (this.Stops != this.Stops_DefaultValue)
-                hashtable.Add((object) "stops", (object) this.HashifyList((IEnumerable) this.Stops));
+            if (this.Stops.Any<Stop>())
+                hashtable.Add((object) "stops", (object) this.GetLists((IEnumerable) this.Stops));
             double? nullable1 = this.Min;
             double? nullable2 = this.Min_DefaultValue;
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
@@ -90,7 +91,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

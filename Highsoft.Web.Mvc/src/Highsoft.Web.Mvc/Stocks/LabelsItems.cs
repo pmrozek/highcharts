@@ -8,6 +8,12 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class LabelsItems : BaseObject
     {
+        public LabelsItems()
+        {
+            this.Html = this.Html_DefaultValue = (string) null;
+            this.Style = this.Style_DefaultValue = new Hashtable();
+        }
+
         public string Html { get; set; }
 
         private string Html_DefaultValue { get; set; }
@@ -15,12 +21,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public Hashtable Style { get; set; }
 
         private Hashtable Style_DefaultValue { get; set; }
-
-        public LabelsItems()
-        {
-            this.Html = this.Html_DefaultValue = (string) null;
-            this.Style = this.Style_DefaultValue = new Hashtable();
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -34,7 +34,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

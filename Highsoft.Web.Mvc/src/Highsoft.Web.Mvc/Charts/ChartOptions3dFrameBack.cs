@@ -8,14 +8,6 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class ChartOptions3dFrameBack : BaseObject
     {
-        public string Color { get; set; }
-
-        private string Color_DefaultValue { get; set; }
-
-        public double? Size { get; set; }
-
-        private double? Size_DefaultValue { get; set; }
-
         public ChartOptions3dFrameBack()
         {
             this.Color = this.Color_DefaultValue = "transparent";
@@ -23,6 +15,14 @@ namespace Highsoft.Web.Mvc.Charts
             this.Size_DefaultValue = nullable;
             this.Size = nullable;
         }
+
+        public string Color { get; set; }
+
+        private string Color_DefaultValue { get; set; }
+
+        public double? Size { get; set; }
+
+        private double? Size_DefaultValue { get; set; }
 
         internal override Hashtable ToHashtable()
         {
@@ -39,7 +39,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

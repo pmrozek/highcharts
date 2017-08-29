@@ -8,6 +8,26 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class FlagsSeriesData : BaseObject
     {
+        public FlagsSeriesData()
+        {
+            this.Color = this.Color_DefaultValue = "undefined";
+            this.Description = this.Description_DefaultValue = "undefined";
+            this.Events = this.Events_DefaultValue = new FlagsSeriesDataEvents();
+            this.FillColor = this.FillColor_DefaultValue = (object) null;
+            this.Id = this.Id_DefaultValue = "null";
+            double? nullable1 = new double?();
+            this.Labelrank_DefaultValue = nullable1;
+            this.Labelrank = nullable1;
+            bool? nullable2 = new bool?(false);
+            this.Selected_DefaultValue = nullable2;
+            this.Selected = nullable2;
+            this.Text = this.Text_DefaultValue = (string) null;
+            this.Title = this.Title_DefaultValue = (string) null;
+            nullable1 = new double?(double.MinValue);
+            this.X_DefaultValue = nullable1;
+            this.X = nullable1;
+        }
+
         public string Color { get; set; }
 
         private string Color_DefaultValue { get; set; }
@@ -19,6 +39,10 @@ namespace Highsoft.Web.Mvc.Stocks
         public FlagsSeriesDataEvents Events { get; set; }
 
         private FlagsSeriesDataEvents Events_DefaultValue { get; set; }
+
+        public object FillColor { get; set; }
+
+        private object FillColor_DefaultValue { get; set; }
 
         public string Id { get; set; }
 
@@ -44,25 +68,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? X_DefaultValue { get; set; }
 
-        public FlagsSeriesData()
-        {
-            this.Color = this.Color_DefaultValue = "undefined";
-            this.Description = this.Description_DefaultValue = "undefined";
-            this.Events = this.Events_DefaultValue = new FlagsSeriesDataEvents();
-            this.Id = this.Id_DefaultValue = "null";
-            double? nullable1 = new double?();
-            this.Labelrank_DefaultValue = nullable1;
-            this.Labelrank = nullable1;
-            bool? nullable2 = new bool?(false);
-            this.Selected_DefaultValue = nullable2;
-            this.Selected = nullable2;
-            this.Text = this.Text_DefaultValue = (string) null;
-            this.Title = this.Title_DefaultValue = (string) null;
-            nullable1 = new double?(double.MinValue);
-            this.X_DefaultValue = nullable1;
-            this.X = nullable1;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -72,6 +77,8 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "description", (object) this.Description);
             if (this.Events.IsDirty())
                 hashtable.Add((object) "events", (object) this.Events.ToHashtable());
+            if (this.FillColor != this.FillColor_DefaultValue)
+                hashtable.Add((object) "fillColor", this.FillColor);
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
             double? nullable1 = this.Labelrank;
@@ -98,7 +105,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

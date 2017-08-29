@@ -3,13 +3,56 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
     public class RangeSelector : BaseObject
     {
+        public RangeSelector()
+        {
+            bool? nullable1 = new bool?(false);
+            this.AllButtonsEnabled_DefaultValue = nullable1;
+            this.AllButtonsEnabled = nullable1;
+            this.ButtonPosition = this.ButtonPosition_DefaultValue = (object) "";
+            double? nullable2 = new double?(0.0);
+            this.ButtonSpacing_DefaultValue = nullable2;
+            this.ButtonSpacing = nullable2;
+            this.ButtonTheme = this.ButtonTheme_DefaultValue = (object) null;
+            this.Buttons = this.Buttons_DefaultValue = (List<RangeSelectorButton>) null;
+            nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            nullable2 = new double?(35.0);
+            this.Height_DefaultValue = nullable2;
+            this.Height = nullable2;
+            this.InputBoxBorderColor = this.InputBoxBorderColor_DefaultValue = "#cccccc";
+            nullable2 = new double?(17.0);
+            this.InputBoxHeight_DefaultValue = nullable2;
+            this.InputBoxHeight = nullable2;
+            nullable2 = new double?(90.0);
+            this.InputBoxWidth_DefaultValue = nullable2;
+            this.InputBoxWidth = nullable2;
+            this.InputDateFormat = this.InputDateFormat_DefaultValue = "%b %e %Y,";
+            this.InputDateParser = this.InputDateParser_DefaultValue = "";
+            this.InputEditDateFormat = this.InputEditDateFormat_DefaultValue = "%Y-%m-%d";
+            bool? nullable3 = new bool?();
+            this.InputEnabled_DefaultValue = nullable3;
+            this.InputEnabled = nullable3;
+            this.InputPosition = this.InputPosition_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "align",
+                    (object) "right"
+                }
+            };
+            this.InputStyle = this.InputStyle_DefaultValue = new Hashtable();
+            this.LabelStyle = this.LabelStyle_DefaultValue = new Hashtable();
+            double? nullable4 = new double?();
+            this.Selected_DefaultValue = nullable4;
+            this.Selected = nullable4;
+        }
+
         public bool? AllButtonsEnabled { get; set; }
 
         private bool? AllButtonsEnabled_DefaultValue { get; set; }
@@ -82,50 +125,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? Selected_DefaultValue { get; set; }
 
-        public RangeSelector()
-        {
-            bool? nullable1 = new bool?(false);
-            this.AllButtonsEnabled_DefaultValue = nullable1;
-            this.AllButtonsEnabled = nullable1;
-            this.ButtonPosition = this.ButtonPosition_DefaultValue = (object) "";
-            double? nullable2 = new double?(0.0);
-            this.ButtonSpacing_DefaultValue = nullable2;
-            this.ButtonSpacing = nullable2;
-            this.ButtonTheme = this.ButtonTheme_DefaultValue = (object) null;
-            this.Buttons = this.Buttons_DefaultValue = new List<RangeSelectorButton>();
-            nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            nullable2 = new double?(35.0);
-            this.Height_DefaultValue = nullable2;
-            this.Height = nullable2;
-            this.InputBoxBorderColor = this.InputBoxBorderColor_DefaultValue = "#cccccc";
-            nullable2 = new double?(17.0);
-            this.InputBoxHeight_DefaultValue = nullable2;
-            this.InputBoxHeight = nullable2;
-            nullable2 = new double?(90.0);
-            this.InputBoxWidth_DefaultValue = nullable2;
-            this.InputBoxWidth = nullable2;
-            this.InputDateFormat = this.InputDateFormat_DefaultValue = "%b %e %Y,";
-            this.InputDateParser = this.InputDateParser_DefaultValue = "";
-            this.InputEditDateFormat = this.InputEditDateFormat_DefaultValue = "%Y-%m-%d";
-            bool? nullable3 = new bool?();
-            this.InputEnabled_DefaultValue = nullable3;
-            this.InputEnabled = nullable3;
-            this.InputPosition = this.InputPosition_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "align",
-                    (object) "right"
-                }
-            };
-            this.InputStyle = this.InputStyle_DefaultValue = new Hashtable();
-            this.LabelStyle = this.LabelStyle_DefaultValue = new Hashtable();
-            double? nullable4 = new double?();
-            this.Selected_DefaultValue = nullable4;
-            this.Selected = nullable4;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -143,7 +142,7 @@ namespace Highsoft.Web.Mvc.Stocks
                 hashtable.Add((object) "buttonSpacing", (object) this.ButtonSpacing);
             if (this.ButtonTheme != this.ButtonTheme_DefaultValue)
                 hashtable.Add((object) "buttonTheme", this.ButtonTheme);
-            if (this.Buttons.Any<RangeSelectorButton>())
+            if (this.Buttons != this.Buttons_DefaultValue)
             {
                 List<Hashtable> hashtableList = new List<Hashtable>();
                 foreach (RangeSelectorButton button in this.Buttons)
@@ -202,7 +201,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

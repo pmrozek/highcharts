@@ -9,6 +9,139 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class XAxis : BaseObject
     {
+        public XAxis()
+        {
+            bool? nullable1 = new bool?(true);
+            this.AllowDecimals_DefaultValue = nullable1;
+            this.AllowDecimals = nullable1;
+            this.AlternateGridColor = this.AlternateGridColor_DefaultValue = (string) null;
+            this.Breaks = this.Breaks_DefaultValue = new XAxisBreaks();
+            this.Categories = this.Categories_DefaultValue = (List<string>) null;
+            double? nullable2 = new double?();
+            this.Ceiling_DefaultValue = nullable2;
+            this.Ceiling = nullable2;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Crosshair = this.Crosshair_DefaultValue = new XAxisCrosshair();
+            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
+            this.Description = this.Description_DefaultValue = "undefined";
+            nullable1 = new bool?(false);
+            this.EndOnTick_DefaultValue = nullable1;
+            this.EndOnTick = nullable1;
+            this.Events = this.Events_DefaultValue = new XAxisEvents();
+            double? nullable3 = new double?();
+            this.Floor_DefaultValue = nullable3;
+            this.Floor = nullable3;
+            this.GridLineColor = this.GridLineColor_DefaultValue = "#e6e6e6";
+            this.GridLineDashStyle = this.GridLineDashStyle_DefaultValue = XAxisGridLineDashStyle.Solid;
+            nullable3 = new double?(0.0);
+            this.GridLineWidth_DefaultValue = nullable3;
+            this.GridLineWidth = nullable3;
+            nullable3 = new double?(1.0);
+            this.GridZIndex_DefaultValue = nullable3;
+            this.GridZIndex = nullable3;
+            this.Id = this.Id_DefaultValue = (string) null;
+            this.Labels = this.Labels_DefaultValue = new XAxisLabels();
+            this.LineColor = this.LineColor_DefaultValue = "#ccd6eb";
+            nullable3 = new double?(1.0);
+            this.LineWidth_DefaultValue = nullable3;
+            this.LineWidth = nullable3;
+            double? nullable4 = new double?();
+            this.LinkedTo_DefaultValue = nullable4;
+            this.LinkedTo = nullable4;
+            double? nullable5 = new double?();
+            this.Max_DefaultValue = nullable5;
+            this.Max = nullable5;
+            nullable5 = new double?(0.01);
+            this.MaxPadding_DefaultValue = nullable5;
+            this.MaxPadding = nullable5;
+            double? nullable6 = new double?();
+            this.Min_DefaultValue = nullable6;
+            this.Min = nullable6;
+            nullable6 = new double?(0.01);
+            this.MinPadding_DefaultValue = nullable6;
+            this.MinPadding = nullable6;
+            double? nullable7 = new double?();
+            this.MinRange_DefaultValue = nullable7;
+            this.MinRange = nullable7;
+            double? nullable8 = new double?();
+            this.MinTickInterval_DefaultValue = nullable8;
+            this.MinTickInterval = nullable8;
+            this.MinorGridLineColor = this.MinorGridLineColor_DefaultValue = "#f2f2f2";
+            this.MinorGridLineDashStyle = this.MinorGridLineDashStyle_DefaultValue = XAxisMinorGridLineDashStyle.Solid;
+            nullable8 = new double?(1.0);
+            this.MinorGridLineWidth_DefaultValue = nullable8;
+            this.MinorGridLineWidth = nullable8;
+            this.MinorTickColor = this.MinorTickColor_DefaultValue = "#999999";
+            this.MinorTickInterval = this.MinorTickInterval_DefaultValue = (string) null;
+            nullable8 = new double?(2.0);
+            this.MinorTickLength_DefaultValue = nullable8;
+            this.MinorTickLength = nullable8;
+            this.MinorTickPosition = this.MinorTickPosition_DefaultValue = XAxisMinorTickPosition.Outside;
+            nullable8 = new double?(0.0);
+            this.MinorTickWidth_DefaultValue = nullable8;
+            this.MinorTickWidth = nullable8;
+            nullable1 = new bool?(true);
+            this.NameToX_DefaultValue = nullable1;
+            this.NameToX = nullable1;
+            nullable8 = new double?(0.0);
+            this.Offset_DefaultValue = nullable8;
+            this.Offset = nullable8;
+            nullable1 = new bool?(false);
+            this.Opposite_DefaultValue = nullable1;
+            this.Opposite = nullable1;
+            this.PlotBands = this.PlotBands_DefaultValue = new List<XAxisPlotBands>();
+            this.PlotLines = this.PlotLines_DefaultValue = new List<XAxisPlotLines>();
+            nullable1 = new bool?(false);
+            this.Reversed_DefaultValue = nullable1;
+            this.Reversed = nullable1;
+            nullable1 = new bool?(true);
+            this.ShowEmpty_DefaultValue = nullable1;
+            this.ShowEmpty = nullable1;
+            nullable1 = new bool?(true);
+            this.ShowFirstLabel_DefaultValue = nullable1;
+            this.ShowFirstLabel = nullable1;
+            nullable1 = new bool?(true);
+            this.ShowLastLabel_DefaultValue = nullable1;
+            this.ShowLastLabel = nullable1;
+            double? nullable9 = new double?();
+            this.SoftMax_DefaultValue = nullable9;
+            this.SoftMax = nullable9;
+            double? nullable10 = new double?();
+            this.SoftMin_DefaultValue = nullable10;
+            this.SoftMin = nullable10;
+            nullable10 = new double?(1.0);
+            this.StartOfWeek_DefaultValue = nullable10;
+            this.StartOfWeek = nullable10;
+            nullable1 = new bool?(false);
+            this.StartOnTick_DefaultValue = nullable1;
+            this.StartOnTick = nullable1;
+            double? nullable11 = new double?();
+            this.TickAmount_DefaultValue = nullable11;
+            this.TickAmount = nullable11;
+            this.TickColor = this.TickColor_DefaultValue = "#ccd6eb";
+            double? nullable12 = new double?();
+            this.TickInterval_DefaultValue = nullable12;
+            this.TickInterval = nullable12;
+            nullable12 = new double?(10.0);
+            this.TickLength_DefaultValue = nullable12;
+            this.TickLength = nullable12;
+            double? nullable13 = new double?();
+            this.TickPixelInterval_DefaultValue = nullable13;
+            this.TickPixelInterval = nullable13;
+            this.TickPosition = this.TickPosition_DefaultValue = XAxisTickPosition.Outside;
+            this.TickPositioner = this.TickPositioner_DefaultValue = "";
+            this.TickPositions = this.TickPositions_DefaultValue = (List<double>) null;
+            nullable13 = new double?(1.0);
+            this.TickWidth_DefaultValue = nullable13;
+            this.TickWidth = nullable13;
+            this.TickmarkPlacement = this.TickmarkPlacement_DefaultValue = XAxisTickmarkPlacement.Null;
+            this.Title = this.Title_DefaultValue = new XAxisTitle();
+            this.Type = this.Type_DefaultValue = XAxisType.Linear;
+            nullable1 = new bool?(true);
+            this.Visible_DefaultValue = nullable1;
+            this.Visible = nullable1;
+        }
+
         public bool? AllowDecimals { get; set; }
 
         private bool? AllowDecimals_DefaultValue { get; set; }
@@ -253,139 +386,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private bool? Visible_DefaultValue { get; set; }
 
-        public XAxis()
-        {
-            bool? nullable1 = new bool?(true);
-            this.AllowDecimals_DefaultValue = nullable1;
-            this.AllowDecimals = nullable1;
-            this.AlternateGridColor = this.AlternateGridColor_DefaultValue = (string) null;
-            this.Breaks = this.Breaks_DefaultValue = new XAxisBreaks();
-            this.Categories = this.Categories_DefaultValue = (List<string>) null;
-            double? nullable2 = new double?();
-            this.Ceiling_DefaultValue = nullable2;
-            this.Ceiling = nullable2;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Crosshair = this.Crosshair_DefaultValue = new XAxisCrosshair();
-            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
-            this.Description = this.Description_DefaultValue = "undefined";
-            nullable1 = new bool?(false);
-            this.EndOnTick_DefaultValue = nullable1;
-            this.EndOnTick = nullable1;
-            this.Events = this.Events_DefaultValue = new XAxisEvents();
-            double? nullable3 = new double?();
-            this.Floor_DefaultValue = nullable3;
-            this.Floor = nullable3;
-            this.GridLineColor = this.GridLineColor_DefaultValue = "#e6e6e6";
-            this.GridLineDashStyle = this.GridLineDashStyle_DefaultValue = XAxisGridLineDashStyle.Solid;
-            nullable3 = new double?(0.0);
-            this.GridLineWidth_DefaultValue = nullable3;
-            this.GridLineWidth = nullable3;
-            nullable3 = new double?(1.0);
-            this.GridZIndex_DefaultValue = nullable3;
-            this.GridZIndex = nullable3;
-            this.Id = this.Id_DefaultValue = (string) null;
-            this.Labels = this.Labels_DefaultValue = new XAxisLabels();
-            this.LineColor = this.LineColor_DefaultValue = "#ccd6eb";
-            nullable3 = new double?(1.0);
-            this.LineWidth_DefaultValue = nullable3;
-            this.LineWidth = nullable3;
-            double? nullable4 = new double?();
-            this.LinkedTo_DefaultValue = nullable4;
-            this.LinkedTo = nullable4;
-            double? nullable5 = new double?();
-            this.Max_DefaultValue = nullable5;
-            this.Max = nullable5;
-            nullable5 = new double?(0.01);
-            this.MaxPadding_DefaultValue = nullable5;
-            this.MaxPadding = nullable5;
-            double? nullable6 = new double?();
-            this.Min_DefaultValue = nullable6;
-            this.Min = nullable6;
-            nullable6 = new double?(0.01);
-            this.MinPadding_DefaultValue = nullable6;
-            this.MinPadding = nullable6;
-            double? nullable7 = new double?();
-            this.MinRange_DefaultValue = nullable7;
-            this.MinRange = nullable7;
-            double? nullable8 = new double?();
-            this.MinTickInterval_DefaultValue = nullable8;
-            this.MinTickInterval = nullable8;
-            this.MinorGridLineColor = this.MinorGridLineColor_DefaultValue = "#f2f2f2";
-            this.MinorGridLineDashStyle = this.MinorGridLineDashStyle_DefaultValue = XAxisMinorGridLineDashStyle.Solid;
-            nullable8 = new double?(1.0);
-            this.MinorGridLineWidth_DefaultValue = nullable8;
-            this.MinorGridLineWidth = nullable8;
-            this.MinorTickColor = this.MinorTickColor_DefaultValue = "#999999";
-            this.MinorTickInterval = this.MinorTickInterval_DefaultValue = (string) null;
-            nullable8 = new double?(2.0);
-            this.MinorTickLength_DefaultValue = nullable8;
-            this.MinorTickLength = nullable8;
-            this.MinorTickPosition = this.MinorTickPosition_DefaultValue = XAxisMinorTickPosition.Outside;
-            nullable8 = new double?(0.0);
-            this.MinorTickWidth_DefaultValue = nullable8;
-            this.MinorTickWidth = nullable8;
-            nullable1 = new bool?(true);
-            this.NameToX_DefaultValue = nullable1;
-            this.NameToX = nullable1;
-            nullable8 = new double?(0.0);
-            this.Offset_DefaultValue = nullable8;
-            this.Offset = nullable8;
-            nullable1 = new bool?(false);
-            this.Opposite_DefaultValue = nullable1;
-            this.Opposite = nullable1;
-            this.PlotBands = this.PlotBands_DefaultValue = new List<XAxisPlotBands>();
-            this.PlotLines = this.PlotLines_DefaultValue = new List<XAxisPlotLines>();
-            nullable1 = new bool?(false);
-            this.Reversed_DefaultValue = nullable1;
-            this.Reversed = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowEmpty_DefaultValue = nullable1;
-            this.ShowEmpty = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowFirstLabel_DefaultValue = nullable1;
-            this.ShowFirstLabel = nullable1;
-            nullable1 = new bool?(true);
-            this.ShowLastLabel_DefaultValue = nullable1;
-            this.ShowLastLabel = nullable1;
-            double? nullable9 = new double?();
-            this.SoftMax_DefaultValue = nullable9;
-            this.SoftMax = nullable9;
-            double? nullable10 = new double?();
-            this.SoftMin_DefaultValue = nullable10;
-            this.SoftMin = nullable10;
-            nullable10 = new double?(1.0);
-            this.StartOfWeek_DefaultValue = nullable10;
-            this.StartOfWeek = nullable10;
-            nullable1 = new bool?(false);
-            this.StartOnTick_DefaultValue = nullable1;
-            this.StartOnTick = nullable1;
-            double? nullable11 = new double?();
-            this.TickAmount_DefaultValue = nullable11;
-            this.TickAmount = nullable11;
-            this.TickColor = this.TickColor_DefaultValue = "#ccd6eb";
-            double? nullable12 = new double?();
-            this.TickInterval_DefaultValue = nullable12;
-            this.TickInterval = nullable12;
-            nullable12 = new double?(10.0);
-            this.TickLength_DefaultValue = nullable12;
-            this.TickLength = nullable12;
-            double? nullable13 = new double?();
-            this.TickPixelInterval_DefaultValue = nullable13;
-            this.TickPixelInterval = nullable13;
-            this.TickPosition = this.TickPosition_DefaultValue = XAxisTickPosition.Outside;
-            this.TickPositioner = this.TickPositioner_DefaultValue = "";
-            this.TickPositions = this.TickPositions_DefaultValue = (List<double>) null;
-            nullable13 = new double?(1.0);
-            this.TickWidth_DefaultValue = nullable13;
-            this.TickWidth = nullable13;
-            this.TickmarkPlacement = this.TickmarkPlacement_DefaultValue = XAxisTickmarkPlacement.Null;
-            this.Title = this.Title_DefaultValue = new XAxisTitle();
-            this.Type = this.Type_DefaultValue = XAxisType.Linear;
-            nullable1 = new bool?(true);
-            this.Visible_DefaultValue = nullable1;
-            this.Visible = nullable1;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -626,7 +626,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

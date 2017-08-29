@@ -8,6 +8,12 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class PlotOptionsSplineMarkerStates : BaseObject
     {
+        public PlotOptionsSplineMarkerStates()
+        {
+            this.Hover = this.Hover_DefaultValue = new PlotOptionsSplineMarkerStatesHover();
+            this.Select = this.Select_DefaultValue = new PlotOptionsSplineMarkerStatesSelect();
+        }
+
         public PlotOptionsSplineMarkerStatesHover Hover { get; set; }
 
         private PlotOptionsSplineMarkerStatesHover Hover_DefaultValue { get; set; }
@@ -15,12 +21,6 @@ namespace Highsoft.Web.Mvc.Stocks
         public PlotOptionsSplineMarkerStatesSelect Select { get; set; }
 
         private PlotOptionsSplineMarkerStatesSelect Select_DefaultValue { get; set; }
-
-        public PlotOptionsSplineMarkerStates()
-        {
-            this.Hover = this.Hover_DefaultValue = new PlotOptionsSplineMarkerStatesHover();
-            this.Select = this.Select_DefaultValue = new PlotOptionsSplineMarkerStatesSelect();
-        }
 
         internal override Hashtable ToHashtable()
         {
@@ -34,7 +34,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

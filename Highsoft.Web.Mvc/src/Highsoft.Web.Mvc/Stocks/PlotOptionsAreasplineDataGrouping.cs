@@ -8,6 +8,24 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class PlotOptionsAreasplineDataGrouping : BaseObject
     {
+        public PlotOptionsAreasplineDataGrouping()
+        {
+            this.Approximation = this.Approximation_DefaultValue = "";
+            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
+            bool? nullable1 = new bool?(true);
+            this.Enabled_DefaultValue = nullable1;
+            this.Enabled = nullable1;
+            nullable1 = new bool?(false);
+            this.Forced_DefaultValue = nullable1;
+            this.Forced = nullable1;
+            double? nullable2 = new double?(2.0);
+            this.GroupPixelWidth_DefaultValue = nullable2;
+            this.GroupPixelWidth = nullable2;
+            nullable1 = new bool?(false);
+            this.Smoothed_DefaultValue = nullable1;
+            this.Smoothed = nullable1;
+        }
+
         public string Approximation { get; set; }
 
         private string Approximation_DefaultValue { get; set; }
@@ -32,31 +50,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private bool? Smoothed_DefaultValue { get; set; }
 
-        public PlotOptionsAreasplineDataGrouping()
-        {
-            this.Approximation = this.Approximation_DefaultValue = "";
-            this.DateTimeLabelFormats = this.DateTimeLabelFormats_DefaultValue = new Hashtable();
-            bool? nullable1 = new bool?(true);
-            this.Enabled_DefaultValue = nullable1;
-            this.Enabled = nullable1;
-            nullable1 = new bool?(false);
-            this.Forced_DefaultValue = nullable1;
-            this.Forced = nullable1;
-            double? nullable2 = new double?(2.0);
-            this.GroupPixelWidth_DefaultValue = nullable2;
-            this.GroupPixelWidth = nullable2;
-            nullable1 = new bool?(false);
-            this.Smoothed_DefaultValue = nullable1;
-            this.Smoothed = nullable1;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
             if (this.Approximation != this.Approximation_DefaultValue)
             {
                 hashtable.Add((object) "approximation", (object) this.Approximation);
-                Highstock.AddFunction("PlotOptionsAreasplineDataGroupingApproximation.approximation", this.Approximation);
+                Highstock.AddFunction("PlotOptionsAreasplineDataGroupingApproximation.approximation",
+                    this.Approximation);
             }
             if (this.DateTimeLabelFormats != this.DateTimeLabelFormats_DefaultValue)
                 hashtable.Add((object) "dateTimeLabelFormats", (object) this.DateTimeLabelFormats);
@@ -85,7 +86,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

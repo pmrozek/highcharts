@@ -3,12 +3,33 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
     public class Series : BaseObject
     {
+        public Series()
+        {
+            this.Data = this.Data_DefaultValue = new List<SeriesData>();
+            this.Id = this.Id_DefaultValue = "";
+            double? nullable1 = new double?();
+            this.Index_DefaultValue = nullable1;
+            this.Index = nullable1;
+            double? nullable2 = new double?();
+            this.LegendIndex_DefaultValue = nullable2;
+            this.LegendIndex = nullable2;
+            this.Name = this.Name_DefaultValue = (string) null;
+            this.Stack = this.Stack_DefaultValue = "null";
+            this.Type = this.Type_DefaultValue = SeriesType.Null;
+            this.XAxis = this.XAxis_DefaultValue = "0";
+            this.YAxis = this.YAxis_DefaultValue = "0";
+            double? nullable3 = new double?();
+            this.ZIndex_DefaultValue = nullable3;
+            this.ZIndex = nullable3;
+        }
+
         public List<SeriesData> Data { get; set; }
 
         private List<SeriesData> Data_DefaultValue { get; set; }
@@ -49,29 +70,11 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? ZIndex_DefaultValue { get; set; }
 
-        public Series()
-        {
-            this.Data = this.Data_DefaultValue = new List<SeriesData>();
-            this.Id = this.Id_DefaultValue = "";
-            double? nullable1 = new double?();
-            this.Index_DefaultValue = nullable1;
-            this.Index = nullable1;
-            double? nullable2 = new double?();
-            this.LegendIndex_DefaultValue = nullable2;
-            this.LegendIndex = nullable2;
-            this.Name = this.Name_DefaultValue = (string) null;
-            this.Stack = this.Stack_DefaultValue = "null";
-            this.Type = this.Type_DefaultValue = SeriesType.Null;
-            this.XAxis = this.XAxis_DefaultValue = "0";
-            this.YAxis = this.YAxis_DefaultValue = "0";
-            double? nullable3 = new double?();
-            this.ZIndex_DefaultValue = nullable3;
-            this.ZIndex = nullable3;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
+            if (this.Data.Any<SeriesData>())
+                hashtable.Add((object) "data", (object) this.HashifyList((IEnumerable) this.Data));
             if (this.Id != this.Id_DefaultValue)
                 hashtable.Add((object) "id", (object) this.Id);
             double? nullable1 = this.Index;
@@ -104,7 +107,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

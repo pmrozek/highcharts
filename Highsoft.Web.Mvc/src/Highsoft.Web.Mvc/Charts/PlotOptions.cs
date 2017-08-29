@@ -8,6 +8,33 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PlotOptions : BaseObject
     {
+        public PlotOptions()
+        {
+            this.Area = this.Area_DefaultValue = new PlotOptionsArea();
+            this.Arearange = this.Arearange_DefaultValue = new PlotOptionsArearange();
+            this.Areaspline = this.Areaspline_DefaultValue = new PlotOptionsAreaspline();
+            this.Areasplinerange = this.Areasplinerange_DefaultValue = new PlotOptionsAreasplinerange();
+            this.Bar = this.Bar_DefaultValue = new PlotOptionsBar();
+            this.Boxplot = this.Boxplot_DefaultValue = new PlotOptionsBoxplot();
+            this.Bubble = this.Bubble_DefaultValue = new PlotOptionsBubble();
+            this.Column = this.Column_DefaultValue = new PlotOptionsColumn();
+            this.Columnrange = this.Columnrange_DefaultValue = new PlotOptionsColumnrange();
+            this.Errorbar = this.Errorbar_DefaultValue = new PlotOptionsErrorbar();
+            this.Funnel = this.Funnel_DefaultValue = new PlotOptionsFunnel();
+            this.Gauge = this.Gauge_DefaultValue = new PlotOptionsGauge();
+            this.Heatmap = this.Heatmap_DefaultValue = new PlotOptionsHeatmap();
+            this.Line = this.Line_DefaultValue = new PlotOptionsLine();
+            this.Pie = this.Pie_DefaultValue = new PlotOptionsPie();
+            this.Polygon = this.Polygon_DefaultValue = new PlotOptionsPolygon();
+            this.Pyramid = this.Pyramid_DefaultValue = new PlotOptionsPyramid();
+            this.Scatter = this.Scatter_DefaultValue = new PlotOptionsScatter();
+            this.Series = this.Series_DefaultValue = new PlotOptionsSeries();
+            this.Solidgauge = this.Solidgauge_DefaultValue = new PlotOptionsSolidgauge();
+            this.Spline = this.Spline_DefaultValue = new PlotOptionsSpline();
+            this.Treemap = this.Treemap_DefaultValue = new PlotOptionsTreemap();
+            this.Waterfall = this.Waterfall_DefaultValue = new PlotOptionsWaterfall();
+        }
+
         public PlotOptionsArea Area { get; set; }
 
         private PlotOptionsArea Area_DefaultValue { get; set; }
@@ -100,33 +127,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private PlotOptionsWaterfall Waterfall_DefaultValue { get; set; }
 
-        public PlotOptions()
-        {
-            this.Area = this.Area_DefaultValue = new PlotOptionsArea();
-            this.Arearange = this.Arearange_DefaultValue = new PlotOptionsArearange();
-            this.Areaspline = this.Areaspline_DefaultValue = new PlotOptionsAreaspline();
-            this.Areasplinerange = this.Areasplinerange_DefaultValue = new PlotOptionsAreasplinerange();
-            this.Bar = this.Bar_DefaultValue = new PlotOptionsBar();
-            this.Boxplot = this.Boxplot_DefaultValue = new PlotOptionsBoxplot();
-            this.Bubble = this.Bubble_DefaultValue = new PlotOptionsBubble();
-            this.Column = this.Column_DefaultValue = new PlotOptionsColumn();
-            this.Columnrange = this.Columnrange_DefaultValue = new PlotOptionsColumnrange();
-            this.Errorbar = this.Errorbar_DefaultValue = new PlotOptionsErrorbar();
-            this.Funnel = this.Funnel_DefaultValue = new PlotOptionsFunnel();
-            this.Gauge = this.Gauge_DefaultValue = new PlotOptionsGauge();
-            this.Heatmap = this.Heatmap_DefaultValue = new PlotOptionsHeatmap();
-            this.Line = this.Line_DefaultValue = new PlotOptionsLine();
-            this.Pie = this.Pie_DefaultValue = new PlotOptionsPie();
-            this.Polygon = this.Polygon_DefaultValue = new PlotOptionsPolygon();
-            this.Pyramid = this.Pyramid_DefaultValue = new PlotOptionsPyramid();
-            this.Scatter = this.Scatter_DefaultValue = new PlotOptionsScatter();
-            this.Series = this.Series_DefaultValue = new PlotOptionsSeries();
-            this.Solidgauge = this.Solidgauge_DefaultValue = new PlotOptionsSolidgauge();
-            this.Spline = this.Spline_DefaultValue = new PlotOptionsSpline();
-            this.Treemap = this.Treemap_DefaultValue = new PlotOptionsTreemap();
-            this.Waterfall = this.Waterfall_DefaultValue = new PlotOptionsWaterfall();
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -181,7 +181,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

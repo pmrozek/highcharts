@@ -8,6 +8,31 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class YAxisPlotBands : BaseObject
     {
+        public YAxisPlotBands()
+        {
+            this.BorderColor = this.BorderColor_DefaultValue = "null";
+            double? nullable1 = new double?(0.0);
+            this.BorderWidth_DefaultValue = nullable1;
+            this.BorderWidth = nullable1;
+            this.ClassName = this.ClassName_DefaultValue = "";
+            this.Color = this.Color_DefaultValue = (string) null;
+            this.Events = this.Events_DefaultValue = (object) null;
+            double? nullable2 = new double?();
+            this.From_DefaultValue = nullable2;
+            this.From = nullable2;
+            this.Id = this.Id_DefaultValue = (string) null;
+            this.InnerRadius = this.InnerRadius_DefaultValue = "null";
+            this.Label = this.Label_DefaultValue = new YAxisPlotBandsLabel();
+            this.OuterRadius = this.OuterRadius_DefaultValue = "100%";
+            this.Thickness = this.Thickness_DefaultValue = "10";
+            double? nullable3 = new double?();
+            this.To_DefaultValue = nullable3;
+            this.To = nullable3;
+            double? nullable4 = new double?();
+            this.ZIndex_DefaultValue = nullable4;
+            this.ZIndex = nullable4;
+        }
+
         public string BorderColor { get; set; }
 
         private string BorderColor_DefaultValue { get; set; }
@@ -60,31 +85,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private double? ZIndex_DefaultValue { get; set; }
 
-        public YAxisPlotBands()
-        {
-            this.BorderColor = this.BorderColor_DefaultValue = "null";
-            double? nullable1 = new double?(0.0);
-            this.BorderWidth_DefaultValue = nullable1;
-            this.BorderWidth = nullable1;
-            this.ClassName = this.ClassName_DefaultValue = "";
-            this.Color = this.Color_DefaultValue = (string) null;
-            this.Events = this.Events_DefaultValue = (object) null;
-            double? nullable2 = new double?();
-            this.From_DefaultValue = nullable2;
-            this.From = nullable2;
-            this.Id = this.Id_DefaultValue = (string) null;
-            this.InnerRadius = this.InnerRadius_DefaultValue = "null";
-            this.Label = this.Label_DefaultValue = new YAxisPlotBandsLabel();
-            this.OuterRadius = this.OuterRadius_DefaultValue = "100%";
-            this.Thickness = this.Thickness_DefaultValue = "10";
-            double? nullable3 = new double?();
-            this.To_DefaultValue = nullable3;
-            this.To = nullable3;
-            double? nullable4 = new double?();
-            this.ZIndex_DefaultValue = nullable4;
-            this.ZIndex = nullable4;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -131,7 +131,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

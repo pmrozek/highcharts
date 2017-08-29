@@ -1,6 +1,7 @@
 ﻿// Type: Highsoft.Web.Mvc.Stocks.HtmlHelperExtensions
 
 
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Highsoft.Web.Mvc.Stocks

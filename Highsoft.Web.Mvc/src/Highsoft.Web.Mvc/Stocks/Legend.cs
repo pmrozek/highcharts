@@ -8,6 +8,119 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public class Legend : BaseObject
     {
+        public Legend()
+        {
+            this.Align = this.Align_DefaultValue = LegendAlign.Center;
+            this.BackgroundColor = this.BackgroundColor_DefaultValue = (string) null;
+            this.BorderColor = this.BorderColor_DefaultValue = "#999999";
+            double? nullable1 = new double?(0.0);
+            this.BorderRadius_DefaultValue = nullable1;
+            this.BorderRadius = nullable1;
+            nullable1 = new double?(0.0);
+            this.BorderWidth_DefaultValue = nullable1;
+            this.BorderWidth = nullable1;
+            bool? nullable2 = new bool?(false);
+            this.Enabled_DefaultValue = nullable2;
+            this.Enabled = nullable2;
+            nullable2 = new bool?(false);
+            this.Floating_DefaultValue = nullable2;
+            this.Floating = nullable2;
+            nullable1 = new double?(20.0);
+            this.ItemDistance_DefaultValue = nullable1;
+            this.ItemDistance = nullable1;
+            this.ItemHiddenStyle = this.ItemHiddenStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#cccccc"
+                }
+            };
+            this.ItemHoverStyle = this.ItemHoverStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#000000"
+                }
+            };
+            nullable1 = new double?(0.0);
+            this.ItemMarginBottom_DefaultValue = nullable1;
+            this.ItemMarginBottom = nullable1;
+            nullable1 = new double?(0.0);
+            this.ItemMarginTop_DefaultValue = nullable1;
+            this.ItemMarginTop = nullable1;
+            this.ItemStyle = this.ItemStyle_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "#333333"
+                },
+                {
+                    (object) "cursor",
+                    (object) "pointer"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "12px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                }
+            };
+            double? nullable3 = new double?();
+            this.ItemWidth_DefaultValue = nullable3;
+            this.ItemWidth = nullable3;
+            this.LabelFormat = this.LabelFormat_DefaultValue = "{name}";
+            this.LabelFormatter = this.LabelFormatter_DefaultValue = "";
+            this.Layout = this.Layout_DefaultValue = LegendLayout.Horizontal;
+            double? nullable4 = new double?();
+            this.Margin_DefaultValue = nullable4;
+            this.Margin = nullable4;
+            double? nullable5 = new double?();
+            this.MaxHeight_DefaultValue = nullable5;
+            this.MaxHeight = nullable5;
+            this.Navigation = this.Navigation_DefaultValue = new LegendNavigation();
+            nullable5 = new double?(8.0);
+            this.Padding_DefaultValue = nullable5;
+            this.Padding = nullable5;
+            nullable2 = new bool?(false);
+            this.Reversed_DefaultValue = nullable2;
+            this.Reversed = nullable2;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
+            nullable2 = new bool?(true);
+            this.SquareSymbol_DefaultValue = nullable2;
+            this.SquareSymbol = nullable2;
+            double? nullable6 = new double?();
+            this.SymbolHeight_DefaultValue = nullable6;
+            this.SymbolHeight = nullable6;
+            nullable6 = new double?(5.0);
+            this.SymbolPadding_DefaultValue = nullable6;
+            this.SymbolPadding = nullable6;
+            double? nullable7 = new double?();
+            this.SymbolRadius_DefaultValue = nullable7;
+            this.SymbolRadius = nullable7;
+            double? nullable8 = new double?();
+            this.SymbolWidth_DefaultValue = nullable8;
+            this.SymbolWidth = nullable8;
+            this.Title = this.Title_DefaultValue = new LegendTitle();
+            nullable2 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable2;
+            this.UseHTML = nullable2;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
+            double? nullable9 = new double?();
+            this.Width_DefaultValue = nullable9;
+            this.Width = nullable9;
+            nullable9 = new double?(0.0);
+            this.X_DefaultValue = nullable9;
+            this.X = nullable9;
+            nullable9 = new double?(0.0);
+            this.Y_DefaultValue = nullable9;
+            this.Y = nullable9;
+        }
+
         public LegendAlign Align { get; set; }
 
         private LegendAlign Align_DefaultValue { get; set; }
@@ -76,9 +189,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private LegendLayout Layout_DefaultValue { get; set; }
 
-        public string[] Margin { get; set; }
+        public double? Margin { get; set; }
 
-        private string[] Margin_DefaultValue { get; set; }
+        private double? Margin_DefaultValue { get; set; }
 
         public double? MaxHeight { get; set; }
 
@@ -144,117 +257,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private double? Y_DefaultValue { get; set; }
 
-        public Legend()
-        {
-            this.Align = this.Align_DefaultValue = LegendAlign.Center;
-            this.BackgroundColor = this.BackgroundColor_DefaultValue = (string) null;
-            this.BorderColor = this.BorderColor_DefaultValue = "#999999";
-            double? nullable1 = new double?(0.0);
-            this.BorderRadius_DefaultValue = nullable1;
-            this.BorderRadius = nullable1;
-            nullable1 = new double?(0.0);
-            this.BorderWidth_DefaultValue = nullable1;
-            this.BorderWidth = nullable1;
-            bool? nullable2 = new bool?(false);
-            this.Enabled_DefaultValue = nullable2;
-            this.Enabled = nullable2;
-            nullable2 = new bool?(false);
-            this.Floating_DefaultValue = nullable2;
-            this.Floating = nullable2;
-            nullable1 = new double?(20.0);
-            this.ItemDistance_DefaultValue = nullable1;
-            this.ItemDistance = nullable1;
-            this.ItemHiddenStyle = this.ItemHiddenStyle_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#cccccc"
-                }
-            };
-            this.ItemHoverStyle = this.ItemHoverStyle_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#000000"
-                }
-            };
-            nullable1 = new double?(0.0);
-            this.ItemMarginBottom_DefaultValue = nullable1;
-            this.ItemMarginBottom = nullable1;
-            nullable1 = new double?(0.0);
-            this.ItemMarginTop_DefaultValue = nullable1;
-            this.ItemMarginTop = nullable1;
-            this.ItemStyle = this.ItemStyle_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "#333333"
-                },
-                {
-                    (object) "cursor",
-                    (object) "pointer"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "12px"
-                },
-                {
-                    (object) "fontWeight",
-                    (object) "bold"
-                }
-            };
-            double? nullable3 = new double?();
-            this.ItemWidth_DefaultValue = nullable3;
-            this.ItemWidth = nullable3;
-            this.LabelFormat = this.LabelFormat_DefaultValue = "{name}";
-            this.LabelFormatter = this.LabelFormatter_DefaultValue = "";
-            this.Layout = this.Layout_DefaultValue = LegendLayout.Horizontal;
-            this.Margin = this.Margin_DefaultValue = new string[0];
-            double? nullable4 = new double?();
-            this.MaxHeight_DefaultValue = nullable4;
-            this.MaxHeight = nullable4;
-            this.Navigation = this.Navigation_DefaultValue = new LegendNavigation();
-            nullable4 = new double?(8.0);
-            this.Padding_DefaultValue = nullable4;
-            this.Padding = nullable4;
-            nullable2 = new bool?(false);
-            this.Reversed_DefaultValue = nullable2;
-            this.Reversed = nullable2;
-            this.Shadow = this.Shadow_DefaultValue = new Shadow()
-            {
-                Enabled = false
-            };
-            nullable2 = new bool?(true);
-            this.SquareSymbol_DefaultValue = nullable2;
-            this.SquareSymbol = nullable2;
-            double? nullable5 = new double?();
-            this.SymbolHeight_DefaultValue = nullable5;
-            this.SymbolHeight = nullable5;
-            nullable5 = new double?(5.0);
-            this.SymbolPadding_DefaultValue = nullable5;
-            this.SymbolPadding = nullable5;
-            double? nullable6 = new double?();
-            this.SymbolRadius_DefaultValue = nullable6;
-            this.SymbolRadius = nullable6;
-            double? nullable7 = new double?();
-            this.SymbolWidth_DefaultValue = nullable7;
-            this.SymbolWidth = nullable7;
-            this.Title = this.Title_DefaultValue = new LegendTitle();
-            nullable2 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable2;
-            this.UseHTML = nullable2;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
-            double? nullable8 = new double?();
-            this.Width_DefaultValue = nullable8;
-            this.Width = nullable8;
-            nullable8 = new double?(0.0);
-            this.X_DefaultValue = nullable8;
-            this.X = nullable8;
-            nullable8 = new double?(0.0);
-            this.Y_DefaultValue = nullable8;
-            this.Y = nullable8;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -319,51 +321,54 @@ namespace Highsoft.Web.Mvc.Stocks
             }
             if (this.Layout != this.Layout_DefaultValue)
                 hashtable.Add((object) "layout", (object) Highstock.FirstCharacterToLower(this.Layout.ToString()));
-            if (this.Margin != this.Margin_DefaultValue)
-                hashtable.Add((object) "margin", (object) this.Margin);
-            nullable1 = this.MaxHeight;
-            nullable2 = this.MaxHeight_DefaultValue;
+            nullable1 = this.Margin;
+            nullable2 = this.Margin_DefaultValue;
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
+                hashtable.Add((object) "margin", (object) this.Margin);
+            nullable2 = this.MaxHeight;
+            nullable1 = this.MaxHeight_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "maxHeight", (object) this.MaxHeight);
             if (this.Navigation.IsDirty())
                 hashtable.Add((object) "navigation", (object) this.Navigation.ToHashtable());
-            nullable2 = this.Padding;
-            nullable1 = this.Padding_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
+            nullable1 = this.Padding;
+            nullable2 = this.Padding_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "padding", (object) this.Padding);
             nullable3 = this.Reversed;
             nullable4 = this.Reversed_DefaultValue;
             if (nullable3.GetValueOrDefault() != nullable4.GetValueOrDefault() ||
                 nullable3.HasValue != nullable4.HasValue)
                 hashtable.Add((object) "reversed", (object) this.Reversed);
-            if (this.Shadow != this.Shadow_DefaultValue)
-                hashtable.Add((object) "shadow", (object) this.Shadow);
+            if (this.Shadow.IsDirty())
+                hashtable.Add((object) "shadow", (object) this.Shadow.ToHashtable());
             nullable4 = this.SquareSymbol;
             nullable3 = this.SquareSymbol_DefaultValue;
             if (nullable4.GetValueOrDefault() != nullable3.GetValueOrDefault() ||
                 nullable4.HasValue != nullable3.HasValue)
                 hashtable.Add((object) "squareSymbol", (object) this.SquareSymbol);
-            nullable1 = this.SymbolHeight;
-            nullable2 = this.SymbolHeight_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
+            nullable2 = this.SymbolHeight;
+            nullable1 = this.SymbolHeight_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "symbolHeight", (object) this.SymbolHeight);
-            nullable2 = this.SymbolPadding;
-            nullable1 = this.SymbolPadding_DefaultValue;
-            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
-                nullable2.HasValue != nullable1.HasValue)
-                hashtable.Add((object) "symbolPadding", (object) this.SymbolPadding);
-            nullable1 = this.SymbolRadius;
-            nullable2 = this.SymbolRadius_DefaultValue;
+            nullable1 = this.SymbolPadding;
+            nullable2 = this.SymbolPadding_DefaultValue;
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
-                hashtable.Add((object) "symbolRadius", (object) this.SymbolRadius);
-            nullable2 = this.SymbolWidth;
-            nullable1 = this.SymbolWidth_DefaultValue;
+                hashtable.Add((object) "symbolPadding", (object) this.SymbolPadding);
+            nullable2 = this.SymbolRadius;
+            nullable1 = this.SymbolRadius_DefaultValue;
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
+                hashtable.Add((object) "symbolRadius", (object) this.SymbolRadius);
+            nullable1 = this.SymbolWidth;
+            nullable2 = this.SymbolWidth_DefaultValue;
+            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
+                nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "symbolWidth", (object) this.SymbolWidth);
             if (this.Title.IsDirty())
                 hashtable.Add((object) "title", (object) this.Title.ToHashtable());
@@ -375,27 +380,30 @@ namespace Highsoft.Web.Mvc.Stocks
             if (this.VerticalAlign != this.VerticalAlign_DefaultValue)
                 hashtable.Add((object) "verticalAlign",
                     (object) Highstock.FirstCharacterToLower(this.VerticalAlign.ToString()));
-            nullable1 = this.Width;
-            nullable2 = this.Width_DefaultValue;
-            if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
-                nullable1.HasValue != nullable2.HasValue)
-                hashtable.Add((object) "width", (object) this.Width);
-            nullable2 = this.X;
-            nullable1 = this.X_DefaultValue;
+            nullable2 = this.Width;
+            nullable1 = this.Width_DefaultValue;
             if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
                 nullable2.HasValue != nullable1.HasValue)
-                hashtable.Add((object) "x", (object) this.X);
-            nullable1 = this.Y;
-            nullable2 = this.Y_DefaultValue;
+                hashtable.Add((object) "width", (object) this.Width);
+            nullable1 = this.X;
+            nullable2 = this.X_DefaultValue;
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
+                hashtable.Add((object) "x", (object) this.X);
+            nullable2 = this.Y;
+            nullable1 = this.Y_DefaultValue;
+            if (nullable2.GetValueOrDefault() != nullable1.GetValueOrDefault() ||
+                nullable2.HasValue != nullable1.HasValue)
                 hashtable.Add((object) "y", (object) this.Y);
             return hashtable;
         }
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }

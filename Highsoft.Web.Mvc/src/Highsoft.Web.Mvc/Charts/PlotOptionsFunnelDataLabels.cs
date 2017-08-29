@@ -8,6 +8,91 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class PlotOptionsFunnelDataLabels : BaseObject
     {
+        public PlotOptionsFunnelDataLabels()
+        {
+            this.BackgroundColor = this.BackgroundColor_DefaultValue = (string) null;
+            this.BorderColor = this.BorderColor_DefaultValue = (string) null;
+            double? nullable1 = new double?(0.0);
+            this.BorderRadius_DefaultValue = nullable1;
+            this.BorderRadius = nullable1;
+            nullable1 = new double?(0.0);
+            this.BorderWidth_DefaultValue = nullable1;
+            this.BorderWidth = nullable1;
+            this.ClassName = this.ClassName_DefaultValue = (string) null;
+            this.Color = this.Color_DefaultValue = (string) null;
+            this.ConnectorColor = this.ConnectorColor_DefaultValue = "{point.color}";
+            nullable1 = new double?(5.0);
+            this.ConnectorPadding_DefaultValue = nullable1;
+            this.ConnectorPadding = nullable1;
+            nullable1 = new double?(1.0);
+            this.ConnectorWidth_DefaultValue = nullable1;
+            this.ConnectorWidth = nullable1;
+            bool? nullable2 = new bool?(true);
+            this.Crop_DefaultValue = nullable2;
+            this.Crop = nullable2;
+            nullable2 = new bool?(true);
+            this.Defer_DefaultValue = nullable2;
+            this.Defer = nullable2;
+            nullable1 = new double?(30.0);
+            this.Distance_DefaultValue = nullable1;
+            this.Distance = nullable1;
+            nullable2 = new bool?(true);
+            this.Enabled_DefaultValue = nullable2;
+            this.Enabled = nullable2;
+            this.Format = this.Format_DefaultValue = "{y}";
+            this.Formatter = this.Formatter_DefaultValue = "";
+            bool? nullable3 = new bool?();
+            this.Inside_DefaultValue = nullable3;
+            this.Inside = nullable3;
+            this.Overflow = this.Overflow_DefaultValue = PlotOptionsFunnelDataLabelsOverflow.Justify;
+            nullable1 = new double?(5.0);
+            this.Padding_DefaultValue = nullable1;
+            this.Padding = nullable1;
+            nullable1 = new double?(0.0);
+            this.Rotation_DefaultValue = nullable1;
+            this.Rotation = nullable1;
+            this.Shadow = this.Shadow_DefaultValue = new Shadow()
+            {
+                Enabled = false
+            };
+            this.Shape = this.Shape_DefaultValue = "square";
+            nullable3 = new bool?(true);
+            this.SoftConnector_DefaultValue = nullable3;
+            this.SoftConnector = nullable3;
+            this.Style = this.Style_DefaultValue = new Hashtable()
+            {
+                {
+                    (object) "color",
+                    (object) "contrast"
+                },
+                {
+                    (object) "fontSize",
+                    (object) "11px"
+                },
+                {
+                    (object) "fontWeight",
+                    (object) "bold"
+                },
+                {
+                    (object) "textOutline",
+                    (object) "1px 1px contrast"
+                }
+            };
+            nullable3 = new bool?(false);
+            this.UseHTML_DefaultValue = nullable3;
+            this.UseHTML = nullable3;
+            this.VerticalAlign = this.VerticalAlign_DefaultValue = PlotOptionsFunnelDataLabelsVerticalAlign.Null;
+            nullable1 = new double?(0.0);
+            this.X_DefaultValue = nullable1;
+            this.X = nullable1;
+            nullable1 = new double?(-6.0);
+            this.Y_DefaultValue = nullable1;
+            this.Y = nullable1;
+            nullable1 = new double?(6.0);
+            this.ZIndex_DefaultValue = nullable1;
+            this.ZIndex = nullable1;
+        }
+
         public string BackgroundColor { get; set; }
 
         private string BackgroundColor_DefaultValue { get; set; }
@@ -120,91 +205,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         private double? ZIndex_DefaultValue { get; set; }
 
-        public PlotOptionsFunnelDataLabels()
-        {
-            this.BackgroundColor = this.BackgroundColor_DefaultValue = (string) null;
-            this.BorderColor = this.BorderColor_DefaultValue = (string) null;
-            double? nullable1 = new double?(0.0);
-            this.BorderRadius_DefaultValue = nullable1;
-            this.BorderRadius = nullable1;
-            nullable1 = new double?(0.0);
-            this.BorderWidth_DefaultValue = nullable1;
-            this.BorderWidth = nullable1;
-            this.ClassName = this.ClassName_DefaultValue = (string) null;
-            this.Color = this.Color_DefaultValue = (string) null;
-            this.ConnectorColor = this.ConnectorColor_DefaultValue = "{point.color}";
-            nullable1 = new double?(5.0);
-            this.ConnectorPadding_DefaultValue = nullable1;
-            this.ConnectorPadding = nullable1;
-            nullable1 = new double?(1.0);
-            this.ConnectorWidth_DefaultValue = nullable1;
-            this.ConnectorWidth = nullable1;
-            bool? nullable2 = new bool?(true);
-            this.Crop_DefaultValue = nullable2;
-            this.Crop = nullable2;
-            nullable2 = new bool?(true);
-            this.Defer_DefaultValue = nullable2;
-            this.Defer = nullable2;
-            nullable1 = new double?(30.0);
-            this.Distance_DefaultValue = nullable1;
-            this.Distance = nullable1;
-            nullable2 = new bool?(true);
-            this.Enabled_DefaultValue = nullable2;
-            this.Enabled = nullable2;
-            this.Format = this.Format_DefaultValue = "{y}";
-            this.Formatter = this.Formatter_DefaultValue = "";
-            bool? nullable3 = new bool?();
-            this.Inside_DefaultValue = nullable3;
-            this.Inside = nullable3;
-            this.Overflow = this.Overflow_DefaultValue = PlotOptionsFunnelDataLabelsOverflow.Justify;
-            nullable1 = new double?(5.0);
-            this.Padding_DefaultValue = nullable1;
-            this.Padding = nullable1;
-            nullable1 = new double?(0.0);
-            this.Rotation_DefaultValue = nullable1;
-            this.Rotation = nullable1;
-            this.Shadow = this.Shadow_DefaultValue = new Shadow()
-            {
-                Enabled = false
-            };
-            this.Shape = this.Shape_DefaultValue = "square";
-            nullable3 = new bool?(true);
-            this.SoftConnector_DefaultValue = nullable3;
-            this.SoftConnector = nullable3;
-            this.Style = this.Style_DefaultValue = new Hashtable()
-            {
-                {
-                    (object) "color",
-                    (object) "contrast"
-                },
-                {
-                    (object) "fontSize",
-                    (object) "11px"
-                },
-                {
-                    (object) "fontWeight",
-                    (object) "bold"
-                },
-                {
-                    (object) "textShadow",
-                    (object) "1px 1px contrast},{ -1px -1px contrast},{ -1px 1px contrast},{ 1px -1px contrast"
-                }
-            };
-            nullable3 = new bool?(false);
-            this.UseHTML_DefaultValue = nullable3;
-            this.UseHTML = nullable3;
-            this.VerticalAlign = this.VerticalAlign_DefaultValue = PlotOptionsFunnelDataLabelsVerticalAlign.Null;
-            nullable1 = new double?(0.0);
-            this.X_DefaultValue = nullable1;
-            this.X = nullable1;
-            nullable1 = new double?(-6.0);
-            this.Y_DefaultValue = nullable1;
-            this.Y = nullable1;
-            nullable1 = new double?(6.0);
-            this.ZIndex_DefaultValue = nullable1;
-            this.ZIndex = nullable1;
-        }
-
         internal override Hashtable ToHashtable()
         {
             Hashtable hashtable = new Hashtable();
@@ -282,8 +282,8 @@ namespace Highsoft.Web.Mvc.Charts
             if (nullable1.GetValueOrDefault() != nullable2.GetValueOrDefault() ||
                 nullable1.HasValue != nullable2.HasValue)
                 hashtable.Add((object) "rotation", (object) this.Rotation);
-            if (this.Shadow != this.Shadow_DefaultValue)
-                hashtable.Add((object) "shadow", (object) this.Shadow);
+            if (this.Shadow.IsDirty())
+                hashtable.Add((object) "shadow", (object) this.Shadow.ToHashtable());
             if (this.Shape != this.Shape_DefaultValue)
                 hashtable.Add((object) "shape", (object) this.Shape);
             nullable3 = this.SoftConnector;
@@ -321,7 +321,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (this.ToHashtable().Count > 0)
+            Hashtable hashtable = this.ToHashtable();
+
+
+            if (hashtable.Count > 0)
                 return JsonConvert.SerializeObject((object) this.ToHashtable());
             return "";
         }
